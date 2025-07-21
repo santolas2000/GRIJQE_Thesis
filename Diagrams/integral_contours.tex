@@ -1,0 +1,49 @@
+\begin{figure}[H]
+\begin{tikzpicture}
+%axes
+\draw[->,thick] (-2,0) -- (2,0) node[below] {Re$(x)$};
+\draw[->,thick] (0,-2) -- (0,2) node[left] {Im$(x)$}; 
+
+%poles
+\draw (0,0.5) node{$\times$};
+\draw (0,0.5) node[above right, scale=0.7] {$\varepsilon<0$};
+\draw (0,-0.5) node{$\times$};
+\draw (0,-0.5) node[below right,scale=0.7] {$\varepsilon>0$};
+
+%countour
+\draw[thick,red,xshift=2pt,
+decoration={ markings,  % This schema allows for fine-tuning the positions of arrows
+      mark=at position 0.12 with {\arrow{latex}}, 
+      mark=at position 0.4 with {\arrow{latex}},
+      mark=at position 0.62 with {\arrow{latex}},
+      mark=at position 0.9 with {\arrow{latex}}}, 
+      postaction={decorate}]
+  (-1.7,0) -- (1.3,0) -- (1.3,1.5) -- (-1.7,1.5) -- cycle;
+
+\end{tikzpicture}
+\begin{tikzpicture}
+%axes
+\draw[->,thick] (-2,0) -- (2,0) node[below] {Re$(x)$};
+\draw[->,thick] (0,-2) -- (0,2) node[left] {Im$(x)$}; 
+
+%poles
+\draw (0,0.5) node{$\times$};
+\draw (0,0.5) node[above right, scale=0.7] {$\varepsilon<0$};
+\draw (0,-0.5) node{$\times$};
+\draw (0,-0.5) node[below right,scale=0.7] {$\varepsilon>0$};
+
+%countour
+\draw[thick,red,xshift=2pt,
+decoration={ markings,  % This schema allows for fine-tuning the positions of arrows
+      mark=at position 0.12 with {\arrow{latex}}, 
+      mark=at position 0.4 with {\arrow{latex}},
+      mark=at position 0.62 with {\arrow{latex}},
+      mark=at position 0.9 with {\arrow{latex}}}, 
+      postaction={decorate}]
+  (-1.7,0) -- (1.3,0) -- (1.3,-1.5) -- (-1.7,-1.5) -- cycle;
+
+\end{tikzpicture}
+\centering
+\caption{Contours.}
+\label{fig:light_cone}
+\end{figure}

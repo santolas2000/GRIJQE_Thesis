@@ -1,0 +1,92 @@
+\section{Light-Cone Coordinates}
+\label{ap:Light_Cone}
+\textcolor{red}{May need to be reviewed so it has a similar structure and flow to the Bjorken coordinates appendix.}
+
+Throughout the derivations, it will be useful to work in light-cone coordinates. A four-vector $a^\mu = (a^0,a^1,a^2,a^3)$ may be expressed in light-cone coordinates as
+\begin{equation}
+a^\mu = (a^+, a^-, a^2, a^3) \equiv (a^+, a^-, \mathbf{a}_\perp), \qquad \mu = (+,-,~2,~3)
+\end{equation}
+
+\noindent with 
+\begin{equation}
+	a^+ = \frac{a^0 + a^1}{\sqrt{2}} \qquad a^- = \frac{a^0 - a^1}{\sqrt{2}} \qquad \mathbf{a}_\perp = (a^2,a^3)
+\end{equation}
+
+The dot product between two four-vectors $a^\mu$ and $b^\nu$ becomes
+\begin{equation}
+	a \cdot b =  a^+ b^- + a^- b^+ - \mathbf{a}_\perp \cdot \mathbf{b}_\perp = a^+ b^- + a^- b^+ - a^2 b^2 - a^3 b^3 
+\end{equation}
+
+\noindent the metric being
+\begin{equation}
+	g_ {\mu \nu} = \begin{bmatrix}
+		0 & 1 & 0 & 0 \\
+		1 & 0 & 0 & 0 \\
+		0 & 0 & -1 & 0 \\
+		0 & 0 & 0 & -1 
+	\end{bmatrix}
+	\label{eq:light_cone_metric}
+\end{equation}
+
+The components of the corresponding covariant four-vector $a_\mu$ are
+\begin{equation}
+	a_\mu = (a_+, a_-, a_2, a_3) = (a^-, a^+, -a^2, -a^3)
+\end{equation}
+
+Considering the position four-vector,
+\begin{equation}
+	x^\mu = (x^+, x^-, x^2, x^3) = \left( \frac{x^0+x^1}{\sqrt{2}}, \frac{x^0-x^1}{\sqrt{2}}, x^2, x^3  \right)
+\end{equation}
+we may obtain the new base vectors. Focusing on the first two coordinates:
+\begin{equation}
+	\vec{r} = x^0 \vec{e}_0 + x^1 \vec{e}_1, \quad \text{with} \quad \vec{e}_0 = (1,0,0,0), \quad \vec{e}_1=(0,1,0,0)
+\end{equation} 
+\begin{equation}
+\begin{split}
+	\vec{e}_+ & = \frac{\partial \vec{r}}{\partial x^+} = \frac{1}{\sqrt{2}} \vec{e}_0 + \frac{1}{\sqrt{2}} \vec{e}_1 \\
+	\vec{e}_- & = \frac{\partial \vec{r}}{\partial x^-} = \frac{1}{\sqrt{2}} \vec{e}_0 - \frac{1}{\sqrt{2}} \vec{e}_1
+\end{split}
+\end{equation}
+
+Allowing us to rewrite $\vec{r}$:
+\begin{equation}
+	\vec{r} =  x^+ \vec{e}_+ + x^- \vec{e}_-
+\end{equation}
+
+Thus, the $x^+$ and $x^-$ axes lie on the light cone (Fig. \ref{fig:light_cone}).
+
+
+\input{Diagrams/light_cone_diagram}
+
+As for the four-gradient,
+\begin{equation}
+	\partial_\mu = (\partial_+, \partial_-, \partial_2, \partial_3) = \left( \frac{\partial}{\partial x^+}, \frac{\partial}{\partial x^-}, \frac{\partial}{\partial x^2}, \frac{\partial}{\partial x^3} \right)
+\end{equation}
+
+\begin{equation}
+	\partial^\mu = (\partial^+, \partial^-, \partial^2, \partial^3) = (\partial_-, \partial_+, -\partial_2, -\partial_3)
+\end{equation}
+
+%\textcolor{red}{Conveniently, the Dirac matrices (in the Dirac representation?) "in light cone coordinates" have anticommutation relations obeying to our new metric.}
+
+\textcolor{red}{Abusing language and the notation,} one may similarly define the Dirac matrices ``in light-cone coordinates".
+\begin{equation}
+	\gamma^+ = \frac{\gamma^0 + \gamma^1}{\sqrt{2}} \qquad \gamma^- = \frac{\gamma^0 - \gamma^1}{\sqrt{2}} 
+\end{equation}
+
+They obey anticommutation relations of the same form as the usual Dirac matrices, with the new metric of Eq. \ref{eq:light_cone_metric}.
+
+\begin{equation}
+	\{ \gamma^\mu, \gamma^\nu \} = 2g^{\mu \nu}, \qquad \mu,\nu = (+,-,2,3)
+\end{equation}
+
+
+
+
+
+%\tdplotsetmaincoords{45}{125}
+%\begin{tikzpicture}[tdplot_main_coords]
+%\draw[thick,->] (-2,0,0) -- (2,0,0) node[anchor=north east]{$x$};
+%\draw[thick,->] (0,-2,0) -- (0,2,0) node[anchor=north west]{$y$};
+%\draw[thick,->] (0,0,-2) -- (0,0,2) node[anchor=south]{$z$};
+%\end{tikzpicture}
