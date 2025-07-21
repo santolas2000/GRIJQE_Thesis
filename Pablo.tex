@@ -18,7 +18,7 @@ and $F^{\mu \nu}$, the gluon field strength tensor, is given by:
 \begin{equation}
 \begin{split}
 	F_{\mu \nu} & = \partial_\mu A_\nu - \partial_\nu A_\mu - ig [A_\mu, A_\nu] \equiv F_{\mu \nu}^a T_a\\
-	F_{\mu \nu}^a & = \partial_\mu A_\nu^a - \partial_\nu A_\mu^a + g f^{a b c} A^b_\mu A^c_\nu 
+	F_{\mu \nu}^a & = \partial_\mu A_\nu^a - \partial_\nu A_\mu^a + g f^{a b c} A^b_\mu A^c_\nu
 \end{split}
 \end{equation}
 %\textcolor{blue}{and $J_\mu$, similarly to $A_\mu$, is a four-vector and  a linear combination of the $T_a$:
@@ -31,15 +31,15 @@ $g$ is the Strong Force's coupling constant; $T^a$ are the SU($N_c$) generators 
 
 Writing the Lagrangian with all indices explicit,
 \begin{equation}
-	\mathcal{L}_{\text{QCD}} = \left(\psi_\alpha^i \right)^*  \left( \gamma^0  \right)_{\alpha \beta} \left(i \left(\gamma^\mu \right)_{\beta \gamma} \left( \delta^{ij} \partial_\mu - i g A^a_\mu \left( T^a \right)^{ij} \right) - \delta_{\beta \gamma} \delta^{ij} m \right) \psi_\gamma^j - \frac{1}{4} F_{\mu \nu}^a F^{\mu \nu}_a 
+	\mathcal{L}_{\text{QCD}} = \left(\psi_\alpha^i \right)^*  \left( \gamma^0  \right)_{\alpha \beta} \left(i \left(\gamma^\mu \right)_{\beta \gamma} \left( \delta^{ij} \partial_\mu - i g A^a_\mu \left( T^a \right)^{ij} \right) - \delta_{\beta \gamma} \delta^{ij} m \right) \psi_\gamma^j - \frac{1}{4} F_{\mu \nu}^a F^{\mu \nu}_a
 	%\textcolor{blue}{- A_\mu^a J^\mu_a}
 	\label{eq:QCD_Lagrangian_Indices}
 \end{equation}
 where $\alpha, \beta, \gamma = 1,2,3,4$ are Dirac indices, $i,j=1, ..., N_c$ are color indices in the fundamental representation, $a = 1, ..., {N_c}^2-1$ are color indices in the adjoint representation, and $\mu,\nu = 0,1,2,3$ are spacetime indices when using Minkowski coordinates.
 
  To obtain the Lagrangian considering all flavors of quarks, one need only add copies of the first term of Eq. (\ref{eq:QCD_Lagrangian}) for each quark flavor's quark fields.
- 
-Given the presented QCD Lagrangian, the corresponding Euler-Lagrange equations relating to the gluon fields $A$ are called the Yang-Mills equations, which can be thought of as the QCD equivalent to Classical Electrodynamics' Maxwell's equations. 
+
+Given the presented QCD Lagrangian, the corresponding Euler-Lagrange equations relating to the gluon fields $A$ are called the Yang-Mills equations, which can be thought of as the QCD equivalent to Classical Electrodynamics' Maxwell's equations.
 %In the absence of color sources,\footnote{That is, in the absence of source terms in the Lagrangian and taking the usual color current, $g \overline{\psi} \gamma^v \psi$, to be $0$.}
 In the absence of quark fields ($\psi=0$), they read:
 \begin{equation}
@@ -47,14 +47,14 @@ In the absence of quark fields ($\psi=0$), they read:
 	%\textcolor{blue}{J^\nu}
 	\label{eq:homogenous_Yang-Mills}
 \end{equation}
-%g \overline{\psi} \gamma^v \psi + 
+%g \overline{\psi} \gamma^v \psi +
 
 \section{[A picture of nuclear matter]}
 \label{sec:nuclear_matter}
 
 \textcolor{red}{[Part of it may migrate. At some point before, introduce the proton as something more than 3 quarks]}
 
-Probing hadrons at high energies in scattering experiments has allowed exploring the interior structure of nucleons. Data from  both fixed-target and collider (HERA, Tevatron, LHC) experiments has been compiled in order to obtain pictures of the parton content of hadrons. 
+Probing hadrons at high energies in scattering experiments has allowed exploring the interior structure of nucleons. Data from  both fixed-target and collider (HERA, Tevatron, LHC) experiments has been compiled in order to obtain pictures of the parton content of hadrons.
 
 At HERA, electrons (or positrons) and protons were accelerated to collide at center of mass energies of around $\sqrt{s} = \qty{300}{GeV}$. In some of these collisions, the momentum transfer $Q^\mu$ from the electron to the proton via a virtual photon was large enough ($Q^2 > \qty{200}{GeV^2}$) to disintegrate the proton into a shower of hadrons $(e  + p \to e + X)$; these are called \gls{DIS} collisions, whose cross-sections are valuable in unveiling the proton's parton content. The greater the virtual photon's energy, the greater its ability to resolve structures of smaller scale than the proton radius and with shorter characteristic timescales. \gls{DIS} collisions have also been studied for this purpose using muons, $\mu$, and neutrinos, $\nu$, as probes, and neutrons as targets. At the Tevatron and LHC colliders, data from $p\overline{p}$ and $pp$ collisions, respectively, has contributed to the study of the gluon content of protons, specifically. \cite{Thomson8:2013}\cite{PDG_2024}
 
@@ -95,8 +95,8 @@ One interpretation of these non-linear effects is the onset, above certain gluon
     \label{fig:gluon_recombination}
 \end{figure}
 
-More formally, the \gls{BFKL} \gls{QCD} evolution equation is a linear differential equation that governs how gluon density in momentum space within a hadron should evolve with $x$ when that hadron is probed at a certain energy scale. It is a linear equation, and it predicts 
-%an exponential growth of the gluon density with rapidity, Y = ln(1/x); equivalently, it predicts 
+More formally, the \gls{BFKL} \gls{QCD} evolution equation is a linear differential equation that governs how gluon density in momentum space within a hadron should evolve with $x$ when that hadron is probed at a certain energy scale. It is a linear equation, and it predicts
+%an exponential growth of the gluon density with rapidity, Y = ln(1/x); equivalently, it predicts
 a divergence of the gluon density as $x \to 0$. The equation does not contain terms reflecting interference between emitters of gluons, as it assumes the hadron to be a dilute parton system. However, making the probability of emission of a new gluon dependent on the present gluon density allows for saturation to be reached when gluon generation and gluon recombination balance out. QCD evolution equations which attempt to incorporate this effect have additional, non-linear, density-dependent terms, such as the \gls{GRL-MQ} equation. \cite{Albacete_2014}
 
 \section{The Color Glass Condensate and The McLarran-Venugopalan Model}
@@ -114,7 +114,7 @@ The \gls{CGC} is an effective theory of \gls{QCD} for high-energy \gls{QCD} scat
 \subsection{Classical saturated gluon fields}
 \textcolor{purple}{YET UNJUSTIFIED: why $N \sim 1/g^2$; why $g$ is small; do the creation operators create a gluon with a specific momentum $(x,\mathbf{k}_\perp)$?}
 
-Starting by justifying the treatment of the saturated gluons as classical fields, the saturated gluon densities at low-$x$ discussed previously in Sections \ref{sec:nuclear_matter} and \ref{sec:gluon_saturation} imply gluon (or color) fields of the order $A \sim 1/g$, which does not allow their treatment through standard perturbative techniques\footnote{For example, in calculating the matrix element $\mathcal{M}$ for a \gls{QCD} process using a series expansion in powers of $g$, all terms are proportional to $gA \sim \mathcal{O}(1)$, which does not allow truncating the series in order to estimate $\mathcal{M}$ -- all orders need to be summed.}.\cite{Albacete_2014} However, it opens the possibility of their treatment as classical fields. 
+Starting by justifying the treatment of the saturated gluons as classical fields, the saturated gluon densities at low-$x$ discussed previously in Sections \ref{sec:nuclear_matter} and \ref{sec:gluon_saturation} imply gluon (or color) fields of the order $A \sim 1/g$, which does not allow their treatment through standard perturbative techniques\footnote{For example, in calculating the matrix element $\mathcal{M}$ for a \gls{QCD} process using a series expansion in powers of $g$, all terms are proportional to $gA \sim \mathcal{O}(1)$, which does not allow truncating the series in order to estimate $\mathcal{M}$ -- all orders need to be summed.}.\cite{Albacete_2014} However, it opens the possibility of their treatment as classical fields.
 
 Comparing the occupation number of the saturated gluon fields and the commutator of their creation, $a^\dagger$, and annihilation, $a$, operators, \citep{Albacete_2014}
 \begin{equation}
@@ -148,7 +148,7 @@ The uncertainty principle can be used to evaluate the approximate extent of each
 \begin{gather}
 \Delta x^- \propto \frac{1}{p^+} = \frac{1}{x_i P^+} \\
 \Delta x^+ \propto \frac{1}{p^-} = \frac{2p^+}{(p^0)^2 - (p^1)^2} = \frac{2p^+}{(\mathbf{p}_\perp)^2 + {m_i}^2} \approx \frac{2 x_i P^+}{(\mathbf{p}_\perp)^2}
-\end{gather} 
+\end{gather}
 \end{subequations}
 where $\mathbf{p}_\perp$ is the $i$-th parton's transverse momentum, which was taken to be negligible in Eqs. (\ref{eq:IMF}) when compared to its longitudinal momentum.
 
@@ -162,12 +162,12 @@ is greater than the low-$x$ partons'. Equivalently, the fluctuations of the low-
 \textcolor{purple}{? Include the naive \cite{Lappi_notes} interpretations? 1) the Lorentz-contraction of the nucleus along $x^1$. 2) Time dilation experienced by valence partons.}
 
 It is from the second point that a hierarchy arises, central to the \gls{CGC} formalism, of partons separated according to their $x$-values. A $+$-momentum scale, $\Lambda^+$, is introduced to separate the high-$x$, or valence, partons and the low-$x$ partons. From the perspective of the latter, the first have very slow dynamics\textcolor{red}{ \footnote{\textcolor{blue}{Also slow in the timescale of the pre-hydrodynamic stage?}}} in $x^+$; in the limit of this argument, they are \emph{static} in $x^+$; for particles traveling at the speed of light, being static in $x^+$ is equivalent to being static in $t$. As such, in the \gls{CGC}, valence partons become constant color charges, which serve as sources for the \emph{dynamic} low-$x$ parton fields.
-% Regarding the low-$x$ partons, 
+% Regarding the low-$x$ partons,
 As was introduced in sections \ref{sec:nuclear_matter} and \ref{sec:gluon_saturation}, the partonic content of protons, and hence of the nucleus, is dominated by gluons at low-$x$. Therefore, the dynamic fields are taken to be gluon, also called color, fields.
 
 %Regarding the low-$x$ partons, they are, in contrast, dynamic. Additionally since the partonic content of protons, \textcolor{blue}{ and hence of the nucleus}, is dominated by gluons at low-$x$, as introduced in sections \ref{sec:nuclear_matter} and \ref{sec:gluon_saturation}, these dynamic fields are taken to be gluonic fields, also called color fields.
 
-The parton content of the nucleus is thus divided into the group of high $+$-momentum ($p^+ > \Lambda^+$) static color charges and the group of low $+$-momentum ($p^+ < \Lambda^+$) dynamic classical gluon fields which they generate. The static color charges may themselves be treated as classical \citep{Albacete_2014,McLerran_1994_classic_source} 
+The parton content of the nucleus is thus divided into the group of high $+$-momentum ($p^+ > \Lambda^+$) static color charges and the group of low $+$-momentum ($p^+ < \Lambda^+$) dynamic classical gluon fields which they generate. The static color charges may themselves be treated as classical \citep{Albacete_2014,McLerran_1994_classic_source}
  and are eikonally coupled to the classical gluon fields; that is, they suffer negligible recoil from their interactions with the color fields, when compared to their longitudinal momentum.\cite{Gelis_2010} Thus, they are introduced into the \gls{QCD} Lagrangian (Eq. (\ref{eq:QCD_Lagrangian_Indices})) as classical color current 4-vectors in the term $A_\mu^a J^\mu_a$. Since, now, the formalism does not include quantum quark fields, Eqs. \ref{eq:QCD_Lagrangian} and \ref{eq:QCD_Lagrangian_Indices} become, respectively,%\textcolor{red}{the absence of dynamic color fields gets rid of the first term. The influence of the static color sources on the system is brought back via the} addition of an external color source term to the \gls{QCD} Lagrangian. Equations \ref{eq:QCD_Lagrangian} and \ref{eq:QCD_Lagrangian_Indices} become, respectively,
 \begin{align}
 	\mathcal{L}_\text{QCD}' & = - \frac{1}{2} \Tr_c \left[ F_{\mu \nu} F^{\mu \nu} \right] + 2 \Tr_c [A_\mu J^\mu] \\
@@ -192,7 +192,7 @@ From the previous discussion on the static nature of the color charges, $\rho$'s
 	{J}^\mu = (g \delta (x^-) \rho (\mathbf{x}_\perp), \sim 0, \sim 0, \sim 0)
 	\label{eq:+_Current}
 \end{equation}
-where the charge distribution has been taken to be longitudinally homogenous and $\rho$ has become an area number charge density. 
+where the charge distribution has been taken to be longitudinally homogenous and $\rho$ has become an area number charge density.
 
 \subsection{The stochastic nature of $\rho$}
 The color charge distribution $\rho$, from which $J^\mu$ and, consequently, the evolution of the gluon fields are obtained, is fixed for a single nucleus in a single event. It is different, however, for different nuclei and for each event, constituting a stochastic variable \cite{Gelis_2010} which isn't experimentally accessible.  Even for the same nucleus, $\rho$ would change if enough time is allowed to pass in order for the nucleus to travel over a $x^+$ greater than the valence partons' typical $x^+$ scale \cite{Gelis_Habilitation}. In order to calculate an observable $\mathcal{O}$ out of many events within the \gls{CGC} effective theory, one must determine its average value considering all the different possible color charge distributions and their probabilities: \cite{Gelis_2010}
@@ -228,7 +228,7 @@ The \gls{MV} model's functional probability distribution $W_{MV}$ and correspond
 
 %\textcolor{blue}{[Talk about renormalization of the theory and the JIMWLK equations?] }
 
-%\textcolor{red}{When to make the leap from the particle description of the mechanisms of parton creation/annihilation into classical fields.} 
+%\textcolor{red}{When to make the leap from the particle description of the mechanisms of parton creation/annihilation into classical fields.}
 
 %- Description of the two classes of partons. Justified on Heisenberg uncertainty principle, delocalization in x- and x+ coordinates. Explain why only gluons in the lower class.
 
@@ -248,7 +248,7 @@ In this work, the non-evolved \gls{MV} model will be used. The application of th
 
 
 \section{[Setting the stage/introducing the initial situation]}
-In a HIC, \textcolor{red}{as previously introduced}, two heavy nuclei travel in opposite directions at near the speed of light before crashing into each other. For the purposes of this work, both nuclei will be taken to travel at the speed of light; because of this, they suffer length contraction along the direction of their trajectories, becoming infinitely thin/planar\footnote{\textcolor{red}{One reference makes a comparison between the longitudinal extent of the nucleus and the energy of the probe??}}. Furthermore, their collision is taken to be central, that is, the trajectories of their centers are perfectly aligned. 
+In a HIC, \textcolor{red}{as previously introduced}, two heavy nuclei travel in opposite directions at near the speed of light before crashing into each other. For the purposes of this work, both nuclei will be taken to travel at the speed of light; because of this, they suffer length contraction along the direction of their trajectories, becoming infinitely thin/planar\footnote{\textcolor{red}{One reference makes a comparison between the longitudinal extent of the nucleus and the energy of the probe??}}. Furthermore, their collision is taken to be central, that is, the trajectories of their centers are perfectly aligned.
 
 In the laboratory/center of mass frame, the $x^1$ axis is placed along the trajectories of the nuclei. The nucleus moving in the positive $x^1$ direction is identified as nucleus 1, and the one moving in the negative $x^1$ direction is identified as nucleus 2. The nuclei collide at $x^1 = 0$, at instant $t=0$. This system is invariant under boosts along the $x^1$ direction.
 
@@ -263,7 +263,7 @@ As such, prior to the collision, each nucleus's position four-vector, $x^\mu = (
 \begin{equation*}
 \begin{split}
 	\text{Nucleus 1}:& \quad (t,t,0,0) \\
-	\text{Nucleus 2}:& \quad (t,-t,0,0) 
+	\text{Nucleus 2}:& \quad (t,-t,0,0)
 \end{split}
 \end{equation*}
 
@@ -276,14 +276,14 @@ These trajectories are well-illustrated in the $x^1Ox^0$ plane:
     \label{fig:HIC_lightcone}
 \end{figure}
 
-After the collision, the nuclei's approximately static high-$x$ partons, discussed in Section \ref{sec:scale_separation}, 
-carry on in the direction they were moving at the speed of light, acting as color sources for the gluon fields then generated in the space between the now receding nuclei. 
-%\textcolor{red}{[They were already acting as color sources for fields, but in the other quadrants]}. 
+After the collision, the nuclei's approximately static high-$x$ partons, discussed in Section \ref{sec:scale_separation},
+carry on in the direction they were moving at the speed of light, acting as color sources for the gluon fields then generated in the space between the now receding nuclei.
+%\textcolor{red}{[They were already acting as color sources for fields, but in the other quadrants]}.
 It is in this space that the pre-hydrodynamic stage to be studied is formed. Fig. \ref{fig:HIC_lightcone} already suggests the usefulness of the ligh-cone coordinate system (see Appendix \ref{ap:Light_Cone}), as the static color sources only travel along the edges of the light-cone centered on the collision coordinates $(0,0)$. In this coordinate system, the nuclei's position four-vectors, $x^\mu=(x^+,x^-,x^2,x^3)$, are:
 \begin{equation*}
 \begin{split}
 	\text{Nucleus 1}:& \quad (\sqrt{2}t,0,0,0) \\
-	\text{Nucleus 2}:& \quad (0,\sqrt{2}t,0,0) 
+	\text{Nucleus 2}:& \quad (0,\sqrt{2}t,0,0)
 \end{split}
 \end{equation*}
 and the collision coordinates remain at $(x^+=0,x^-=0)$.
@@ -291,7 +291,7 @@ and the collision coordinates remain at $(x^+=0,x^-=0)$.
 In order to fulfill this work's objectives, it will be necessary to calculate the gluon fields generated in the space between the receding nuclei, making use of the classical Yang-Mills equations. The fields will be determined from the the static distributions of color charge of the receding nuclei.
 
 \textcolor{red}{Next: event averages? Move the introduction to dEdx and $\hat{q}$ to before this? say they are the result of the color fields acting on the quark probe?}
- 
+
 \section{Solving The Yang-Mills Equations}
 
 \subsection{One nucleus}
@@ -317,11 +317,11 @@ First of all, the external current inputted is checked to be consistent with the
 \end{split}
 \end{equation}
 where, in the first step, the ``dummy" indices of the first term on the right are switched ($\mu 	\leftrightarrow \nu$) and then the antisymmetry of the anticommutator and of the field strength tensor is used; for the second step, $[D_\mu, D_\nu]$ may be shown to equal $-ig F_{\mu \nu}$:
-\begin{equation} 
+\begin{equation}
 \begin{split}
 	[D_\mu, D_\nu] & = [\partial_\mu - i g A_\mu, \partial_\nu - i g A_\nu] = [\partial_\mu, \partial_\nu] - ig [\partial_\mu, A_\nu] - i g [A_\mu, \partial_\nu] - g^2 [A^\mu, A^\nu] \\
 	& =  0 - ig \left( \partial_\mu A_\nu -  A_\nu \partial_\mu + A_\mu \partial_\nu  - \partial_\nu A_\mu - ig [A_\mu, A_\nu] \right) \\
-	& = -ig \left( (\partial_\mu A_\nu) - (\partial_\nu A_\mu) - ig [A_\mu, A_\nu] \right) = -ig F_{\mu\nu} 
+	& = -ig \left( (\partial_\mu A_\nu) - (\partial_\nu A_\mu) - ig [A_\mu, A_\nu] \right) = -ig F_{\mu\nu}
 \end{split}
 \end{equation}
 and $[F^{\mu\nu}, F_{\mu\nu}] = 0$ because, first swapping the order in the commutator and then swapping the raised and lowered indices,
@@ -344,13 +344,13 @@ There is a particular solution to the Yang-Mills equations in which $A^-$ vanish
 
 \subsection{Two nuclei}
 
-%In the case of a HIC, in the center of mass \textcolor{red}{(laboratory?)} frame, two heavy nuclei travel at (close to) the speed of light along the $z$ axis in opposing directions. The nuclei moving in the positive or negative $z$ direction are named nucleus 1 or nucleus 2, respectively. 
+%In the case of a HIC, in the center of mass \textcolor{red}{(laboratory?)} frame, two heavy nuclei travel at (close to) the speed of light along the $z$ axis in opposing directions. The nuclei moving in the positive or negative $z$ direction are named nucleus 1 or nucleus 2, respectively.
 
 In light cone coordinates, for nucleus 1, the only non-vanishing component of the color current four-vector $J^\nu$ is the $+$ component, ${J_1}^+$ (see Eq. (\ref{eq:+_Current})); for nucleus 2, by equivalent arguments applied to a nucleus moving in the opposite direction, the only non-vanishing component is the $-$ component, ${J_2}^-$, which has a similar form to ${J_1}^+$, but exchanging $x^- \to x^+$ \textcolor{red}{\footnote{\textcolor{red}{\cite{Carrington_2022_Energy_Momentum_Tensor} \cite{Gelis_Habilitation} allows the nuclei to retain some thickness and then brings it to 0 at the end of the calculation. It justifies the use of $\rho$ as a surface charge density, I think.}}}: \textcolor{blue}{gauge-dependent charge density}
 \begin{equation*}
 	{J_1}^+ = g \delta (x^-) \rho_1 (\mathbf{x}_\perp) \qquad {J_2}^- = g \delta (x^+) \rho_2 (\mathbf{x}_\perp)
 \end{equation*}
-where $\rho_{1,2}$ are the static number color densities in nuclei 1 and 2 per unit of transverse area. 
+where $\rho_{1,2}$ are the static number color densities in nuclei 1 and 2 per unit of transverse area.
 %The Lorentz contraction in the $x^1$ direction suffered by nucleus 1 implies a very thin spread of color charge in the $x^-$ direction, so the dependence on this coordinate is factorized as $\delta(x^-)$ \cite{Gelis_Habilitation} \textcolor{blue}{ This reference}; \textcolor{red}{if we consider additionally that, due to length contraction along the $x^1$ direction, the nucleus is infinitely thin, and therefore extends only in the $\mathbf{x}_\perp$ plane, then $\rho_1$ may not depend on $x^+$ either}. Equivalently, for nucleus 2, which travels along the $x^-$ axis, the color charge spread along the $x^+$ direction is factorized into $\delta(x^+)$ \textcolor{red}{and, if considered infinitely thin, neither on $x^-$.}
 %where $\rho_{1,2}$ are the static number color densities in nuclei 1 and 2 per unit of transverse area. Since nucleus 1 travels along the $x^+$ axis, its number color density $\rho_1$ may not depend on $x^-$; if we consider additionally that, due to length contraction along the $x^1$ direction, the nucleus is infinitely thin, and therefore extends only in the $\mathbf{x}_\perp$ plane, then $\rho_1$ may not depend on $x^+$ either. Equivalently, for nucleus 2, which travels along the $x^-$ axis, $\rho_2$ may not depend on $x^+$ and, if considered infinitely thin, neither on $x^-$.
 
@@ -386,8 +386,8 @@ The classical Yang-Mills equations to be solved in the presence of the static co
 A^+ (x^\mu) &= \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} x^+ \alpha (\tau, \mathbf{x}_\perp)\\
 A^- (x^\mu) &= - \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} x^- \alpha (\tau, \mathbf{x}_\perp) \\
 A^{i}(x^\mu) &= \underbrace{\theta (-x^+) \theta(x^-)}_{\Circled{1}} \alpha^i_1 (\mathbf{x}_\perp)
- + \underbrace{\theta (x^+) \theta(-x^-)}_{\Circled{2}} \alpha^i_2 (\mathbf{x}_\perp) 
- + \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} \alpha^i (\tau, \mathbf{x}_\perp) 
+ + \underbrace{\theta (x^+) \theta(-x^-)}_{\Circled{2}} \alpha^i_2 (\mathbf{x}_\perp)
+ + \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} \alpha^i (\tau, \mathbf{x}_\perp)
 \end{split}
 \end{equation}
 
@@ -411,7 +411,7 @@ B^\eta_0(\mathbf{x}_\perp) & = -ig \varepsilon^{ij} [\alpha^i_1 (\mathbf{x}_\per
 \begin{subequations} \label{eq:EB_from_initial_EB}
 \begin{align}
 E^\eta(\tau,\mathbf{k}_\perp) & = E^\eta_0 (\mathbf{k}_\perp) J_0 (k \tau) \\
-E^i(\tau,\mathbf{k}_\perp) & = -i \varepsilon^{ij} \hat{k}^j B_0^\eta (\mathbf{k}_\perp) J_1 (k \tau) \\ 
+E^i(\tau,\mathbf{k}_\perp) & = -i \varepsilon^{ij} \hat{k}^j B_0^\eta (\mathbf{k}_\perp) J_1 (k \tau) \\
 B^\eta(\tau,\mathbf{k}_\perp) & = B^\eta_0 (\mathbf{k}_\perp) J_0 (k \tau) \\
 B^i(\tau,\mathbf{k}_\perp) & = -i \varepsilon^{ij} \hat{k}^j E_0^\eta (\mathbf{k}_\perp) J_1 (k \tau)
 \end{align}
@@ -424,7 +424,7 @@ In order to get expressions for one of the fields in coordinate  space\textcolor
 	E^\alpha (\tau,\mathbf{x}_\perp) & =  \int \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} e^{i \mathbf{k}_\perp \cdot \mathbf{x}_\perp} & & (-i)   \varepsilon^{\alpha \beta} \hat{k}^\beta J_1 (k \tau)  \int \diff^2 \mathbf{u}_\perp e^{-i \mathbf{k}_\perp \cdot \mathbf{u}_\perp} \\
 	& ~ & & \times ~ g \varepsilon^{ij} \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp) f^{abc} T_c \\
 	& = -ig \varepsilon^{ij} f^{abc} T_c \varepsilon^{\alpha \beta} & & \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} \hat{k}^\beta J_1 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp}  \\
-	& ~ & & \times \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp) 
+	& ~ & & \times \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp)
 \end{alignedat}
 \end{equation}
 
@@ -433,5 +433,7 @@ And the remaining fields:
 \begin{align}
 	E^\eta (\tau,\mathbf{x}_\perp) & = g \delta^{ij} f^{abc} T_c \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} J_0 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp) \\
 	B^\eta (\tau,\mathbf{x}_\perp) & = g \varepsilon^{ij} f^{abc} T_c \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} J_0 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp) \\
-	B^\alpha (\tau,\mathbf{x}_\perp) & = -ig \delta^{ij} f^{abc} T_c \varepsilon^{\alpha \beta} \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} \hat{k}^\beta J_1 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp) 
+	B^\alpha (\tau,\mathbf{x}_\perp) & = -ig \delta^{ij} f^{abc} T_c \varepsilon^{\alpha \beta} \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} \hat{k}^\beta J_1 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp)
 \end{align}
+
+Atom pablo como estás? :)
