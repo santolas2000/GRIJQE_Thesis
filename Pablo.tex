@@ -297,37 +297,66 @@ In order to fulfill this work's objectives, it will be necessary to calculate th
 \subsection{One nucleus}
 It is easiest to start by considering the case of a single nucleus, chosen to be Nucleus 1, moving in the positive $x^1$ direction.
 Solutions to the Yang-Mills equations for a single nucleus moving along the light-cone were first found analytically in \cite{McLerran:1993ka} for the classical case $D_{\mu}F^{\mu \nu} = J^\nu$.
-A more recent calculation for our case can be found in \cite[Section 2.2]{Blaizot_2004}.
+A more recent calculation for the full equations can be found in \cite[Section 2.2]{Blaizot_2004}.
 
- The Yang-Mills equations are solved in the Lorenz, or covariant, gauge, where $\partial_\mu A^\mu=0$, an axial gauge condition. \textcolor{blue}{(\citep{Kovner_1995}: "one has direct access to the gluon distribution functions of the parton model")}
+The Yang-Mills equations are initially solved in the Lorenz, or covariant, gauge, where $\partial_\mu A^\mu=0$. The solution is then brought to light-cone gauge, where $A^+=0$, an axial gauge condition. \textcolor{blue}{(\citep{Kovner_1995}: "one has direct access to the gluon distribution functions of the parton model")}. \textcolor{red}{I was going to write something here.}
 
-First of all, the external current inputted is checked to be consistent with the Yang-Mills equations; the current should be covariantly conserved:
+First of all, the equation explicitly enforcing the covariant conservation of color charge is added to the list of equations to solve. It is analogous to Classical Electromagnetism's equation of conservation of electric charge, and is obtained from the Yang-Mills equations as:
 \begin{equation}
-	[D_\nu, J^\nu] = [D_\nu, [D_\mu, F^{\mu \nu}]] = 0
+	[D_\mu, F^{\mu \nu}] = J^\nu \implies [D_\nu, J^\nu] = 0
 	\label{eq:covariant_conservation}
 \end{equation}
-\textcolor{blue}{ (proof should be left to an appendix?) where the second equality may be shown by use of the Jacobi Identity:
+via the Jacobi identity and the $F^{\mu \nu} = -ig [D_\mu, D_\nu]$ identity for the gluon field strength tensor (see Appendix \ref{ap:covariant_conservation} for a detailed derivation). %\textcolor{red}{Expanding for a four-current with only a $+$-component:
+%\begin{equation}
+	%\partial_+ J^+ = ig[A_+,J^+] = ig[A^-,J^+]
+%\end{equation}
+%$J^+$ is required to evolve in light-cone time ($x^+$) provided that the left side does not vanish. The right side vanishes for the assumed form of the current (Eq. (\ref{eq:+_Current})), however the solution for $A^\mu$ that will be produced in this section, out of a current of the form of Eq. (\ref{eq:+_Current}), will guarantee that the left side vanishes as well.}
+
+The conservation equation and The Yang-Mills equations (in the Lorenz gauge) are then arranged into the system of equations:
+\begin{equation}
+	\begin{cases}
+	[D_\mu, J^\mu] = 0 \\
+	[D_\mu, F^{\mu \nu}] = J^\nu
+	\end{cases} \Leftrightarrow
+	\begin{cases}
+	\partial_\mu J^\mu = ig[A_\mu, J^\mu]  \\
+	\partial_\mu \partial^\mu A^\nu = J^\nu + ig [A_\mu, F^{\mu \nu} + \partial^\mu A^\nu]
+	\end{cases}
+\end{equation}
+
+A solution may be built by solving this system iteratively, for the fields and current expanded in terms of powers of the color charge density, $\rho$. The terms of order $(n)$ are obtained from those of lower orders by:
+\begin{equation}
+	\begin{cases}
+	\partial_\mu J_{(n)}^\mu = ig[A_\mu, J^\mu]_{(n)}  \\
+	\partial_\mu \partial^\mu A_{(n)}^\nu = J_{(n)}^\nu + ig [A_\mu, F^{\mu \nu} + \partial^\mu A^\nu]_{(n)}
+	\end{cases}
+\end{equation}
+
+%\begin{equation}
+%	\begin{cases}
+%	\partial_\mu J_{(n+1)}^\mu = ig[A^{(n)}_\mu, J_{(n)}^\mu]  \\
+%	\partial_\mu \partial^\mu A_{(n+1)}^\nu = J_{(n+1)}^\nu + ig [A^{(n)}_\mu, F_{(n)}^{\mu \nu} + \partial^\mu A_{(n)}^\nu]
+%	\end{cases}
+%\end{equation}
+
+Inputting $A_{(0)}^\mu = J_{(0)}^\mu = 0$ (since in the absence of color charges there is neither a current nor a field generated from it) and $J_{(1)}^\mu = g \delta^{\mu}_+ \rho(x^-,\mathbf{x}_\perp)$  (Eq. (\ref{eq:+_Current})'s form for $J^\mu$), the top equation for $n=1$ is automatically satisfied since $\partial_+ J^+_{(1)} = 0$. The bottom equation may be solved by requiring that $A^\mu_{(1)}$, like $J_{(1)}^\mu$, be independent of $x^+$, and that it \textcolor{red}{vanishes in the far past/does not explode in the far past?}:
 \begin{equation}
 \begin{split}
-	& [D_\nu, [D_\mu, F^{\mu \nu}]] = - [D_\mu, [F^{\mu \nu}, D_\nu]] - [F^{\mu \nu}, [D_\nu, D_\mu]] \\
-%	\Leftrightarrow ~ & [D_\nu, [D_\mu, F^{\mu \nu}]] = - [D_\nu, [F^{\nu \mu}, D_\mu]] - [F^{\mu \nu}, [D_\nu, D_\mu]] \\
-	\Leftrightarrow ~ & [D_\nu, [D_\mu, F^{\mu \nu}]] = - [D_\nu, [D_\mu, F^{\mu \nu}]] - ig [F^{\mu \nu}, F_{\mu \nu}]
-	\\
-	\Leftrightarrow ~ & 2 [D_\nu, [D_\mu, F^{\mu \nu}]] = 0
+	\partial_\mu & \partial^\mu A_{(1)}^\nu = J_{(1)}^\nu ~ \to ~
+	 - \mathbf{\nabla}_\perp^2 A_{(1)}^\nu = J_{(1)}^\nu \\
+	 & \to ~ A^\nu_{(1)}(x^-,\mathbf{x}_\perp) = - g \delta^{\nu}_+  \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(x^-,\mathbf{y}_\perp)
 \end{split}
 \end{equation}
-where, in the first step, the ``dummy" indices of the first term on the right are switched ($\mu 	\leftrightarrow \nu$) and then the antisymmetry of the anticommutator and of the field strength tensor is used; for the second step, $[D_\mu, D_\nu]$ may be shown to equal $-ig F_{\mu \nu}$:
+where $G(\mathbf{x_\perp} - \mathbf{y_\perp})$ is a Green's function for the 2-dimensional Laplacian, $\mathbf{\nabla}_\perp^2 = \partial_i \partial^i$ with $i=1,2$.
+
+Moving to the $n=2$ system, the right side of the top equation is once again $0$ since $A_{(1)}^\mu$ and $J_{(1)}^{\mu}$ only have a $+$-component. For the bottom equation, its commutator vanishes because $A_{(1)}^\mu$ only has a $+$-component which is independent of $x^+$. The system for $n=2$ is, then,
 \begin{equation}
-\begin{split}
-	[D_\mu, D_\nu] & = [\partial_\mu - i g A_\mu, \partial_\nu - i g A_\nu] = [\partial_\mu, \partial_\nu] - ig [\partial_\mu, A_\nu] - i g [A_\mu, \partial_\nu] - g^2 [A^\mu, A^\nu] \\
-	& =  0 - ig \left( \partial_\mu A_\nu -  A_\nu \partial_\mu + A_\mu \partial_\nu  - \partial_\nu A_\mu - ig [A_\mu, A_\nu] \right) \\
-	& = -ig \left( (\partial_\mu A_\nu) - (\partial_\nu A_\mu) - ig [A_\mu, A_\nu] \right) = -ig F_{\mu\nu}
-\end{split}
+	\begin{cases}
+	\partial_\mu J_{(2)}^\mu = 0  \\
+	\partial_\mu \partial^\mu A_{(2)}^\nu = J_{(2)}^\nu
+	\end{cases}
 \end{equation}
-and $[F^{\mu\nu}, F_{\mu\nu}] = 0$ because, first swapping the order in the commutator and then swapping the raised and lowered indices,
-\begin{equation}
-	[F^{\mu\nu}, F_{\mu\nu}] = -[F_{\mu\nu}, F^{\mu\nu}] = - [F^{\mu\nu}, F_{\mu\nu}]
-\end{equation}}
+
 
 When the only non-vanishing component of $J^\mu$ is $J^+$, this requirement becomes:
 \begin{equation}
@@ -435,5 +464,3 @@ And the remaining fields:
 	B^\eta (\tau,\mathbf{x}_\perp) & = g \varepsilon^{ij} f^{abc} T_c \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} J_0 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp) \\
 	B^\alpha (\tau,\mathbf{x}_\perp) & = -ig \delta^{ij} f^{abc} T_c \varepsilon^{\alpha \beta} \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} \hat{k}^\beta J_1 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp)
 \end{align}
-
-Atom pablo como estás? :)
