@@ -339,7 +339,7 @@ A solution may be built by solving this system iteratively, for the fields and c
 %	\end{cases}
 %\end{equation}
 
-Inputting $A_{(0)}^\mu = J_{(0)}^\mu = 0$ (since in the absence of color charges there is neither a current nor a field generated from it) and $J_{(1)}^\mu = g \delta^{\mu}_+ \rho(x^-,\mathbf{x}_\perp)$  (Eq. (\ref{eq:+_Current})'s form for $J^\mu$), the top equation for $n=1$ is automatically satisfied since $\partial_+ J^+_{(1)} = 0$. The bottom equation may be solved by requiring that $A^\mu_{(1)}$, like $J_{(1)}^\mu$, be independent of $x^+$, and that it \textcolor{red}{vanishes in the far past/does not explode in the far past?}:
+Inputting $A_{(0)}^\mu = J_{(0)}^\mu = 0$ (since, in the absence of color charges, there is neither a current nor a field generated from it) and $J_{(1)}^\mu = g \delta^{\mu}_+ \rho(x^-,\mathbf{x}_\perp)$  (Eq. (\ref{eq:+_Current})'s form for $J^\mu$), the top equation for $n=1$ is automatically satisfied since $\partial_+ J^+_{(1)} = 0$. The bottom equation may be solved by requiring that $A^\mu_{(1)}$, like $J_{(1)}^\mu$, be independent of $x^+$, and that it \textcolor{red}{vanishes in the far past/does not explode in the far past?}:
 \begin{equation}
 \begin{split}
 	\partial_\mu & \partial^\mu A_{(1)}^\nu = J_{(1)}^\nu ~ \to ~
@@ -357,6 +357,35 @@ Moving to the $n=2$ system, the right side of the top equation is once again $0$
 	\end{cases}
 \end{equation}
 
+Once again requiring that the current and fields  \textcolor{red}{vanish in the far past/do not explode in the far past?}, the solution is $J_{(2)}^\mu = 0$ for the top and $A_{(2)}^\mu =0$ for the bottom. This makes all the greater-order terms also $0$, so the final solution becomes:
+\begin{subequations}
+\begin{gather}
+	J^\mu = g \delta^{\mu}_+ \rho(x^-,\mathbf{x}_\perp) \\
+	A^\nu(x^-,\mathbf{x}_\perp) = - g \delta^{\nu}_+  \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(x^-,\mathbf{y}_\perp)
+\end{gather}
+\end{subequations}
+
+Finally, in order to move to light-cone gauge, where $A_{\text{LC}}^{+}=0$, the appropriate gauge transformation matrix $U$ is found by solving the equation:
+\begin{equation}
+	A_{\text{LC}}^{+}=0 ~ \Leftrightarrow ~ U^\dagger A^+ U + \frac{i}{g} U^\dagger \partial^+ U = 0 ~ \Leftrightarrow ~ A^+ U + \frac{i}{g} \partial_- U = 0 ~ \Leftrightarrow ~ \partial_- U = ig A^+ U
+\end{equation}
+
+which admits a solution of the type $U(x^-,\mathbf{x}_\perp)$ and may be solved iteratively in its integral form:
+\begin{gather}
+	U(x^-,\mathbf{x}_\perp) = U(x^-_0, \mathbf{x}_\perp) + \int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp) U (z, \mathbf{x}_\perp) 	\\
+	U(x^-,\mathbf{x}_\perp) = \lim_{n \to \infty}\left(\mathds{1} 
+	+ \int_{x^0_-}^{x^-} \diff z_0 A (z_0)
+	+ \int_{x^0_-}^{x^-} \diff z_0 A (z_0)\int_{x^0_-}^{z_0} \diff z_1 A (z_1) + ...  
+	+ \int_{x^0_-}^{x^-} \diff z_0 A (z_0)\int_{x^0_-}^{z_0} \diff z_1 A (z_1) ... \int_{x^0_-}^{z_{n-1}} \diff z_n A (z_n)
+	 \right) U(x_0^-,\mathbf{x}_\perp)
+\end{gather}
+
+
+where $x^-_0$ was chosen to be $-\infty$ and $U(x_0^-,\mathbf{x}_\perp)$ was chosen to be $\mathds{1}$, without loss of generality.
+
+\textcolor{red}{TALK ABOUT CHARGE DENSITY IN THE COVARIANT GAUGE}
+
+\textcolor{red}{TALK ABOUT THE APPROACH STARTING IN THE LIGHT-CONE GAUGE?}
 
 When the only non-vanishing component of $J^\mu$ is $J^+$, this requirement becomes:
 \begin{equation}
