@@ -1,9 +1,9 @@
 \chapter{}
 
 
-.\section{The QCD Lagrangian}
+\section{The QCD Lagrangian}
 
-In studying a system where only strong interactions are relevant, one turns to the QCD Lagrangian. It is a functional of the quark fields, $\psi$, which are 4-component Dirac spinors, and of the gluon fields, $A^a_\mu$, which are real-valued four-vectors; both are functions of spacetime. For a theory with $N_c$ colors, considering a single flavor of quarks with mass $m$,
+In studying a system where only strong interactions are relevant, one turns to the QCD Lagrangian. It is a functional of the quark fields, $\psi$, which are 4-component Dirac spinors -- with $\overline{\psi} = \psi^\dagger \gamma^0$ being the quark field's Dirac adjoint --, and of the gluon fields, $A^a_\mu$, which are real-valued four-vectors; both are functions of spacetime. For a theory with $N_c$ colors, considering a single flavor of quarks with mass $m$,
 % in the presence of external color charge sources $J^\mu (x)$,
  the Lagrangian is
 \begin{equation}
@@ -25,7 +25,7 @@ and $F^{\mu \nu}$, the gluon field strength tensor, is given by:
 %\begin{equation}
 %	J_\mu \equiv J_\mu^a T^a
 %\end{equation}}
-$g$ is the Strong Force's coupling constant; $T^a$ are the SU($N_c$) generators in the fundamental representation\footnote{Normalized such that $\Tr_c [T^a, T^b] = \delta^{ab}/2$}, and $f^{abc}$ are the SU($N_c$) structure constants; $\Tr_c$ denotes a color-trace, that is, a trace in color space, the space of the $T_a$ matrices' indices; and $\overline{\psi}$ is the quark field's Dirac adjoint, equal to $ \psi^\dagger \gamma^0$.
+where $g$ is the Strong Force's coupling constant; $T^a$ are the SU($N_c$) generators in the fundamental representation\footnote{Normalized such that $\Tr_c [T^a, T^b] = \delta^{ab}/2$}, and $f^{abc}$ are the SU($N_c$) structure constants; $\Tr_c$ denotes a color-trace, that is, a trace in color space, the space of the $T_a$ matrices' indices.
 
 %where the 4-component Dirac spinor $\psi$ is the quark field, a function of spacetime; $\overline{\psi}$ is its Dirac adjoint, $ \psi^\dagger \gamma^0$; $m$ is that quark flavour's mass; $D^\mu$ is the covariant derivative, obtained from the four-vector $A^\mu$, which is in turn obtained from a linear combination of the SU($N_c$) generators in the fundamental representation, $T^a$, with the real-valued gluon fields $A_\mu^a$, functions of spacetime, serving as coefficients; $F^{\mu \nu}$ is called the gluon field strength tensor; and $\Tr_c$ denotes a color-trace, that is, a trace in color space, where the $T_a$ live.
 
@@ -54,7 +54,7 @@ In the absence of quark fields ($\psi=0$), they read:
 
 \textcolor{red}{[Part of it may migrate. At some point before, introduce the proton as something more than 3 quarks]}
 
-Probing hadrons at high energies in scattering experiments has allowed exploring the interior structure of nucleons. Data from  both fixed-target and collider (HERA, Tevatron, LHC) experiments has been compiled in order to obtain pictures of the parton content of hadrons.
+Probing hadrons at high energies in scattering experiments has allowed exploring the interior structure of nucleons. Data from  both fixed-target and collider (HERA, Tevatron, LHC) experiments has been compiled in order to obtain pictures of the parton \textcolor{red}{(define)} content of hadrons.
 
 At HERA, electrons (or positrons) and protons were accelerated to collide at center of mass energies of around $\sqrt{s} = \qty{300}{GeV}$. In some of these collisions, the momentum transfer $Q^\mu$ from the electron to the proton via a virtual photon was large enough ($Q^2 > \qty{200}{GeV^2}$) to disintegrate the proton into a shower of hadrons $(e  + p \to e + X)$; these are called \gls{DIS} collisions, whose cross-sections are valuable in unveiling the proton's parton content. The greater the virtual photon's energy, the greater its ability to resolve structures of smaller scale than the proton radius and with shorter characteristic timescales. \gls{DIS} collisions have also been studied for this purpose using muons, $\mu$, and neutrinos, $\nu$, as probes, and neutrons as targets. At the Tevatron and LHC colliders, data from $p\overline{p}$ and $pp$ collisions, respectively, has contributed to the study of the gluon content of protons, specifically. \cite{Thomson8:2013}\cite{PDG_2024}
 
@@ -297,7 +297,7 @@ In order to fulfill this work's objectives, it will be necessary to calculate th
 
 \subsection{One nucleus}
 It is easiest to start by considering the case of a single nucleus, chosen to be Nucleus 1, moving in the positive $x^1$ direction.
-Solutions to the Yang-Mills equations for a single nucleus moving along the light-cone were first found analytically in \cite{McLerran:1993ka} for the classical case $D_{\mu}F^{\mu \nu} = J^\nu$.  \textcolor{red}{Then cite where you got the rest of the procedure, or even where it was made in the light-cone gauge from the beginning.}
+Solutions to the Yang-Mills equations for a single nucleus moving along the light-cone were first found analytically in \cite{McLerran:1993ka} for the classical case $D_{\mu}F^{\mu \nu} = J^\nu$.  \textcolor{red}{Then maybe cite where it was made in the light-cone gauge from the beginning.}
 
 The Yang-Mills equations are initially solved in the Lorenz, or covariant, gauge, where $\partial_\mu A^\mu=0$, following the more recent solving of the full equations from \cite[Section 2.2]{Blaizot_2004}. The solution is then brought to light-cone gauge, where $A^+=0$, an axial gauge condition, following the procedure from \citep[Section 3A]{Carrington_2022}. \textcolor{blue}{(\citep{Kovner_1995}: "one has direct access to the gluon distribution functions of the parton model")}. \textcolor{red}{I was going to write something here. Maybe the residual gauge freedom?}
 
@@ -324,7 +324,7 @@ The conservation equation and The Yang-Mills equations (in the Lorenz gauge) are
 	\end{cases}
 \end{equation}
 
-A solution may be built by solving this system iteratively, for the fields and current expanded \textcolor{red}{in terms of powers of the color charge density, $\rho$}. The terms of order $(n)$ are obtained from those of lower orders by:
+A solution may be built by solving this system iteratively, for the fields and current expanded \textcolor{red}{in terms of powers of the color number charge density, $\rho$}. The terms of order $(n)$ are obtained from those of lower orders by:
 \begin{equation}
 	\begin{cases}
 	\partial_\mu J_{(n)}^\mu = ig[A_\mu, J^\mu]_{(n)}  \\
@@ -387,16 +387,21 @@ which admits a solution of the type $U(x^-,\mathbf{x}_\perp)$ and may be solved 
 	 \Bigg) U(x_0^-,\mathbf{x}_\perp) \nonumber \\
 	 & = \lim_{n \to \infty} \Bigg( \mathds{1} 
 	 && + ig\int_{x^0_-}^{x^-}  \diff z_0 A^+ (z_0) 
-	+ \frac{(ig)^2}{2} \int_{x^0_-}^{x^-} \diff z_0 \int_{x^0_-}^{x^-} \diff z_1  \mathcal{P} \Big \{ A^+ (z_0) A^+ (z_1) \Big \} + ... \nonumber \\ 
-	& && + \frac{(ig)^n}{n!}\int_{x^0_-}^{x^-} \diff z_0  \int_{x^0_-}^{x^-} \diff z_1 ...  \int_{x^0_-}^{x^-} \diff z_n ~ \mathcal{P} \Big \{ A^+ (z_0) A^+ (z_1) ...  A^+ (z_n) \Big \}
+	+ \frac{(ig)^2}{2} \int_{x^0_-}^{x^-} \diff z_0 \int_{x^0_-}^{x^-} \diff z_1  \mathcal{P}^- \Big \{ A^+ (z_0) A^+ (z_1) \Big \} + ... \nonumber \\ 
+	& && + \frac{(ig)^n}{n!}\int_{x^0_-}^{x^-} \diff z_0  \int_{x^0_-}^{x^-} \diff z_1 ...  \int_{x^0_-}^{x^-} \diff z_n ~ \mathcal{P}^- \Big \{ A^+ (z_0) A^+ (z_1) ...  A^+ (z_n) \Big \}
 	 \Bigg) U(x_0^-,\mathbf{x}_\perp) \nonumber \\
-	 & \equiv \mathcal{P} \exp  \Bigg[&& ig \int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp) \Bigg] U(x_0^-,\mathbf{x}_\perp)
+	 & \equiv \mathcal{P}^- \exp  \Bigg[&& ig \int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp) \Bigg] U(x_0^-,\mathbf{x}_\perp)
 \end{alignat}
-\textcolor{red}{EXPLAIN $\mathcal{P}$} where $\mathcal{P}\exp[ig\int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp)]$ is the path-ordered exponential of the $ig\int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp)$ integral.
+where the dependence of the $A^+$ fields on $\mathbf{x}_\perp$ was only made explicit in the last line and $\mathcal{P}^-$ is the path-ordering operator for the $x^-$ variable; that is, it orders the $A^+$ field operators from right to left in descending order of their $x^-$ argument:
+\begin{gather}
+	x^-_n \geq x^-_{n-1} \geq ... \geq x_1 \implies \mathcal{P}^- \left \{A^+(x^-_{p_n}) A^+(x^-_{p_{n-1}}) ... A^+(x_{p_1}) \right \} \equiv A^+(x^-_n) A^+(x^-_{n-1}) ... A^+(x_1) \\
+	\text{with $\{p_n, p_{n-1}, ..., p_1\}$ some permutation of $\{n, n-1, ..., 1\}$} \nonumber
+\end{gather}
+Additionally,  $\mathcal{P}^-\exp[ig\int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp)]$ is called the path-ordered exponential of the $ig\int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp)$ integral.
 
-Choosing $x^-_0$ to be $-\infty$ and $U(x_0^-,\mathbf{x}_\perp)$ to be $\mathds{1}$ \textcolor{red}{(Can I really? Is it a part of residual gauge freedom? It is still a gauge transformation that leads to light-cone gauge)}, without loss of generality,
+It is possible to choose $x^-_0$ to be $-\infty$ and $U(x_0^-,\mathbf{x}_\perp)$ to be $\mathds{1}$ with $U$ remaining a solution \textcolor{red}{(Is this a part of residual gauge freedom?}:
 \begin{equation}
-	U(x^-,\mathbf{x}_\perp) = \mathcal{P} \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp) \Bigg] \equiv W(x^-,\mathbf{x}_\perp)
+	U(x^-,\mathbf{x}_\perp) = \mathcal{P}^- \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp) \Bigg] \equiv W(x^-,\mathbf{x}_\perp)
 \end{equation}
 which corresponds to a Wilson Line, $W(x^-,\mathbf{x}_\perp)$.
 
@@ -405,22 +410,22 @@ Renaming the $+$-component of $A$ in the Lorenz gauge to $\Phi(x^-,\mathbf{x}_\p
 the expressions for the gluon fields in light-cone gauge become:
 \begin{subequations}
 \begin{alignat}{2}
-	A^+_\text{LC} & = 0 &&\\
+	A^+_\text{LC} & = 0 && \\
 	A^-_\text{LC} & = 0 && \\
-	A^i_\text{LC} & = \frac{i}{g} U(x^-,\mathbf{x}_\perp)^\dagger ~ && \partial^i U(x^-,\mathbf{x}_\perp) \\
+	A^i_\text{LC} & = \frac{i}{g} U(x^-,\mathbf{x}_\perp)^\dagger ~ && \partial^i U(x^-,\mathbf{x}_\perp), \qquad i = 1,2\\
 	& \text{with} ~ U(x^-, \mathbf{x}_\perp) && =
-	\mathcal{P} \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z ~ \Phi (z, \mathbf{x}_\perp) \Bigg] \nonumber \\ 
-	&  &&  =  \mathcal{P} \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z ~ (- g) \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(z,\mathbf{y}_\perp) \Bigg] \nonumber 
+	\mathcal{P}^- \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z ~ \Phi (z, \mathbf{x}_\perp) \Bigg] \nonumber \\ 
+	&  &&  =  \mathcal{P}^- \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z ~ (- g) \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(z,\mathbf{y}_\perp) \Bigg] \nonumber 
 \end{alignat}
 \label{eq:A_lc_one_nucleus}
 \end{subequations}
 where the $A^i$ fields are called pure-gauge fields due to them arising solely out of the gauge transformation term involving only $U$ (Eq. (\ref{eq:gauge_transformation})).
 
-One last topic that should be discussed before moving on to the case of two nuclei is that, unlike in the classical abelian case of Electrodynamics, in the non-abelian gauge theory of \textcolor{blue}{Classical Chromodynamics} gauge transformations affect the distributions of color charge; otherwise, the introduced Lagrangian, Eq. \ref{eq:QCD_Lag_Current_indices}, would not be invariant under SU(3) gauge transformations. Thus, one should remember that the color charge distribution $\rho$ discussed in this chapter and present in its final result (Eqs. \ref{eq:A_lc_one_nucleus}) is the color charge distribution in the Lorenz, and not the light-cone, gauge. In order to avoid confusion, in the rest of this work color number charge densities in the Lorenz gauge will be denoted by $\tilde{\rho}$ instead of $\rho$.
-
+One last topic that should be discussed before moving on to the case of two nuclei is that, unlike in the classical abelian case of Electrodynamics, in the non-abelian gauge theory of \textcolor{blue}{Classical Chromodynamics} gauge transformations affect the distributions of color charge; otherwise, the introduced Lagrangian, Eq. \ref{eq:QCD_Lag_Current_indices}, would not be invariant under SU(3) gauge transformations. Thus, one should remember that the color charge distribution $\rho$ discussed in this chapter and present in its final result (Eqs. \ref{eq:A_lc_one_nucleus}) is the color charge distribution in the Lorenz, and not the light-cone, gauge. In the rest of this work, the subscript ``LC" denoting results in the light-cone gauge will be dropped; in order to avoid confusion, color number charge densities in the Lorenz gauge will be denoted by $\tilde{\rho}$ instead of $\rho$.
 
 \textcolor{red}{TALK ABOUT THE APPROACH STARTING IN THE LIGHT-CONE GAUGE?}
 
+\begin{comment}
 When the only non-vanishing component of $J^\mu$ is $J^+$, this requirement becomes:
 \begin{equation}
 \begin{split}
@@ -432,9 +437,27 @@ When the only non-vanishing component of $J^\mu$ is $J^+$, this requirement beco
 Thus, $J^+$ should evolve in $x^+$ in a way that mixes components in the fundamental and the adjoint SU(3) spaces. \textcolor{red}{In a resolution of the classical Yang-Mills equations, the solution would be a Wilson line}. This can be overcome by making use of the residual gauge freedom associated with choosing an axial gauge to force $A^- = 0$ at $x^-=0$ \citep{Kovner_1995}, that is, along the trajectory of the nucleus. This way, the second term of Eq. (\ref{eq:J+_covariant_conservation}) vanishes and the previously put forward expression for $J^\mu$ (Eq. (\ref{eq:+_Current})) becomes consistent with covariant conservation.
 
 There is a particular solution to the Yang-Mills equations in which $A^-$ vanishes in all space instead of only in the nucleus's trajectory. \citep{Kovner_1995}
-
+\end{comment}
 
 \subsection{Two nuclei}
+The previous discussion of the fields generated by a single nucleus traveling at the speed of light in the positive $x^1$ direction (Nucleus 1) can be easily adapted for a single nucleus traveling in the negative $x^1$ direction (Nucleus 2). Labeling all quantities in this scenario with the subscript $2$, equivalent arguments to those used in Section \ref{sec:scale_separation} lead to a color current with only a $-$-component, of the form:
+\begin{equation}
+	J_2^\mu = g \delta^{\mu}_- \tilde{\rho}_2(x^+,\mathbf{x}_\perp) \approx g \delta^{\mu}_- \delta (x^+) \tilde{\rho}_2(\mathbf{x}_\perp)
+\end{equation}
+
+Which generates the gluon fields, in the light-cone gauge:
+\begin{subequations}
+\begin{alignat}{2}
+	A^+_2 & = 0 && \\
+	A^-_2 & = 0 && \\
+	A^i_2 & = \frac{i}{g} U_2(x^+,\mathbf{x}_\perp)&& ^\dagger ~  \partial^i U_2(x^+,\mathbf{x}_\perp), \qquad i = 1,2\\
+	& \text{with} ~ U_2(x^+, \mathbf{x}_\perp) && =
+	\mathcal{P}^+ \exp  \Bigg[ig \int_{-\infty}^{x^+} \diff z ~ \Phi_2 (z, \mathbf{x}_\perp) \Bigg] \nonumber \\ 
+	&  &&  =  \mathcal{P}^+ \exp  \Bigg[ig \int_{-\infty}^{x^+} \diff z ~ (- g) \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \tilde{\rho}_2(z,\mathbf{y}_\perp) \Bigg] \nonumber 
+\end{alignat}
+\end{subequations}
+
+Moving to the scenario where both nuclei are present -- the \gls{HIC} -- 
 
 %In the case of a HIC, in the center of mass \textcolor{red}{(laboratory?)} frame, two heavy nuclei travel at (close to) the speed of light along the $z$ axis in opposing directions. The nuclei moving in the positive or negative $z$ direction are named nucleus 1 or nucleus 2, respectively.
 
