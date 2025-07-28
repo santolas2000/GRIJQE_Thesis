@@ -171,7 +171,8 @@ The parton content of the nucleus is thus divided into the group of high $+$-mom
  and are eikonally coupled to the classical gluon fields; that is, they suffer negligible recoil from their interactions with the color fields, when compared to their longitudinal momentum.\cite{Gelis_2010} Thus, they are introduced into the \gls{QCD} Lagrangian (Eq. (\ref{eq:QCD_Lagrangian_Indices})) as classical color current 4-vectors in the term $A_\mu^a J^\mu_a$. Since, now, the formalism does not include quantum quark fields, Eqs. \ref{eq:QCD_Lagrangian} and \ref{eq:QCD_Lagrangian_Indices} become, respectively,%\textcolor{red}{the absence of dynamic color fields gets rid of the first term. The influence of the static color sources on the system is brought back via the} addition of an external color source term to the \gls{QCD} Lagrangian. Equations \ref{eq:QCD_Lagrangian} and \ref{eq:QCD_Lagrangian_Indices} become, respectively,
 \begin{align}
 	\mathcal{L}_\text{QCD}' & = - \frac{1}{2} \Tr_c \left[ F_{\mu \nu} F^{\mu \nu} \right] + 2 \Tr_c [A_\mu J^\mu] \\
-	\mathcal{L}_\text{QCD}' & =  - \frac{1}{4} F_{\mu \nu}^a F^{\mu \nu}_a + A_\mu^a J^\mu_a
+	\mathcal{L}_\text{QCD}' & =  - \frac{1}{4} F_{\mu \nu}^a F^{\mu \nu}_a + A_\mu^a J^\mu_a 
+	\label{eq:QCD_Lag_Current_indices}
 \end{align}
 where $J^\mu \equiv J^\mu_a T^a$.
 
@@ -267,7 +268,7 @@ As such, prior to the collision, each nucleus's position four-vector, $x^\mu = (
 \end{split}
 \end{equation*}
 
-These trajectories are well-illustrated in the $x^1Ox^0$ plane:
+These trajectories are well-illustrated in the $x^1Ox^0$ plane (Fig. \ref{fig:HIC_lightcone}). 
 
 \begin{figure}[h]
     \centering
@@ -296,14 +297,13 @@ In order to fulfill this work's objectives, it will be necessary to calculate th
 
 \subsection{One nucleus}
 It is easiest to start by considering the case of a single nucleus, chosen to be Nucleus 1, moving in the positive $x^1$ direction.
-Solutions to the Yang-Mills equations for a single nucleus moving along the light-cone were first found analytically in \cite{McLerran:1993ka} for the classical case $D_{\mu}F^{\mu \nu} = J^\nu$.
-A more recent calculation for the full equations can be found in \cite[Section 2.2]{Blaizot_2004}.
+Solutions to the Yang-Mills equations for a single nucleus moving along the light-cone were first found analytically in \cite{McLerran:1993ka} for the classical case $D_{\mu}F^{\mu \nu} = J^\nu$.  \textcolor{red}{Then cite where you got the rest of the procedure, or even where it was made in the light-cone gauge from the beginning.}
 
-The Yang-Mills equations are initially solved in the Lorenz, or covariant, gauge, where $\partial_\mu A^\mu=0$. The solution is then brought to light-cone gauge, where $A^+=0$, an axial gauge condition. \textcolor{blue}{(\citep{Kovner_1995}: "one has direct access to the gluon distribution functions of the parton model")}. \textcolor{red}{I was going to write something here.}
+The Yang-Mills equations are initially solved in the Lorenz, or covariant, gauge, where $\partial_\mu A^\mu=0$, following the more recent solving of the full equations from \cite[Section 2.2]{Blaizot_2004}. The solution is then brought to light-cone gauge, where $A^+=0$, an axial gauge condition, following the procedure from \citep[Section 3A]{Carrington_2022}. \textcolor{blue}{(\citep{Kovner_1995}: "one has direct access to the gluon distribution functions of the parton model")}. \textcolor{red}{I was going to write something here. Maybe the residual gauge freedom?}
 
 First of all, the equation explicitly enforcing the covariant conservation of color charge is added to the list of equations to solve. It is analogous to Classical Electromagnetism's equation of conservation of electric charge, and is obtained from the Yang-Mills equations as:
 \begin{equation}
-	[D_\mu, F^{\mu \nu}] = J^\nu \implies [D_\nu, J^\nu] = 0
+	[D_\mu, F^{\mu \nu}] = J^\nu \implies [D_\nu, J^\nu] = [D_\nu, [D_\mu, F^{\mu \nu}]] = 0
 	\label{eq:covariant_conservation}
 \end{equation}
 via the Jacobi identity and the $F^{\mu \nu} = -ig [D_\mu, D_\nu]$ identity for the gluon field strength tensor (see Appendix \ref{ap:covariant_conservation} for a detailed derivation). %\textcolor{red}{Expanding for a four-current with only a $+$-component:
@@ -324,7 +324,7 @@ The conservation equation and The Yang-Mills equations (in the Lorenz gauge) are
 	\end{cases}
 \end{equation}
 
-A solution may be built by solving this system iteratively, for the fields and current expanded in terms of powers of the color charge density, $\rho$. The terms of order $(n)$ are obtained from those of lower orders by:
+A solution may be built by solving this system iteratively, for the fields and current expanded \textcolor{red}{in terms of powers of the color charge density, $\rho$}. The terms of order $(n)$ are obtained from those of lower orders by:
 \begin{equation}
 	\begin{cases}
 	\partial_\mu J_{(n)}^\mu = ig[A_\mu, J^\mu]_{(n)}  \\
@@ -339,7 +339,7 @@ A solution may be built by solving this system iteratively, for the fields and c
 %	\end{cases}
 %\end{equation}
 
-Inputting $A_{(0)}^\mu = J_{(0)}^\mu = 0$ (since, in the absence of color charges, there is neither a current nor a field generated from it) and $J_{(1)}^\mu = g \delta^{\mu}_+ \rho(x^-,\mathbf{x}_\perp)$  (Eq. (\ref{eq:+_Current})'s form for $J^\mu$), the top equation for $n=1$ is automatically satisfied since $\partial_+ J^+_{(1)} = 0$. The bottom equation may be solved by requiring that $A^\mu_{(1)}$, like $J_{(1)}^\mu$, be independent of $x^+$, and that it \textcolor{red}{vanishes in the far past/does not explode in the far past?}:
+Inputting $J_{(0)}^\mu = A_{(0)}^\mu = 0$ (since, in the absence of color charges, there is neither a field generated from them nor any color currents) and $J_{(1)}^\mu = g \delta^{\mu}_+ \rho(x^-,\mathbf{x}_\perp)$  (Eq. (\ref{eq:+_Current})'s form for $J^\mu$), the top equation for $n=1$ is automatically satisfied since $\partial_+ J^+_{(1)} = 0$. The bottom equation may be solved by requiring that $A^\mu_{(1)}$, like $J_{(1)}^\mu$, be independent of $x^+$, and that it \textcolor{red}{vanishes in the far past/does not explode in the far past?}:
 \begin{equation}
 \begin{split}
 	\partial_\mu & \partial^\mu A_{(1)}^\nu = J_{(1)}^\nu ~ \to ~
@@ -349,7 +349,7 @@ Inputting $A_{(0)}^\mu = J_{(0)}^\mu = 0$ (since, in the absence of color charge
 \end{equation}
 where $G(\mathbf{x_\perp} - \mathbf{y_\perp})$ is a Green's function for the 2-dimensional Laplacian, $\mathbf{\nabla}_\perp^2 = \partial_i \partial^i$ with $i=1,2$.
 
-Moving to the $n=2$ system, the right side of the top equation is once again $0$ since $A_{(1)}^\mu$ and $J_{(1)}^{\mu}$ only have a $+$-component. For the bottom equation, its commutator vanishes because $A_{(1)}^\mu$ only has a $+$-component which is independent of $x^+$. The system for $n=2$ is, then,
+Moving to the $n=2$ system, the right side of the top equation is once again $0$ since $A_{(1)}^\mu$ and $J_{(1)}^{\mu}$ only have a $+$-component. For the bottom equation, its commutator vanishes because $A_{(1)}^\mu$ only has a $+$-component and because that component is independent of $x^+$. The system for $n=2$ is, then,
 \begin{equation}
 	\begin{cases}
 	\partial_\mu J_{(2)}^\mu = 0  \\
@@ -365,25 +365,59 @@ Once again requiring that the current and fields  \textcolor{red}{vanish in the 
 \end{gather}
 \end{subequations}
 
-Finally, in order to move to light-cone gauge, where $A_{\text{LC}}^{+}=0$, the appropriate gauge transformation matrix $U$ is found by solving the equation:
+Finally, in order to move to light-cone gauge, where $A_\text{LC}^+=0$, the appropriate gauge transformation matrix $U$ must be found:
 \begin{equation}
-	A_{\text{LC}}^{+}=0 ~ \Leftrightarrow ~ U^\dagger A^+ U + \frac{i}{g} U^\dagger \partial^+ U = 0 ~ \Leftrightarrow ~ A^+ U + \frac{i}{g} \partial_- U = 0 ~ \Leftrightarrow ~ \partial_- U = ig A^+ U
+	A^\mu_\text{LC} = U^\dagger A^\mu U + \frac{i}{g} U^\dagger \partial^\mu U
 \end{equation}
 
+It may be found by solving the equation:
+\begin{equation}
+	A_{\text{LC}}^{+}=0 ~ \Leftrightarrow ~ U^\dagger A^+ U + \frac{i}{g} U^\dagger \partial^+ U = 0 ~ \Leftrightarrow ~ A^+ U + \frac{i}{g} \partial_- U = 0 ~ \Leftrightarrow ~ \partial_- U = ig A^+ U
+\label{eq:gauge_transformation}
+\end{equation}
 which admits a solution of the type $U(x^-,\mathbf{x}_\perp)$ and may be solved iteratively in its integral form:
 \begin{gather}
-	U(x^-,\mathbf{x}_\perp) = U(x^-_0, \mathbf{x}_\perp) + \int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp) U (z, \mathbf{x}_\perp) 	\\
-	U(x^-,\mathbf{x}_\perp) = \lim_{n \to \infty}\left(\mathds{1} 
-	+ \int_{x^0_-}^{x^-} \diff z_0 A (z_0)
-	+ \int_{x^0_-}^{x^-} \diff z_0 A (z_0)\int_{x^0_-}^{z_0} \diff z_1 A (z_1) + ...  
-	+ \int_{x^0_-}^{x^-} \diff z_0 A (z_0)\int_{x^0_-}^{z_0} \diff z_1 A (z_1) ... \int_{x^0_-}^{z_{n-1}} \diff z_n A (z_n)
-	 \right) U(x_0^-,\mathbf{x}_\perp)
+	U(x^-,\mathbf{x}_\perp) = U(x^-_0, \mathbf{x}_\perp) + ig \int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp) U (z, \mathbf{x}_\perp)
 \end{gather}
+\begin{alignat}{2}
+	U(x^-,\mathbf{x}_\perp) & = \lim_{n \to \infty} \Bigg( \mathds{1} 
+	 && + ig\int_{x^0_-}^{x^-}  \diff z_0 A^+ (z_0) 
+	+ (ig)^2\int_{x^0_-}^{x^-} \diff z_0 \int_{x^0_-}^{z_0} \diff z_1 A^+ (z_0) A^+ (z_1) + ... \nonumber \\ 
+	& && + (ig)^n\int_{x^0_-}^{x^-} \diff z_0  \int_{x^0_-}^{z_0} \diff z_1 ...  \int_{x^0_-}^{z_{n-1}} \diff z_n ~ A^+ (z_0) A^+ (z_1) ...  A^+ (z_n)
+	 \Bigg) U(x_0^-,\mathbf{x}_\perp) \nonumber \\
+	 & = \lim_{n \to \infty} \Bigg( \mathds{1} 
+	 && + ig\int_{x^0_-}^{x^-}  \diff z_0 A^+ (z_0) 
+	+ \frac{(ig)^2}{2} \int_{x^0_-}^{x^-} \diff z_0 \int_{x^0_-}^{x^-} \diff z_1  \mathcal{P} \Big \{ A^+ (z_0) A^+ (z_1) \Big \} + ... \nonumber \\ 
+	& && + \frac{(ig)^n}{n!}\int_{x^0_-}^{x^-} \diff z_0  \int_{x^0_-}^{x^-} \diff z_1 ...  \int_{x^0_-}^{x^-} \diff z_n ~ \mathcal{P} \Big \{ A^+ (z_0) A^+ (z_1) ...  A^+ (z_n) \Big \}
+	 \Bigg) U(x_0^-,\mathbf{x}_\perp) \nonumber \\
+	 & \equiv \mathcal{P} \exp  \Bigg[&& ig \int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp) \Bigg] U(x_0^-,\mathbf{x}_\perp)
+\end{alignat}
+\textcolor{red}{EXPLAIN $\mathcal{P}$} where $\mathcal{P}\exp[ig\int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp)]$ is the path-ordered exponential of the $ig\int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp)$ integral.
 
+Choosing $x^-_0$ to be $-\infty$ and $U(x_0^-,\mathbf{x}_\perp)$ to be $\mathds{1}$ \textcolor{red}{(Can I really? Is it a part of residual gauge freedom? It is still a gauge transformation that leads to light-cone gauge)}, without loss of generality,
+\begin{equation}
+	U(x^-,\mathbf{x}_\perp) = \mathcal{P} \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp) \Bigg] \equiv W(x^-,\mathbf{x}_\perp)
+\end{equation}
+which corresponds to a Wilson Line, $W(x^-,\mathbf{x}_\perp)$.
 
-where $x^-_0$ was chosen to be $-\infty$ and $U(x_0^-,\mathbf{x}_\perp)$ was chosen to be $\mathds{1}$, without loss of generality.
+Renaming the $+$-component of $A$ in the Lorenz gauge to $\Phi(x^-,\mathbf{x}_\perp)$,
+% and dropping the ``LC" subscript to denote fields in the light-cone gauge, 
+the expressions for the gluon fields in light-cone gauge become:
+\begin{subequations}
+\begin{alignat}{2}
+	A^+_\text{LC} & = 0 &&\\
+	A^-_\text{LC} & = 0 && \\
+	A^i_\text{LC} & = \frac{i}{g} U(x^-,\mathbf{x}_\perp)^\dagger ~ && \partial^i U(x^-,\mathbf{x}_\perp) \\
+	& \text{with} ~ U(x^-, \mathbf{x}_\perp) && =
+	\mathcal{P} \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z ~ \Phi (z, \mathbf{x}_\perp) \Bigg] \nonumber \\ 
+	&  &&  =  \mathcal{P} \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z ~ (- g) \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(z,\mathbf{y}_\perp) \Bigg] \nonumber 
+\end{alignat}
+\label{eq:A_lc_one_nucleus}
+\end{subequations}
+where the $A^i$ fields are called pure-gauge fields due to them arising solely out of the gauge transformation term involving only $U$ (Eq. (\ref{eq:gauge_transformation})).
 
-\textcolor{red}{TALK ABOUT CHARGE DENSITY IN THE COVARIANT GAUGE}
+One last topic that should be discussed before moving on to the case of two nuclei is that, unlike in the classical abelian case of Electrodynamics, in the non-abelian gauge theory of \textcolor{blue}{Classical Chromodynamics} gauge transformations affect the distributions of color charge; otherwise, the introduced Lagrangian, Eq. \ref{eq:QCD_Lag_Current_indices}, would not be invariant under SU(3) gauge transformations. Thus, one should remember that the color charge distribution $\rho$ discussed in this chapter and present in its final result (Eqs. \ref{eq:A_lc_one_nucleus}) is the color charge distribution in the Lorenz, and not the light-cone, gauge. In order to avoid confusion, in the rest of this work color number charge densities in the Lorenz gauge will be denoted by $\tilde{\rho}$ instead of $\rho$.
+
 
 \textcolor{red}{TALK ABOUT THE APPROACH STARTING IN THE LIGHT-CONE GAUGE?}
 
