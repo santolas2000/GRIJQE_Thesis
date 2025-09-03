@@ -377,12 +377,12 @@ Once again requiring that the current and fields  \textcolor{red}{vanish in the 
 Finally, in order to move to light-cone gauge, where $A_\text{LC}^+=0$, the appropriate gauge transformation matrix $U$ must be found:
 \begin{equation}
 	A^\mu_\text{LC} = U^\dagger A^\mu U + \frac{i}{g} U^\dagger \partial^\mu U
+\label{eq:gauge_transformation}
 \end{equation}
 
 It may be found by solving the equation:
 \begin{equation}
 	A_{\text{LC}}^{+}=0 ~ \Leftrightarrow ~ U^\dagger A^+ U + \frac{i}{g} U^\dagger \partial^+ U = 0 ~ \Leftrightarrow ~ A^+ U + \frac{i}{g} \partial_- U = 0 ~ \Leftrightarrow ~ \partial_- U = ig A^+ U
-\label{eq:gauge_transformation}
 \end{equation}
 which admits a solution of the type $U(x^-,\mathbf{x}_\perp)$ and may be solved iteratively in its integral form:
 \begin{gather}
@@ -450,9 +450,9 @@ which allows factoring the $x^-$ dependence of the $A^i_\text{LC}$ fields:
 
 %which will be useful in the establishment of boundary conditions for the resolution of the Yang-Mills equations in the space between the two nuclei, after the collision.
 
-This factorization is only possible due to the choice $U(-\infty,\mathbf{x}_\perp) = \mathds{1}$. Another, $\mathbf{x}_\perp$-dependent form for $U(-\infty,\mathbf{x}_\perp)$ may be chosen, amounting to a further gauge transformation $U'(\mathbf{x}_\perp)$ which keeps $A'^+$ and $A'^-$ equal to $0$ (and consequently keeps the solution in the light-cone gauge), but due to which the transverse fields $A'^i$ do not vanish for $x^-<0$. However, keeping the fields in the form of Eq. (\ref{eq:A^i_factorization}) will be useful for establishing boundary conditions for the resolution of the Yang-Mills equations in the space between the two nuclei, after the collision. Addditionally, it corresponds to having the gluon fields vanish in the region in front of the planar nucleus; since the nucleus travels at the speed of light, the region in front of it should not ``feel" the presence of its color charges due to causality, and this is explicitly the case in the present gauge. 
+This factorization is only possible due to the choice $U(-\infty,\mathbf{x}_\perp) = \mathds{1}$. Another, $\mathbf{x}_\perp$-dependent form for $U(-\infty,\mathbf{x}_\perp)$ may be chosen, amounting to a further gauge transformation $U'(\mathbf{x}_\perp)$ which keeps $A'^+$ and $A'^-$ equal to $0$ (and consequently keeps the solution in the light-cone gauge), but due to which the transverse fields $A'^i$ do not vanish for $x^-<0$. However, keeping the fields in the form of Eq. (\ref{eq:A^i_factorization}) will be useful for establishing boundary conditions for the resolution of the Yang-Mills equations in the space between the two nuclei, after the collision. Addditionally, it corresponds to having the gluon fields vanish in the region in front of the planar nucleus; since the nucleus travels at the speed of light, the region in front of it should not ``feel" the presence of its color charges due to causality, and this is explicitly the case in the present gauge. \textcolor{red}{(Note: It is also explicitly boost invariant. Add?)}
 
-One last topic that should be discussed before moving on to the case of the oppositely-moving leus is that, unlike in the classical abelian case of Electrodynamics, in the non-abelian gauge theory of \textcolor{blue}{Classical Chromodynamics} gauge transformations affect the distributions of color charge; otherwise, the introduced Lagrangian, Eq. \ref{eq:QCD_Lag_Current_indices}, would not be invariant under SU(3) gauge transformations. Thus, one should remember that the color charge distribution $\rho$ discussed in this chapter and present in its final result (Eqs. \ref{eq:A_lc_one_nucleus}) is the color charge distribution in the Lorenz, and not the light-cone, gauge. In the rest of this work, the subscript ``LC" denoting results in the light-cone gauge will be dropped; in order to avoid confusion, color number charge densities in the Lorenz gauge will be denoted by $\tilde{\rho}$ instead of $\rho$.
+One last topic that should be discussed before moving on to the situation of the oppositely-moving nucleus is that, unlike in the classical abelian case of Electrodynamics, in the present case of a classical non-abelian gauge theory of Chromodynamics gauge transformations alter the distributions of color charge; otherwise, the introduced Lagrangian, Eq. \ref{eq:QCD_Lag_Current_indices}, would not be invariant under SU(3) gauge transformations. Thus, one should remember that the color charge distribution $\rho$ discussed in this chapter and present in its final result (Eqs. \ref{eq:A_lc_one_nucleus}) is the color charge distribution in the Lorenz, and not the light-cone, gauge. In the rest of this work, the subscript ``LC" denoting results in the light-cone gauge will be dropped; in order to avoid confusion, color number charge densities in the Lorenz gauge will be denoted by $\tilde{\rho}$ instead of $\rho$.
 
 \begin{comment}
 When the only non-vanishing component of $J^\mu$ is $J^+$, this requirement becomes:
@@ -483,11 +483,16 @@ Which generates the gluon fields, in the light-cone gauge\footnote{In this case,
 	\mathcal{P}^+ \exp  \Bigg[ig \int_{-\infty}^{x^+} \diff z ~ \Phi_2 (z, \mathbf{x}_\perp) \Bigg] \nonumber \\ 
 	&  &&  =  \mathcal{P}^+ \exp  \Bigg[ig \int_{-\infty}^{x^+} \diff z ~ (- g) \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \tilde{\rho}_2(z,\mathbf{y}_\perp) \Bigg] \nonumber 
 \end{alignat}
+\label{eq:A_lc_one_nucleus_2}
 \end{subequations}
 
 \textcolor{purple}{ADD SOME SORT OF CONCLUSION}
 
 \subsection{Two nuclei}
+
+\textcolor{red}{WHAT PAPERS WILL YOU BE FOLLOWING} \cite{Albacete_2019} \cite{Guerrero_Rodr_guez_2021}
+
+%Having solved the Yang Mills equations in the case of a single nucleus, moving in either direction, 
 
 Moving to the scenario of a HIC, where both nuclei are present, the two currents are added, and $J^\mu$ is given by the expression:
 \begin{equation}
@@ -497,11 +502,64 @@ Moving to the scenario of a HIC, where both nuclei are present, the two currents
 \end{split}
 \end{equation}
 
-For the purpose of solving the Yang-Mills equations, spacetime is divided into four quadrants in the $(x^+,x^-)$ space  as illustrated in Fig. \ref{fig:space_partition}. 
+For the purpose of solving the Yang-Mills equations, spacetime is divided into four quadrants in $(x^+,x^-)$ space,  as illustrated in Fig. \ref{fig:space_partition}. Quadrants 1 and 2 are named the pre-collision quadrants, while quadrant 3 is referred to as the forward light-cone. For calculations in the third quadrant, the Bjorken/Milne/Comoving coordinate system is used, where positions and four vetors are given by:
+\begin{subequations}
+\begin{gather}
+	\tau = \sqrt{2x^+x^-} \\
+	\eta = \frac{1}{2} \log \left( \frac{x^+}{x^-} \right)
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{align}
+A^\tau & = \frac{x^- A^+ + x^+ A^-}{\tau} \\
+A^\eta & = \frac{x^- A^+ - x^+ A^-}{\tau^2}
+\end{align}
+\end{subequations}
+and the transverse components keep their Cartesian form. $\tau$ is called the proper time and $\eta$ is called the rapidity. For a more detailed overview of the Comoving coordinates, see Appendix \ref{ap:bjorken_coordinates}.
 
-Drawing future light-cones originating at points where the color currents pass, one notices that all points in quadrant 1 may not be affected by the $J_2$ current, due to causality; in the same manner, all points in quadrant 2 may not be affected by current $J_1$. Only points in quadrant 3 are causally related to both currents (Fig. \ref{fig:current_light-cones}). 
+Drawing future light-cones out from points where the color currents pass in $(x^+,x^-)$ space, one notices that all points in quadrant 1 may not be affected by the $J_2$ current, due to causality; in the same manner, all points in quadrant 2 may not be affected by current $J_1$. Only points in quadrant 3 are causally related to both currents (Fig. \ref{fig:current_light-cones}). Following \cite{Albacete_2019}'s approach, this permits the ``single-nuclei" results of the previous section to be used for the gluon fields in quadrants 1 and 2. Even though they were obtained using different gauge conditions ($A^+ = 0$ for the first nucleus and $A^- = 0$ for the second nucleus), the result in Eqs. (\ref{eq:A_lc_one_nucleus}) and (\ref{eq:A^i_factorization}) can be used for the fields in quadrant 1 and the result in Eqs. (\ref{eq:A_lc_one_nucleus_2}) can be used for the fields in quadrant 2, since those regions are not causally related. This time, the Fock-Schwinger gauge is chosen, defined by the gauge condition:
+\begin{equation}
+	x^+ A^- + x^- A^+ = 0 ~ \Leftrightarrow ~ A^\tau = 0
+\end{equation}
+which is obeyed by the solution built for quadrants 1 and 2. For the interior of quadrant 3, this gauge choice requires $A^+$ and $A^-$ to be related as:
+\begin{equation}
+	A^- = -\frac{x^-}{x^+} A^+ 
+\end{equation}
+Therefore, we may define an $\alpha$ field as:
+\begin{equation}
+	A^+ \equiv x^+ \alpha \implies A^- = - x^- \alpha
+\end{equation}
 
-Following \cite{}'s approach, this permits the ``single-nuclei" results of the previous section to be used for the gluon fields in quadrants 1 and 2. Even though they were obtained using different gauge conditions ($A^+ = 0$ for the first nucleus and $A^- = 0$ for the second nucleus), the result in Eq. (\ref{}) can be used for the fields in quadrant 1 and the result in Eq. (\ref{}) can be used for the fields in quadrant 2, since
+\textcolor{red}{Attention: \citep{Kovner_1995} initially posits that $A^+$ and $A^-$ are different}
+\begin{equation}
+\begin{split}
+A^+ (x^\mu) &= \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} x^+ \alpha (\tau, \mathbf{x}_\perp)\\
+A^- (x^\mu) &= - \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} x^- \alpha (\tau, \mathbf{x}_\perp) \\
+A^{i}(x^\mu) &= \underbrace{\theta (-x^+) \theta(x^-)}_{\Circled{1}} \alpha^i_1 (\mathbf{x}_\perp)
+ + \underbrace{\theta (x^+) \theta(-x^-)}_{\Circled{2}} \alpha^i_2 (\mathbf{x}_\perp)
+ + \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} \alpha^i (\tau, \mathbf{x}_\perp)
+\end{split}
+\end{equation}
+
+
+\textcolor{red}{As for the resolution of the Yang-Mills equations in quadrant 3,} it is possible to obtain, out of the already-found fields in the pre-collision quadrants, boundary conditions along the edges of the forward light-cone. A detailed derivation of these boundary conditions may be found in \cite[Appendix C]{Carrington_2022_Energy_Momentum_Tensor}. They are obtained by first considering that the longitudinal width of the sources is finite and greater than 0, rather than infinitely thin as in Eq. (2.32), then integrating the Yang-Mills equations over a path (Eq. (\ref{eq:boundary_alpha})) and an area (Eq. (\ref{eq:boundary_transverse}
+)) which cross the light-cone, and finally taking the limit where the width goes to zero. They are:
+\begin{subequations}
+\begin{align}
+	\alpha(0, \mathbf{x}_\perp) & = -\frac{ig}{2} \left[ \alpha_1^i(\mathbf{x}_\perp), \alpha_2^i(\mathbf{x}_\perp) \right]
+	\label{eq:boundary_alpha} \\
+	\alpha^i(0, \mathbf{x}_\perp) & =  \alpha_1^i(\mathbf{x}_\perp) + \alpha_2^i(\mathbf{x}_\perp)
+	\label{eq:boundary_transverse}
+\end{align}
+\end{subequations}
+
+For the two-nuclei case, the Fock-Schwinger gauge is chosen. In light-cone coordinates, its gauge condition is Eq. (\ref{eq:fock_schwinger_lc}). More compactly, in the Bjorken, Milne or comoving coordinate system \textcolor{red}{(introduce)}, the gauge condition is equivalent to Eq. (\ref{eq:fock_schwinger_comoving}):
+\begin{subequations}
+\begin{gather}
+x^+ A^- + x^- A^+ = 0 \label{eq:fock_schwinger_lc}\\
+A^\tau = 0 \label{eq:fock_schwinger_comoving}
+\end{gather}
+\end{subequations}
 
 ----------------------
 
@@ -538,18 +596,6 @@ The classical Yang-Mills equations to be solved in the presence of the static co
 
 \begin{equation}
 	 [D_\mu, F^{\mu \nu}] = J^\nu
-\end{equation}
-
-
-\textcolor{red}{Attention: \citep{Kovner_1995} initially posits that $A^+$ and $A^-$ are different}
-\begin{equation}
-\begin{split}
-A^+ (x^\mu) &= \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} x^+ \alpha (\tau, \mathbf{x}_\perp)\\
-A^- (x^\mu) &= - \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} x^- \alpha (\tau, \mathbf{x}_\perp) \\
-A^{i}(x^\mu) &= \underbrace{\theta (-x^+) \theta(x^-)}_{\Circled{1}} \alpha^i_1 (\mathbf{x}_\perp)
- + \underbrace{\theta (x^+) \theta(-x^-)}_{\Circled{2}} \alpha^i_2 (\mathbf{x}_\perp)
- + \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} \alpha^i (\tau, \mathbf{x}_\perp)
-\end{split}
 \end{equation}
 
 \section{\textcolor{red}{Transcribed expressions yet without text}}
