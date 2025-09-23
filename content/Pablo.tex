@@ -2,7 +2,7 @@
 
 In studying a system where only strong interactions are relevant, one turns to the QCD Lagrangian. It is a functional of the quark fields, $\psi$, which are 4-component Dirac spinors -- with $\overline{\psi} = \psi^\dagger \gamma^0$ being the quark field's Dirac adjoint --, and of the gluon fields, $A^a_\mu$, which are real-valued four-vectors; both are functions of spacetime. For a theory with $N_c$ colors, considering a single flavor of quarks with mass $m$,
 % in the presence of external color charge sources $J^\mu (x)$,
- the Lagrangian is
+the Lagrangian is
 \begin{equation}
 	\mathcal{L}_\text{QCD} = \overline{\psi} \left(i \gamma^\mu D_\mu - m \right) \psi - \frac{1}{2} \Tr_c \left[ F_{\mu \nu} F^{\mu \nu} \right] %\textcolor{blue}{-2 \Tr [A_\mu J^\mu]}
 	\label{eq:QCD_Lagrangian}
@@ -13,10 +13,10 @@ where $D_\mu$, the covariant derivative, is given by:
 \end{equation}
 and $F^{\mu \nu}$, the gluon field strength tensor, is given by:
 \begin{equation}
-\begin{split}
-	F_{\mu \nu} & = \partial_\mu A_\nu - \partial_\nu A_\mu - ig [A_\mu, A_\nu] \equiv F_{\mu \nu}^a T_a\\
-	F_{\mu \nu}^a & = \partial_\mu A_\nu^a - \partial_\nu A_\mu^a + g f^{a b c} A^b_\mu A^c_\nu
-\end{split}
+	\begin{split}
+		F_{\mu \nu} & = \partial_\mu A_\nu - \partial_\nu A_\mu - ig [A_\mu, A_\nu] \equiv F_{\mu \nu}^a T_a\\
+		F_{\mu \nu}^a & = \partial_\mu A_\nu^a - \partial_\nu A_\mu^a + g f^{a b c} A^b_\mu A^c_\nu
+	\end{split}
 \end{equation}
 %\textcolor{blue}{and $J_\mu$, similarly to $A_\mu$, is a four-vector and  a linear combination of the $T_a$:
 %\begin{equation}
@@ -34,7 +34,7 @@ Writing the Lagrangian with all indices explicit,
 \end{equation}
 where $\alpha, \beta, \gamma = 1,2,3,4$ are Dirac indices, $i,j=1, ..., N_c$ are color indices in the fundamental representation, $a = 1, ..., {N_c}^2-1$ are color indices in the adjoint representation, and $\mu,\nu = 0,1,2,3$ are spacetime indices when using Minkowski coordinates.
 
- To obtain the Lagrangian considering all flavors of quarks, one need only add copies of the first term of Eq. (\ref{eq:QCD_Lagrangian}) for each quark flavor's quark fields.
+To obtain the Lagrangian considering all flavors of quarks, one need only add copies of the first term of Eq. (\ref{eq:QCD_Lagrangian}) for each quark flavor's quark fields.
 
 Given the presented QCD Lagrangian, the corresponding Euler-Lagrange equations relating to the gluon fields $A$ are called the Yang-Mills equations, which can be thought of as the QCD equivalent to Classical Electrodynamics' Maxwell's equations.
 %In the absence of color sources,\footnote{That is, in the absence of source terms in the Lagrangian and taking the usual color current, $g \overline{\psi} \gamma^v \psi$, to be $0$.}
@@ -62,8 +62,8 @@ At HERA, electrons (or positrons) and protons were accelerated to collide at cen
 Fig. \ref{fig:PDFs} shows the different parton species' \glspl{PDF} for the proton. For $0.1 \lesssim x < 1$, the ``valence" quarks $u$ ($\mathbf{u}_V$)and $d$ ($\mathbf{d}_V$) dominate -- in the relative proportion expected from the static quark model for the proton, $uud$. However, for $x \lesssim 0.02$, they are overtaken by a ``sea" of quarks and antiquarks ($\overline{\mathbf{u}}$, $\overline{\mathbf{d}}$, $\mathbf{s}$, $\mathbf{c}$, $\mathbf{b}$), which, for the same flavor, have identical \glspl{PDF}. For small $x$, however, the most abundant parton is, by far, the gluon ($\mathbf{g}$).
 
 \begin{figure}\centering
-    \includegraphics[width=\textwidth]{figures/external/PDFs_2021.png}
-    \caption[The proton's \glshyperlink{PDF}s multiplied by $x$ calculated at \glshyperlink{NNLO} for the case of unpolarized beams at the energy scales $\mu^2 = \qty{10}{GeV^2}$ (left) and $\mu^2 = 10^4\qty{}{GeV^2}$ (right). The gluon's \glsentryfirst{PDF} appears scaled down by a factor of 10. \cite{PDG_2024} Originally from and calculated by the MSHT Group in 2020. \cite{Bailey_2021}]{The proton's \glspl{PDF} multiplied by $x$ calculated at \gls{NNLO} for the case of unpolarized beams at the energy scales $\mu^2 = \qty{10}{GeV^2}$ (left) and $\mu^2 = 10^4\qty{}{GeV^2}$ (right). The gluon's \gls{PDF} appears scaled down by a factor of 10. \cite{PDG_2024} Originally from and calculated by the MSHT Group in 2020. \cite{Bailey_2021}}
+	\includegraphics[width=\textwidth]{figures/external/PDFs_2021.png}
+	\caption[The proton's \glshyperlink{PDF}s multiplied by $x$ calculated at \glshyperlink{NNLO} for the case of unpolarized beams at the energy scales $\mu^2 = \qty{10}{GeV^2}$ (left) and $\mu^2 = 10^4\qty{}{GeV^2}$ (right). The gluon's \glsentryfirst{PDF} appears scaled down by a factor of 10. \cite{PDG_2024} Originally from and calculated by the MSHT Group in 2020. \cite{Bailey_2021}]{The proton's \glspl{PDF} multiplied by $x$ calculated at \gls{NNLO} for the case of unpolarized beams at the energy scales $\mu^2 = \qty{10}{GeV^2}$ (left) and $\mu^2 = 10^4\qty{}{GeV^2}$ (right). The gluon's \gls{PDF} appears scaled down by a factor of 10. \cite{PDG_2024} Originally from and calculated by the MSHT Group in 2020. \cite{Bailey_2021}}
 \label{fig:PDFs}\end{figure}
 
 \section{Gluon Saturation}
@@ -87,8 +87,8 @@ Below a certain value of $x$, non-linear dynamics not considered so far should t
 One interpretation of these non-linear effects is the onset, above certain gluon densities, of gluon recombination. Above that threshold, the probability of emission of a new gluon becomes comparable to the probability of recombination of gluons, stopping the growth of their density (Fig. \ref{fig:gluon_recombination}).
 
 \begin{figure}\centering
-    \includegraphics[width=\textwidth]{figures/external/gluon_recombination.png}
-    \caption{The onset of gluon recombination. Above a certain gluon density, gluon recombination (red dot) becomes comparatively likely to gluon emission (the pink and blue ladders of gluons). Taken from \cite{Albacete_2014}.}
+	\includegraphics[width=\textwidth]{figures/external/gluon_recombination.png}
+	\caption{The onset of gluon recombination. Above a certain gluon density, gluon recombination (red dot) becomes comparatively likely to gluon emission (the pink and blue ladders of gluons). Taken from \cite{Albacete_2014}.}
 \label{fig:gluon_recombination}\end{figure}
 
 More formally, the \gls{BFKL} \gls{QCD} evolution equation is a linear differential equation that governs how gluon density in momentum space within a hadron should evolve with $x$ when that hadron is probed at a certain energy scale. It is a linear equation, and it predicts
@@ -104,7 +104,7 @@ The \gls{CGC} is an effective theory of \gls{QCD} for high-energy \gls{QCD} scat
 
 The effective theory hinges on the partition of the parton content of a hadron,
 %-- in this case, a heavy nucleus --
- through approximations, into static color charges and the saturated gluons (represented by dynamic classical gluon fields) which they generate via the processes described in Section \ref{sec:gluon_saturation}.\cite{Gelis_2010} In this case, the hadron in question is a heavy nucleus, which is made up of neutrons and protons whose contents were previously discussed. This partition is done in the \gls{IMF}, where the nucleus is boosted along its direction of motion in order to make all of its constituents' momenta approximately collinear to its own.
+through approximations, into static color charges and the saturated gluons (represented by dynamic classical gluon fields) which they generate via the processes described in Section \ref{sec:gluon_saturation}.\cite{Gelis_2010} In this case, the hadron in question is a heavy nucleus, which is made up of neutrons and protons whose contents were previously discussed. This partition is done in the \gls{IMF}, where the nucleus is boosted along its direction of motion in order to make all of its constituents' momenta approximately collinear to its own.
 %The \gls{CGC} effective theory of \gls{QCD} for high-energy \gls{QCD} scattering is one of the approaches used to study initial state effects in \glspl{HIC}, and has stood out due to its practical applicability and phenomenological success. \cite{Albacete_2014}
 
 %\textcolor{purple}{- Separation of the contents of the nucleus//hadron according to their momentum. This is done in the INFINITE MOMENTUM FRAME.}
@@ -124,18 +124,18 @@ it is possible to state that quantum corrections to the classical solution, wher
 
 In order to analitically validate the partition of the parton content of the nucleus into a static and a dynamic part in a \gls{HIC}, it is necessary to move to the infinite momentum frame. In the \gls{IMF}, the nucleus is boosted along its direction of motion so as to make the momenta of its constituent partons approximately collinear to its own. In this frame, considering a nucleus moving in the positive $x^1$ direction with large total longitudinal momentum $P$ much greater than its mass, $m_A$, the four-momenta of the nucleus and of one of its constituent partons in Minkowski coordinates are: \cite{Thomson8:2013}
 \begin{subequations}
-\label{eq:IMF}
-\begin{align}
-	\text{Nucleus: } & P^\mu = (P,P,0,0)
-	&
-	\text{Parton $i$: } & p^\mu = (x_i P, x_i P, \sim 0, \sim 0)
-\\
-\intertext{
-where $0<x_i<1$ is the fraction of the nuclear longitudinal momentum carried by the $i$-th parton; it was further assumed that the boost applied was such that $x_i P \gg m_i$, with $m_i$ being the $i$-th parton's mass. In light-cone coordinates (Appendix \ref{ap:Light_Cone}),}
-	\text{Nucleus: } & P^\mu = (P^+,0,0,0)
-	&
-    \text{Parton $i$: } & p^\mu = (x_i P^+, \sim 0, \sim 0, \sim 0)
-\end{align}
+	\label{eq:IMF}
+	\begin{align}
+		\text{Nucleus: } & P^\mu = (P,P,0,0)
+		&
+		\text{Parton $i$: } & p^\mu = (x_i P, x_i P, \sim 0, \sim 0)
+		\\
+		\intertext{
+			where $0<x_i<1$ is the fraction of the nuclear longitudinal momentum carried by the $i$-th parton; it was further assumed that the boost applied was such that $x_i P \gg m_i$, with $m_i$ being the $i$-th parton's mass. In light-cone coordinates (Appendix \ref{ap:Light_Cone}),}
+		\text{Nucleus: } & P^\mu = (P^+,0,0,0)
+		&
+		\text{Parton $i$: } & p^\mu = (x_i P^+, \sim 0, \sim 0, \sim 0)
+	\end{align}
 \end{subequations}
 where $P^+ = \sqrt{2} P$. It becomes clear that $x_i$ is also the $i$-th parton's fraction of the nuclear light-cone $+$-momentum.
 
@@ -143,10 +143,10 @@ where $P^+ = \sqrt{2} P$. It becomes clear that $x_i$ is also the $i$-th parton'
 
 The uncertainty principle can be used to evaluate the approximate extent of each parton over the $x^-$ and $x^+$ coordinates: \cite{Lappi_notes,Albacete_2014}
 \begin{subequations} \label{eq:Uncertainty_Relations}
-\begin{gather}
-\Delta x^- \propto \frac{1}{p^+} = \frac{1}{x_i P^+} \\
-\Delta x^+ \propto \frac{1}{p^-} = \frac{2p^+}{(p^0)^2 - (p^1)^2} = \frac{2p^+}{(\mathbf{p}_\perp)^2 + {m_i}^2} \approx \frac{2 x_i P^+}{(\mathbf{p}_\perp)^2}
-\end{gather}
+	\begin{gather}
+		\Delta x^- \propto \frac{1}{p^+} = \frac{1}{x_i P^+} \\
+		\Delta x^+ \propto \frac{1}{p^-} = \frac{2p^+}{(p^0)^2 - (p^1)^2} = \frac{2p^+}{(\mathbf{p}_\perp)^2 + {m_i}^2} \approx \frac{2 x_i P^+}{(\mathbf{p}_\perp)^2}
+	\end{gather}
 \end{subequations}
 where $\mathbf{p}_\perp$ is the $i$-th parton's transverse momentum, which was taken to be negligible in Eqs. (\ref{eq:IMF}) when compared to its longitudinal momentum.
 
@@ -154,7 +154,7 @@ Two useful conclusions about the $x^+,x^-$  scales of high-$x$ and low-$x$ parto
 \begin{itemize}
 	\item[1)] high-$x$ partons are highly localized in the $x^-$ direction. That is, they occupy a very thin ``slice" of space in the $x^-$ direction.
 	\item[2)] high-$x$ partons are more delocalized in the $x^+$ direction than their low-$x$ counterparts. That is, their typical $x^+$ scale %\textcolor{red}{(often called light-cone time -- introduce $x^+/t$ equivalence somewhere??)}
-is greater than the low-$x$ partons'. Equivalently, the fluctuations of the low-$x$ parton fields are much shorter along the $x^+$ direction than for the high-$x$ parton fields.
+		is greater than the low-$x$ partons'. Equivalently, the fluctuations of the low-$x$ parton fields are much shorter along the $x^+$ direction than for the high-$x$ parton fields.
 \end{itemize}
 
 \textcolor{purple}{? Include the naive \cite{Lappi_notes} interpretations? 1) the Lorentz-contraction of the nucleus along $x^1$. 2) Time dilation experienced by valence partons.}
@@ -166,7 +166,7 @@ As was introduced in sections \ref{sec:nuclear_matter} and \ref{sec:gluon_satura
 %Regarding the low-$x$ partons, they are, in contrast, dynamic. Additionally since the partonic content of protons, \textcolor{blue}{ and hence of the nucleus}, is dominated by gluons at low-$x$, as introduced in sections \ref{sec:nuclear_matter} and \ref{sec:gluon_saturation}, these dynamic fields are taken to be gluonic fields, also called color fields.
 
 The parton content of the nucleus is thus divided into the group of high $+$-momentum ($p^+ > \Lambda^+$) static color charges and the group of low $+$-momentum ($p^+ < \Lambda^+$) dynamic classical gluon fields which they generate. The static color charges may themselves be treated as classical \cite{Albacete_2014,McLerran_1994_classic_source}
- and are eikonally \textcolor{red}{define} coupled to the classical gluon fields; that is, they suffer negligible recoil from their interactions with the color fields, when compared to their longitudinal momentum.\cite{Gelis_2010} Thus, they are introduced into the \gls{QCD} Lagrangian (Eq. (\ref{eq:QCD_Lagrangian_Indices})) as classical color current 4-vectors in the term $A_\mu^a J^\mu_a$. Since, now, the formalism does not include quantum quark fields, Eqs. \ref{eq:QCD_Lagrangian} and \ref{eq:QCD_Lagrangian_Indices} become, respectively,%\textcolor{red}{the absence of dynamic color fields gets rid of the first term. The influence of the static color sources on the system is brought back via the} addition of an external color source term to the \gls{QCD} Lagrangian. Equations \ref{eq:QCD_Lagrangian} and \ref{eq:QCD_Lagrangian_Indices} become, respectively,
+and are eikonally \textcolor{red}{define} coupled to the classical gluon fields; that is, they suffer negligible recoil from their interactions with the color fields, when compared to their longitudinal momentum.\cite{Gelis_2010} Thus, they are introduced into the \gls{QCD} Lagrangian (Eq. (\ref{eq:QCD_Lagrangian_Indices})) as classical color current 4-vectors in the term $A_\mu^a J^\mu_a$. Since, now, the formalism does not include quantum quark fields, Eqs. \ref{eq:QCD_Lagrangian} and \ref{eq:QCD_Lagrangian_Indices} become, respectively,%\textcolor{red}{the absence of dynamic color fields gets rid of the first term. The influence of the static color sources on the system is brought back via the} addition of an external color source term to the \gls{QCD} Lagrangian. Equations \ref{eq:QCD_Lagrangian} and \ref{eq:QCD_Lagrangian_Indices} become, respectively,
 \begin{align}
 	\mathcal{L}_\text{QCD}' & = - \frac{1}{2} \Tr_c \left[ F_{\mu \nu} F^{\mu \nu} \right] + 2 \Tr_c [A_\mu J^\mu] \\
 	\mathcal{L}_\text{QCD}' & =  - \frac{1}{4} F_{\mu \nu}^a F^{\mu \nu}_a + A_\mu^a J^\mu_a
@@ -256,23 +256,23 @@ In a HIC, \textcolor{red}{as previously introduced}, two heavy nuclei travel in 
 In the laboratory/center of mass frame, the $x^1$ axis is placed along the trajectories of the nuclei. The nucleus moving in the positive $x^1$ direction is identified as nucleus 1, and the one moving in the negative $x^1$ direction is identified as nucleus 2. The nuclei collide at $x^1 = 0$, at instant $t=0$. This system is invariant under boosts along the $x^1$ direction.
 
 \begin{figure}\centering
-    \includegraphics[width=0.7\textwidth]{figures/external/HIC.png}
-    \caption{Two heavy nuclei, Lorentz-contracted into thin disks, travel along the $x^1$ axis in opposite directions until they collide at $t=0, x^1=0$.}
+	\includegraphics[width=0.7\textwidth]{figures/external/HIC.png}
+	\caption{Two heavy nuclei, Lorentz-contracted into thin disks, travel along the $x^1$ axis in opposite directions until they collide at $t=0, x^1=0$.}
 \label{fig:HIC}\end{figure}
 
 As such, prior to the collision, each nucleus's position four-vector, $x^\mu = (x^0,x^1,x^2,x^3)$, in Minkowski coordinates, is:
 \begin{equation*}
-\begin{split}
-	\text{Nucleus 1}:& \quad (t,t,0,0) \\
-	\text{Nucleus 2}:& \quad (t,-t,0,0)
-\end{split}
+	\begin{split}
+		\text{Nucleus 1}:& \quad (t,t,0,0) \\
+		\text{Nucleus 2}:& \quad (t,-t,0,0)
+	\end{split}
 \end{equation*}
 
 These trajectories are well-illustrated in the $x^1Ox^0$ plane (Fig. \ref{fig:HIC_lightcone}).
 
 \begin{figure}\centering
-    \includegraphics[width=0.7\textwidth]{figures/external/HIC_lightcone.png}
-    \caption{A heavy-ion collision represented in the $x^1Ox^0$ plane. Both nuclei travel along the light-cone centered around the collision at coordinates $(0,0)$. Taken from \cite{vanderschee2014}.}
+	\includegraphics[width=0.7\textwidth]{figures/external/HIC_lightcone.png}
+	\caption{A heavy-ion collision represented in the $x^1Ox^0$ plane. Both nuclei travel along the light-cone centered around the collision at coordinates $(0,0)$. Taken from \cite{vanderschee2014}.}
 \label{fig:HIC_lightcone}\end{figure}
 
 After the collision, the nuclei's approximately static high-$x$ partons, discussed in Section \ref{sec:scale_separation},
@@ -280,10 +280,10 @@ carry on in the direction they were moving at the speed of light, acting as colo
 %\textcolor{red}{[They were already acting as color sources for fields, but in the other quadrants]}.
 It is in this space that the pre-hydrodynamic stage to be studied is formed. Fig. \ref{fig:HIC_lightcone} already suggests the usefulness of the ligh-cone coordinate system (see Appendix \ref{ap:Light_Cone}), as the static color sources only travel along the edges of the light-cone centered on the collision coordinates $(0,0)$. In this coordinate system, the nuclei's position four-vectors, $x^\mu=(x^+,x^-,x^2,x^3)$, are:
 \begin{equation*}
-\begin{split}
-	\text{Nucleus 1}:& \quad (\sqrt{2}t,0,0,0) \\
-	\text{Nucleus 2}:& \quad (0,\sqrt{2}t,0,0)
-\end{split}
+	\begin{split}
+		\text{Nucleus 1}:& \quad (\sqrt{2}t,0,0,0) \\
+		\text{Nucleus 2}:& \quad (0,\sqrt{2}t,0,0)
+	\end{split}
 \end{equation*}
 and the collision coordinates remain at $(x^+=0,x^-=0)$.
 
@@ -306,27 +306,27 @@ First of all, the equation explicitly enforcing the covariant conservation of co
 \end{equation}
 via the Jacobi identity and the $F^{\mu \nu} = -ig [D_\mu, D_\nu]$ identity for the gluon field strength tensor (see Appendix \ref{ap:covariant_conservation} for a detailed derivation). %\textcolor{red}{Expanding for a four-current with only a $+$-component:
 %\begin{equation}
-	%\partial_+ J^+ = ig[A_+,J^+] = ig[A^-,J^+]
+%\partial_+ J^+ = ig[A_+,J^+] = ig[A^-,J^+]
 %\end{equation}
 %$J^+$ is required to evolve in light-cone time ($x^+$) provided that the left side does not vanish. The right side vanishes for the assumed form of the current (Eq. (\ref{eq:+_Current})), however the solution for $A^\mu$ that will be produced in this section, out of a current of the form of Eq. (\ref{eq:+_Current}), will guarantee that the left side vanishes as well.}
 
 The conservation equation and The Yang-Mills equations (in the Lorenz gauge) are then arranged into the system of equations:
 \begin{equation}
 	\begin{cases}
-	[D_\mu, J^\mu] = 0 \\
-	[D_\mu, F^{\mu \nu}] = J^\nu
+		[D_\mu, J^\mu] = 0 \\
+		[D_\mu, F^{\mu \nu}] = J^\nu
 	\end{cases} \Leftrightarrow
 	\begin{cases}
-	\partial_\mu J^\mu = ig[A_\mu, J^\mu]  \\
-	\partial_\mu \partial^\mu A^\nu = J^\nu + ig [A_\mu, F^{\mu \nu} + \partial^\mu A^\nu]
+		\partial_\mu J^\mu = ig[A_\mu, J^\mu]  \\
+		\partial_\mu \partial^\mu A^\nu = J^\nu + ig [A_\mu, F^{\mu \nu} + \partial^\mu A^\nu]
 	\end{cases}
 \end{equation}
 
 A solution may be built by solving this system iteratively, for the fields and current expanded \textcolor{red}{in terms of powers of the color number charge density, $\rho$}. The terms of order $(n)$ are obtained from those of lower orders by:
 \begin{equation}
 	\begin{cases}
-	\partial_\mu J_{(n)}^\mu = ig[A_\mu, J^\mu]_{(n)}  \\
-	\partial_\mu \partial^\mu A_{(n)}^\nu = J_{(n)}^\nu + ig [A_\mu, F^{\mu \nu} + \partial^\mu A^\nu]_{(n)}
+		\partial_\mu J_{(n)}^\mu = ig[A_\mu, J^\mu]_{(n)}  \\
+		\partial_\mu \partial^\mu A_{(n)}^\nu = J_{(n)}^\nu + ig [A_\mu, F^{\mu \nu} + \partial^\mu A^\nu]_{(n)}
 	\end{cases}
 \end{equation}
 
@@ -339,34 +339,34 @@ A solution may be built by solving this system iteratively, for the fields and c
 
 Inputting $J_{(0)}^\mu = A_{(0)}^\mu = 0$ (since, in the absence of color charges, there is neither a field generated from them nor any color currents) and $J_{(1)}^\mu = g \delta^{\mu}_+ \rho(x^-,\mathbf{x}_\perp)$  (Eq. (\ref{eq:+_Current})'s form for $J^\mu$), the top equation for $n=1$ is automatically satisfied since $\partial_+ J^+_{(1)} = 0$. The bottom equation may be solved by requiring that $A^\mu_{(1)}$, like $J_{(1)}^\mu$, be independent of $x^+$, and that it vanishes in the far past \cite{Blaizot_2004}: \textcolor{blue}{(does not explode in the far past? But this is a transverce laplacian; it would explode away from the nucleus)}
 \begin{equation}
-\begin{split}
-	\partial_\mu & \partial^\mu A_{(1)}^\nu = J_{(1)}^\nu ~ \to ~
-	 - \mathbf{\nabla}_\perp^2 A_{(1)}^\nu = J_{(1)}^\nu \\
-	 & \to ~ A^\nu_{(1)}(x^-,\mathbf{x}_\perp) = - g \delta^{\nu}_+  \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(x^-,\mathbf{y}_\perp)
-\end{split}
+	\begin{split}
+		\partial_\mu & \partial^\mu A_{(1)}^\nu = J_{(1)}^\nu ~ \to ~
+		- \mathbf{\nabla}_\perp^2 A_{(1)}^\nu = J_{(1)}^\nu \\
+		& \to ~ A^\nu_{(1)}(x^-,\mathbf{x}_\perp) = - g \delta^{\nu}_+  \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(x^-,\mathbf{y}_\perp)
+	\end{split}
 \end{equation}
 where $G(\mathbf{x_\perp} - \mathbf{y_\perp})$ is a Green's function for the 2-dimensional Laplacian, $\mathbf{\nabla}_\perp^2 = \partial_i \partial^i$ with $i=1,2$.
 
 Moving to the $n=2$ system, the right side of the top equation is once again $0$ since $A_{(1)}^\mu$ and $J_{(1)}^{\mu}$ only have a $+$-component. For the bottom equation, its commutator vanishes because $A_{(1)}^\mu$ only has a $+$-component and because that component is independent of $x^+$. The system for $n=2$ is, then,
 \begin{equation}
 	\begin{cases}
-	\partial_\mu J_{(2)}^\mu = 0  \\
-	\partial_\mu \partial^\mu A_{(2)}^\nu = J_{(2)}^\nu
+		\partial_\mu J_{(2)}^\mu = 0  \\
+		\partial_\mu \partial^\mu A_{(2)}^\nu = J_{(2)}^\nu
 	\end{cases}
 \end{equation}
 
 Once again requiring that the current and fields  \textcolor{red}{vanish in the far past/do not explode in the far past?}, the solution is $J_{(2)}^\mu = 0$ for the top and $A_{(2)}^\mu =0$ for the bottom. This makes all the greater-order terms also $0$, making the final solution equal to the first order solution:
 \begin{subequations}
-\begin{gather}
-	J^\mu(x^-,\mathbf{x}_\perp) = g \delta^{\mu}_+ \rho(x^-,\mathbf{x}_\perp) \\
-	A^\nu(x^-,\mathbf{x}_\perp) = - g \delta^{\nu}_+  \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(x^-,\mathbf{y}_\perp)
-\end{gather}
+	\begin{gather}
+		J^\mu(x^-,\mathbf{x}_\perp) = g \delta^{\mu}_+ \rho(x^-,\mathbf{x}_\perp) \\
+		A^\nu(x^-,\mathbf{x}_\perp) = - g \delta^{\nu}_+  \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(x^-,\mathbf{y}_\perp)
+	\end{gather}
 \end{subequations}
 
 Finally, in order to move to light-cone gauge, where $A_\text{LC}^+=0$, the appropriate gauge transformation matrix $U$ must be found:
 \begin{equation}
 	A^\mu_\text{LC} = U^\dagger A^\mu U + \frac{i}{g} U^\dagger \partial^\mu U
-\label{eq:gauge_transformation}
+	\label{eq:gauge_transformation}
 \end{equation}
 
 It may be found by solving the equation:
@@ -379,16 +379,16 @@ which admits a solution of the type $U(x^-,\mathbf{x}_\perp)$ and may be solved 
 \end{gather}
 \begin{alignat}{2}
 	U(x^-,\mathbf{x}_\perp) & = \lim_{n \to \infty} \Bigg( \mathds{1}
-	 && + ig\int_{x^0_-}^{x^-}  \diff z_0 A^+ (z_0)
+	&& + ig\int_{x^0_-}^{x^-}  \diff z_0 A^+ (z_0)
 	+ (ig)^2\int_{x^0_-}^{x^-} \diff z_0 \int_{x^0_-}^{z_0} \diff z_1 A^+ (z_0) A^+ (z_1) + ... \nonumber \\
 	& && + (ig)^n\int_{x^0_-}^{x^-} \diff z_0  \int_{x^0_-}^{z_0} \diff z_1 ...  \int_{x^0_-}^{z_{n-1}} \diff z_n ~ A^+ (z_0) A^+ (z_1) ...  A^+ (z_n)
-	 \Bigg) U(x_0^-,\mathbf{x}_\perp) \nonumber \\
-	 & = \lim_{n \to \infty} \Bigg( \mathds{1}
-	 && + ig\int_{x^0_-}^{x^-}  \diff z_0 A^+ (z_0)
+	\Bigg) U(x_0^-,\mathbf{x}_\perp) \nonumber \\
+	& = \lim_{n \to \infty} \Bigg( \mathds{1}
+	&& + ig\int_{x^0_-}^{x^-}  \diff z_0 A^+ (z_0)
 	+ \frac{(ig)^2}{2} \int_{x^0_-}^{x^-} \diff z_0 \int_{x^0_-}^{x^-} \diff z_1  \mathcal{P}^- \Big \{ A^+ (z_0) A^+ (z_1) \Big \} + ... \nonumber \\
 	& && + \frac{(ig)^n}{n!}\int_{x^0_-}^{x^-} \diff z_0  \int_{x^0_-}^{x^-} \diff z_1 ...  \int_{x^0_-}^{x^-} \diff z_n ~ \mathcal{P}^- \Big \{ A^+ (z_0) A^+ (z_1) ...  A^+ (z_n) \Big \}
-	 \Bigg) U(x_0^-,\mathbf{x}_\perp) \nonumber \\
-	 & \equiv \mathcal{P}^- \exp  \Bigg[&& ig \int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp) \Bigg] U(x_0^-,\mathbf{x}_\perp)
+	\Bigg) U(x_0^-,\mathbf{x}_\perp) \nonumber \\
+	& \equiv \mathcal{P}^- \exp  \Bigg[&& ig \int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp) \Bigg] U(x_0^-,\mathbf{x}_\perp)
 \end{alignat}
 where the dependence of the $A^+$ fields on $\mathbf{x}_\perp$ was only shown explicitly in the last line and $\mathcal{P}^-$ is the path-ordering operator for the $x^-$ variable; that is, it orders the $A^+$ field operators from right to left in descending order of their $x^-$ argument:
 \begin{gather}
@@ -407,22 +407,22 @@ Renaming the $+$-component of $A$ in the Lorenz gauge to $\Phi(x^-,\mathbf{x}_\p
 % and dropping the ``LC" subscript to denote fields in the light-cone gauge,
 the expressions for the gluon fields in light-cone gauge become:
 \begin{subequations}
-\begin{alignat}{2}
-	A^+_\text{LC} & = 0 && \\
-	A^-_\text{LC} & = 0 && \\
-	A^i_\text{LC} & = \frac{i}{g} U(x^-,\mathbf{x}_\perp)^\dagger ~ && \partial^i U(x^-,\mathbf{x}_\perp), \qquad i = 1,2\\
-	& \text{with} ~ U(x^-, \mathbf{x}_\perp) && =
-	\mathcal{P}^- \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z ~ \Phi (z, \mathbf{x}_\perp) \Bigg] \nonumber \\
-	&  &&  =  \mathcal{P}^- \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z ~ (- g) \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(z,\mathbf{y}_\perp) \Bigg] \nonumber
-\end{alignat}
-\label{eq:A_lc_one_nucleus}
+	\begin{alignat}{2}
+		A^+_\text{LC} & = 0 && \\
+		A^-_\text{LC} & = 0 && \\
+		A^i_\text{LC} & = \frac{i}{g} U(x^-,\mathbf{x}_\perp)^\dagger ~ && \partial^i U(x^-,\mathbf{x}_\perp), \qquad i = 1,2\\
+		& \text{with} ~ U(x^-, \mathbf{x}_\perp) && =
+		\mathcal{P}^- \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z ~ \Phi (z, \mathbf{x}_\perp) \Bigg] \nonumber \\
+		&  &&  =  \mathcal{P}^- \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z ~ (- g) \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(z,\mathbf{y}_\perp) \Bigg] \nonumber
+	\end{alignat}
+	\label{eq:A_lc_one_nucleus}
 \end{subequations}
 where the $A^i$ fields, named the transverse fields, are pure-gauge fields due to them arising solely out of the gauge transformation term involving only $U$ (Eq. (\ref{eq:gauge_transformation})).
 
 So far, all calculations have been performed keeping a generic, unknown dependence of $\rho$ on $x^-$. However, remembering that the color charge density has very narrow support around $x^-=0$:
 \begin{equation}
 	\rho(x^-,\mathbf{x}_\perp) \approx \delta(x^-) \rho(\mathbf{x_\perp})
-\label{eq:thin_rho}
+	\label{eq:thin_rho}
 \end{equation}
 the $U$ operator's dependence on $x^-$ turns out to be of the form:
 \begin{equation}
@@ -435,7 +435,7 @@ the $U$ operator's dependence on $x^-$ turns out to be of the form:
 which allows factoring the $x^-$ dependence of the $A^i_\text{LC}$ fields:
 \begin{equation}
 	A^i_\text{LC} (x^-, \mathbf{x}_\perp) \equiv \theta(x^-) \alpha^i_\text{LC} (\mathbf{x}_\perp)
-\label{eq:A^i_factorization}
+	\label{eq:A^i_factorization}
 \end{equation}
 
 %which will be useful in the establishment of boundary conditions for the resolution of the Yang-Mills equations in the space between the two nuclei, after the collision.
@@ -463,12 +463,12 @@ The previous discussion of the fields generated by a single nucleus traveling at
 
 Which generates the gluon fields, in the light-cone gauge\footnote{In this case, the light-cone gauge condition is $A^- = 0$.}
 \begin{subequations}
-\begin{alignat}{2}
-	A^+_2 & = 0 && \\
-	A^-_2 & = 0 && \\
-	A^i_2 & = \frac{i}{g} U_2(x^+,\mathbf{x}_\perp)&& ^\dagger ~  \partial^i U_2(x^+,\mathbf{x}_\perp) \equiv \theta(x^+) \alpha_2^i(\mathbf{x}_\perp), \qquad i = 1,2
-\end{alignat}
-\label{eq:A_lc_one_nucleus_2}
+	\begin{alignat}{2}
+		A^+_2 & = 0 && \\
+		A^-_2 & = 0 && \\
+		A^i_2 & = \frac{i}{g} U_2(x^+,\mathbf{x}_\perp)&& ^\dagger ~  \partial^i U_2(x^+,\mathbf{x}_\perp) \equiv \theta(x^+) \alpha_2^i(\mathbf{x}_\perp), \qquad i = 1,2
+	\end{alignat}
+	\label{eq:A_lc_one_nucleus_2}
 \end{subequations}
 with
 \begin{align}
@@ -487,24 +487,24 @@ with
 
 Moving to the scenario of a HIC, where both nuclei are present, the two currents are added, and $J^\mu$ is given by the expression:
 \begin{equation}
-\begin{split}
-	J^\mu(x^\mu) & = J_1^\mu(x^-,\mathbf{x}_\perp) + J_2^\mu(x^+, \mathbf{x}_\perp) = g \delta^{\mu}_+ \tilde{\rho}_1(x^-,\mathbf{x}_\perp) + g \delta^{\mu}_- \tilde{\rho}_2(x^+,\mathbf{x}_\perp) \\
-	& \approx g \delta^{\mu}_+ \delta(x^-) \tilde{\rho}_1(\mathbf{x}_\perp) + g \delta^{\mu}_- \delta(x^+) \tilde{\rho}_2(\mathbf{x}_\perp)
-\end{split}
+	\begin{split}
+		J^\mu(x^\mu) & = J_1^\mu(x^-,\mathbf{x}_\perp) + J_2^\mu(x^+, \mathbf{x}_\perp) = g \delta^{\mu}_+ \tilde{\rho}_1(x^-,\mathbf{x}_\perp) + g \delta^{\mu}_- \tilde{\rho}_2(x^+,\mathbf{x}_\perp) \\
+		& \approx g \delta^{\mu}_+ \delta(x^-) \tilde{\rho}_1(\mathbf{x}_\perp) + g \delta^{\mu}_- \delta(x^+) \tilde{\rho}_2(\mathbf{x}_\perp)
+	\end{split}
 \end{equation}
 
 For the purpose of solving the Yang-Mills equations, spacetime is divided into four quadrants in $(x^+,x^-)$ space,  as illustrated in Fig. \ref{fig:space_partition}. Quadrants 1 and 2 are named the pre-collision quadrants, while quadrant 3 is referred to as the forward light-cone. For calculations in the third quadrant, the Bjorken/Milne/Comoving coordinate system is used, where positions and four-vectors are given by:
 \begin{subequations}
-\begin{gather}
-	\tau = \sqrt{2x^+x^-} \\
-	\eta = \frac{1}{2} \log \left( \frac{x^+}{x^-} \right)
-\end{gather}
+	\begin{gather}
+		\tau = \sqrt{2x^+x^-} \\
+		\eta = \frac{1}{2} \log \left( \frac{x^+}{x^-} \right)
+	\end{gather}
 \end{subequations}
 \begin{subequations}
-\begin{align}
-A^\tau & = \frac{x^- A^+ + x^+ A^-}{\tau} \\
-A^\eta & = \frac{x^- A^+ - x^+ A^-}{\tau^2} \label{eq:milne_Aeta}
-\end{align}
+	\begin{align}
+		A^\tau & = \frac{x^- A^+ + x^+ A^-}{\tau} \\
+		A^\eta & = \frac{x^- A^+ - x^+ A^-}{\tau^2} \label{eq:milne_Aeta}
+	\end{align}
 \end{subequations}
 and the transverse components ($i=2,3$) keep their Cartesian form. $\tau$ is called the proper time and $\eta$ is called the rapidity. For a more detailed overview of the Comoving coordinates, see Appendix \ref{ap:bjorken_coordinates}.
 
@@ -524,14 +524,14 @@ Inserting these definitions in Eq. (\ref{eq:milne_Aeta}), the $\alpha$ field can
 
 Following the ansatz first proposed in \cite{Kovner_1995}, the $\alpha$ field and the transverse fields of the third quadrant, $\alpha^i$, are taken not to depend on $\eta$. This is so that the form of the solution in the third quadrant is not altered by applying a boost to the studied system along the direction of motion of the two nuclei, since the system is invariant under boosts along the $x^1$ axis. For any boost applied, the two nuclei will keep moving at the speed of light, making the boosted system indistinguishable from the original and requiring a solution of the same form. Compiling all the information gathered so far regarding the form of the solution,
 \begin{subequations}
-\begin{alignat}{2}
-& A^+ (x^\mu) &&= \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} x^+ \alpha (\tau, \mathbf{x}_\perp)\\
-& A^- (x^\mu) &&= - \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} x^- \alpha (\tau, \mathbf{x}_\perp) \\
-& A^{i}(x^\mu) &&= \underbrace{\theta (-x^+) \theta(x^-)}_{\Circled{1}} \alpha^i_1 (\mathbf{x}_\perp)
- + \underbrace{\theta (x^+) \theta(-x^-)}_{\Circled{2}} \alpha^i_2 (\mathbf{x}_\perp)
- + \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} \alpha^i (\tau, \mathbf{x}_\perp)
-\end{alignat}
-\label{eq:ansatz}
+	\begin{alignat}{2}
+		& A^+ (x^\mu) &&= \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} x^+ \alpha (\tau, \mathbf{x}_\perp)\\
+		& A^- (x^\mu) &&= - \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} x^- \alpha (\tau, \mathbf{x}_\perp) \\
+		& A^{i}(x^\mu) &&= \underbrace{\theta (-x^+) \theta(x^-)}_{\Circled{1}} \alpha^i_1 (\mathbf{x}_\perp)
+		+ \underbrace{\theta (x^+) \theta(-x^-)}_{\Circled{2}} \alpha^i_2 (\mathbf{x}_\perp)
+		+ \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} \alpha^i (\tau, \mathbf{x}_\perp)
+	\end{alignat}
+	\label{eq:ansatz}
 \end{subequations}
 %\textcolor{red}{Attention: \cite{Kovner_1995} initially posits that $A^+$ and $A^-$ are different}
 For the third quadrant (terms underbraced with `3'), applying such a boost as described leaves the form of the solution unchanged, as $\tau$ and $\mathbf{x}_\perp$ are invariant under it. \textcolor{purple}{Specify why the $A^+$ and $A^-$ terms are invariant?}
@@ -544,31 +544,31 @@ In the interior of the third quadrant, the currents $J_1^\mu$ and $J_2^\mu$ have
 %Before moving on to their treatment, a discussion of the boundary conditions to be used to connect the solution in the forward light-cone with the already-found solutions in the pre-collision quadrants is in order. It is possible to obtain, out of the already-found fields in the pre-collision quadrants, boundary conditions along the edges of the forward light-cone. A detailed derivation of these boundary conditions may be found in \cite[Appendix C]{Carrington_2022_Energy_Momentum_Tensor}. They are obtained by first considering that the longitudinal width of the sources is finite and greater than 0, rather than infinitely thin as in Eq. (2.32), then integrating the Yang-Mills equations over a path (Eq. (\ref{eq:boundary_alpha})) and an area (Eq. (\ref{eq:boundary_transverse})) which cross the light-cone, and finally taking the limit where the width goes to zero. They are:
 Before moving on to their treatment, a discussion of the boundary conditions to be used to connect the solution in the forward light-cone with the already-found solutions in the pre-collision quadrants is in order. It is possible to obtain, out of the already-found fields in the pre-collision quadrants, starting values for the fields in the forward light-cone at $\tau = 0$. A detailed derivation of these boundary conditions may be found in \cite[Appendix C]{Carrington_2022_Energy_Momentum_Tensor}. They are obtained by first considering that the longitudinal width of the sources is finite and greater than 0, rather than infinitely thin as in Eq. (\ref{eq:thin_rho}), then integrating the Yang-Mills equations over a path (Eq. (\ref{eq:boundary_alpha})) and an area (Eq. (\ref{eq:boundary_transverse})) which cross the light-cone, and finally taking the limit where the width of the sources goes to zero. They are:
 \begin{subequations}
-\label{eq:boundary_conditions}
-\begin{align}
-	\alpha(0, \mathbf{x}_\perp) & = -\frac{ig}{2} \left[ \alpha_1^i(\mathbf{x}_\perp), \alpha_2^i(\mathbf{x}_\perp) \right]
-	\label{eq:boundary_alpha} \\
-	\alpha^i(0, \mathbf{x}_\perp) & =  \alpha_1^i(\mathbf{x}_\perp) + \alpha_2^i(\mathbf{x}_\perp)
-	\label{eq:boundary_transverse}
-\end{align}
+	\label{eq:boundary_conditions}
+	\begin{align}
+		\alpha(0, \mathbf{x}_\perp) & = -\frac{ig}{2} \left[ \alpha_1^i(\mathbf{x}_\perp), \alpha_2^i(\mathbf{x}_\perp) \right]
+		\label{eq:boundary_alpha} \\
+		\alpha^i(0, \mathbf{x}_\perp) & =  \alpha_1^i(\mathbf{x}_\perp) + \alpha_2^i(\mathbf{x}_\perp)
+		\label{eq:boundary_transverse}
+	\end{align}
 \end{subequations}
 
 Moving on to the treatment of the Yang-Mills equations, defining $Y^\nu = [D_\mu, F^{\mu\nu}]$, the $\tau$ and $\eta$ components of the system of equations in comoving coordinates may be obtained out of the $+$ and $-$ components in light-cone coordinates as:
 \begin{subequations}
-\begin{gather}
-	Y^\tau = 0 ~ \Leftrightarrow ~ \frac{x^- Y^+ + x^+ Y^-}{\tau} = 0 \\
-	Y^\eta = 0 ~ \Leftrightarrow ~ \frac{x^- Y^+ - x^+ Y^-}{\tau^2} = 0
-\end{gather}
+	\begin{gather}
+		Y^\tau = 0 ~ \Leftrightarrow ~ \frac{x^- Y^+ + x^+ Y^-}{\tau} = 0 \\
+		Y^\eta = 0 ~ \Leftrightarrow ~ \frac{x^- Y^+ - x^+ Y^-}{\tau^2} = 0
+	\end{gather}
 \end{subequations}
 and the $\nu = 2,3$ components keep their cartesian form.
 
 Inserting Eq. (\ref{eq:ansatz}) into the Yang-Mills equations in comoving coordinates returns:
 \begin{subequations}
-\begin{align}
-	& Y^\tau = 0 \quad \Leftrightarrow \quad ig\tau \left[\alpha, \partial_\tau \alpha \right] - \frac{1}{\tau} \left[D^i, \partial_\tau \alpha^i \right] = 0 \\
-	& Y^\eta = 0 \quad \Leftrightarrow \quad \frac{1}{\tau} \partial_\tau \left( \frac{1}{\tau} \partial_\tau \left( \tau^2 \alpha \right) \right) - \left[D^i, \left[D^i, \alpha \right] \right] = 0 \\
-	& Y^j = 0 \quad \Leftrightarrow \quad \frac{1}{\tau} \partial_\tau \left( \tau \partial_\tau \alpha^j \right) - ig\tau^2 \left[\alpha, \left[D^j,\alpha \right] \right] - [D^i, F^{ij}] = 0
-\end{align}
+	\begin{align}
+		& Y^\tau = 0 \quad \Leftrightarrow \quad ig\tau \left[\alpha, \partial_\tau \alpha \right] - \frac{1}{\tau} \left[D^i, \partial_\tau \alpha^i \right] = 0 \\
+		& Y^\eta = 0 \quad \Leftrightarrow \quad \frac{1}{\tau} \partial_\tau \left( \frac{1}{\tau} \partial_\tau \left( \tau^2 \alpha \right) \right) - \left[D^i, \left[D^i, \alpha \right] \right] = 0 \\
+		& Y^j = 0 \quad \Leftrightarrow \quad \frac{1}{\tau} \partial_\tau \left( \tau \partial_\tau \alpha^j \right) - ig\tau^2 \left[\alpha, \left[D^j,\alpha \right] \right] - [D^i, F^{ij}] = 0
+	\end{align}
 \end{subequations}
 where $i,j=2,3$. \textcolor{purple}{And it doesn't look very friendly.}
 
@@ -582,35 +582,35 @@ the Fock-Schwinger gauge condition ($A^\tau = 0$) is maintained \textcolor{purpl
 \end{subequations}
 which makes the linearized Yang-Mills equations for the fields in the new gauge, \textcolor{purple}{CHECK}
 \begin{subequations}
-\begin{gather}
-	\partial_\tau \partial_i* \beta^i = 0 \\
-	\frac{1}{\tau} \partial_\tau \left( \frac{1}{\tau} \partial_\tau \left( \tau^2 \beta \right) \right) - \partial_i* \partial^i \beta = 0 \\
-	\frac{1}{\tau} \partial_\tau \left( \tau \partial_\tau \beta^i \right) - \left( \partial^k \partial_k* \delta^{i j} - \partial^i \partial^j \right) \beta^j =0
-\end{gather}
+	\begin{gather}
+		\partial_\tau \partial_i* \beta^i = 0 \\
+		\frac{1}{\tau} \partial_\tau \left( \frac{1}{\tau} \partial_\tau \left( \tau^2 \beta \right) \right) - \partial_i* \partial^i \beta = 0 \\
+		\frac{1}{\tau} \partial_\tau \left( \tau \partial_\tau \beta^i \right) - \left( \partial^k \partial_k* \delta^{i j} - \partial^i \partial^j \right) \beta^j =0
+	\end{gather}
 \end{subequations}
 where $k=2,3$. (\textcolor{purple}{different signs in 1808 and 2102})
 
 The remaining gauge freedom allows setting $\partial_i \beta^i = 0$ (\textcolor{purple}{minimizes the amplitudes of the transverse fields?}), because of which this will be called the Coulomb gauge. The equations become:
 \begin{subequations}
-\begin{gather}
-	\partial_\tau \left( \frac{1}{\tau} \partial_\tau \left( \tau^2 \beta \right) \right) - \tau \partial_i * \partial^i \beta = 0 \\
-	\partial_\tau \left( \tau \partial_\tau \beta^i \right) - \tau \partial^k \partial_k * \beta^i =0
-\end{gather}
+	\begin{gather}
+		\partial_\tau \left( \frac{1}{\tau} \partial_\tau \left( \tau^2 \beta \right) \right) - \tau \partial_i * \partial^i \beta = 0 \\
+		\partial_\tau \left( \tau \partial_\tau \beta^i \right) - \tau \partial^k \partial_k * \beta^i =0
+	\end{gather}
 \end{subequations}
 
 Taking the transverse position Fourier transform on both sides,
 \begin{subequations}
-\begin{gather}
-	\beta (\tau, \mathbf{x}_\perp) = \iint \frac{\diff^2 \mathbf{k}_\perp}{(2\pi)^2} ~ e^{i (k_\perp)^j (x_\perp)_j} \tilde{\beta} (\tau, \mathbf{k}_\perp) \\
-	\beta^i (\tau, \mathbf{x}_\perp) = \iint \frac{\diff^2 \mathbf{k}_\perp}{(2\pi)^2} ~ e^{i (k_\perp)^j (x_\perp)_j} \tilde{\beta}^i (\tau, \mathbf{k}_\perp)
-\end{gather}
+	\begin{gather}
+		\beta (\tau, \mathbf{x}_\perp) = \iint \frac{\diff^2 \mathbf{k}_\perp}{(2\pi)^2} ~ e^{i (k_\perp)^j (x_\perp)_j} \tilde{\beta} (\tau, \mathbf{k}_\perp) \\
+		\beta^i (\tau, \mathbf{x}_\perp) = \iint \frac{\diff^2 \mathbf{k}_\perp}{(2\pi)^2} ~ e^{i (k_\perp)^j (x_\perp)_j} \tilde{\beta}^i (\tau, \mathbf{k}_\perp)
+	\end{gather}
 \end{subequations}
 the equations for $\tilde{\beta}$ and $\tilde{\beta}^i$ are:
 \begin{subequations}
-\begin{gather}
-	\tau^2 \partial_\tau^2 \big(\tau \tilde{\beta}\big) + \tau \partial_\tau \big(\tau \tilde{\beta}\big) + \big(\textcolor{red}{-}\tau^2 |\mathbf{k}_\perp|^2 - 1\big) \big(\tau \tilde{\beta}\big) = 0  \label{eq:bessel_beta}\\
-	\tau^2 \partial_\tau^2 \tilde{\beta}^i + \tau \partial_\tau \tilde{\beta}^i \textcolor{red}{-} \tau^2 |\mathbf{k}_\perp|^2  \tilde{\beta}^i =0 \label{eq:bessel_beta_i}
-\end{gather}
+	\begin{gather}
+		\tau^2 \partial_\tau^2 \big(\tau \tilde{\beta}\big) + \tau \partial_\tau \big(\tau \tilde{\beta}\big) + \big(\textcolor{red}{-}\tau^2 |\mathbf{k}_\perp|^2 - 1\big) \big(\tau \tilde{\beta}\big) = 0  \label{eq:bessel_beta}\\
+		\tau^2 \partial_\tau^2 \tilde{\beta}^i + \tau \partial_\tau \tilde{\beta}^i \textcolor{red}{-} \tau^2 |\mathbf{k}_\perp|^2  \tilde{\beta}^i =0 \label{eq:bessel_beta_i}
+	\end{gather}
 \end{subequations}
 In order to simplify the expressions, $\omega$ is defined as $\omega \equiv |\mathbf{k}_\perp| $.
 
@@ -618,10 +618,10 @@ Once the change of variable $z=\omega \tau$ is made, Eq. (\ref{eq:bessel_beta}) 
 
 The solution is, then,
 \begin{subequations}
-\begin{align}
-	\tilde{\beta} (\tau, \mathbf{k}_\perp) &= \beta_0 (\mathbf{k}_\perp) \frac{2 J_1(\omega \tau)}{\omega \tau} \label{eq:beta_tilde}\\
-	\tilde{\beta}^i (\tau, \mathbf{k}_\perp) &= \beta^i_0 (\mathbf{k}_\perp) J_0(\omega \tau)
-\end{align}
+	\begin{align}
+		\tilde{\beta} (\tau, \mathbf{k}_\perp) &= \beta_0 (\mathbf{k}_\perp) \frac{2 J_1(\omega \tau)}{\omega \tau} \label{eq:beta_tilde}\\
+		\tilde{\beta}^i (\tau, \mathbf{k}_\perp) &= \beta^i_0 (\mathbf{k}_\perp) J_0(\omega \tau)
+	\end{align}
 \end{subequations}
 where the factor of $2$ in Eq. (\ref{eq:beta_tilde}) was introduced in order to make the $\mathbf{k}_\perp$-dependent coefficient, $\beta_0$, match the value of $\tilde{\beta}$ at $\tau=0$, since $\lim_{z \to 0} J_1(z)/z=1/2$. \cite{arfken2005mathematical}
 
@@ -632,13 +632,13 @@ One way to go around this problem is to recall that the necessary, physical quan
 ----------------------
 
 \begin{figure}\centering
-\includetikz{Diagrams/space_partition}
-\caption{Partition of spacetime into light-cone quadrants. The quadrants where the Yang-Mills equations will be solved are identified as quadrants 1, 2 and 3. Adapted from \cite{Kovner_1995}.}
+	\includetikz{Diagrams/space_partition}
+	\caption{Partition of spacetime into light-cone quadrants. The quadrants where the Yang-Mills equations will be solved are identified as quadrants 1, 2 and 3. Adapted from \cite{Kovner_1995}.}
 \label{fig:space_partition}\end{figure}
 
 \begin{figure}\centering
-\includetikz{Diagrams/space_partition_light_cones}
-\caption{The same four quadrants with the support of current $J_1$ ($J_2$) drawn as a red (blue) line. Future light-cones drawn from points where $J_1$ passes only occupy quadrants 1 and 3; future light-cones drawn from points where $J_2$ passes only occupy quadrants 2 and 3.}
+	\includetikz{Diagrams/space_partition_light_cones}
+	\caption{The same four quadrants with the support of current $J_1$ ($J_2$) drawn as a red (blue) line. Future light-cones drawn from points where $J_1$ passes only occupy quadrants 1 and 3; future light-cones drawn from points where $J_2$ passes only occupy quadrants 2 and 3.}
 \label{fig:current_light-cones}\end{figure}
 
 %In the case of a HIC, in the center of mass \textcolor{red}{(laboratory?)} frame, two heavy nuclei travel at (close to) the speed of light along the $z$ axis in opposing directions. The nuclei moving in the positive or negative $z$ direction are named nucleus 1 or nucleus 2, respectively.
@@ -653,50 +653,50 @@ where $\rho_{1,2}$ are the static number color densities in nuclei 1 and 2 per u
 
 Adding the contributions of both color currents, the source term becomes:
 \begin{equation}
-J^\nu = g \delta^\nu_+ \delta (x^-) \rho_1 (\mathbf{x}_\perp) + g \delta^\nu_- \delta (x^+) \rho_2 (\mathbf{x}_\perp)
+	J^\nu = g \delta^\nu_+ \delta (x^-) \rho_1 (\mathbf{x}_\perp) + g \delta^\nu_- \delta (x^+) \rho_2 (\mathbf{x}_\perp)
 \end{equation}
 
 The classical Yang-Mills equations to be solved in the presence of the static color sources become, then,
 
 \begin{equation}
-	 [D_\mu, F^{\mu \nu}] = J^\nu
+	[D_\mu, F^{\mu \nu}] = J^\nu
 \end{equation}
 
 \section{\textcolor{red}{Transcribed expressions yet without text}}
 
 \begin{subequations} \label{eq:initial_fields}
-\begin{equation}
-\begin{split}
-E^\eta_0(\mathbf{x}_\perp) & = -ig \delta^{ij} [\alpha^i_1 (\mathbf{x}_\perp), \alpha^j_2(\mathbf{x}_\perp)] \\
- & = g \delta^{ij}   \alpha^i_{1a} (\mathbf{x}_\perp) \alpha^j_{2b}(\mathbf{x}_\perp)f^{abc} T_c
-\end{split} \label{eq:initial_E}
-\end{equation}
-\begin{equation}
-\begin{split}
-B^\eta_0(\mathbf{x}_\perp) & = -ig \varepsilon^{ij} [\alpha^i_1 (\mathbf{x}_\perp), \alpha^j_2(\mathbf{x}_\perp)] \\
-& = g \varepsilon^{ij} \alpha^i_{1a} (\mathbf{x}_\perp) \alpha^j_{2b}(\mathbf{x}_\perp) f^{abc} T_c
-\end{split} \label{eq:initial_B}
-\end{equation}
+	\begin{equation}
+		\begin{split}
+			E^\eta_0(\mathbf{x}_\perp) & = -ig \delta^{ij} [\alpha^i_1 (\mathbf{x}_\perp), \alpha^j_2(\mathbf{x}_\perp)] \\
+			& = g \delta^{ij}   \alpha^i_{1a} (\mathbf{x}_\perp) \alpha^j_{2b}(\mathbf{x}_\perp)f^{abc} T_c
+		\end{split} \label{eq:initial_E}
+	\end{equation}
+	\begin{equation}
+		\begin{split}
+			B^\eta_0(\mathbf{x}_\perp) & = -ig \varepsilon^{ij} [\alpha^i_1 (\mathbf{x}_\perp), \alpha^j_2(\mathbf{x}_\perp)] \\
+			& = g \varepsilon^{ij} \alpha^i_{1a} (\mathbf{x}_\perp) \alpha^j_{2b}(\mathbf{x}_\perp) f^{abc} T_c
+		\end{split} \label{eq:initial_B}
+	\end{equation}
 \end{subequations}
 
 \begin{subequations} \label{eq:EB_from_initial_EB}
-\begin{align}
-E^\eta(\tau,\mathbf{k}_\perp) & = E^\eta_0 (\mathbf{k}_\perp) J_0 (k \tau) \\
-E^i(\tau,\mathbf{k}_\perp) & = -i \varepsilon^{ij} \hat{k}^j B_0^\eta (\mathbf{k}_\perp) J_1 (k \tau) \\
-B^\eta(\tau,\mathbf{k}_\perp) & = B^\eta_0 (\mathbf{k}_\perp) J_0 (k \tau) \\
-B^i(\tau,\mathbf{k}_\perp) & = -i \varepsilon^{ij} \hat{k}^j E_0^\eta (\mathbf{k}_\perp) J_1 (k \tau)
-\end{align}
+	\begin{align}
+		E^\eta(\tau,\mathbf{k}_\perp) & = E^\eta_0 (\mathbf{k}_\perp) J_0 (k \tau) \\
+		E^i(\tau,\mathbf{k}_\perp) & = -i \varepsilon^{ij} \hat{k}^j B_0^\eta (\mathbf{k}_\perp) J_1 (k \tau) \\
+		B^\eta(\tau,\mathbf{k}_\perp) & = B^\eta_0 (\mathbf{k}_\perp) J_0 (k \tau) \\
+		B^i(\tau,\mathbf{k}_\perp) & = -i \varepsilon^{ij} \hat{k}^j E_0^\eta (\mathbf{k}_\perp) J_1 (k \tau)
+	\end{align}
 \end{subequations}
 
 In order to get expressions for one of the fields in coordinate  space\textcolor{red}{\footnote{as is necessary in order to calculate $X^{\alpha \beta}$}}, the appropriate field at $\tau=0^+$ (eqs. \ref{eq:initial_fields}) must be Fourier-transformed and used in Eqs. (\ref{eq:EB_from_initial_EB}). The inverse Fourier transform is then applied to the resulting expression. For $E^\alpha$, $\alpha=1,2$ \textcolor{red}{(2,3)?}, for example:
 
 \begin{equation}
-\begin{alignedat}{2}
-	E^\alpha (\tau,\mathbf{x}_\perp) & =  \int \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} e^{i \mathbf{k}_\perp \cdot \mathbf{x}_\perp} & & (-i)   \varepsilon^{\alpha \beta} \hat{k}^\beta J_1 (k \tau)  \int \diff^2 \mathbf{u}_\perp e^{-i \mathbf{k}_\perp \cdot \mathbf{u}_\perp} \\
-	& ~ & & \times ~ g \varepsilon^{ij} \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp) f^{abc} T_c \\
-	& = -ig \varepsilon^{ij} f^{abc} T_c \varepsilon^{\alpha \beta} & & \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} \hat{k}^\beta J_1 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp}  \\
-	& ~ & & \times \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp)
-\end{alignedat}
+	\begin{alignedat}{2}
+		E^\alpha (\tau,\mathbf{x}_\perp) & =  \int \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} e^{i \mathbf{k}_\perp \cdot \mathbf{x}_\perp} & & (-i)   \varepsilon^{\alpha \beta} \hat{k}^\beta J_1 (k \tau)  \int \diff^2 \mathbf{u}_\perp e^{-i \mathbf{k}_\perp \cdot \mathbf{u}_\perp} \\
+		& ~ & & \times ~ g \varepsilon^{ij} \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp) f^{abc} T_c \\
+		& = -ig \varepsilon^{ij} f^{abc} T_c \varepsilon^{\alpha \beta} & & \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} \hat{k}^\beta J_1 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp}  \\
+		& ~ & & \times \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp)
+	\end{alignedat}
 \end{equation}
 
 And the remaining fields:
