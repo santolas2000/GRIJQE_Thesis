@@ -433,6 +433,7 @@ where the $A^i$ fields, named the transverse fields, are pure-gauge fields due t
 So far, all calculations have been performed keeping a generic, unknown dependence of $\rho$ on $x^-$. However, remembering that the color charge density has very narrow support around $x^-=0$:
 \begin{equation}
 	\rho(x^-,\mathbf{x}_\perp) \approx \delta(x^-) \rho(\mathbf{x_\perp})
+\label{eq:thin_rho}
 \end{equation}
 the $U$ operator's dependence on $x^-$ turns out to be of the form:
 \begin{equation}
@@ -478,13 +479,16 @@ Which generates the gluon fields, in the light-cone gauge\footnote{In this case,
 \begin{alignat}{2}
 	A^+_2 & = 0 && \\
 	A^-_2 & = 0 && \\
-	A^i_2 & = \frac{i}{g} U_2(x^+,\mathbf{x}_\perp)&& ^\dagger ~  \partial^i U_2(x^+,\mathbf{x}_\perp) \equiv \theta(x^+) \alpha_2^i(\mathbf{x}_\perp), \qquad i = 1,2\\
-	& \text{with} ~ U_2(x^+, \mathbf{x}_\perp) && =
-	\mathcal{P}^+ \exp  \Bigg[ig \int_{-\infty}^{x^+} \diff z ~ \Phi_2 (z, \mathbf{x}_\perp) \Bigg] \nonumber \\ 
-	&  &&  =  \mathcal{P}^+ \exp  \Bigg[ig \int_{-\infty}^{x^+} \diff z ~ (- g) \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \tilde{\rho}_2(z,\mathbf{y}_\perp) \Bigg] \nonumber 
+	A^i_2 & = \frac{i}{g} U_2(x^+,\mathbf{x}_\perp)&& ^\dagger ~  \partial^i U_2(x^+,\mathbf{x}_\perp) \equiv \theta(x^+) \alpha_2^i(\mathbf{x}_\perp), \qquad i = 1,2                                     
 \end{alignat}
 \label{eq:A_lc_one_nucleus_2}
 \end{subequations}
+with
+\begin{align}
+	U_2(x^+, \mathbf{x}_\perp) & =
+	\mathcal{P}^+ \exp  \Bigg[ig \int_{-\infty}^{x^+} \diff z ~ \Phi_2 (z, \mathbf{x}_\perp) \Bigg] \nonumber  
+	=  \mathcal{P}^+ \exp  \Bigg[ig \int_{-\infty}^{x^+} \diff z ~ (- g) \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \tilde{\rho}_2(z,\mathbf{y}_\perp) \Bigg] \nonumber 
+\end{align}
 
 \textcolor{purple}{ADD SOME SORT OF CONCLUSION}
 
@@ -497,12 +501,12 @@ Which generates the gluon fields, in the light-cone gauge\footnote{In this case,
 Moving to the scenario of a HIC, where both nuclei are present, the two currents are added, and $J^\mu$ is given by the expression:
 \begin{equation}
 \begin{split}
-	J^\mu(x^\mu) & = J_1(x^-,\mathbf{x}_\perp) + J_2(x^+, \mathbf{x}_\perp) = g \delta^{\mu}_+ \tilde{\rho}_1(x^-,\mathbf{x}_\perp) + g \delta^{\mu}_- \tilde{\rho}_2(x^+,\mathbf{x}_\perp) \\ 
+	J^\mu(x^\mu) & = J_1^\mu(x^-,\mathbf{x}_\perp) + J_2^\mu(x^+, \mathbf{x}_\perp) = g \delta^{\mu}_+ \tilde{\rho}_1(x^-,\mathbf{x}_\perp) + g \delta^{\mu}_- \tilde{\rho}_2(x^+,\mathbf{x}_\perp) \\ 
 	& \approx g \delta^{\mu}_+ \delta(x^-) \tilde{\rho}_1(\mathbf{x}_\perp) + g \delta^{\mu}_- \delta(x^+) \tilde{\rho}_2(\mathbf{x}_\perp)
 \end{split}
 \end{equation}
 
-For the purpose of solving the Yang-Mills equations, spacetime is divided into four quadrants in $(x^+,x^-)$ space,  as illustrated in Fig. \ref{fig:space_partition}. Quadrants 1 and 2 are named the pre-collision quadrants, while quadrant 3 is referred to as the forward light-cone. For calculations in the third quadrant, the Bjorken/Milne/Comoving coordinate system is used, where positions and four vetors are given by:
+For the purpose of solving the Yang-Mills equations, spacetime is divided into four quadrants in $(x^+,x^-)$ space,  as illustrated in Fig. \ref{fig:space_partition}. Quadrants 1 and 2 are named the pre-collision quadrants, while quadrant 3 is referred to as the forward light-cone. For calculations in the third quadrant, the Bjorken/Milne/Comoving coordinate system is used, where positions and four-vectors are given by:
 \begin{subequations}
 \begin{gather}
 	\tau = \sqrt{2x^+x^-} \\
@@ -512,39 +516,48 @@ For the purpose of solving the Yang-Mills equations, spacetime is divided into f
 \begin{subequations}
 \begin{align}
 A^\tau & = \frac{x^- A^+ + x^+ A^-}{\tau} \\
-A^\eta & = \frac{x^- A^+ - x^+ A^-}{\tau^2}
+A^\eta & = \frac{x^- A^+ - x^+ A^-}{\tau^2} \label{eq:milne_Aeta}
 \end{align}
 \end{subequations}
-and the transverse components keep their Cartesian form. $\tau$ is called the proper time and $\eta$ is called the rapidity. For a more detailed overview of the Comoving coordinates, see Appendix \ref{ap:bjorken_coordinates}.
+and the transverse components ($i=2,3$) keep their Cartesian form. $\tau$ is called the proper time and $\eta$ is called the rapidity. For a more detailed overview of the Comoving coordinates, see Appendix \ref{ap:bjorken_coordinates}.
 
-Drawing future light-cones out from points where the color currents pass in $(x^+,x^-)$ space, one notices that all points in quadrant 1 may not be affected by the $J_2$ current, due to causality; in the same manner, all points in quadrant 2 may not be affected by current $J_1$. Only points in quadrant 3 are causally related to both currents (Fig. \ref{fig:current_light-cones}). Following \cite{Albacete_2019}'s approach, this permits the ``single-nuclei" results of the previous section to be used for the gluon fields in quadrants 1 and 2. Even though they were obtained using different gauge conditions ($A^+ = 0$ for the first nucleus and $A^- = 0$ for the second nucleus), the result in Eqs. (\ref{eq:A_lc_one_nucleus}) and (\ref{eq:A^i_factorization}) can be used for the fields in quadrant 1 and the result in Eqs. (\ref{eq:A_lc_one_nucleus_2}) can be used for the fields in quadrant 2, since those regions are not causally related. This time, the Fock-Schwinger gauge is chosen, defined by the gauge condition:
+Drawing future light-cones out from points where the color currents pass in $(x^+,x^-)$ space, one notices that all points in quadrant 1 may not be affected by the $J_2$ current, due to causality; in the same manner, all points in quadrant 2 may not be affected by current $J_1$. Only points in quadrant 3 are causally related to both currents (Fig. \ref{fig:current_light-cones}). Following \cite{Albacete_2019}'s approach, this permits the ``single-nuclei" results of the previous section to be used for the gluon fields in quadrants 1 and 2, reducing the problem to solving the Yang-Mills equations in the third quadrant. Even though they were obtained using different gauge conditions ($A^+ = 0$ for the first nucleus and $A^- = 0$ for the second nucleus), the result in Eqs. (\ref{eq:A_lc_one_nucleus}) and (\ref{eq:A^i_factorization}) can be used for the fields in quadrant 1 and the result in Eqs. (\ref{eq:A_lc_one_nucleus_2}) can be used for the fields in quadrant 2, since those regions are not causally related. In solving the Yang Mills equations for the case of two nuclei, the Fock-Schwinger gauge is chosen, defined by the axial gauge condition:
 \begin{equation}
 	x^+ A^- + x^- A^+ = 0 ~ \Leftrightarrow ~ A^\tau = 0
 \end{equation}
-which is obeyed by the solution built for quadrants 1 and 2. For the interior of quadrant 3, this gauge choice requires $A^+$ and $A^-$ to be related as:
+which is obeyed by the solutions built for quadrants 1 and 2. Moving on to quadrant 3, in its interior, this gauge choice requires $A^+$ and $A^-$ to be related as:
 \begin{equation}
 	A^- = -\frac{x^-}{x^+} A^+ 
 \end{equation}
-Therefore, we may define an $\alpha$ field as:
+which suggests the definition of an $\alpha$ field as:
 \begin{equation}
 	A^+ \equiv x^+ \alpha \implies A^- = - x^- \alpha
 \end{equation}
+Inserting these definitions in Eq. (\ref{eq:milne_Aeta}), the $\alpha$ field can be shown to be equal to $A^\eta$.
 
-\textcolor{red}{Attention: \citep{Kovner_1995} initially posits that $A^+$ and $A^-$ are different}
-\begin{equation}
-\begin{split}
-A^+ (x^\mu) &= \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} x^+ \alpha (\tau, \mathbf{x}_\perp)\\
-A^- (x^\mu) &= - \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} x^- \alpha (\tau, \mathbf{x}_\perp) \\
-A^{i}(x^\mu) &= \underbrace{\theta (-x^+) \theta(x^-)}_{\Circled{1}} \alpha^i_1 (\mathbf{x}_\perp)
+Following the ansatz first proposed in \cite{Kovner_1995}, the $\alpha$ field and the transverse fields of the third quadrant, $\alpha^i$, are taken not to depend on $\eta$. This is so that the form of the solution in the third quadrant is not altered by applying a boost to the studied system along the direction of motion of the two nuclei, since the system is invariant under boosts along the $x^1$ axis. For any boost applied, the two nuclei will keep moving at the speed of light, making the boosted system indistinguishable from the original and requiring a solution of the same form. Compiling all the information gathered so far regarding the form of the solution,
+\begin{subequations}
+\begin{alignat}{2}
+& A^+ (x^\mu) &&= \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} x^+ \alpha (\tau, \mathbf{x}_\perp)\\
+& A^- (x^\mu) &&= - \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} x^- \alpha (\tau, \mathbf{x}_\perp) \\
+& A^{i}(x^\mu) &&= \underbrace{\theta (-x^+) \theta(x^-)}_{\Circled{1}} \alpha^i_1 (\mathbf{x}_\perp)
  + \underbrace{\theta (x^+) \theta(-x^-)}_{\Circled{2}} \alpha^i_2 (\mathbf{x}_\perp)
  + \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} \alpha^i (\tau, \mathbf{x}_\perp)
-\end{split}
+\end{alignat}
+\label{eq:ansatz}
+\end{subequations}
+%\textcolor{red}{Attention: \citep{Kovner_1995} initially posits that $A^+$ and $A^-$ are different}
+For the third quadrant (terms underbraced with `3'), applying such a boost as described leaves the form of the solution unchanged, as $\tau$ and $\mathbf{x}_\perp$ are invariant under it. \textcolor{purple}{Specify why the $A^+$ and $A^-$ terms are invariant?}
+
+In the interior of the third quadrant, the currents $J_1^\mu$ and $J_2^\mu$ have no support, and the Yang-Mills equations take the form:
+\begin{equation}
+	[D_\mu, F^{\mu\nu}] = 0
 \end{equation}
 
-
-\textcolor{red}{As for the resolution of the Yang-Mills equations in quadrant 3,} it is possible to obtain, out of the already-found fields in the pre-collision quadrants, boundary conditions along the edges of the forward light-cone. A detailed derivation of these boundary conditions may be found in \cite[Appendix C]{Carrington_2022_Energy_Momentum_Tensor}. They are obtained by first considering that the longitudinal width of the sources is finite and greater than 0, rather than infinitely thin as in Eq. (2.32), then integrating the Yang-Mills equations over a path (Eq. (\ref{eq:boundary_alpha})) and an area (Eq. (\ref{eq:boundary_transverse}
-)) which cross the light-cone, and finally taking the limit where the width goes to zero. They are:
+%Before moving on to their treatment, a discussion of the boundary conditions to be used to connect the solution in the forward light-cone with the already-found solutions in the pre-collision quadrants is in order. It is possible to obtain, out of the already-found fields in the pre-collision quadrants, boundary conditions along the edges of the forward light-cone. A detailed derivation of these boundary conditions may be found in \cite[Appendix C]{Carrington_2022_Energy_Momentum_Tensor}. They are obtained by first considering that the longitudinal width of the sources is finite and greater than 0, rather than infinitely thin as in Eq. (2.32), then integrating the Yang-Mills equations over a path (Eq. (\ref{eq:boundary_alpha})) and an area (Eq. (\ref{eq:boundary_transverse})) which cross the light-cone, and finally taking the limit where the width goes to zero. They are:
+Before moving on to their treatment, a discussion of the boundary conditions to be used to connect the solution in the forward light-cone with the already-found solutions in the pre-collision quadrants is in order. It is possible to obtain, out of the already-found fields in the pre-collision quadrants, starting values for the fields in the forward light-cone at $\tau = 0$. A detailed derivation of these boundary conditions may be found in \cite[Appendix C]{Carrington_2022_Energy_Momentum_Tensor}. They are obtained by first considering that the longitudinal width of the sources is finite and greater than 0, rather than infinitely thin as in Eq. (\ref{eq:thin_rho}), then integrating the Yang-Mills equations over a path (Eq. (\ref{eq:boundary_alpha})) and an area (Eq. (\ref{eq:boundary_transverse})) which cross the light-cone, and finally taking the limit where the width of the sources goes to zero. They are:
 \begin{subequations}
+\label{eq:boundary_conditions}
 \begin{align}
 	\alpha(0, \mathbf{x}_\perp) & = -\frac{ig}{2} \left[ \alpha_1^i(\mathbf{x}_\perp), \alpha_2^i(\mathbf{x}_\perp) \right]
 	\label{eq:boundary_alpha} \\
@@ -553,13 +566,81 @@ A^{i}(x^\mu) &= \underbrace{\theta (-x^+) \theta(x^-)}_{\Circled{1}} \alpha^i_1 
 \end{align}
 \end{subequations}
 
-For the two-nuclei case, the Fock-Schwinger gauge is chosen. In light-cone coordinates, its gauge condition is Eq. (\ref{eq:fock_schwinger_lc}). More compactly, in the Bjorken, Milne or comoving coordinate system \textcolor{red}{(introduce)}, the gauge condition is equivalent to Eq. (\ref{eq:fock_schwinger_comoving}):
+Moving on to the treatment of the Yang-Mills equations, defining $Y^\nu = [D_\mu, F^{\mu\nu}]$, the $\tau$ and $\eta$ components of the system of equations in comoving coordinates may be obtained out of the $+$ and $-$ components in light-cone coordinates as:
 \begin{subequations}
 \begin{gather}
-x^+ A^- + x^- A^+ = 0 \label{eq:fock_schwinger_lc}\\
-A^\tau = 0 \label{eq:fock_schwinger_comoving}
+	Y^\tau = 0 ~ \Leftrightarrow ~ \frac{x^- Y^+ + x^+ Y^-}{\tau} = 0 \\
+	Y^\eta = 0 ~ \Leftrightarrow ~ \frac{x^- Y^+ - x^+ Y^-}{\tau^2} = 0
 \end{gather}
 \end{subequations}
+and the $\nu = 2,3$ components keep their cartesian form.
+
+Inserting Eq. (\ref{eq:ansatz}) into the Yang-Mills equations in comoving coordinates returns:
+\begin{subequations}
+\begin{align}
+	& Y^\tau = 0 \quad \Leftrightarrow \quad ig\tau \left[\alpha, \partial_\tau \alpha \right] - \frac{1}{\tau} \left[D^i, \partial_\tau \alpha^i \right] = 0 \\
+	& Y^\eta = 0 \quad \Leftrightarrow \quad \frac{1}{\tau} \partial_\tau \left( \frac{1}{\tau} \partial_\tau \left( \tau^2 \alpha \right) \right) - \left[D^i, \left[D^i, \alpha \right] \right] = 0 \\
+	& Y^j = 0 \quad \Leftrightarrow \quad \frac{1}{\tau} \partial_\tau \left( \tau \partial_\tau \alpha^j \right) - ig\tau^2 \left[\alpha, \left[D^j,\alpha \right] \right] - [D^i, F^{ij}] = 0
+\end{align}
+\end{subequations}
+where $i,j=2,3$. \textcolor{purple}{And it doesn't look very friendly.}
+
+These equations have no known analytical solution, but have been studied numerically (\textcolor{purple}{say more}) and analytically via approximations (\textcolor{purple}{say more}). In this work, the approximation that will allow the analytical treatment of the equations is their linearization; that is, the neglect of second or higher order terms in the fields, which was first done in \cite{}. This  will naturally do away with gauge invariance, as the value of the neglected terms changes according to the used gauge. Therefore, one must choose the proper gauge, which minimizes the influence of these terms, before linearizing the equations. Two criteria are put forward in \cite{Guerrero_Rodr_guez_2021}: keeping the result independent of $\eta$ suggests that the gauge transformation matrix should be independent of $\eta$ as well; additionally, since there are no color charge sources in the interior of the forward light-cone that would generate a static Coulomb field,
+the Fock-Schwinger gauge condition ($A^\tau = 0$) is maintained \textcolor{purple}{(why?)}, which can be achieved by requiring the gauge transformation to be independent of $\tau$. Thus, the inverse gauge transformation is:
+\begin{subequations}
+\begin{gather}
+	\alpha(\tau,\mathbf{x}_\perp) = U (\mathbf{x}_\perp) \beta(\tau,\mathbf{x}_\perp) U^\dagger (\mathbf{x}_\perp) \\
+	\alpha^i(\tau,\mathbf{x}_\perp) = U (\mathbf{x}_\perp) \left( \beta(\tau,\mathbf{x}_\perp) - \frac{1}{ig} \partial^i \right) U^\dagger (\mathbf{x}_\perp)
+\end{gather}
+\end{subequations}
+which makes the linearized Yang-Mills equations for the fields in the new gauge, \textcolor{purple}{CHECK}
+\begin{subequations}
+\begin{gather}
+	\partial_\tau \partial_i* \beta^i = 0 \\
+	\frac{1}{\tau} \partial_\tau \left( \frac{1}{\tau} \partial_\tau \left( \tau^2 \beta \right) \right) - \partial_i* \partial^i \beta = 0 \\
+	\frac{1}{\tau} \partial_\tau \left( \tau \partial_\tau \beta^i \right) - \left( \partial^k \partial_k* \delta^{i j} - \partial^i \partial^j \right) \beta^j =0
+\end{gather}
+\end{subequations}
+where $k=2,3$. (\textcolor{purple}{different signs in 1808 and 2102})
+
+The remaining gauge freedom allows setting $\partial_i \beta^i = 0$ (\textcolor{purple}{minimizes the amplitudes of the transverse fields?}), because of which this will be called the Coulomb gauge. The equations become:
+\begin{subequations}
+\begin{gather}
+	\partial_\tau \left( \frac{1}{\tau} \partial_\tau \left( \tau^2 \beta \right) \right) - \tau \partial_i * \partial^i \beta = 0 \\
+	\partial_\tau \left( \tau \partial_\tau \beta^i \right) - \tau \partial^k \partial_k * \beta^i =0
+\end{gather}
+\end{subequations}
+
+Taking the transverse position Fourier transform on both sides,
+\begin{subequations}
+\begin{gather}
+	\beta (\tau, \mathbf{x}_\perp) = \iint \frac{\diff^2 \mathbf{k}_\perp}{(2\pi)^2} ~ e^{i (k_\perp)^j (x_\perp)_j} \tilde{\beta} (\tau, \mathbf{k}_\perp) \\
+	\beta^i (\tau, \mathbf{x}_\perp) = \iint \frac{\diff^2 \mathbf{k}_\perp}{(2\pi)^2} ~ e^{i (k_\perp)^j (x_\perp)_j} \tilde{\beta}^i (\tau, \mathbf{k}_\perp)
+\end{gather}
+\end{subequations}
+the equations for $\tilde{\beta}$ and $\tilde{\beta}^i$ are:
+\begin{subequations}
+\begin{gather}
+	\tau^2 \partial_\tau^2 \big(\tau \tilde{\beta}\big) + \tau \partial_\tau \big(\tau \tilde{\beta}\big) + \big(\textcolor{red}{-}\tau^2 |\mathbf{k}_\perp|^2 - 1\big) \big(\tau \tilde{\beta}\big) = 0  \label{eq:bessel_beta}\\ 
+	\tau^2 \partial_\tau^2 \tilde{\beta}^i + \tau \partial_\tau \tilde{\beta}^i \textcolor{red}{-} \tau^2 |\mathbf{k}_\perp|^2  \tilde{\beta}^i =0 \label{eq:bessel_beta_i}
+\end{gather}
+\end{subequations}
+In order to simplify the expressions, $\omega$ is defined as $\omega \equiv |\mathbf{k}_\perp| $.
+
+Once the change of variable $z=\omega \tau$ is made, Eq. (\ref{eq:bessel_beta}) is a Bessel differential equation of degree 1 for the function $\tau \tilde{\beta}$. It admits as solutions linear combinations of the Bessel functions of order 1 of the first and second kind, $J_1(\omega \tau)$ and $Y_1(\omega \tau)$. Similarly, after the same change of variable, Eq. (\ref{eq:bessel_beta_i}) is a Bessel differential equation of degree 0 for the function $\tilde{\beta}^i$, which admits as solutions linear combinations of the Bessel functions of order 0 of the first and second kind, $J_0(\omega \tau)$ and $Y_0(\omega \tau)$. \cite{arfken2005mathematical} As the Bessel functions of the second kind, $Y_n$, are singular at the origin for integer $n$, they are taken as unphysical solutions and their coefficients are set to $0$. 
+
+The solution is, then,
+\begin{subequations}
+\begin{align}
+	\tilde{\beta} (\tau, \mathbf{k}_\perp) &= \beta_0 (\mathbf{k}_\perp) \frac{2 J_1(\omega \tau)}{\omega \tau} \label{eq:beta_tilde}\\
+	\tilde{\beta}^i (\tau, \mathbf{k}_\perp) &= \beta^i_0 (\mathbf{k}_\perp) J_0(\omega \tau)
+\end{align}
+\end{subequations}
+where the factor of $2$ in Eq. (\ref{eq:beta_tilde}) was introduced in order to make the $\mathbf{k}_\perp$-dependent coefficient, $\beta_0$, match the value of $\tilde{\beta}$ at $\tau=0$, since $\lim_{z \to 0} J_1(z)/z=1/2$. \cite{arfken2005mathematical}
+
+In wanting to find the expressions for the fields at $\tau = 0$ ($\beta_0$ and $\beta^i_0$), the next step would be to use the boundary conditions of Eqs. \ref{eq:boundary_conditions}, which would require first bringing the pre-collision potentials, $\alpha^i_1$ and $\alpha^i_2$, to the Coulomb gauge. However, no analytical expression for the necessary transformation matrix $U(\mathbf{x}_\perp)$ has been found. In spite of this, a numerical treatment of this problem has found that the resolution of the linearized equations with numerically-computed boundary conditions in the Coulomb gauge approximate the resolution of the full Yang-Mills equations quite well \cite{} \textcolor{purple}{(read paper, quantify similarity)}, except for very soft modes (very low $|\mathbf{k}_\perp|$). \textcolor{purple}{(quantify)}
+
+One way to go around this problem is to recall that the necessary, physical result needed to compute quantities with physical meaning are the Chromodynamic force fields, the Electric Chromodynamic field, $\mathbf{E}$, and the Magnetic Chromodynamic field, $\mathbf{B}$, which are gauge-invariant. 
 
 ----------------------
 
