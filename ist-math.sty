@@ -1,0 +1,137 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IST-Math                                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ist-math}[2024/03/08 v0.1 Math mode configurations and macros]
+
+%-------------------------------------------------------------------------------
+% Class options
+%-------------------------------------------------------------------------------
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{family=istmath, prefix=istmath@}
+
+\DeclareBoolOption[false]{sectionedequations}
+
+\ProcessKeyvalOptions*
+
+%-------------------------------------------------------------------------------
+% Math Packages
+%-------------------------------------------------------------------------------
+\RequirePackage{mathtools}
+
+\RequirePackage{ist-texver}
+\ifxetexorluatex
+    \RequirePackage[bold-style=ISO, warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+
+    \setmathfont{Latin Modern Math}
+    \setmathfont{Latin Modern Math}[version=bold, FakeBold={1.5}]
+\else
+    \RequirePackage{amssymb}
+\fi
+
+\RequirePackage{nicefrac}
+
+\RequirePackage{fixdif,derivative}
+\newdif*{\D}{\mathcal{D}}
+
+\RequirePackage{slashed}
+
+\RequirePackage{cancel}
+
+\RequirePackage{siunitx}
+\DeclareSIUnit{\sigma}{\sigma}
+
+\RequirePackage{physics2}
+\usephysicsmodule{ab}
+\usephysicsmodule{ab.legacy}
+\usephysicsmodule{ab.braket}
+\usephysicsmodule{op.legacy}
+
+%-------------------------------------------------------------------------------
+% Equation Numbers
+%-------------------------------------------------------------------------------
+\ifistmath@sectionedequations
+  \numberwithin{equation}{section}
+\fi
+
+%-------------------------------------------------------------------------------
+% Bold math
+%-------------------------------------------------------------------------------
+\ifxetexorluatex
+    \newcommand*{\bm}[1]{\symbfit{#1}}
+\else
+    \RequirePackage{bm}
+    \AtBeginDocument{\let\mathbf\bm}
+\fi
+\g@addto@macro\bfseries{\boldmath}
+
+%-------------------------------------------------------------------------------
+% Vectors
+%-------------------------------------------------------------------------------
+\renewcommand*{\vec}[1]{\Umathaccent 0 2 "20D7 {#1}}
+\newcommand*{\cev}[1]{\Umathaccent 0 2 "20D6 {#1}}
+
+\newcommand*{\istmath@vectorargsloop}[1]{#1\\}
+\DeclareDocumentCommand{\vector}{ >{ \SplitList {,} } m }{%
+    {\begin{pmatrix}\ProcessList{#1}{\istmath@vectorargsloop}\end{pmatrix}}%
+}
+
+\newcommand*{\istmath@vectortargsloopst}[1]{#1\let\istmath@vectortargsloop\istmath@vectortargsloopnd}
+\newcommand*{\istmath@vectortargsloopnd}[1]{&#1\let\istmath@vectortargsloop\istmath@vectortargsloopnd}
+\DeclareDocumentCommand{\vectort}{ >{ \SplitList {,} } m }{%
+    \let\istmath@vectortargsloop\istmath@vectortargsloopst%
+    {\begin{pmatrix}\ProcessList{#1}{\istmath@vectortargsloop}\end{pmatrix}}%
+}
+
+\newcommand*{\twovector}[2]{\vector{#1,#2}}
+\newcommand*{\twovectort}[2]{\vector{#1,#2}}
+
+%-------------------------------------------------------------------------------
+% Widebar
+%-------------------------------------------------------------------------------
+\DeclareDocumentCommand{\widebar}{m}{%
+    \mkern+2.5mu\overline{\mkern-2.5mu#1\mkern+1.0mu}\mkern-1.0mu{\vphantom{\overline{#1}}}%
+}
+
+%-------------------------------------------------------------------------------
+% Matrices
+%-------------------------------------------------------------------------------
+\DeclareDocumentCommand{\trans}{}{T}
+
+%-------------------------------------------------------------------------------
+% Trigonometry
+%-------------------------------------------------------------------------------
+\let\sin\undefined
+\DeclareMathOperator{\sin}{sin\vphantom{i}}
+\let\asin\undefined
+\DeclareMathOperator{\asin}{asin\vphantom{i}}
+
+\let\sinh\undefined
+\DeclareMathOperator{\sinh}{sinh\vphantom{i}}
+\let\asinh\undefined
+\DeclareMathOperator{\asinh}{asinh\vphantom{i}}
+
+\let\cos\undefined
+\DeclareMathOperator{\cos}{cos\vphantom{i}}
+\let\acos\undefined
+\DeclareMathOperator{\acos}{acos\vphantom{i}}
+
+\let\cosh\undefined
+\DeclareMathOperator{\cosh}{cosh\vphantom{i}}
+\let\acosh\undefined
+\DeclareMathOperator{\acosh}{acosh\vphantom{i}}
+
+\let\tan\undefined
+\DeclareMathOperator{\tan}{tan\vphantom{i}}
+\let\atan\undefined
+\DeclareMathOperator{\atan}{atan\vphantom{i}}
+
+\let\tanh\undefined
+\DeclareMathOperator{\tanh}{tanh\vphantom{i}}
+\let\atanh\undefined
+\DeclareMathOperator{\atanh}{atanh\vphantom{i}}
+
+%-------------------------------------------------------------------------------
+% Other configurations
+%-------------------------------------------------------------------------------
+\allowdisplaybreaks[1]

@@ -1,0 +1,373 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IST-Ref                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ist-bib}[2024/03/08 v0.1 Bibliographies]
+
+%-------------------------------------------------------------------------------
+% Class options
+%-------------------------------------------------------------------------------
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{family=istbib, prefix=istbib@}
+
+\DeclareStringOption[numeric-comp]{bibstyle}
+\newcommand*{\istbib@apa}{apa}
+
+\DeclareStringOption{compactbib}[subtle]
+
+\DeclareBoolOption[false]{loadhyperref}
+
+\DeclareBoolOption[false]{nobibtitle}
+\DeclareBoolOption[false]{smallbibfont}
+\DeclareBoolOption[false]{nobibitemsep}
+
+\DeclareBoolOption[false]{sloppybib}
+
+\DeclareBoolOption[false]{arxivcite}
+
+\ProcessKeyvalOptions*
+
+%-------------------------------------------------------------------------------
+% Hyperref
+%-------------------------------------------------------------------------------
+\ifistbib@loadhyperref
+    \RequirePackage[
+        pdfencoding=auto, psdextra,
+        linktoc=all,
+        hidelinks,
+        breaklinks=true
+    ]{hyperref}
+\fi
+
+%-------------------------------------------------------------------------------
+% Bibliography
+%-------------------------------------------------------------------------------
+% ----- compactbib option -----
+\ifx\istbib@compactbib\@empty
+\else
+    \istbib@nobibtitletrue
+    \istbib@smallbibfonttrue
+    \istbib@nobibitemseptrue
+
+    \PassOptionsToPackage{
+        giveninits=true,
+        maxbibnames=1,
+        isbn=false, url=false, doi=false, eprint=false, related=false,
+    }{biblatex}
+\fi
+
+% ----- Packages -----
+\ifx\istbib@bibstyle\istbib@apa
+\else
+    % Not sure what this is, but it's necessary for collaboration to work
+    \PassOptionsToPackage{datamodel=hep-bibliography}{biblatex}
+\fi
+
+\RequirePackage[
+    backend=biber,
+    style=\istbib@bibstyle,
+    sorting=none,
+]{biblatex}
+
+\RequirePackage{csquotes}
+
+% ----- Sorting -----
+\providecommand{\DeclareSortingTemplate}{\DeclareSortingScheme}
+
+\DeclareSourcemap{
+    \maps[datatype=bibtex]{
+        % ----- Material from journals, magazines & newspapers -----
+        \map{
+            \pertype{article} % journal, magazine or newspaper article
+            \pertype{periodical} % whole issue of a periodical
+            \pertype{suppperiodical} % supplemental material in periodical
+            \step[fieldset=entrytype, fieldvalue=1]
+        }
+        % ----- Material from single-authored or co-authored books -----
+        \map{
+            \pertype{inbook} % book part with own title
+            \pertype{suppbook} % supplemental material in book
+            \pertype{bookinbook} % originally published as standalone book
+            \pertype{book} % single-volume book by author(s) of whole
+            \pertype{mvbook} % multi-volume book
+            \step[fieldset=entrytype, fieldvalue=2]
+        }
+        % ----- Material from edited anthologies -----
+        \map{
+            \pertype{incollection} % contribution to anthology
+            \pertype{suppcollection} % supplemental material in anthology
+            \pertype{collection} % single-volume edited anthology
+            \pertype{mvcollection} % multi-volume collection
+            \step[fieldset=entrytype, fieldvalue=3]
+        }
+        % ----- Material from conference proceedings -----
+        \map{
+            \pertype{inproceedings} % article in conference proceedings
+            \pertype{proceedings} % single-volume conference proceedings
+            \pertype{mvproceedings} % multi-volume conference proceedings
+            \step[fieldset=entrytype, fieldvalue=4]
+        }
+        % ----- Material from works of reference -----
+        \map{
+            \pertype{inreference} % article in a reference work
+            \pertype{reference} % single-volume work of reference
+            \pertype{mvreference} % multi-volume reference work
+            \step[fieldset=entrytype, fieldvalue=5]
+        }
+        % ----- Material from technical & institutional publications -----
+        \map{
+            \pertype{manual} % technical or other documentation
+            \pertype{report} % institutional report or white paper
+            \pertype{patent} % patent or patent request
+            \pertype{thesis} % work completed to fulfil degree requirement
+            \step[fieldset=entrytype, fieldvalue=6]
+        }
+        % ----- Material from online, informal & other sources -----
+        \map{
+            \pertype{online} % inherently online source
+            \pertype{booklet} % informally published book
+            \pertype{unpublished} % work not formally published
+            \pertype{misc} % last resort (check manual first!)
+            \step[fieldset=entrytype, fieldvalue=7]
+        }
+        % ----- Special entries for database management -----
+        \map{
+            \pertype{set} % (static) entry ‘set’
+            \pertype{xdata} % data-container (cannot be cited)
+            \step[fieldset=entrytype, fieldvalue=9999]
+        }
+    }
+}
+
+\DeclareSortingTemplate{ist-bibliography}{
+  \sort{
+    \field{presort}
+  }
+  \sort[final]{
+    \field{sortkey}
+  }
+  \sort{
+      \citeorder
+  }
+  \sort{
+      \field{sortyear}
+      \field{year}
+      \literal{9999}
+  }
+  \sort{
+      \field{month}
+  }
+  \sort{
+      \field{eprint}
+      \field{doi}
+  }
+  \sort{
+      \field{sortname}
+      \field{author}
+      \field{editor}
+      \field{translator}
+      \field{sorttitle}
+      \field{title}
+  }
+  \sort{
+      \field{sorttitle}
+      \field{title}
+  }
+  \sort{
+      \field{subtitle}
+  }
+  \sort{
+      \field{volume}
+      \literal{0}
+  }
+}
+
+\DeclareSortingTemplate{ist-arxivcite}{
+  \sort{
+    \field{presort}
+  }
+  \sort[final]{
+    \field{sortkey}
+  }
+  \sort{
+    \field{entrytype}
+  }
+  \sort{
+      \field{sortyear}
+      \field{year}
+      \literal{9999}
+  }
+  \sort{
+      \field{month}
+  }
+  \sort{
+      \field{eprint}
+      \field{doi}
+  }
+  \sort{
+      \field{sortname}
+      \field{author}
+      \field{editor}
+      \field{translator}
+      \field{sorttitle}
+      \field{title}
+  }
+  \sort{
+      \field{sorttitle}
+      \field{title}
+  }
+  \sort{
+      \field{subtitle}
+  }
+  \sort{
+      \field{volume}
+      \literal{0}
+  }
+}
+
+\ExecuteBibliographyOptions{sorting=ist-bibliography}
+
+% ----- Fixes -----
+\renewbibmacro*{in:}{%
+  \iffieldundef{journaltitle}{}{\printtext{\bibstring{in}\intitlepunct}}%
+}
+
+% ----- Collaboration -----
+\DeclareSourcemap{%
+    \maps[datatype=bibtex, overwrite=true]{%
+        \map{%
+            \step[fieldsource=Collaboration, final=true]%
+            \step[fieldset=collaboration, origfieldval, final=true]
+        }%
+        \map{%
+            \step[fieldsource=reportNumber, final=true]%
+            \step[fieldset=reportnumber, origfieldval, final=true]
+        }%
+    }%
+}
+
+\providecommand{\letbibmacro}[2]{\csletcs{abx@macro@#1}{abx@macro@#2}}
+\renewbibmacro*{author/translator+others}{%
+    \ifboolexpr{
+        test \ifuseauthor and (
+            not test {\ifnameundef{author}} or
+            not test {\iffieldundef{collaboration}}
+        )
+    }
+    {\usebibmacro{author}}
+    {\usebibmacro{translator+others}}
+}
+
+\letbibmacro{istbib@author}{author}
+\renewbibmacro*{author}{%
+    \iffieldundef{collaboration}%
+                 {\usebibmacro{istbib@author}}%
+                 {\textit{\printfield{collaboration}}}%
+}
+
+% ----- ePrint -----
+\newcommand*{\istbib@online}[2]{\href{#1}{\nolinkurl{#2}}}
+\NewDocumentCommand{\istbib@eprint}{smm}{%
+    \DeclareFieldFormat{eprint:#2}{%
+        \newcommand*{\@path}{\IfBooleanT{#1}{\thefield{eprintclass}/}##1}%
+        #2\addcolon\space\istbib@online{#3/\@path}{\@path}%
+  }%
+}
+
+% Documents
+\istbib@eprint{CDS}{https://cds.cern.ch/record}
+\DeclareFieldAlias{eprint:cds}{eprint:CDS}
+
+% Data
+\DeclareFieldAlias{eprint:hepdata}{eprint:HEPData}
+\istbib@eprint{HEPData}{https://www.hepdata.net/record}
+
+% Code
+\istbib@eprint*{GitHub}{https://github.com}
+\DeclareFieldAlias{eprint:github}{eprint:GitHub}
+
+\istbib@eprint*{GitLab}{https://gitlab.com}
+\DeclareFieldAlias{eprint:gitlab}{eprint:GitLab}
+
+\istbib@eprint*{Bitbucket}{https://bitbucket.org}
+\DeclareFieldAlias{eprint:bitbucket}{eprint:Bitbucket}
+
+\istbib@eprint{Launchpad}{https://launchpad.net}
+\DeclareFieldAlias{eprint:launchpad}{eprint:Launchpad}
+
+\istbib@eprint{SourceForge}{https://sourceforge.net/projects}
+\DeclareFieldAlias{eprint:sourceforge}{eprint:SourceForge}
+
+\DeclareFieldFormat{eprint:hepforge}{HEPForge\addcolon\space\istbib@online{https://#1/hepforge.org}{#1}}
+\DeclareFieldAlias{eprint:HEPForge}{eprint:hepforge}
+
+\istbib@eprint{CTAN}{https://ctan.org/pkg}
+\DeclareFieldAlias{eprint:ctan}{eprint:CTAN}
+
+% ----- Other options -----
+\RequirePackage{xstring}
+\ifx\istbib@compactbib\@empty
+\else
+    \IfStrEq{\istbib@compactbib}{subtle}{
+        \ExecuteBibliographyOptions{url=true}
+        \ExecuteBibliographyOptions{doi=true}
+        \ExecuteBibliographyOptions{eprint=true}
+        \ExecuteBibliographyOptions[online]{eprint=true}
+        \ExecuteBibliographyOptions[thesis]{url=true}
+    }{}
+
+    \DeclareSourcemap{
+        \maps[datatype=bibtex]{
+            \map[overwrite]{
+                \step[fieldsource=doi, final]
+                \step[fieldset=url, null]
+                \step[fieldset=eprint, null]
+            }
+        }
+    }
+\fi
+
+\ifistbib@nobibtitle
+    \AtEveryBibitem{\clearfield{title}}
+\fi
+
+\ifistbib@smallbibfont
+    \renewcommand*{\bibfont}{\small}
+\fi
+
+\ifistbib@nobibitemsep
+    \setlength{\bibitemsep}{0pt}
+\fi
+
+\ifistbib@sloppybib
+    \let\istbib@printbibliography\printbibliography
+    \renewcommand*{\printbibliography}{{\sloppy\istbib@printbibliography}}
+\fi
+
+\ifistbib@arxivcite
+    \DeclareFieldFormat{labelnumberwidth}{}
+
+    \DeclareSourcemap{
+        \maps[datatype=bibtex, overwrite=false]{
+            \map{
+                \step[fieldsource=eprint, final]
+                \step[fieldset=shorthand, origfieldval]
+            }
+            \map{
+                \step[fieldsource=title, final]
+                \step[fieldset=shorthand, origfieldval]
+            }
+        }
+    }
+
+    \ExecuteBibliographyOptions{sorting=ist-arxivcite}
+
+    \renewcommand{\cite}[1]{\scriptsize\normalfont\autocite{#1}}
+\fi
+
+%-------------------------------------------------------------------------------
+% Portuguese Support
+%-------------------------------------------------------------------------------
+\ifx\istbib@bibstyle\istbib@apa
+    \DeclareLanguageMapping{portuges}{portuguese-apa}
+\fi

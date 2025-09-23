@@ -1,0 +1,174 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preamble                                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \DocumentMetadata{}
+\documentclass[showoverfull]{istthesis}
+
+%-------------------------------------------------------------------------------
+% Packages and such
+%-------------------------------------------------------------------------------
+\usepackage{dsfont}
+
+\usepackage{circledsteps}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+%-------------------------------------------------------------------------------
+% Metadata
+%-------------------------------------------------------------------------------
+\title{Glasma Role in Jet Quenching Effects}
+\author{José Soares Trindade Nunes dos Santos}
+
+\course{Engineering Physics}
+\subject{Particle Physics}
+\keywordsen{Heavy Neutral Leptons, Type I Seesaw Mechanism, Future Circular Collider, Long-lived Particles}
+\keywordspt{Leptões Neutros Pesados, Mecanismo \foreign[english]{Seesaw} Tipo I, Futuro Colisor de Partículas, Partículas de Vida Longa}
+
+\university{\href{https://www.ulisboa.pt}{Universidade de Lisboa}}
+\faculty{\href{http://tecnico.ulisboa.pt}{Instituto Superior Técnico}}
+\facultylogo{figures/IST_A_CMYK_POS}
+\department{\href{http://department.university.com}{Departamento de Física}}
+\group{\href{http://cftp.ist.utl.pt}{Centro de Física Teórica de Partículas}}
+
+\supervisor{Doctor Liliana Apolinário }
+\supervisortwo{Doctor Pablo Guerrero Rodriguez}
+\chairperson{A}
+\membercommittee{B}
+\membercommitteetwo{C}
+
+\date{November 2025}
+
+\coverimage{figures/coverimage}
+
+%-------------------------------------------------------------------------------
+% PGF/TikZ Stack
+%-------------------------------------------------------------------------------
+\datadir{data}
+\tikzdir{graphics}
+\figuresdir{figures}
+
+%-------------------------------------------------------------------------------
+% Bibliography and Glossary
+%-------------------------------------------------------------------------------
+\addbibresource{bibliography.bib}
+\input{glossary.tex}
+
+%-------------------------------------------------------------------------------
+% Comments
+%-------------------------------------------------------------------------------
+\usepackage{xcolor}
+%\NewDocumentCommand{\comment}{O{magenta}m}{\textcolor{#1}{#2}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document                                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%-------------------------------------------------------------------------------
+% Cover page
+%-------------------------------------------------------------------------------
+\pagenumbering{alph}
+\maketitle
+
+%-------------------------------------------------------------------------------
+% Prefix
+%-------------------------------------------------------------------------------
+\pagenumbering{roman}
+\glsunsetall
+
+% Dedication page
+\dedication{P'la açorda}
+
+% Declaration page
+\declaration
+
+% Acknowledgments
+\chapter*{\acknowledgments}\addcontentsline{toc}{chapter}{\acknowledgments}
+\input{prefix/acknowledgements}
+\cleardoublepage
+
+% Abstract
+\chapter*{\abstractpt}\addcontentsline{toc}{chapter}{\abstractpt}
+\begin{portuguese}
+    % \glsresetall%
+    \input{prefix/abstract-pt}
+    % \glsunsetall%
+    \\\\
+    \noindent{\Large\bfseries Palavras-chave:} \thekeywordspt
+\end{portuguese}
+\vfill\cleardoublepage
+
+\chapter*{\abstracten}\addcontentsline{toc}{chapter}{\abstracten}
+\begin{english}
+    \glsresetall%
+    \input{prefix/abstract-en}
+    \glsunsetall%
+    \\\\
+    \noindent{\Large\bfseries Keywords:} \thekeywordsen
+\end{english}
+\vfill\cleardoublepage
+
+% Table of contents
+\tableofcontents
+\cleardoublepage
+
+% List of tables
+\phantomsection\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+\cleardoublepage
+
+\phantomsection\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\cleardoublepage
+
+\phantomsection\addcontentsline{toc}{chapter}{Abbreviations}
+\printunsrtglossary[type={abbreviations}]
+\cleardoublepage
+
+% \phantomsection\addcontentsline{toc}{chapter}{Software}
+% \printunsrtglossary[type={software}]
+% \cleardoublepage
+
+%-------------------------------------------------------------------------------
+% Main Contents
+%-------------------------------------------------------------------------------
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\glsresetall
+
+\chapter{}
+%\input{content/introduction}
+\cleardoublepage
+
+\chapter{}
+\input{content/Pablo}
+\cleardoublepage
+
+\chapter{[Margaret]}
+\input{content/Margaret}
+\cleardoublepage
+
+%-------------------------------------------------------------------------------
+% Bibliography
+%-------------------------------------------------------------------------------
+\printbibliography[heading=bibintoc]
+\cleardoublepage
+
+%-------------------------------------------------------------------------------
+% Appendix
+%-------------------------------------------------------------------------------
+\appendix
+
+\chapter{Derivations}
+\input{appendix/Proofs}
+\cleardoublepage
+
+\cleardoublepage
+
+\chapter{Coordinate Systems}
+\input{appendix/Coordinate_Systems}
+\cleardoublepage
+
+\end{document}

@@ -1,0 +1,29 @@
+\section{Covariant Current Conservation}
+\label{ap:covariant_conservation}
+
+\begin{equation}
+	[D_\nu, J^\nu] = [D_\nu, [D_\mu, F^{\mu \nu}]] = 0
+	%\label{eq:covariant_conservation}
+\end{equation}
+ where the second equality may be shown by use of the Jacobi Identity:
+\begin{equation}
+\begin{split}
+	& [D_\nu, [D_\mu, F^{\mu \nu}]] = - [D_\mu, [F^{\mu \nu}, D_\nu]] - [F^{\mu \nu}, [D_\nu, D_\mu]] \\
+%	\Leftrightarrow ~ & [D_\nu, [D_\mu, F^{\mu \nu}]] = - [D_\nu, [F^{\nu \mu}, D_\mu]] - [F^{\mu \nu}, [D_\nu, D_\mu]] \\
+	\Leftrightarrow ~ & [D_\nu, [D_\mu, F^{\mu \nu}]] = - [D_\nu, [D_\mu, F^{\mu \nu}]] - ig [F^{\mu \nu}, F_{\mu \nu}]
+	\\
+	\Leftrightarrow ~ & 2 [D_\nu, [D_\mu, F^{\mu \nu}]] = 0
+\end{split}
+\end{equation}
+where, in the first step, the ``dummy" indices of the first term on the right are switched ($\mu 	\leftrightarrow \nu$) and then the antisymmetry of the anticommutator and of the field strength tensor is used; for the second step, $[D_\mu, D_\nu]$ may be shown to equal $-ig F_{\mu \nu}$:
+\begin{equation}
+\begin{split}
+	[D_\mu, D_\nu] & = [\partial_\mu - i g A_\mu, \partial_\nu - i g A_\nu] = [\partial_\mu, \partial_\nu] - ig [\partial_\mu, A_\nu] - i g [A_\mu, \partial_\nu] - g^2 [A^\mu, A^\nu] \\
+	& =  0 - ig \left( \partial_\mu A_\nu -  A_\nu \partial_\mu + A_\mu \partial_\nu  - \partial_\nu A_\mu - ig [A_\mu, A_\nu] \right) \\
+	& = -ig \left( (\partial_\mu A_\nu) - (\partial_\nu A_\mu) - ig [A_\mu, A_\nu] \right) = -ig F_{\mu\nu}
+\end{split}
+\end{equation}
+and $[F^{\mu\nu}, F_{\mu\nu}] = 0$ because, first swapping the order in the commutator and then swapping the raised and lowered indices,
+\begin{equation}
+	[F^{\mu\nu}, F_{\mu\nu}] = -[F_{\mu\nu}, F^{\mu\nu}] = - [F^{\mu\nu}, F_{\mu\nu}]
+\end{equation}

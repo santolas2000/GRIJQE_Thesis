@@ -1,0 +1,161 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IST-Ref                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ist-ref}[2024/09/08 v0.1 References]
+
+%-------------------------------------------------------------------------------
+% Hyperref
+%-------------------------------------------------------------------------------
+\RequirePackage[
+    pdfencoding=auto, psdextra,
+    linktoc=all,
+    hidelinks,
+    breaklinks=true,
+    pdfcreator={}, pdfproducer={}
+]{hyperref}
+
+%-------------------------------------------------------------------------------
+% References
+%-------------------------------------------------------------------------------
+\RequirePackage[all]{hypcap}
+
+\RequirePackage[english,capitalise,noabbrev]{cleveref}
+
+%-------------------------------------------------------------------------------
+% Portuguese Support
+%-------------------------------------------------------------------------------
+\providecommand\portuguese@loaded{}
+\providecommand\english@loaded{}
+
+\cref@addlanguagedefs{english}{%
+    \renewcommand{\creflastconjunction}{, and\nobreakspace}
+}% end \cref@addlangagedefs
+
+\cref@addlanguagedefs{portuguese}{%
+    \renewcommand{\crefrangeconjunction}{ a\nobreakspace}%
+    \renewcommand\crefrangepreconjunction{}%
+    \renewcommand\crefrangepostconjunction{}%
+    \renewcommand{\crefpairconjunction}{ e\nobreakspace}%
+    \renewcommand{\crefmiddleconjunction}{, }%
+    \renewcommand{\creflastconjunction}{ e\nobreakspace}%
+    \renewcommand{\crefpairgroupconjunction}{ e\nobreakspace}%
+    \renewcommand{\crefmiddlegroupconjunction}{, }%
+    \renewcommand{\creflastgroupconjunction}{, e\nobreakspace}%
+    %
+    \Crefname{equation}{Equação}{Equação}%
+    \Crefname{figure}{Figura}{Figuras}%
+    \Crefname{subfigure}{Figura}{Figuras}%
+    \Crefname{table}{Tabela}{Tabelas}%
+    \Crefname{subtable}{Tabela}{Tabelas}%
+    \Crefname{page}{Página}{Páginas}%
+    \Crefname{part}{Parte}{Partes}%
+    \Crefname{chapter}{Capítulo}{Capítulos}%
+    \Crefname{section}{Secção}{Secções}%
+    \Crefname{subsection}{Secção}{Secções}%
+    \Crefname{subsubsection}{Secção}{Secções}%
+    \Crefname{appendix}{Apêndice}{Apêndices}%
+    \Crefname{subappendix}{Apêndice}{Apêndices}%
+    \Crefname{subsubappendix}{Apêndice}{Apêndices}%
+    \Crefname{subsubsubappendix}{Apêndice}{Apêndices}%
+    \Crefname{enumi}{Item}{Itens}%
+    \Crefname{enumii}{Item}{Itens}%
+    \Crefname{enumiii}{Item}{Itens}%
+    \Crefname{enumiv}{Item}{Itens}%
+    \Crefname{enumv}{Item}{Itens}%
+    \Crefname{footnote}{Nota de rodapé}{Notas de rodapé}%
+    \Crefname{theorem}{Teorema}{Teoremas}%
+    \Crefname{lemma}{Lema}{Lemas}%
+    \Crefname{corollary}{Corolário}{Corolários}%
+    \Crefname{proposition}{Proposição}{Proposições}%
+    \Crefname{definition}{Definição}{Definições}%
+    \Crefname{result}{Resultado}{Resultados}%
+    \Crefname{example}{Exemplo}{Exemplos}%
+    \Crefname{remark}{Observação}{Observações}%
+    \Crefname{note}{Nota}{Notas}%
+    \Crefname{algorithm}{Algoritmo}{Algoritmos}%
+    \Crefname{listing}{Listagem}{Listagens}%
+    \Crefname{line}{Linha}{Linhas}%
+    %
+    \if@cref@capitalise%  capitalise set
+    \if@cref@abbrev%
+    \crefname{equation}{Eq.}{Eqs.}%
+    \crefname{figure}{Fig.}{Figs.}%
+    \crefname{subfigure}{Fig.}{Figs.}%
+    \else%
+    \crefname{equation}{Equação}{Equações}%
+    \crefname{figure}{Figura}{Figuras}%
+    \crefname{subfigure}{Figura}{Figuras}%
+    \fi%
+    \crefname{page}{Página}{Páginas}%
+    \crefname{table}{Tabela}{Tabelas}%
+    \crefname{subtable}{Tabela}{Tabelas}%
+    \crefname{part}{Parte}{Partes}%
+    \crefname{chapter}{Capítulo}{Capítulos}%
+    \crefname{section}{Secção}{Secções}%
+    \crefname{subsection}{Secção}{Secções}%
+    \crefname{subsubsection}{Secção}{Secções}%
+    \crefname{appendix}{Apêndice}{Apêndices}%
+    \crefname{subappendix}{Apêndice}{Apêndices}%
+    \crefname{subsubappendix}{Apêndice}{Apêndices}%
+    \crefname{subsubsubappendix}{Apêndice}{Apêndices}%
+    \crefname{enumi}{Item}{Itens}%
+    \crefname{enumii}{Item}{Itens}%
+    \crefname{enumiii}{Item}{Itens}%
+    \crefname{enumiv}{Item}{Itens}%
+    \crefname{enumv}{Item}{Itens}%
+    \crefname{footnote}{Nota de rodapé}{Notas de rodapé}%
+    \crefname{theorem}{Teorema}{Teoremas}%
+    \crefname{lemma}{Lema}{Lemas}%
+    \crefname{corollary}{Corolário}{Corolários}%
+    \crefname{proposition}{Proposição}{Proposições}%
+    \crefname{definition}{Definição}{Definições}%
+    \crefname{result}{Resultado}{Resultados}%
+    \crefname{example}{Exemplo}{Exemplos}%
+    \crefname{remark}{Observação}{Observações}%
+    \crefname{note}{Nota}{Notas}%
+    \crefname{algorithm}{Algoritmo}{Algoritmos}%
+    \crefname{listing}{Listagem}{Listagens}%
+    \crefname{line}{Linha}{Linhas}%
+    %
+    \else%  capitalise unset
+    \if@cref@abbrev%
+    \crefname{equation}{eq.}{eqs.}%
+    \crefname{figure}{fig.}{figs.}%
+    \crefname{subfigure}{fig.}{figs.}%
+    \else%
+    \crefname{equation}{equação}{equações}%
+    \crefname{figure}{figura}{figuras}%
+    \crefname{subfigure}{figura}{figuras}%
+    \fi%
+    \crefname{table}{tabela}{tabelas}%
+    \crefname{subtable}{tabela}{tabelas}%
+    \crefname{page}{página}{páginas}%
+    \crefname{part}{parte}{partes}%
+    \crefname{chapter}{capítulo}{capítulos}%
+    \crefname{section}{secção}{secções}%
+    \crefname{subsection}{secção}{secções}%
+    \crefname{subsubsection}{secção}{secções}%
+    \crefname{appendix}{apêndice}{apêndices}%
+    \crefname{subappendix}{apêndice}{apêndices}%
+    \crefname{subsubappendix}{apêndice}{apêndices}%
+    \crefname{subsubsubappendix}{apêndice}{apêndices}%
+    \crefname{enumi}{item}{itens}%
+    \crefname{enumii}{item}{itens}%
+    \crefname{enumiii}{item}{itens}%
+    \crefname{enumiv}{item}{itens}%
+    \crefname{enumv}{item}{itens}%
+    \crefname{footnote}{nota de rodapé}{notas de rodapé}%
+    \crefname{theorem}{teorema}{teoremas}%
+    \crefname{lemma}{lema}{lemas}%
+    \crefname{corollary}{corolário}{corolários}%
+    \crefname{proposition}{proposição}{proposições}%
+    \crefname{definition}{definição}{definições}%
+    \crefname{result}{resultado}{resultados}%
+    \crefname{example}{exemplo}{exemplos}%
+    \crefname{remark}{observação}{observações}%
+    \crefname{note}{nota}{notas}%
+    \crefname{algorithm}{algoritmo}{algoritmos}%
+    \crefname{listing}{listagem}{listagens}%
+    \crefname{line}{linha}{linhas}%
+\fi}% end \cref@addlangagedefs

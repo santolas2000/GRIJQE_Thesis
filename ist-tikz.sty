@@ -1,0 +1,545 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IST-TikZ                                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ist-tikz}[2024/08/01 v0.1 Setup PGF-TikZ environment]
+
+%-------------------------------------------------------------------------------
+% Class options
+%-------------------------------------------------------------------------------
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{family=isttikz, prefix=isttikz@}
+
+\DeclareBoolOption[false]{pagenodes}
+
+\DeclareBoolOption[false]{plots}
+\DeclareBoolOption[false]{pies}
+\DeclareBoolOption[false]{feynman}
+
+\DeclareBoolOption[false]{compact}
+
+\ProcessKeyvalOptions*
+
+%-------------------------------------------------------------------------------
+% Packages
+%-------------------------------------------------------------------------------
+% TikZ
+\RequirePackage{tikz}
+
+\usetikzlibrary{angles}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{babel}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathreplacing,calligraphy}
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{external}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{quotes}
+\usetikzlibrary{shapes}
+\usetikzlibrary{scopes}
+
+% tikzpagenodes
+\ifisttikz@pagenodes
+\RequirePackage{tikzpagenodes}
+\fi
+
+% PGFPlots
+\ifisttikz@plots
+\RequirePackage{pgfplots}
+\RequirePackage{pgfplotstable}
+
+\pgfplotsset{compat=1.18}
+
+\usepgfplotslibrary{colormaps}
+\usepgfplotslibrary{fillbetween}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{polar}
+\fi
+
+% pgf-pie
+\ifisttikz@pies
+\RequirePackage{pgf-pie}
+\fi
+
+% TikZ-Feynman
+\ifisttikz@feynman
+\RequirePackage[compat=1.1.0]{tikz-feynman}
+\RequirePackage[compat=1.1.0]{tikz-feynhand}
+\tikzfeynmanset{warn luatex=false}
+
+\tikzset{
+  perturbative/.style={
+    /tikz/decoration={
+      markings,
+      mark=at position #1 with {
+        \draw[
+          fill,
+          outer sep=0pt, inner sep=0pt,
+          minimum size=\feynhandblobsize,
+          line width=\feynhandlinesize,
+        ] circle [radius=1mm];
+      },
+    },
+    /tikz/postaction={
+      /tikz/decorate=true,
+    },
+  },
+}
+\fi
+
+%-------------------------------------------------------------------------------
+% Externalize
+%-------------------------------------------------------------------------------
+\newcommand*{\isttikz@datadir}{.}
+\NewDocumentCommand{\datadir}{m}{\renewcommand*{\isttikz@datadir}{#1}}
+\newcommand*{\isttikz@tikzdir}{.}
+\NewDocumentCommand{\tikzdir}{m}{\renewcommand*{\isttikz@tikzdir}{#1}}
+\newcommand*{\isttikz@figuresdir}{.}
+\NewDocumentCommand{\figuresdir}{m}{\renewcommand*{\isttikz@figuresdir}{#1}}
+
+\tikzexternalize[optimize=true, only named=true]
+\tikzset{external/optimize command away={\includepdf}}
+
+\AtBeginDocument{
+  \tikzsetexternalprefix{\isttikz@figuresdir/}
+
+  \ifisttikz@plots
+  \pgfplotsset{table/search path=\isttikz@datadir}
+  \fi
+
+  \NewDocumentCommand{\includetikz}{sm}{
+    \IfBooleanF{#1}{\tikzsetnextfilename{#2}}%
+    \input{\isttikz@tikzdir/#2}%
+  }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TikZ                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tikzset{
+  node/.style={
+    decoration={
+      markings,
+      transform={xshift=1.5ex},
+      mark=at position 1 with \node{#1};
+    },
+    postaction=decorate,
+  },
+}
+
+\tikzset{
+  ->-/.style={
+    decoration={
+      markings,
+      mark=at position #1 with \arrow>
+    },
+    postaction=decorate
+  },
+  ->-/.default=.5,
+}
+
+% Complete sines replaces the path with a whole number of sine waves.
+% https://tex.stackexchange.com/a/60757
+%\newif\ifstartcompletesineup
+%\newif\ifendcompletesineup
+%\pgfkeys{
+%  /pgf/decoration/.cd,
+%  start up/.is if=startcompletesineup,
+%  start up=true,
+%  start up/.default=true,
+%  start down/.style={/pgf/decoration/start up=false},
+%  end up/.is if=endcompletesineup,
+%  end up=true,
+%  end up/.default=true,
+%  end down/.style={/pgf/decoration/end up=false}
+%}
+%
+%\pgfdeclaredecoration{complete sines}{initial}{
+%  \state{initial}[
+%    width=+0pt,
+%    next state=upsine,
+%    persistent precomputation={
+%      \ifstartcompletesineup
+%      \pgfkeys{/pgf/decoration automaton/next state=upsine}
+%      \ifendcompletesineup
+%      \pgfmathsetmacro\matchinglength{
+%        0.5*\pgfdecoratedinputsegmentlength / (ceil(0.5* \pgfdecoratedinputsegmentlength / \pgfdecorationsegmentlength) )
+%      }
+%      \else
+%      \pgfmathsetmacro\matchinglength{
+%        0.5 * \pgfdecoratedinputsegmentlength / (ceil(0.5 * \pgfdecoratedinputsegmentlength / \pgfdecorationsegmentlength ) - 0.499)
+%      }
+%      \fi
+%      \else
+%      \pgfkeys{/pgf/decoration automaton/next state=downsine}
+%      \ifendcompletesineup
+%      \pgfmathsetmacro\matchinglength{
+%        0.5* \pgfdecoratedinputsegmentlength / (ceil(0.5 * \pgfdecoratedinputsegmentlength / \pgfdecorationsegmentlength ) - 0.4999)
+%      }
+%      \else
+%      \pgfmathsetmacro\matchinglength{
+%        0.5 * \pgfdecoratedinputsegmentlength / (ceil(0.5 * \pgfdecoratedinputsegmentlength / \pgfdecorationsegmentlength ) )
+%      }
+%      \fi
+%      \fi
+%      \setlength{\pgfdecorationsegmentlength}{\matchinglength pt}
+%    }
+%  ] {}
+%  \state{downsine}[width=\pgfdecorationsegmentlength,next state=upsine]{
+%    \pgfpathsine{\pgfpoint{0.5\pgfdecorationsegmentlength}{0.5\pgfdecorationsegmentamplitude}}
+%    \pgfpathcosine{\pgfpoint{0.5\pgfdecorationsegmentlength}{-0.5\pgfdecorationsegmentamplitude}}
+%  }
+%  \state{upsine}[width=\pgfdecorationsegmentlength,next state=downsine]{
+%    \pgfpathsine{\pgfpoint{0.5\pgfdecorationsegmentlength}{-0.5\pgfdecorationsegmentamplitude}}
+%    \pgfpathcosine{\pgfpoint{0.5\pgfdecorationsegmentlength}{0.5\pgfdecorationsegmentamplitude}}
+%  }
+%  \state{final}{}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PGFPlots                                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------
+% General Settings
+%-------------------------------------------------------------------------------
+\pgfplotsset{
+  scale only axis   = true,
+  enlarge x limits  = false,
+  legend cell align = left,
+}
+
+\pgfplotsset{
+  every axis/.append style = {
+    legend style      = {font = \footnotesize},
+    tick label style  = {font = \footnotesize},
+    label style       = {font = \small},
+    title style       = {font = \small},
+  },
+}
+
+%-------------------------------------------------------------------------------
+% Colormaps
+%-------------------------------------------------------------------------------
+\pgfplotsset{
+  cycle list/.define={viridis}{[indices of colormap={0,4,8,12,17} of viridis]},
+  colormap={reverse viridis}{indices of colormap={\pgfplotscolormaplastindexof{viridis},...,0 of viridis}},
+  cycle list/.define={reverse viridis}{[indices of colormap={0,4,8,12,17} of reverse viridis]},
+  colormap={bluered}{color=(blue) color=(red)},
+  cycle list/.define={bluered}{[of colormap=bluered]},
+  colormap={rainbow}{color(0)=(violet); color(1)=(blue); color(2)=(cyan); color(3)=(green!75!black); color(4)=(yellow); color(5)=(orange); color(6)=(red)},
+  cycle list/.define={rainbow}{[of colormap=rainbow]},
+}
+
+%-------------------------------------------------------------------------------
+% Axis
+%-------------------------------------------------------------------------------
+\pgfplotsset{
+  no axis/.style = {
+    axis x line=none,
+    axis y line=none,
+    axis z line=none,
+  },
+  no colorbar axis/.style = {
+    colorbar style={
+      no axis,
+    },
+  },
+}
+
+\pgfplotsset{
+  no axis labels/.style={
+    xlabel={}, ylabel={}, zlabel={},
+  },
+}
+
+% Ticks
+\pgfplotsset{
+  no ticks/.style={
+    xtick=\empty, ytick=\empty, ztick=\empty,
+  },
+  no tick labels/.style={
+    xticklabel=\empty, yticklabel=\empty, zticklabel=\empty,
+  },
+  no extra ticks/.style={
+    extra x ticks=\empty, extra y ticks=\empty, extra z ticks=\empty,
+  },
+  no extra tick labels/.style={
+    extra x tick labels=\empty, extra y tick labels=\empty, extra z tick labels=\empty,
+  },
+}
+
+\pgfplotsset{
+  base10 xticklabel/.style = {
+    xticklabel=$10^{\pgfmathparse{\tick}\pgfmathprintnumber\pgfmathresult}$,
+  },
+  base10 yticklabel/.style = {
+    yticklabel=$10^{\pgfmathparse{\tick}\pgfmathprintnumber\pgfmathresult}$,
+  },
+  base10 zticklabel/.style = {
+    zticklabel=$10^{\pgfmathparse{\tick}\pgfmathprintnumber\pgfmathresult}$,
+  },
+  colorbar base10 ticklabel/.style = {
+    colorbar style = {base10 xticklabel, base10 yticklabel, base10 zticklabel},
+  },
+}
+
+\pgfplotsset{
+  nonlog xticklabel/.style = {
+    xticklabel = {
+      \pgfkeys{/pgf/fpu=true}
+      \pgfmathparse{exp(\tick)}%
+      \pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+      \pgfkeys{/pgf/fpu=false}
+    },
+  },
+  nonlog yticklabel/.style = {
+    yticklabel = {
+      \pgfkeys{/pgf/fpu=true}
+      \pgfmathparse{exp(\tick)}%
+      \pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+      \pgfkeys{/pgf/fpu=false}
+    },
+  },
+  nonlog zticklabel/.style = {
+    zticklabel = {
+      \pgfkeys{/pgf/fpu=true}
+      \pgfmathparse{exp(\tick)}%
+      \pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+      \pgfkeys{/pgf/fpu=false}
+    },
+  },
+  colorbar nonlog ticklabel/.style = {
+    colorbar style = {nonlog xticklabel, nonlog yticklabel, nonlog zticklabel},
+  },
+}
+
+\pgfplotsset{
+  nonlog10 xticklabel/.style = {
+    xticklabel = {
+      \pgfkeys{/pgf/fpu=true}
+      \pgfmathparse{10^(\tick)}%
+      \pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+      \pgfkeys{/pgf/fpu=false}
+    },
+  },
+  nonlog10 yticklabel/.style = {
+    yticklabel = {
+      \pgfkeys{/pgf/fpu=true}
+      \pgfmathparse{10^(\tick)}%
+      \pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+      \pgfkeys{/pgf/fpu=false}
+    },
+  },
+  nonlog10 zticklabel/.style = {
+    zticklabel = {
+      \pgfkeys{/pgf/fpu=true}
+      \pgfmathparse{10^\tick}%
+      \pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+      \pgfkeys{/pgf/fpu=false}
+    },
+  },
+  colorbar nonlog10 ticklabel/.style = {
+    colorbar style = {nonlog10 xticklabel, nonlog10 yticklabel, nonlog10 zticklabel},
+  },
+}
+
+%-------------------------------------------------------------------------------
+% Legends
+%-------------------------------------------------------------------------------
+\pgfplotsset{
+  legend image with text/.style={
+    legend image code/.code={
+      \node[anchor=center] at (0.3cm,0cm) {#1};
+    },
+  },
+}
+\newcommand*{\addemptylegend}[2][]{
+  \addlegendimage{legend image with text=#1}
+  \addlegendentry{#2}
+}
+
+\pgfplotsset{
+  legend pos/north/.style={legend style={at={(0.50,0.97)},anchor=north}},
+  legend pos/south/.style={legend style={at={(0.50,0.03)},anchor=south}},
+  legend pos/east/.style ={legend style={at={(0.97,0.50)},anchor=east}},
+  legend pos/west/.style ={legend style={at={(0.03,0.50)},anchor=west}},
+  legend pos/outer north/.style={legend style={at={(0.50,+1.03)},anchor=south}},
+  legend pos/outer south/.style={legend style={at={(0.50,-0.03)},anchor=north}},
+  % https://tex.stackexchange.com/questions/278530/how-i-can-customize-a-legend-on-pgfplots
+}
+
+% \pgfplotsset{
+%   /pgfplots/error bar legend/.style={
+%       legend image code/.code={
+%           \draw[sharp plot,mark repeat=2,mark phase=1,##1,mark=none,solid]plot coordinates { (0.3cm, -0.15cm) (0.3cm,0cm) (0.3cm, 0.15cm) };%
+%           \draw[mark repeat=2,mark phase=2,##1] plot coordinates {(0cm,0cm) (0.3cm,0cm) (0.6cm,0cm)};%
+%         }
+%     }
+% }
+
+\tikzset{
+  error bar legend helper/.style={
+    sharp plot,
+    mark repeat=2,
+    mark phase=1,
+    mark=none,
+    solid,
+    xshift=0.30cm,
+  },
+}
+
+\pgfplotsset{
+  error bar legend/.style={
+    legend image code/.code={
+      \draw[error bar legend helper, ##1] plot coordinates {(0cm, -0.15cm) (0cm, +0.15cm)};%
+      \draw[error bar legend helper, ##1] plot coordinates {(-0.15cm, 0cm) (+0.15cm, 0cm)};%
+    }
+  },
+}
+
+%-------------------------------------------------------------------------------
+% Colorbars
+%-------------------------------------------------------------------------------
+\pgfplotsset{
+  colorbar top/.style n args={4}{
+    colorbar horizontal,
+    colorbar/width={2ex},
+    colorbar style={
+      % ----- Arguments -----
+      xlabel=#1,
+      xmin=#2, xmax=#3,
+      xtick=#4, samples at=#4,
+      % ----- Geometry -----
+      at=(parent axis.north west), anchor=south west,
+      yshift=3ex,
+      % ----- Axis -----
+      tick style={draw=none},
+      ticklabel style={align=center},
+      % x axis
+      xlabel style={
+        at={(0.,1.)}, anchor=south east,
+        xshift=-2em, yshift=-.25ex
+      },
+      xticklabel pos=upper,
+      xmajorticks=true, xminorticks=false,
+    },
+  },
+  colorbar right/.style n args={4}{
+    colorbar,
+    colorbar/width={2ex},
+    colorbar style={
+      % ----- Arguments -----
+      ylabel=#1,
+      ymin=#2, ymax=#3,
+      ytick=#4, samples at=#4,
+      % ----- Geometry -----
+      at=(parent axis.north east), anchor=north west,
+      % ----- Axis -----
+      tick style={draw=none},
+      ticklabel style={align=center},
+      % y axis
+      ylabel style={
+        at={(axis description cs:1,0)}, anchor=north west,
+        xshift=-3ex,
+        rotate=-90,
+      },
+      ymajorticks=true, yminorticks=false,
+    },
+  },
+}
+
+\pgfplotsset{
+  colorbar top sampled line/.style n args={4}{
+    colorbar top={#1}{#2}{#3}{#4},
+    colorbar sampled line,
+    colorbar style={
+      % ----- Axis -----
+      % x axis
+      axis x line*=top,
+      xmajorticks=true, xminorticks=false,
+      % y axis
+      axis y line=none,
+      % ----- Marks -----
+      mark=|, mark size={\pgfkeysvalueof{/pgfplots/colorbar/width}/2},
+      mark options={thick, solid},
+    },
+  },
+  colorbar right sampled line/.style n args={4}{
+    colorbar right={#1}{#2}{#3}{#4},
+    colorbar sampled line,
+    colorbar style={
+      % ----- Axis -----
+      % x axis
+      axis x line=none,
+      % y axis
+      axis y line*=right,
+      ymajorticks=true, yminorticks=false,
+      % ----- Marks -----
+      mark=-, mark size={\pgfkeysvalueof{/pgfplots/colorbar/width}/2},
+      mark options={thick, solid},
+    },
+  },
+}
+
+\pgfplotsset{
+  colorbar solid/.style={
+    colorbar style={
+      mark options={thick, solid},
+    },
+  },
+  colorbar dashed/.style={
+    colorbar style={
+      mark options={thick, dashed},
+    },
+  },
+  colorbar dotted/.style={
+    colorbar style={
+      mark options={thick, densely dotted},
+    },
+  },
+}
+
+\pgfplotsset{
+  colorbar reverse/.style={
+    colorbar style={x dir=reverse, y dir=reverse, z dir=reverse},
+  },
+}
+
+\pgfplotsset{
+  colorbar solid/.style={
+    colorbar style={
+      mark options={thick, solid},
+    },
+  },
+  colorbar dashed/.style={
+    colorbar style={
+      mark options={thick, dashed},
+    },
+  },
+  colorbar dotted/.style={
+    colorbar style={
+      mark options={thick, densely dotted},
+    },
+  },
+}
+
+\pgfplotsset{
+  colorbar no tick labels/.style={
+    colorbar style={no tick labels},
+  },
+}
+
+%-------------------------------------------------------------------------------
+% Fixes and Workarounds
+%-------------------------------------------------------------------------------
+% https://tex.stackexchange.com/questions/665296/pgfplots-const-plot-mark-mid-with-ref
+\pgfplotsset{
+  const plot mark mid fix/.style = {
+    const plot mark mid,
+    legend image code/.code = {
+      \draw[mark repeat=2, mark phase=2, const plot] plot coordinates {(0cm,0cm) (0.3cm,0cm) (0.6cm,0cm)};
+    },
+  },
+}

@@ -1,0 +1,15 @@
+	\begin{tikzpicture}
+		%light cone
+		\filldraw[cyan!20!white] (-1.8,1.8) -- (1.8,1.8) -- (-1.8,-1.8) -- (1.8,-1.8) -- cycle;
+		\draw[cyan,dashed] (-1.8,1.8) -- (1.8,-1.8);
+		\draw[cyan,dashed] (1.8,1.8) -- (-1.8,-1.8);
+		%axes
+		\draw[->,gray,thick] (-2,0) -- (2,0) node[below] {$x^1$};
+		\draw[->,gray,thick] (0,-2) -- (0,2) node[left] {$ct$};
+		\draw[->,thick] (1.41,-1.41) -- (-1.41,1.41) node[below] {$x^-$};
+		\draw[->,thick] (-1.41,-1.41) -- (1.41,1.41) node[below] {$x^+$};
+		%text
+		\draw (0,1) node {Future};
+		\draw (0,-1) node {Past};
+	\end{tikzpicture}
+	\centering

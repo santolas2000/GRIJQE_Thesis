@@ -1,0 +1,113 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IST-Color                                                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ist-color}[2024/06/01 v0.1 Setup colours]
+
+%-------------------------------------------------------------------------------
+% Class options
+%-------------------------------------------------------------------------------
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{family=istcolor, prefix=istcolor@}
+
+\DeclareBoolOption[false]{pm}
+
+\ProcessKeyvalOptions*
+
+%-------------------------------------------------------------------------------
+% Packages
+%-------------------------------------------------------------------------------
+\RequirePackage{xcolor}
+
+\RequirePackage{iftex}
+\ifLuaTeX
+  \RequirePackage{luacolor}
+\fi
+
+% ----- Custom Colours -----
+\colorlet{darkgreen}{green!50!black}
+
+% ----- Institutional Colours -----
+% Instituto Superior Técnico
+% https://tecnico.ulisboa.pt/pt/sobre-o-tecnico/institucional/logo-e-manual-de-identidade/
+\definecolor{istblue}{RGB}{0,157,224}
+\definecolor{istgrey}{RGB}{70,85,95}
+
+% Faculdade de Medicina da Universidade de Lisboa
+% https://www.medicina.ulisboa.pt/en/node/66
+\definecolor{fmlyellow}{RGB}{234,184,24}
+
+% ----- Coloured \pm and \mp -----
+% https://tex.stackexchange.com/questions/278073/plus-minus-pm-in-different-colors
+\ifistcolor@pm
+  %\RequirePackage{stackengine,scalerel}
+  %\NewDocumentCommand{\cpm}{mm}{
+  %  \mathbin{%
+  %    \ThisStyle{%
+  %      \ensurestackMath{%
+  %        \abovebaseline[-\dimexpr1pt+2.4\LMpt]{%
+  %          \stackunder[-\dimexpr1pt+2.5\LMpt]{%
+  %            \color{#1}\SavedStyle+%
+  %          }{%
+  %            \color{#2}\SavedStyle-%
+  %          }%
+  %        }%
+  %      }%
+  %    }%
+  %  }%
+  %}
+  %
+  %\NewDocumentCommand{\cmp}{mm}{
+  %  \mathbin{%
+  %    \ThisStyle{%
+  %      \ensurestackMath{%
+  %        \abovebaseline[-\dimexpr1pt+2.4\LMpt]{%
+  %          \stackunder[-\dimexpr1pt+2.5\LMpt]{%
+  %            \color{#1}\SavedStyle-%
+  %          }{%
+  %            \color{#2}\SavedStyle+%
+  %          }%
+  %        }%
+  %      }%
+  %    }%
+  %  }%
+  %}
+
+  \newlength{\ist@cpmheight@a}
+  \settoheight{\ist@cpmheight@a}{$\displaystyle+$}
+  \setlength{\ist@cpmheight@a}{.54\ist@cpmheight@a}
+  \newlength{\ist@cpmheight@b}
+  \settoheight{\ist@cpmheight@b}{$\textstyle+$}
+  \setlength{\ist@cpmheight@b}{.54\ist@cpmheight@b}
+  \newlength{\ist@cpmheight@c}
+  \settoheight{\ist@cpmheight@c}{$\scriptstyle+$}
+  \setlength{\ist@cpmheight@c}{.54\ist@cpmheight@c}
+  \newlength{\ist@cpmheight@d}
+  \settoheight{\ist@cpmheight@d}{$\scriptscriptstyle+$}
+  \setlength{\ist@cpmheight@d}{.54\ist@cpmheight@d}
+
+  \NewDocumentCommand{\ist@cpm}{mmmmm}{
+    \mathbin{%
+      \ooalign{%
+        \raisebox{#2}{\color{#4}$#1+$}\cr
+        \smash{\raisebox{#3}{\color{#5}$#1-$}}\cr%
+      }%
+    }%
+  }
+
+  \NewDocumentCommand{\cpm}{mm}{%
+    \mathchoice%
+    {\ist@cpm{\displaystyle}{0pt}{-\ist@cpmheight@a}{#1}{#2}}% displaystyle
+    {\ist@cpm{\textstyle}{0pt}{-\ist@cpmheight@b}{#1}{#2}}% textstyle
+    {\ist@cpm{\scriptstyle}{0pt}{-\ist@cpmheight@c}{#1}{#2}}% scriptstyle
+    {\ist@cpm{\scriptscriptstyle}{0pt}{-\ist@cpmheight@d}{#1}{#2}}% scriptscriptstyle
+  }
+
+  \NewDocumentCommand{\cmp}{mm}{%
+    \mathchoice%
+    {\ist@cpm{\displaystyle}{0pt}{\ist@cpmheight@a}{#1}{#2}}% displaystyle
+    {\ist@cpm{\textstyle}{0pt}{\ist@cpmheight@b}{#1}{#2}}% textstyle
+    {\ist@cpm{\scriptstyle}{0pt}{\ist@cpmheight@c}{#1}{#2}}% scriptstyle
+    {\ist@cpm{\scriptscriptstyle}{0pt}{\ist@cpmheight@d}{#1}{#2}}% scriptscriptstyle
+  }
+\fi

@@ -1,0 +1,17 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IST-TeXVer                                                                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ist-texver}[2024/03/08 v0.1 TeX Versions]
+
+\RequirePackage{iftex}
+\newif\ifxetexorluatex
+\ifXeTeX
+    \xetexorluatextrue
+\else
+    \ifLuaTeX
+        \xetexorluatextrue
+    \else
+        \xetexorluatexfalse
+    \fi
+\fi

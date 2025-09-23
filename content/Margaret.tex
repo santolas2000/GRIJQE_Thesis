@@ -1,0 +1,128 @@
+\textcolor{red}{[Likely to Migrate, requires references (textbooks?)]}
+
+The objectives of this work are: the derivation, by analytical means, of expressions for parameters characterizing the pre-equilibrium stage of a HIC as a medium which affects the highly energetic partons that traverse it; and the numerical evaluation of those expressions and comparison of the results obtained to others in the literature.
+
+Those parameters are: the \textit{stopping power}, denoted by $-\diff dE / \diff x$, and the \textit{momentum broadening coefficient}, denoted by $\hat{q}$.
+
+In Particle Physics, the stopping power of a medium as felt by a probe traversing it at a given instant  corresponds to the amount of kinetic energy being lost by the probe per unit length traveled in the medium. Less formally, it is equal to the infinitesimal loss of energy of the probe by interaction with the medium divided by the infinitesimal distance traversed during that loss:
+
+\begin{equation*}
+- \frac{\diff E}{\diff x} \approx - \frac{\Delta E}{\Delta x}
+\end{equation*}
+
+The stopping power may be viewed as a measure of how capable a medium is of slowing down or stopping traversing particles within a given length, which makes it a quantity commonly discussed in the field of radiation protection, for example.
+
+The momentum broadening coefficient, on the other hand, measures how capable a medium is of deflecting traversing particles, that is, of changing their original direction. It corresponds to the square magnitude of transverse momentum gained by the probe per unit length traveled in the medium, transverse meaning perpendicular to the probe’s velocity in that instant.
+
+\begin{equation*}
+\hat{q} \approx \frac{(\Delta{\mathbf{p}_T})^2}{\Delta x}
+\end{equation*}
+
+These quantities are dependent on the properties of the medium and of the probe, on the velocity of the probe, and, in the case of a heterogeneous, dynamic medium, on the current position of the probe and on time.
+
+\textcolor{red}{---------------------------------}
+
+The chromodynamic field correlators derived in the previous section may be used to obtain the momentum broadening coefficient, $\hat{q}$, and the stopping power, $\diff E/\diff x$,  felt by a relativistic quark probe traversing the glasma. This procedure is outlined in \cite{Carrington_2022}.
+
+\section{The Fokker-Planck equation and its collision terms}
+
+The Fokker-Planck equation has frequently been used to study the transport of heavy quarks across a thermalized QGP. The following Fokker-Planck equation, derived in \cite{Mrowczynski2018} for the transport of heavy quarks through a glasma, is also applicable to relativistic light partons, as long as the diffusion approximation is applicable \cite{Carrington_2022}, that is, as long as the transfer of momentum to the probe is negligible when compared to the probe's momentum \cite{Mrowczynski2018}. It commands the evolution of the event-averaged probe quark distribution function $n(t,\mathbf{x},\mathbf{p})$ as the probes traverse the medium.
+
+\begin{equation}
+	\left(\frac{\partial}{\partial t}
+	+ \mathbf{v} \cdot \mathbf{\nabla}
+	- \nabla^\alpha_p X^{\alpha \beta} \nabla^\beta_p
+	- \nabla^\alpha_p Y^\alpha
+	\right) n(t, \mathbf{x}, \mathbf{p}) = 0
+\end{equation}
+
+\noindent \textcolor{red}{where $t$ is time, $v$ is the probe's velocity, $\nabla^\alpha = (\partial_1, \partial_2, \partial_3)$ is the usual gradient, $\nabla_p^\alpha$ is the gradient with respect to the probes' momentum, $\partial/(\partial p^\alpha)$, $\mathbf{x}$ and $\mathbf{p}$ are the probes' position and momentum, respectively, and $\alpha,\beta$ run from 1 through 3}. The tensors $X^{\alpha\beta}$ and $Y^\alpha$, from which $\hat{q}$ and $\diff E / \diff x$ will be calculated, are called the collision terms.
+
+The collision terms are related to event-averaged\textcolor{red}{\footnote{ \textcolor{red}{Requires further explanation if the event-averages haven't been explained so far.}}} rates of change of the momentum of the probes over time:
+
+\begin{subequations}
+\begin{align}
+	\frac{\left< \Delta p^\alpha \Delta p^\beta \right>}{\Delta t} &= X^{\alpha\beta} + X^{\beta\alpha} \label{eq:momentum_from_X}\\
+	\frac{\left< \Delta p^\alpha \right>}{\Delta t} &= -Y^\alpha
+\end{align}
+\end{subequations}
+
+As such, $\hat{q}$ and $\diff E / \diff x$ may be obtained from $X^{\alpha\beta}$ and $Y^\alpha$:
+\begin{subequations}
+\begin{align}
+	\hat{q} & = \frac{1}{v} \left(\delta^{\alpha \beta} - \frac{v^\alpha v^\beta}{v^2} \right) \frac{\left< \Delta p^\alpha \Delta p^\beta \right>}{\Delta t} = \frac{2}{v} \left(\delta^{\alpha \beta} - \frac{v^\alpha v^\beta}{v^2} \right) X^{\alpha\beta} \label{eq:qHat_from_X} \\
+	\frac{\diff E}{\diff x} &= \frac{v^\alpha}{v} \frac{\left< \Delta p^\alpha \right>}{\Delta t} = - \frac{v^\alpha}{v} Y^\alpha \label{eq:dEdx_from_Y}
+\end{align}
+\label{eq:collision_from_tensors_v0}
+\end{subequations}
+
+\textcolor{red}{Should these auxiliary calcs be moved to an appendix?} To prove the first equality of eq. \ref{eq:qHat_from_X},
+\begin{equation*}
+\frac{1}{v} \left(\delta^{\alpha \beta} - \frac{v^\alpha v^\beta}{v^2} \right) \frac{\left< \Delta p^\alpha \Delta p^\beta \right>}{\Delta t} = \frac{1}{\Delta x} \left< (\Delta \mathbf{p})^2 - \left(\frac{\mathbf{v}\cdot \Delta \mathbf{p}}{v^2} \right)\right> = \frac{\left<(\Delta{\mathbf{p}_T})^2\right>}{\Delta x}
+\end{equation*}
+
+To prove the second equality of eq. \ref{eq:qHat_from_X}, eq. \ref{eq:momentum_from_X} is plugged in and the symmetry of $(\delta^{\alpha \beta} - v^\alpha v^\beta/v^2)$ under the switch of $\alpha$ and $\beta$ is used.
+
+To prove the first equality of eq. \ref{eq:dEdx_from_Y}, it is easiest to start from the definition of the stopping power:
+\begin{equation*}
+	\frac{\left< \Delta E\right>}{\Delta x}  = \frac{1}{v\Delta t} \left<  \Delta (\sqrt{\mathbf{p}^2+m^2})\right> = \frac{1}{v\Delta t} \left<  \frac{\Delta (\mathbf{p}^2)}{ 2\sqrt{\mathbf{p}^2+m^2}}\right>
+	 = \frac{1}{v\Delta t} \left<  \frac{\mathbf{p} \cdot \Delta \mathbf{p}}{ \sqrt{p^2+m^2}}\right> = \frac{v^\alpha}{v} \frac{\Delta p^\alpha}{\Delta t}
+\end{equation*}
+
+$X^{\alpha\beta}$ is obtained using the event-averaged field correlators previously derived, while determining $Y^\alpha$ requires calculating the event-average of the correlator of one of the fields and each event's deviation of the quark-probe density from the event-averaged density, $n$, a quantity which is difficult to access.
+
+In order to circumvent the challenges of calculating $Y^\alpha$, it is assumed that the Fokker-Planck equation should, if the system were in equilibrium at a temperature $T$, admit the Boltzmann distribution function as a solution:
+\begin{equation*}
+	n^{\text{eq}}(\mathbf{p}) \propto \exp(E_\mathbf{p}/T), \qquad \text{with } E_\mathbf{p} = \sqrt{\mathbf{p}^2 + {m_Q}^2}
+\end{equation*}
+
+\noindent with $m_Q$ the mass of the quark probe. This assumption allows obtaining $Y^\alpha$ from $X^{\alpha\beta}$ via the simple relation:
+\begin{equation}
+	Y^\alpha = \frac{v^\beta}{T} X^{\alpha\beta}
+	\label{eq:Y_from_X}
+\end{equation}
+
+For the purpose of obtaining $Y^\alpha$ from $X^{\alpha\beta}$, $T$ is taken to be the temperature of a thermalized QGP with an energy density equal to that of the glasma\textcolor{red}{\footnote{\textcolor{red}{The derivation of the glasma's energy density should end up before this section, so the reader will be familiar with the concept.}}}. That is, the temperature which would characterize the system achieved if the glasma were allowed to reach equilibrium without expanding. \textcolor{red}{[Comments on validity?] - partly discussed in sec. 5 of Mrowczyncki\_2018}
+
+From eqs. \ref{eq:collision_from_tensors_v0} and \ref{eq:Y_from_X}, the final expressions for determining $\hat{q}$ and $\diff E / \diff x$ from $X^{\alpha \beta}$ become:\textcolor{red}{\footnote{\textcolor{red}{The final form of dEdx will depend on wheteher the projection calculated will be on va*vb or va*vb/v**2}}}
+\begin{subequations}
+\begin{align}
+	\hat{q} & = \frac{2}{v} \left(\delta^{\alpha \beta} - \frac{v^\alpha v^\beta}{v^2} \right) X^{\alpha\beta} \\
+	\frac{\diff E}{\diff x} &= - \frac{v}{T}\frac{v^\alpha v^\beta}{v^2} X^{\alpha \beta}
+\end{align}
+\label{eq:collision_from_tensors}
+\end{subequations}
+As such, obtaining $\hat{q}$ and $\diff E / \diff x$ requires calculating the $\delta^{\alpha \beta} X^{\alpha \beta}$ and $v^\alpha v^\beta X^{\alpha \beta}$ projections of the $X^{\alpha \beta}$ tensor.
+
+\section{The $X^{\alpha \beta}$ tensor}
+
+The first collision term is obtained from the correlators of chromodynamic fields:\footnote{The first line of this equation disagrees with \cite{Carrington_2022} by a fator of $1/2$ but agrees with \cite{Mrowczynski2018}. However, the second line is in agreement with \cite{Carrington_2022}. This is presumably due to a typo in \cite{Carrington_2022}.}
+\begin{equation}
+\begin{split}
+	X^{\alpha \beta} (\textcolor{red}{t,\mathbf{x}}, \mathbf{v}) & = \frac{1}{N_c} \int_0^t \diff t' ~\Tr_c \left[ \left< F^\alpha(t, \mathbf{x} ) F^\beta(t', \mathbf{y} )\right> \right] \\
+	& = \frac{1}{2 N_c} \int_0^t \diff t' \left< F^\alpha_a(t, \mathbf{x} ) F^\beta_a(t', \mathbf{y} )\right>
+	\end{split}
+\label{eq:short_X}
+\end{equation}
+\noindent \textcolor{red}{where $N_c$ is the number of colors, $\Tr_c$ is a color trace in the fundamental representation, $\mathbf{y} = \mathbf{x} - \mathbf{v} (t - t')$, $F^\alpha \equiv F^\alpha_a t^a$\textcolor{red}{\footnote{\textcolor{red}{A proper appendix or introduction to SU(Nc) will be necessary}}} is the $\alpha$ component of the Lorentz color force, and $a$ are color indices in the adjoint representation, which run from 1 through ${N_c}^2 - 1$}. Thus, the $X^{\alpha \beta}$ component of the tensor is obtained by integrating, in time, over the full past trajectory of the probe, the correlator of the $\alpha$ and $\beta$ components of the Lorentz color force; the first at the ``present'' (time $t$, position $\mathbf{x}$), and the second at a past point of the probe's trajectory (time $t'$, position $\mathbf{y}$).
+
+The Lorentz color force a quark is subject to when traveling with velocity $\mathbf{v}$ at time $t$ and position $\mathbf{x}$ is:
+\begin{subequations}
+\begin{align}
+\mathbf{F}_a(t, \mathbf{x}) & = g \big( \mathbf{E}_a(t, \mathbf{x}) + \mathbf{v} \times \mathbf{B}_a(t, \mathbf{x}) \big) \\
+F^\alpha_a(t, \mathbf{x}) & = g \big( E^\alpha_a(t, \mathbf{x}) + \varepsilon^{\alpha \gamma \gamma'}{}v^{\gamma} B^{\gamma'}_a(t, \mathbf{x}) \big)
+\label{eq:lorentz_force_component}
+\end{align}
+\end{subequations}
+\noindent \textcolor{red}{where $g$ is the strong coupling constant and $\varepsilon^{\alpha \beta \gamma}$ is the Levi-Civita or antisymmetric tensor with $\varepsilon^{123}=1$.}
+
+Plugging eq. \ref{eq:lorentz_force_component} into eq. \ref{eq:short_X} allows writing the unfolded expression for $X^{\alpha \beta}$:
+\begin{equation}
+\begin{split}
+	X^{\alpha \beta} (\textcolor{red}{t,\mathbf{x}}, \mathbf{v}) =  \frac{g^2}{2 N_c} \int_0^t \diff t'
+	 \bigg[ &  \left< E^\alpha_a(t, \mathbf{x} ) E^\beta_a(t-t', \mathbf{y} )\right> \\
+	& + \varepsilon^{\beta \gamma \gamma'} v^\gamma \left< E^\alpha_a(t, \mathbf{x} ) B^{\gamma'}_a(t-t', \mathbf{y} )\right> \\
+	& + \varepsilon^{\alpha \gamma \gamma'} v^\gamma \left< B^{\gamma'}_a(t, \mathbf{x} ) E^{\beta}_a(t-t', \mathbf{y} )\right> \\
+	& + \varepsilon^{\alpha \gamma \gamma'} \varepsilon^{\beta \delta \delta'} v^\gamma v^\delta \left< B^{\gamma'}_a(t, \mathbf{x} ) B^{\delta'}_a(t-t', \mathbf{y} )\right> \bigg]
+\end{split}
+\end{equation}

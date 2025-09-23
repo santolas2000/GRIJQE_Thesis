@@ -1,0 +1,92 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IST-Float                                                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ist-float}[2024/03/08 v0.1 Setup figures, tables, and listings]
+
+%-------------------------------------------------------------------------------
+% Class options
+%-------------------------------------------------------------------------------
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{family=istfloat, prefix=istfloat@}
+
+\DeclareStringOption[tp]{placement}
+
+\ProcessKeyvalOptions*
+
+%-------------------------------------------------------------------------------
+% Packages
+%-------------------------------------------------------------------------------
+\RequirePackage[labelfont=bf]{caption}
+\RequirePackage[labelfont=bf,subrefformat=parens]{subcaption}
+
+\RequirePackage{newfloat}
+
+% ----- Figures -----
+\RequirePackage{graphicx}
+
+% ----- Tables -----
+\RequirePackage{array}
+
+\RequirePackage{booktabs}
+\RequirePackage{multirow}
+
+% ----- Listings -----
+\RequirePackage{listings}
+\RequirePackage{setspace}
+
+\lstset{
+    %backgroundcolor=, % colour for the background. External color or xcolor package needed.
+    %commentstyle=, % style of comments in source language.
+    basicstyle=\ttfamily\footnotesize\singlespacing, % font size/family/etc. for source (e.g. basicstyle=\ttfamily\small)
+    %keywordstyle=, % style of keywords in source language (e.g. keywordstyle=\color{red})
+    %numberstyle=, % style used for line-numbers
+    %numbersep=, % distance of line-numbers from the code
+    %stringstyle=, % style of strings in source language
+    showspaces=false, % emphasize spaces in code (true/false)
+    showstringspaces=false, % emphasize spaces in strings (true/false)
+    showtabs=false, % emphasize tabulators in code (true/false)
+    numbers=none, % position of line numbers (left/right/none, i.e. no line numbers)
+    %prebreak=, % displaying mark on the end of breaking line (e.g. prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}})
+    captionpos=t, % position of caption (t/b)
+    %frame=, % showing frame outside code (none/leftline/topline/bottomline/lines/single/shadowbox)
+    %breakatwhitespace=, % sets if automatic breaks should only happen at whitespaces
+    breaklines=true, % automatic line-breaking
+    %keepspaces=, % keep spaces in the code, useful for indetation
+    %tabsize=, % default tabsize
+    %escapeinside=, % specify characters to escape from source code to LaTeX (e.g. escapeinside={\%*}{*)})
+    %rulecolor=, % Specify the colour of the frame-box
+}
+
+\lstdefinelanguage{diff}{
+    morecomment=[f][\color{blue}]{@@},
+    morecomment=[f][\color{red}]-,
+    morecomment=[f][\color{green}]+,
+    morecomment=[f][\color{magenta}]{---},
+    morecomment=[f][\color{magenta}]{+++},
+}
+
+% ----- PDF -----
+\RequirePackage{pdfpages}
+
+%-------------------------------------------------------------------------------
+% Configurations
+%-------------------------------------------------------------------------------
+\newcommand{\goldenratio}{1.618033}
+\newcommand{\igoldenratio}{0.618033}
+
+\setcounter{topnumber}{1}        % maximum number of floats that can appear on the top of a text page (2)
+\renewcommand{\topfraction}{0.9} % maximum part of a text page that can be occupied by floats at the top (0.7)
+
+\setcounter{bottomnumber}{1}        % maximum part of a text page that can be occupied by floats at the bottom (1)
+\renewcommand{\bottomfraction}{0.8} % maximum number of floats that can appear on any text page (0.3)
+
+\setcounter{totalnumber}{2}            % maximum number of floats that can appear on any text page (3)
+\renewcommand{\textfraction}{0.1}      % minimum part of a text page that has to be occupied by text (0.2)
+\renewcommand{\floatpagefraction}{0.8} % minimum part of a page that has to be occupied by floating objects before a ‘float page’ is produced (0.5)
+
+\setcounter{dbltopnumber}{1}              % maximum number of two-column floats that can appear on the top of a two-column text page (2)
+\renewcommand{\dbltopfraction}{0.9}       % maximum part of a two-column text page that can be occupied by two-column floats at the top (0.7)
+\renewcommand{\dblfloatpagefraction}{0.8} % minimum part of a page that has to be occupied by two-column wide floating objects before a ‘float page’ is produced (0.5)
+
+\ForEachFloatingEnvironment{\SetupFloatingEnvironment{#1}{placement=\istfloat@placement}}
