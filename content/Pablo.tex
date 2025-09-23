@@ -632,14 +632,14 @@ One way to go around this problem is to recall that the necessary, physical quan
 ----------------------
 
 \begin{figure}\centering
-	\includetikz{Diagrams/space_partition}
-	\caption{Partition of spacetime into light-cone quadrants. The quadrants where the Yang-Mills equations will be solved are identified as quadrants 1, 2 and 3. Adapted from \cite{Kovner_1995}.}
-\label{fig:space_partition}\end{figure}
-
-\begin{figure}\centering
-	\includetikz{Diagrams/space_partition_light_cones}
-	\caption{The same four quadrants with the support of current $J_1$ ($J_2$) drawn as a red (blue) line. Future light-cones drawn from points where $J_1$ passes only occupy quadrants 1 and 3; future light-cones drawn from points where $J_2$ passes only occupy quadrants 2 and 3.}
-\label{fig:current_light-cones}\end{figure}
+  \subcaptionbox{\label{fig:space_partition}}{\includetikz{space_partition}}
+  \hspace{.2\linewidth}
+  \subcaptionbox{\label{fig:current_light-cones}}{\includetikz{space_partition_light_cones}}
+	\caption{
+    Left: Partition of spacetime into light-cone quadrants. The quadrants where the Yang-Mills equations will be solved are identified as quadrants 1, 2 and 3. Adapted from \cite{Kovner_1995}.
+    Right: The same four quadrants with the support of current $J_1$ ($J_2$) drawn as a red (blue) line. Future light-cones drawn from points where $J_1$ passes only occupy quadrants 1 and 3; future light-cones drawn from points where $J_2$ passes only occupy quadrants 2 and 3.
+  }
+\end{figure}
 
 %In the case of a HIC, in the center of mass \textcolor{red}{(laboratory?)} frame, two heavy nuclei travel at (close to) the speed of light along the $z$ axis in opposing directions. The nuclei moving in the positive or negative $z$ direction are named nucleus 1 or nucleus 2, respectively.
 
