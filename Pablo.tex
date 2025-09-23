@@ -589,8 +589,8 @@ These equations have no known analytical solution, but have been studied numeric
 the Fock-Schwinger gauge condition ($A^\tau = 0$) is maintained \textcolor{purple}{(why?)}, which can be achieved by requiring the gauge transformation to be independent of $\tau$. Thus, the inverse gauge transformation is:
 \begin{subequations}
 \begin{gather}
-	\alpha(\tau,\mathbf{x}_\perp) = U (\mathbf{x}_\perp) \beta(\tau,\mathbf{x}_\perp) U^\dagger (\mathbf{x}_\perp) \\
-	\alpha^i(\tau,\mathbf{x}_\perp) = U (\mathbf{x}_\perp) \left( \beta(\tau,\mathbf{x}_\perp) - \frac{1}{ig} \partial^i \right) U^\dagger (\mathbf{x}_\perp)
+	\alpha(\tau,\mathbf{x}_\perp) = V (\mathbf{x}_\perp) \beta(\tau,\mathbf{x}_\perp) V^\dagger (\mathbf{x}_\perp) \\
+	\alpha^i(\tau,\mathbf{x}_\perp) = V (\mathbf{x}_\perp) \left( \beta(\tau,\mathbf{x}_\perp) - \frac{1}{ig} \partial^i \right) V^\dagger (\mathbf{x}_\perp)
 \end{gather}
 \end{subequations}
 which makes the linearized Yang-Mills equations for the fields in the new gauge, \textcolor{purple}{CHECK}
@@ -638,9 +638,9 @@ The solution is, then,
 \end{subequations}
 where the factor of $2$ in Eq. (\ref{eq:beta_tilde}) was introduced in order to make the $\mathbf{k}_\perp$-dependent coefficient, $\beta_0$, match the value of $\tilde{\beta}$ at $\tau=0$, since $\lim_{z \to 0} J_1(z)/z=1/2$. \cite{arfken2005mathematical}
 
-In wanting to find the expressions for the fields at $\tau = 0$ ($\beta_0$ and $\beta^i_0$), the next step would be to use the boundary conditions of Eqs. \ref{eq:boundary_conditions}, which would require first bringing the pre-collision potentials, $\alpha^i_1$ and $\alpha^i_2$, to the Coulomb gauge. However, no analytical expression for the necessary transformation matrix $U(\mathbf{x}_\perp)$ has been found. In spite of this, a numerical treatment of this problem has found that the resolution of the linearized equations with numerically-computed boundary conditions in the Coulomb gauge approximate the resolution of the full Yang-Mills equations quite well \cite{} \textcolor{purple}{(read paper, quantify similarity)}, except for very soft modes (very low $|\mathbf{k}_\perp|$). \textcolor{purple}{(quantify)}
+In wanting to find the expressions for the fields at $\tau = 0$ ($\beta_0$ and $\beta^i_0$), the next step would be to use the boundary conditions of Eqs. \ref{eq:boundary_conditions}, which would require first bringing the pre-collision potentials, $\alpha^i_1$ and $\alpha^i_2$, to the Coulomb gauge. However, no analytical expression for the necessary transformation matrix $V(\mathbf{x}_\perp)$ has been found. In spite of this, another approach to this problem has found that the resolution of the linearized equations with numerically-computed boundary conditions in the Coulomb gauge approximate the resolution of the full Yang-Mills equations quite well \cite{} \textcolor{purple}{(read paper, quantify similarity)}, except for very soft modes (very low $|\mathbf{k}_\perp|$). \textcolor{purple}{(quantify)}
 
-One way to go around this problem is to recall that the necessary, physical result needed to compute quantities with physical meaning are the Chromodynamic force fields, the Electric Chromodynamic field, $\mathbf{E}$, and the Magnetic Chromodynamic field, $\mathbf{B}$, which are gauge-invariant. 
+One way to go around this problem is to recall that the necessary, physical quantities needed to compute results with physical meaning are the chromodynamic force fields: the Electric Chromodynamic field, $\mathbf{E}$, and the Magnetic Chromodynamic field, $\mathbf{B}$, which will be referred to simply as the electric and magnetic fields. They will be necessary in order to calculate color traces of products of components of two of these fields ($\Tr_c [E^i(\tau, \mathbf{x}_\perp) B^j(\tau', \mathbf{x}_\perp) ]$) for example. Since the field components change under a gauge transformation as $E^i (\tau, \mathbf{x}_\perp) \to E'^i(\tau, \mathbf{x}_\perp) = V(\mathbf{x}_\perp) E^i(\tau, \mathbf{x}_\perp) V^\dagger(\mathbf{x}_\perp)$ \textcolor{purple}{(NOT GAUGE INVARIANT FOR $v_\parallel \neq 0$ ??)}
 
 ----------------------
 
