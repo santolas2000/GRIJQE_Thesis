@@ -356,7 +356,7 @@ Inputting $J_{(0)}^\mu = A_{(0)}^\mu = 0$ (since, in the absence of color charge
 	 & \to ~ A^\nu_{(1)}(x^-,\mathbf{x}_\perp) = - g \delta^{\nu}_+  \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(x^-,\mathbf{y}_\perp)
 \end{split}
 \end{equation}
-where $G(\mathbf{x_\perp} - \mathbf{y_\perp})$ is a Green's function for the 2-dimensional Laplacian, $\mathbf{\nabla}_\perp^2 = \partial_i \partial^i$ with $i=1,2$.
+where $G(\mathbf{x_\perp} - \mathbf{y_\perp})$ is a Green's function for the 2-dimensional Laplacian, $\mathbf{\nabla}_\perp^2 = -\partial_i \partial^i$ with $i=2,3$.
 
 Moving to the $n=2$ system, the right side of the top equation is once again $0$ since $A_{(1)}^\mu$ and $J_{(1)}^{\mu}$ only have a $+$-component. For the bottom equation, its commutator vanishes because $A_{(1)}^\mu$ only has a $+$-component and because that component is independent of $x^+$. The system for $n=2$ is, then,
 \begin{equation}
@@ -506,6 +506,13 @@ Moving to the scenario of a HIC, where both nuclei are present, the two currents
 \end{split}
 \end{equation}
 
+\begin{figure}
+\input{Diagrams/space_partition}
+\centering
+\caption{Partition of spacetime into light-cone quadrants. The quadrants where the Yang-Mills equations will be solved are identified as quadrants 1, 2 and 3. Adapted from \citep{Kovner_1995}.}
+\label{fig:space_partition}
+\end{figure}
+
 For the purpose of solving the Yang-Mills equations, spacetime is divided into four quadrants in $(x^+,x^-)$ space,  as illustrated in Fig. \ref{fig:space_partition}. Quadrants 1 and 2 are named the pre-collision quadrants, while quadrant 3 is referred to as the forward light-cone. For calculations in the third quadrant, the Bjorken/Milne/Comoving coordinate system is used, where positions and four-vectors are given by:
 \begin{subequations}
 \begin{gather}
@@ -521,6 +528,13 @@ A^\eta & = \frac{x^- A^+ - x^+ A^-}{\tau^2} \label{eq:milne_Aeta}
 \end{subequations}
 and the transverse components ($i=2,3$) keep their Cartesian form. $\tau$ is called the proper time and $\eta$ is called the rapidity. For a more detailed overview of the Comoving coordinates, see Appendix \ref{ap:bjorken_coordinates}.
 
+\begin{figure}
+\input{Diagrams/space_partition_light_cones}
+\centering
+\caption{The same four quadrants with the support of current $J_1$ ($J_2$) drawn as a red (blue) line. Future light-cones drawn from points where $J_1$ passes only occupy quadrants 1 and 3; future light-cones drawn from points where $J_2$ passes only occupy quadrants 2 and 3.}
+\label{fig:current_light-cones}
+\end{figure}
+
 Drawing future light-cones out from points where the color currents pass in $(x^+,x^-)$ space, one notices that all points in quadrant 1 may not be affected by the $J_2$ current, due to causality; in the same manner, all points in quadrant 2 may not be affected by current $J_1$. Only points in quadrant 3 are causally related to both currents (Fig. \ref{fig:current_light-cones}). Following \cite{Albacete_2019}'s approach, this permits the ``single-nuclei" results of the previous section to be used for the gluon fields in quadrants 1 and 2, reducing the problem to solving the Yang-Mills equations in the third quadrant. Even though they were obtained using different gauge conditions ($A^+ = 0$ for the first nucleus and $A^- = 0$ for the second nucleus), the result in Eqs. (\ref{eq:A_lc_one_nucleus}) and (\ref{eq:A^i_factorization}) can be used for the fields in quadrant 1 and the result in Eqs. (\ref{eq:A_lc_one_nucleus_2}) can be used for the fields in quadrant 2, since those regions are not causally related. In solving the Yang Mills equations for the case of two nuclei, the Fock-Schwinger gauge is chosen, defined by the axial gauge condition:
 \begin{equation}
 	x^+ A^- + x^- A^+ = 0 ~ \Leftrightarrow ~ A^\tau = 0
@@ -535,7 +549,7 @@ which suggests the definition of an $\alpha$ field as:
 \end{equation}
 Inserting these definitions in Eq. (\ref{eq:milne_Aeta}), the $\alpha$ field can be shown to be equal to $A^\eta$.
 
-Following the ansatz first proposed in \cite{Kovner_1995}, the $\alpha$ field and the transverse fields of the third quadrant, $\alpha^i$, are taken not to depend on $\eta$. This is so that the form of the solution in the third quadrant is not altered by applying a boost to the studied system along the direction of motion of the two nuclei, since the system is invariant under boosts along the $x^1$ axis. For any boost applied, the two nuclei will keep moving at the speed of light, making the boosted system indistinguishable from the original and requiring a solution of the same form. Compiling all the information gathered so far regarding the form of the solution,
+Following the ansatz first proposed in \cite{Kovner_1995}, the $\alpha$ field and the transverse fields of the third quadrant, $\alpha^i$, are taken not to depend on $\eta$. This is so that the form of the solution in the third quadrant is not altered by applying a boost to the studied system along the direction of motion of the two nuclei, since the system is invariant under boosts along the $x^1$ axis. For any boost applied, the two infinitely thin nuclei will keep moving at the speed of light, making the boosted system indistinguishable from the original and requiring a solution of the same form. Compiling all the information gathered so far regarding the form of the solution,
 \begin{subequations}
 \begin{alignat}{2}
 & A^+ (x^\mu) &&= \underbrace{\theta (x^+) \theta(x^-)}_{\Circled{3}} x^+ \alpha (\tau, \mathbf{x}_\perp)\\
@@ -559,9 +573,9 @@ Before moving on to their treatment, a discussion of the boundary conditions to 
 \begin{subequations}
 \label{eq:boundary_conditions}
 \begin{align}
-	\alpha(0, \mathbf{x}_\perp) & = -\frac{ig}{2} \left[ \alpha_1^i(\mathbf{x}_\perp), \alpha_2^i(\mathbf{x}_\perp) \right]
+	\alpha(\tau \to 0^+, \mathbf{x}_\perp) & = \frac{ig}{2} \left[ \alpha_1^i(\mathbf{x}_\perp), \alpha_2^i(\mathbf{x}_\perp) \right]
 	\label{eq:boundary_alpha} \\
-	\alpha^i(0, \mathbf{x}_\perp) & =  \alpha_1^i(\mathbf{x}_\perp) + \alpha_2^i(\mathbf{x}_\perp)
+	\alpha^i(\tau \to 0^+, \mathbf{x}_\perp) & =  \alpha_1^i(\mathbf{x}_\perp) + \alpha_2^i(\mathbf{x}_\perp)
 	\label{eq:boundary_transverse}
 \end{align}
 \end{subequations}
@@ -632,31 +646,89 @@ Once the change of variable $z=\omega \tau$ is made, Eq. (\ref{eq:bessel_beta}) 
 The solution is, then,
 \begin{subequations}
 \begin{align}
-	\tilde{\beta} (\tau, \mathbf{k}_\perp) &= \beta_0 (\mathbf{k}_\perp) \frac{2 J_1(\omega \tau)}{\omega \tau} \label{eq:beta_tilde}\\
-	\tilde{\beta}^i (\tau, \mathbf{k}_\perp) &= \beta^i_0 (\mathbf{k}_\perp) J_0(\omega \tau)
+	\tilde{\beta} (\tau, \mathbf{k}_\perp) &= \tilde{\beta}_0 (\mathbf{k}_\perp) \frac{2 J_1(\omega \tau)}{\omega \tau} \label{eq:beta_tilde}\\
+	\tilde{\beta}^i (\tau, \mathbf{k}_\perp) &= \tilde{\beta}^i_0 (\mathbf{k}_\perp) J_0(\omega \tau) \label{eq:beta^i_tilde}
 \end{align}
 \end{subequations}
-where the factor of $2$ in Eq. (\ref{eq:beta_tilde}) was introduced in order to make the $\mathbf{k}_\perp$-dependent coefficient, $\beta_0$, match the value of $\tilde{\beta}$ at $\tau=0$, since $\lim_{z \to 0} J_1(z)/z=1/2$. \cite{arfken2005mathematical}
+where the factor of $2$ in Eq. (\ref{eq:beta_tilde}) was introduced in order to make the $\mathbf{k}_\perp$-dependent coefficient, $\tilde{\beta}_0$, match the value of $\tilde{\beta}$ at $\tau=0$, since $\lim_{z \to 0} J_1(z)/z=1/2$. \cite{arfken2005mathematical}
 
-In wanting to find the expressions for the fields at $\tau = 0$ ($\beta_0$ and $\beta^i_0$), the next step would be to use the boundary conditions of Eqs. \ref{eq:boundary_conditions}, which would require first bringing the pre-collision potentials, $\alpha^i_1$ and $\alpha^i_2$, to the Coulomb gauge. However, no analytical expression for the necessary transformation matrix $V(\mathbf{x}_\perp)$ has been found. In spite of this, another approach to this problem has found that the resolution of the linearized equations with numerically-computed boundary conditions in the Coulomb gauge approximate the resolution of the full Yang-Mills equations quite well \cite{} \textcolor{purple}{(read paper, quantify similarity)}, except for very soft modes (very low $|\mathbf{k}_\perp|$). \textcolor{purple}{(quantify)}
+In wanting to find the expressions for the fields at $\tau = 0$ ($\tilde{\beta}_0$ and $\tilde{\beta}^i_0$), the next step would be to use the boundary conditions of Eqs. (\ref{eq:boundary_conditions}), which would require first bringing the pre-collision potentials, $\alpha^i_1$ and $\alpha^i_2$, to the Coulomb gauge. However, no analytical expression for the necessary transformation matrix $V(\mathbf{x}_\perp)$ has been found. In spite of this, another approach to this problem has found that the resolution of the linearized equations with numerically-computed boundary conditions in the Coulomb gauge approximate the resolution of the full Yang-Mills equations quite well \cite{} \textcolor{purple}{(read paper, quantify similarity)}, except for very soft modes (very low $|\mathbf{k}_\perp|$). \textcolor{purple}{(quantify)}
 
-One way to go around this problem is to recall that the necessary, physical quantities needed to compute results with physical meaning are the chromodynamic force fields: the Electric Chromodynamic field, $\mathbf{E}$, and the Magnetic Chromodynamic field, $\mathbf{B}$, which will be referred to simply as the electric and magnetic fields. They will be necessary in order to calculate color traces of products of components of two of these fields ($\Tr_c [E^i(\tau, \mathbf{x}_\perp) B^j(\tau', \mathbf{x}_\perp) ]$) for example. Since the field components change under a gauge transformation as $E^i (\tau, \mathbf{x}_\perp) \to E'^i(\tau, \mathbf{x}_\perp) = V(\mathbf{x}_\perp) E^i(\tau, \mathbf{x}_\perp) V^\dagger(\mathbf{x}_\perp)$ \textcolor{purple}{(NOT GAUGE INVARIANT FOR $v_\parallel \neq 0$ ??)}
+One way to go around this problem is to recall that the quantities needed to compute the physically meaningful results are the chromodynamic force fields: the electric chromodynamic field, $\mathbf{E}$, and the magnetic chromodynamic field, $\mathbf{B}$, which will be referred to simply as the electric and magnetic fields. The components of the chromodynamic fields ($E^i$ and $B^i$ with $i=\eta,2,3$) are obtained from the components of the gluon field strength tensor, $F^{\mu \nu}$, following \cite{Lappi:2017skr}, as:
+\begin{subequations}
+\begin{gather}
+E^i = F_{0 i}\\
+B^i = -\frac12 \varepsilon^{ijk} F_{jk}
+\end{gather}
+\end{subequations}
+with $i=1,2,3$, as in the case of Classical Electromagnetism. In Milne coordinates, the components are defined as:
+\begin{subequations}
+\begin{alignat}{2}
+E^\eta &= \frac{1}{\tau} F_{\tau \eta}  = - F_{+ -}
+ && E^i = F_{\tau i} \label{eq:E_from_F} \\
+ B^\eta &= -\frac12 \varepsilon^{ij} F_{ij} = -F_{23} \quad
+&& B^i = -\varepsilon^{ij} \frac{1}{\tau} F_{j \eta} \label{eq:B_from_F}
+\end{alignat}
+\label{eq:E_B_from_F}
+\end{subequations}
+with $i,j=2,3$. Defined this way, $E^\eta= E^1$ and $B^\eta = B^1$ everywhere; and $E^i_{\text{Minkowski}} = E^i_{\text{Milne}}$  and $B^i_{\text{Minkowski}} = B^i_{\text{Milne}}$ ($i=2,3$) at midrapidity, where $\eta = 0$.
 
+They will be used to calculate color traces of products of components, like $\Tr_c [E^i(\tau, \mathbf{x}_\perp) B^j(\tau', \mathbf{y}_\perp) ]$, for example. Checking for gauge invariance, since the field components change under the latest gauge transformation as $E^i (\tau, \mathbf{x}_\perp) \to E'^i(\tau, \mathbf{x}_\perp) = V(\mathbf{x}_\perp) E^i(\tau, \mathbf{x}_\perp) V^\dagger(\mathbf{x}_\perp)$ \textcolor{purple}{(NOT GAUGE INVARIANT FOR $v_\perp \neq 0$ ??
+% But maybe $\hat{q}$ and $dE/dx$ are)
+}, the previous trace is gauge invariant. 
+
+As such, in order to obtain the initial fields $\tilde{\beta}_0$ and $\tilde{\beta}_0^i$, one may choose them so as to produce the appropriate initial chromodynamic fields. The initial values of the chromodynamic fields, $\mathbf{E}_0 (\mathbf{x}_\perp) \equiv \mathbf{E}(\tau \to 0^+,\mathbf{x}_\perp)$ and $\mathbf{B}_0 (\mathbf{x}_\perp) \equiv \mathbf{B}(\tau \to 0^+,\mathbf{x}_\perp)$ may themselves be obtained out of the initial conditions in Eqs. (\ref{eq:boundary_conditions}).
+
+The relations between the initial gluon fields and the initial chromodynamic fields are obtained from taking the Fourier transform of the gluon and chromodynamic fields in Eqs. (\ref{eq:E_B_from_F}), as detailed in Appendix \ref{ap:betas_and_EBs}:
+\begin{subequations}
+\begin{align}
+\label{eq:betas_and_E}
+\tilde{E}_0^\eta (\mathbf{k}_\perp) = -2 \tilde{\beta}_0 (\mathbf{k}_\perp) & \implies \tilde{\beta}_0 (\mathbf{k}_\perp) = -\frac12 \tilde{E}_0^\eta (\mathbf{k}_\perp)\\ 
+\label{eq:betas_and_B}
+\tilde{B}_0^\eta (\mathbf{k}_\perp) = - i \varepsilon^{ij} k^i \tilde{\beta}_0^j (\mathbf{k}_\perp) & \implies \tilde{\beta}^i_0 (\mathbf{k}_\perp)= - i \varepsilon^{ij} \frac{k^j}{|\mathbf{k}_\perp|^2} \tilde{B}_0^\eta(\mathbf{k}_\perp) 
+\end{align}
+\label{eq:betas_and_EBs}
+\end{subequations}
+%\tilde{E}_0^i = \\
+%\tilde{B}_0^i =
+
+The initial values of $E^\eta$ and $B^\eta$, the longitudinal fields (so called because they match $E^1$ and $B^1$), are obtainable from the pre-collision potentials by calculating the relevant components of $F^{\mu \nu}$ using the expressions for $\alpha$ and $\alpha^i$ arbitrarily close to the borders of the forward light-cone (the boundary equations of Eq. (\ref{eq:boundary_conditions})): \textcolor{red}{missing $-$ sign}
+\begin{subequations}
+\begin{gather}
+E^\eta_0 (\mathbf{x}_\perp) = - ig \delta^{ij} \left[ \alpha_1^i(\mathbf{x}_\perp), \alpha_2^j(\mathbf{x}_\perp) \right] 
+\label{eq:E_from_precollision}\\
+B^\eta_0 (\mathbf{x}_\perp) = \textcolor{red}{-}ig \varepsilon^{ij} \left[ \alpha_1^i(\mathbf{x}_\perp), \alpha_2^j(\mathbf{x}_\perp) \right]
+\label{eq:B_from_precollision}
+\end{gather}
+\label{eq:EB_from_precollision}
+\end{subequations}
+Additionally, the initial chromodynamic fields are purely longitudinal; that is, the transverse fields are initially null, $E^i_0 = B^i_0 = 0$. The steps of this derivation are detailed in Appendix \ref{ap:EB_from_precollision}.
+
+Thus, the chain of expressions which allows writing the chromodynamic fields as functions of the pre-collision potentials is now complete.
+\begin{subequations} \label{eq:EB_from_initial_EB}
+\begin{align}
+\tilde{E}^\eta(\tau,\mathbf{k}_\perp) & = \tilde{E}^\eta_0 (\mathbf{k}_\perp) J_0 (k \tau) \\
+\tilde{E}^i(\tau,\mathbf{k}_\perp) & = -i \varepsilon^{ij} (k^j/k) \tilde{B}_0^\eta (\mathbf{k}_\perp) J_1 (k \tau) \\
+\tilde{B}^\eta(\tau,\mathbf{k}_\perp) & = \tilde{B}^\eta_0 (\mathbf{k}_\perp) J_0 (k \tau) \\
+\tilde{B}^i(\tau,\mathbf{k}_\perp) & = \textcolor{red}{-}i \varepsilon^{ij} (k^j/k) \tilde{E}_0^\eta (\mathbf{k}_\perp) J_1 (k \tau)
+\end{align}
+\end{subequations}
+where $\omega$ has been replaced with $k\equiv|\mathbf{k}_\perp|$.
+
+In order to obtain these expressions in position space, it is necessary to calculate the Fourier transforms of Eqs. (\ref{eq:EB_from_precollision}) to insert into Eqs. (\ref{eq:EB_from_initial_EB}), before applying the Fourier transform again to finish at position space. For example, for $E^i$:
+\begin{equation}
+\begin{split}
+	E^i (\tau,\mathbf{x}_\perp) & =  \int \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} e^{i \mathbf{k}_\perp \cdot \mathbf{x}_\perp} (-i)   \varepsilon^{i j} \frac{k^j}{k} J_1 (k \tau)  \int \diff^2 \mathbf{u}_\perp e^{-i \mathbf{k}_\perp \cdot \mathbf{u}_\perp} (-ig) \varepsilon^{mn} [\alpha^m_{1} (\mathbf{u}_\perp) \alpha^n_{2}(\mathbf{u}_\perp)] \\
+	& = -ig \varepsilon^{mn} f^{abc} T_c \varepsilon^{ij} \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} \frac{k^j}{k} J_1 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^m_{1a} (\mathbf{u}_\perp) \alpha^n_{2b}(\mathbf{u}_\perp)
+\end{split}
+\end{equation}
+where the definition $\alpha_i^m(\mathbf{u}_\perp) = \alpha_{ia}^m(\mathbf{u}_\perp) T_a$ and the SU($3$) commutation relations, $[T_a,T_b] = if^{abc} T_c$, were used.
+
+
+
+\begin{comment}
 ----------------------
 
-\begin{figure}
-\input{Diagrams/space_partition}
-\centering
-\caption{Partition of spacetime into light-cone quadrants. The quadrants where the Yang-Mills equations will be solved are identified as quadrants 1, 2 and 3. Adapted from \citep{Kovner_1995}.}
-\label{fig:space_partition}
-\end{figure}
-
-\begin{figure}
-\input{Diagrams/space_partition_light_cones}
-\centering
-\caption{The same four quadrants with the support of current $J_1$ ($J_2$) drawn as a red (blue) line. Future light-cones drawn from points where $J_1$ passes only occupy quadrants 1 and 3; future light-cones drawn from points where $J_2$ passes only occupy quadrants 2 and 3.}
-\label{fig:current_light-cones}
-\end{figure}
 
 %In the case of a HIC, in the center of mass \textcolor{red}{(laboratory?)} frame, two heavy nuclei travel at (close to) the speed of light along the $z$ axis in opposing directions. The nuclei moving in the positive or negative $z$ direction are named nucleus 1 or nucleus 2, respectively.
 
@@ -679,6 +751,8 @@ The classical Yang-Mills equations to be solved in the presence of the static co
 	 [D_\mu, F^{\mu \nu}] = J^\nu
 \end{equation}
 
+\end{comment}
+
 \section{\textcolor{red}{Transcribed expressions yet without text}}
 
 \begin{subequations} \label{eq:initial_fields}
@@ -694,15 +768,6 @@ B^\eta_0(\mathbf{x}_\perp) & = -ig \varepsilon^{ij} [\alpha^i_1 (\mathbf{x}_\per
 & = g \varepsilon^{ij} \alpha^i_{1a} (\mathbf{x}_\perp) \alpha^j_{2b}(\mathbf{x}_\perp) f^{abc} T_c
 \end{split} \label{eq:initial_B}
 \end{equation}
-\end{subequations}
-
-\begin{subequations} \label{eq:EB_from_initial_EB}
-\begin{align}
-E^\eta(\tau,\mathbf{k}_\perp) & = E^\eta_0 (\mathbf{k}_\perp) J_0 (k \tau) \\
-E^i(\tau,\mathbf{k}_\perp) & = -i \varepsilon^{ij} \hat{k}^j B_0^\eta (\mathbf{k}_\perp) J_1 (k \tau) \\
-B^\eta(\tau,\mathbf{k}_\perp) & = B^\eta_0 (\mathbf{k}_\perp) J_0 (k \tau) \\
-B^i(\tau,\mathbf{k}_\perp) & = -i \varepsilon^{ij} \hat{k}^j E_0^\eta (\mathbf{k}_\perp) J_1 (k \tau)
-\end{align}
 \end{subequations}
 
 In order to get expressions for one of the fields in coordinate  space\textcolor{red}{\footnote{as is necessary in order to calculate $X^{\alpha \beta}$}}, the appropriate field at $\tau=0^+$ (eqs. \ref{eq:initial_fields}) must be Fourier-transformed and used in Eqs. (\ref{eq:EB_from_initial_EB}). The inverse Fourier transform is then applied to the resulting expression. For $E^\alpha$, $\alpha=1,2$ \textcolor{red}{(2,3)?}, for example:

@@ -1,7 +1,6 @@
 \chapter{Derivations}
 \section{Covariant Current Conservation}
 \label{ap:covariant_conservation}
-
 \begin{equation}
 	[D_\nu, J^\nu] = [D_\nu, [D_\mu, F^{\mu \nu}]] = 0
 	%\label{eq:covariant_conservation}
@@ -28,3 +27,108 @@ and $[F^{\mu\nu}, F_{\mu\nu}] = 0$ because, first swapping the order in the comm
 \begin{equation}
 	[F^{\mu\nu}, F_{\mu\nu}] = -[F_{\mu\nu}, F^{\mu\nu}] = - [F^{\mu\nu}, F_{\mu\nu}]
 \end{equation}
+
+\section{Equations (\ref{eq:betas_and_EBs})}
+\label{ap:betas_and_EBs}
+\subsection{Equation (\ref{eq:betas_and_E})}
+From Eq. (\ref{eq:E_from_F}) (left), 
+\begin{equation}
+\begin{split}
+	E^\eta & = -F_{+-} = -\partial_+ A_- + \partial_- A_+ + ig \left[A_+,A_- \right] = -\partial_+ (x^+ \beta) - \partial_- (x^- \beta) \\
+	& = -2\beta - x^+ \partial_+ \beta - x^- \partial_-  \beta = -2\beta -\tau \partial_\tau \beta 
+\end{split}
+\label{eq:E_eta_from_beta}
+\end{equation}
+
+Taking the Fourier transforms of $E^\eta$ and $\beta$,
+\begin{equation}
+	\tilde{E}^\eta = -2\tilde{\beta} -\tau \partial_\tau \tilde{\beta}
+\end{equation}
+
+Inserting Eq. (\ref{eq:beta_tilde}),
+\begin{equation}
+	\tilde{E}^\eta = -2 \tilde{\beta}_0  \left(\frac{2J_1(\omega \tau)}{\omega \tau} + \tau \partial_\tau \left(\frac{J_1(\omega \tau)}{\omega \tau}   \right) \right) = -2 \tilde{\beta}_0 J_0(\omega \tau)
+\end{equation}
+where the Bessel functions' recurrence relations were used in the last step.
+
+Taking the limit where $\tau \to 0^+$,
+\begin{equation}
+	\tilde{E}^\eta_0  \equiv \lim_{\tau \to 0^+} \tilde{E}^\eta =  -2 \tilde{\beta}_0 \lim_{x \to 0^+}  J_0(x) = -2 \tilde{\beta}_0
+\end{equation}
+%\left(\frac{J_1(x)}{x} + \partial_x J_1(x) \right)
+
+
+\subsection{Equation (\ref{eq:betas_and_B})}
+From Eq. (\ref{eq:B_from_F}) (left),
+\begin{equation}
+	B^\eta = - F_{23} = - \left( \partial_2 A_3 - \partial_3 A_2 - ig[A_2,A_3] \right) =  \partial_2 \beta^3 - \partial_3 \beta^2 + ig[\beta^2,\beta^3]
+	\label{eq:B_eta_from_beta}
+\end{equation}
+
+Two equalities must be drawn from the Coulomb gauge condition, the first for $\tilde{\beta}^i$:
+\begin{equation}
+	\partial_i \beta^i = 0 \implies k_i \tilde{\beta}^i = 0 \Leftrightarrow k_i \tilde{\beta}^i_0 = 0
+\label{eq:app_coulomb_gauge}
+\end{equation}
+
+For the second, $\tilde{\beta}^i$ is decomposed into its parallel and perpendicular components to $\mathbf{k}_\perp$: 
+\begin{equation}
+	\tilde{\beta}^i_0(\mathbf{k}_\perp) = k^i C_\parallel + \varepsilon^{ij} k^j C_\perp
+\end{equation}
+where the $C$ coefficients do not depend on $\mathbf{k}_\perp$ because no Lorentz-invariant quantity may be crafted solely from $k^2$ and $k^3$. Thus, in order for $\tilde{\beta}^i_0$ to be components of a four-vector, $C_\parallel$ and $C_\perp$ must be constants. 
+
+Applying the Coulomb gauge condition to this decomposition:
+\begin{equation}
+	k_i \tilde{\beta}^i(\tau, \mathbf{k}_\perp) = 0 \implies k_i \tilde{\beta}^i_0(\mathbf{k}_\perp) = 0 \Leftrightarrow -k_\perp^2 C_\parallel + 0 = 0 \implies C_\parallel = 0
+\end{equation}
+%still behaves as a 4-vector if the perpendicular component is the one different from 0?
+from which
+\begin{equation}
+	[\beta_0^2, \beta_0^3] = \iint \frac{\diff \mathbf{k}_\perp}{(2\pi)^2} \iint \frac{\diff \mathbf{k_\perp'}}{(2\pi)^2} \left[k^3 C_\perp , -(k')^2 C_\perp\right] = 0 \implies [\beta^2,\beta^3] = 0
+\end{equation}
+
+Thus, taking the Fourier transforms of $B^\eta$ and $\beta^i$:
+\begin{equation}
+	\tilde{B}^\eta = ik_2 \tilde{\beta}^3 - ik_3 \tilde{\beta}^2 = - i \varepsilon^{ij} k^i \tilde{\beta}^j
+\end{equation}
+
+Taking the limit $\tau \to 0^+$ and inserting Eq. (\ref{eq:beta^i_tilde}),
+\begin{equation}
+	B^\eta_0 \equiv \lim_{\tau \to 0^+} B^\eta =  - i \varepsilon^{ij} k^i \tilde{\beta}^j_0 \lim_{\tau \to 0^+} J_0(\omega \tau) = - i \varepsilon^{ij} k^i \tilde{\beta}^j_0
+\end{equation}
+
+Which may be inverted as:
+\begin{equation}
+\begin{split}
+	\tilde{B}^\eta_0 = - i \varepsilon^{mn} k^m \tilde{\beta}^n_0 
+	\Leftrightarrow i \varepsilon^{ij} \tilde{B}^\eta_0 = \varepsilon^{ij} \varepsilon^{mn} k^m \tilde{\beta}^n_0
+	\Leftrightarrow i \varepsilon^{ij} \tilde{B}^\eta_0 = \left(\delta^{im}\delta^{jn} - \delta^{in}\delta^{jm} \right) k^m \tilde{\beta}^n_0 
+	\\ \Leftrightarrow i \varepsilon^{ij} \tilde{B}^\eta_0 = k^i \tilde{\beta}^j_0 - k^j \tilde{\beta}^i_0 
+	\Rightarrow i \varepsilon^{ij} k^j \tilde{B}^\eta_0 =   k^i k^j \tilde{\beta}^j_0  - k_\perp^2 \tilde{\beta}^j_0
+	 \Rightarrow \tilde{\beta}^i_0 = - i \varepsilon^{ij} \frac{k^j}{k_\perp^2} \tilde{B}^\eta_0
+\end{split} 
+\end{equation}
+where, in the last step, Eq. (\ref{eq:app_coulomb_gauge}) was used.
+
+\section{Equations (\ref{eq:EB_from_precollision})}
+\label{ap:EB_from_precollision}
+
+In truth, the calculation of $E^\eta_0$ of Eq. (\ref{eq:E_from_precollision}) requires more than simply inserting the boundary condition for $\alpha$ (Eq. (\ref{eq:boundary_alpha})) into the expression for $E^\eta$ (Eq. (\ref{eq:E_eta_from_beta}), for $\beta$), as the expression for $E^\eta$ involves a derivative in $\tau$, so an expression for $\alpha$ as $\tau \to 0$ may not be used. However, treatments of the HIC glasma problem using power expansions in $\tau$ of the $\alpha$ and $\alpha^i$ fields \cite{Chen:2015wia} have shown that $\alpha^i$ behaves as proportional to $\tau^2$ as $\tau \to 0^+$, so $E^\eta_0 (\mathbf{x}_\perp) = -2 \alpha(\tau \to 0^+, \mathbf{x}_\perp) = -ig \delta^{ij} \left[ \alpha_1^i(\mathbf{x}_\perp), \alpha_2^j(\mathbf{x}_\perp) \right]$.
+
+As for obtaining $B^\eta_0$ in Eq. (\ref{eq:B_from_precollision}), the boundary conditions for $\alpha^i$ (Eq. (\ref{eq:boundary_transverse})) may be inserted into the expression for $B^\eta$ (Eq. (\ref{eq:B_eta_from_beta}), for $\beta^i$), returning
+\begin{equation}
+\begin{split}
+	B^\eta_0 = ~ & \partial_2 \alpha^3_1 - \partial_3 \alpha^2_1 + ig [\alpha^2_1, \alpha^3_1] \\
+	& + \partial_2 \alpha^3_2 - \partial_3 \alpha^2_2 + ig [\alpha^2_2, \alpha^3_2] \\
+	& + ig \varepsilon^{ij} [\alpha^i_1, \alpha^j_2]
+\end{split}
+\end{equation}
+The first and second lines are $0$ because of $\alpha^i_1$ and $\alpha^i_2$ being pure gauge fields. For the first line, taking $\alpha_1^i = (i/g) U^\dagger \partial^i U$:
+\begin{equation}
+\begin{split}
+	 - & \partial^2 \alpha^3_1 + \partial^3 \alpha^2_1 + ig [\alpha^2_1, \alpha^3_1] = \\
+	& = \frac{i}{g} \left( (\partial^2 U^\dagger) \partial^3 U + U^\dagger \partial^2 \partial^3 U - (\partial^3 U^\dagger)\partial^2 U - U^\dagger \partial^2 \partial^3 U + U^\dagger (\partial^2 U) U^\dagger \partial^3 U - U^\dagger (\partial^3 U) U^\dagger \partial^2 U \right) \\
+	& = 0
+	\end{split}
+\end{equation}
+using $\partial^i (U^\dagger U) = 0 \Leftrightarrow (\partial^i U^\dagger) U = - U^\dagger (\partial^i U)$.
