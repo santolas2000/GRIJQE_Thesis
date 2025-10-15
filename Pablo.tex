@@ -12,13 +12,13 @@ In studying a system where only strong interactions are relevant, one turns to t
 \end{equation}
 where $D_\mu$, the covariant derivative, is given by:
 \begin{equation}
-	D_\mu =  \partial_\mu - i g A_\mu, \quad \text{where }  A_\mu = A_\mu^a T_a
+	D_\mu =  \partial_\mu + i g A_\mu, \quad \text{where }  A_\mu = A_\mu^a T_a
 \end{equation}
 and $F^{\mu \nu}$, the gluon field strength tensor, is given by:
 \begin{equation}
 \begin{split}
-	F_{\mu \nu} & = \partial_\mu A_\nu - \partial_\nu A_\mu - ig [A_\mu, A_\nu] \equiv F_{\mu \nu}^a T_a\\
-	F_{\mu \nu}^a & = \partial_\mu A_\nu^a - \partial_\nu A_\mu^a + g f^{a b c} A^b_\mu A^c_\nu
+	F_{\mu \nu} & = \partial_\mu A_\nu - \partial_\nu A_\mu + ig [A_\mu, A_\nu] \equiv F_{\mu \nu}^a T_a\\
+	F_{\mu \nu}^a & = \partial_\mu A_\nu^a - \partial_\nu A_\mu^a - g f^{a b c} A^b_\mu A^c_\nu
 \end{split}
 \end{equation}
 %\textcolor{blue}{and $J_\mu$, similarly to $A_\mu$, is a four-vector and  a linear combination of the $T_a$:
@@ -308,7 +308,7 @@ In order to fulfill this work's objectives, it will be necessary to calculate th
 It is easiest to start by considering the case of a single nucleus, chosen to be Nucleus 1, moving in the positive $x^1$ direction.
 Solutions to the Yang-Mills equations for a single nucleus moving along the light-cone were first found analytically in \cite{McLerran:1993ka} for the classical case $D_{\mu}F^{\mu \nu} = J^\nu$.   \textcolor{blue}{The very first papers' approach was to start off in light-cone gauge right away. Should I refer to this method too?}
 
-In the present work, the Yang-Mills equations in the case of a single nucleus are initially solved in the Lorenz, or covariant, gauge, where $\partial_\mu A^\mu=0$, following the more recent solving of the full equations from \cite[Section 2.2]{Blaizot_2004}. The solution is then brought to light-cone gauge, where $A^+=0$, an axial gauge condition, following the procedure from \citep[Section 3A]{Carrington_2022}. \textcolor{blue}{(\citep{Kovner_1995}: "Using light cone gauge one has direct access to the gluon distribution functions of the parton model" -- I wasn't able to find a justification for this, in order to include it as a motivation to work in light-cone gauge. Is there any reference you know I could use?)} %\textcolor{red}{I was going to write something here. Maybe the residual gauge freedom?}
+In the present work, the Yang-Mills equations in the case of a single nucleus are initially solved in the Lorenz, or covariant, gauge, where $\partial_\mu A^\mu=0$, following the more recent solving of the full equations\footnote{Note that this paper's covariant derivative definition is $D_\mu=\partial_\mu -igA_\mu$. However, this does not affect the final result.} from \cite[Section 2.2]{Blaizot_2004}. The solution is then brought to light-cone gauge, where $A^+=0$, an axial gauge condition, following the procedure from \citep[Section 3A]{Carrington_2022}. \textcolor{blue}{(\citep{Kovner_1995}: "Using light cone gauge one has direct access to the gluon distribution functions of the parton model" -- I wasn't able to find a justification for this, in order to include it as a motivation to work in light-cone gauge. Is there any reference you know I could use?)} %\textcolor{red}{I was going to write something here. Maybe the residual gauge freedom?}
 
 First of all, the equation explicitly enforcing the covariant conservation of color charge is added to the set of equations to solve. It is analogous to Classical Electrodynamics' equation of conservation of electric charge, and is obtained from the Yang-Mills equations as:
 \begin{equation}
@@ -328,16 +328,16 @@ The conservation equation and The Yang-Mills equations (in the Lorenz gauge) are
 	[D_\mu, F^{\mu \nu}] = J^\nu
 	\end{cases} \Leftrightarrow
 	\begin{cases}
-	\partial_\mu J^\mu = ig[A_\mu, J^\mu]  \\
-	\partial_\mu \partial^\mu A^\nu = J^\nu + ig [A_\mu, F^{\mu \nu} + \partial^\mu A^\nu]
+	\partial_\mu J^\mu = -ig[A_\mu, J^\mu]  \\
+	\partial_\mu \partial^\mu A^\nu = J^\nu - ig [A_\mu, F^{\mu \nu} + \partial^\mu A^\nu]
 	\end{cases}
 \end{equation}
 
 A solution may be built by solving this system iteratively, for the fields and current expanded \textcolor{red}{in terms of powers of the color number charge density, $\rho$}. The terms of order $(n)$ are obtained from those of lower orders by:
 \begin{equation}
 	\begin{cases}
-	\partial_\mu J_{(n)}^\mu = ig[A_\mu, J^\mu]_{(n)}  \\
-	\partial_\mu \partial^\mu A_{(n)}^\nu = J_{(n)}^\nu + ig [A_\mu, F^{\mu \nu} + \partial^\mu A^\nu]_{(n)}
+	\partial_\mu J_{(n)}^\mu = -ig[A_\mu, J^\mu]_{(n)}  \\
+	\partial_\mu \partial^\mu A_{(n)}^\nu = J_{(n)}^\nu - ig [A_\mu, F^{\mu \nu} + \partial^\mu A^\nu]_{(n)}
 	\end{cases}
 \end{equation}
 
@@ -592,9 +592,9 @@ and the $\nu = 2,3$ components keep their cartesian form.
 Inserting Eq. (\ref{eq:ansatz}) into the Yang-Mills equations in comoving coordinates returns:
 \begin{subequations}
 \begin{align}
-	& Y^\tau = 0 \quad \Leftrightarrow \quad ig\tau \left[\alpha, \partial_\tau \alpha \right] - \frac{1}{\tau} \left[D^i, \partial_\tau \alpha^i \right] = 0 \\
+	& Y^\tau = 0 \quad \Leftrightarrow \quad ig\tau \left[\alpha, \partial_\tau \alpha \right] - \frac{1}{\tau} \left[D_i, \partial_\tau \alpha^i \right] = 0 \\
 	& Y^\eta = 0 \quad \Leftrightarrow \quad \frac{1}{\tau} \partial_\tau \left( \frac{1}{\tau} \partial_\tau \left( \tau^2 \alpha \right) \right) - \left[D^i, \left[D^i, \alpha \right] \right] = 0 \\
-	& Y^j = 0 \quad \Leftrightarrow \quad \frac{1}{\tau} \partial_\tau \left( \tau \partial_\tau \alpha^j \right) - ig\tau^2 \left[\alpha, \left[D^j,\alpha \right] \right] - [D^i, F^{ij}] = 0
+	& Y^i = 0 \quad \Leftrightarrow \quad \frac{1}{\tau} \partial_\tau \left( \tau \partial_\tau \alpha^i \right) - ig\tau^2 \left[\alpha, \left[D^i,\alpha \right] \right] - [D^j, F^{ji}] = 0
 \end{align}
 \end{subequations}
 where $i,j=2,3$. \textcolor{purple}{And it doesn't look very friendly.}
@@ -610,9 +610,9 @@ the Fock-Schwinger gauge condition ($A^\tau = 0$) is maintained \textcolor{purpl
 which makes the linearized Yang-Mills equations for the fields in the new gauge, \textcolor{purple}{CHECK}
 \begin{subequations}
 \begin{gather}
-	\partial_\tau \partial_i* \beta^i = 0 \\
-	\frac{1}{\tau} \partial_\tau \left( \frac{1}{\tau} \partial_\tau \left( \tau^2 \beta \right) \right) - \partial_i* \partial^i \beta = 0 \\
-	\frac{1}{\tau} \partial_\tau \left( \tau \partial_\tau \beta^i \right) - \left( \partial^k \partial_k* \delta^{i j} - \partial^i \partial^j \right) \beta^j =0
+	\partial_\tau \partial_i \beta^i = 0 \\
+	\frac{1}{\tau} \partial_\tau \left( \frac{1}{\tau} \partial_\tau \left( \tau^2 \beta \right) \right) - \partial^{\textcolor{purple}{i}} \partial^i \beta = 0 \\
+	\frac{1}{\tau} \partial_\tau \left( \tau \partial_\tau \beta^i \right) - \left( \partial^k \partial^{\textcolor{purple}{k}} \delta^{i j} - \partial^j \partial^i \right) \beta^j =0
 \end{gather}
 \end{subequations}
 where $k=2,3$. (\textcolor{purple}{different signs in 1808 and 2102})
@@ -620,8 +620,8 @@ where $k=2,3$. (\textcolor{purple}{different signs in 1808 and 2102})
 The remaining gauge freedom allows setting $\partial_i \beta^i = 0$ (\textcolor{purple}{minimizes the amplitudes of the transverse fields?}), because of which this will be called the Coulomb gauge. The equations become:
 \begin{subequations}
 \begin{gather}
-	\partial_\tau \left( \frac{1}{\tau} \partial_\tau \left( \tau^2 \beta \right) \right) - \tau \partial_i * \partial^i \beta = 0 \\
-	\partial_\tau \left( \tau \partial_\tau \beta^i \right) - \tau \partial^k \partial_k * \beta^i =0
+	\partial_\tau \left( \frac{1}{\tau} \partial_\tau \left( \tau^2 \beta \right) \right) - \tau \partial^{\textcolor{purple}{i}}  \partial^i \beta = 0 \\
+	\partial_\tau \left( \tau \partial_\tau \beta^i \right) - \tau \partial^k \partial^{\textcolor{purple}{k}} \beta^i =0
 \end{gather}
 \end{subequations}
 
@@ -635,11 +635,11 @@ Taking the transverse position Fourier transform on both sides,
 the equations for $\tilde{\beta}$ and $\tilde{\beta}^i$ are:
 \begin{subequations}
 \begin{gather}
-	\tau^2 \partial_\tau^2 \big(\tau \tilde{\beta}\big) + \tau \partial_\tau \big(\tau \tilde{\beta}\big) + \big(\textcolor{red}{-}\tau^2 |\mathbf{k}_\perp|^2 - 1\big) \big(\tau \tilde{\beta}\big) = 0  \label{eq:bessel_beta}\\ 
-	\tau^2 \partial_\tau^2 \tilde{\beta}^i + \tau \partial_\tau \tilde{\beta}^i \textcolor{red}{-} \tau^2 |\mathbf{k}_\perp|^2  \tilde{\beta}^i =0 \label{eq:bessel_beta_i}
+	\tau^2 \partial_\tau^2 \big(\tau \tilde{\beta}\big) + \tau \partial_\tau \big(\tau \tilde{\beta}\big) + \big(\tau^2 |\mathbf{k}_\perp|^2 - 1\big) \big(\tau \tilde{\beta}\big) = 0  \label{eq:bessel_beta}\\ 
+	\tau^2 \partial_\tau^2 \tilde{\beta}^i + \tau \partial_\tau \tilde{\beta}^i + \tau^2 |\mathbf{k}_\perp|^2  \tilde{\beta}^i =0 \label{eq:bessel_beta_i}
 \end{gather}
 \end{subequations}
-In order to simplify the expressions, $\omega$ is defined as $\omega \equiv |\mathbf{k}_\perp| $.
+In order to simplify the expressions, $\omega$ is defined as $\omega \equiv |\mathbf{k}_\perp|  \equiv \sqrt{(k^2)^2+(k^3)^2}$.
 
 Once the change of variable $z=\omega \tau$ is made, Eq. (\ref{eq:bessel_beta}) is a Bessel differential equation of degree 1 for the function $\tau \tilde{\beta}$. It admits as solutions linear combinations of the Bessel functions of order 1 of the first and second kind, $J_1(\omega \tau)$ and $Y_1(\omega \tau)$. Similarly, after the same change of variable, Eq. (\ref{eq:bessel_beta_i}) is a Bessel differential equation of degree 0 for the function $\tilde{\beta}^i$, which admits as solutions linear combinations of the Bessel functions of order 0 of the first and second kind, $J_0(\omega \tau)$ and $Y_0(\omega \tau)$. \cite{arfken2005mathematical} As the Bessel functions of the second kind, $Y_n$, are singular at the origin for integer $n$, they are taken as unphysical solutions and their coefficients are set to $0$. 
 
@@ -722,7 +722,7 @@ In order to obtain these expressions in position space, it is necessary to calcu
 	& = -ig \varepsilon^{mn} f^{abc} T_c \varepsilon^{ij} \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} \frac{k^j}{k} J_1 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^m_{1a} (\mathbf{u}_\perp) \alpha^n_{2b}(\mathbf{u}_\perp)
 \end{split}
 \end{equation}
-where the definition $\alpha_i^m(\mathbf{u}_\perp) = \alpha_{ia}^m(\mathbf{u}_\perp) T_a$ and the SU($3$) commutation relations, $[T_a,T_b] = if^{abc} T_c$, were used.
+where the definition $\alpha_i^m(\mathbf{u}_\perp) \equiv \alpha_{ia}^m(\mathbf{u}_\perp) T_a$ and the SU($3$) commutation relations, $[T_a,T_b] = if^{abc} T_c$, were used.
 
 
 
