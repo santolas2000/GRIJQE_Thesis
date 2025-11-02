@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+    \begin{feynman}
+    \vertex (c);
+    \vertex [above left=of c] (g1) {g};
+    \vertex [above right=of c] (g2) {g};
+    \vertex [below=of c] (g3) {g};
+
+    \diagram* {
+    (g1) -- [gluon] (c) -- [gluon] (g2),
+    (c) -- [gluon] (g3),
+    };
+    \end{feynman}
+\end{tikzpicture}

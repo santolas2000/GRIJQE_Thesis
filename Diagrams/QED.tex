@@ -1,0 +1,152 @@
+\begin{align*}
+\begin{tikzpicture}[domain=0:2.3, baseline=(a.mid)]
+\node [draw=none] at (0,1.1) (a) {};
+\draw[->] (-0.2,0) -- (3,0) node[below] {$\mu$};
+\draw[->] (0,-0.2) -- (0,2.5) node[left] {$e(\mu)$};
+\filldraw[black] (0,1) circle (1pt) node[left] {$\sim \sqrt{\frac{4\pi}{137}}$};
+\draw   plot (\x,{1 + \x*\x/45});
+\end{tikzpicture}
+& \quad \to \quad
+\begin{tikzpicture}[baseline=(ctr.base)]
+\begin{feynman}[inline=ctr.base)]
+\vertex (a1) {e};
+\vertex[right=3cm of a1] (a3);
+\vertex[below=1.5cm of a1] (b1) {e};
+\vertex[right=3cm of b1] (b5);
+\vertex at ($(a1)!0.5!(b1)$) (ctr);
+\diagram* {
+(a1) -- [plain] (a3),
+(b1) -- [plain] (b5),
+};
+\end{feynman}
+\end{tikzpicture}
++
+\begin{tikzpicture}[scale = 0.7, transform shape, baseline=(ctr.base)]
+\begin{feynman}[inline=ctr.base)]
+\vertex (a1);
+\vertex[right=1.5cm of a1] (a2);
+\vertex[right=1.5cm of a2] (a3);
+\vertex[below=1.5cm of a1] (b1);
+\vertex[right=1.5cm of b1] (b4);
+\vertex[right=1.5cm of b4] (b5);
+\vertex at ($(a1)!0.5!(b1)$) (ctr);
+\diagram* {
+{[edges=plain]
+(a1) -- (a2) -- (a3),
+},
+{[edges=plain]
+(b1) -- (b4) -- (b5),
+},
+(a2) -- [photon] (b4),
+};
+\end{feynman}
+\end{tikzpicture}
++
+\underbrace{
+...+
+\begin{tikzpicture}[scale = 0.5, transform shape, baseline=(ctr.base)]
+\begin{feynman}[inline=ctr.base)]
+\vertex (a1);
+\vertex[right=0.5cm of a1] (a2);
+\vertex[right=2.5cm of a2] (a3);
+\vertex[below=1.5cm of a1] (b1);
+\vertex[right=0.5cm of b1] (b2);
+\vertex[right=1cm of b2] (b3);
+\vertex[right=1cm of b3] (b4);
+\vertex[right=0.5cm of b4] (b5);
+\vertex at ($(a2)!0.3!(b4)$) (c1);
+\vertex at ($(a2)!0.6!(b4)$) (c2);
+\vertex at ($(a1)!0.5!(b1)$) (ctr);
+\diagram* {
+{[edges=plain]
+(a1) -- (a2) -- (a3),
+},
+{[edges=plain]
+(b1) -- (b2) -- (b3) -- (b4) -- (b5),
+},
+(a2) -- [photon] (c1),
+(c1) -- [plain, half right] (c2) -- [plain, half right] (c1),
+(c2) -- [photon] (b4),
+(b2) -- [photon, half left] (b3),
+};
+\end{feynman}
+\end{tikzpicture}
++...
+}_\text{may be truncated}	
+\\
+\begin{tikzpicture}[domain=0.7:2.3, baseline=(a.mid)]
+\node [draw=none] at (0,1.1) (a) {};
+\draw[->] (-0.2,0) -- (3,0) node[below] {$\mu$};
+\draw[->] (0,-0.2) -- (0,2.5) node[left] {$g_S(\mu)$};
+\draw[thin, gray,dashed] (1,0) node[below, black] {$\Lambda_{\text{QCD}}$} -- (1,1.5) -- (0,1.5) node[left, black] {$\sim 1$};
+\filldraw[black] (1,1.5) circle (1pt);
+\draw   plot (\x,{1.5 / \x});
+\end{tikzpicture}
+& \quad \to \quad
+\begin{tikzpicture}[baseline=(ctr.base)]
+\begin{feynman}[inline=ctr.base)]
+\vertex (a1) {q};
+\vertex[right=2.2cm of a1] (a3);
+\vertex[below=1.5cm of a1] (b1) {q};
+\vertex[right=2.2cm of b1] (b5);
+\vertex at ($(a1)!0.5!(b1)$) (ctr);
+\diagram* {
+(a1) -- [plain] (a3),
+(b1) -- [plain] (b5),
+};
+\end{feynman}
+\end{tikzpicture}
++
+\begin{tikzpicture}[baseline=(ctr.base)]
+\begin{feynman}[inline=ctr.base)]
+\vertex (a1);
+\vertex[right=1cm of a1] (a2);
+\vertex[right=1cm of a2] (a3);
+\vertex[below=1.5cm of a1] (b1);
+\vertex[right=1cm of b1] (b4);
+\vertex[right=1cm of b4] (b5);
+\vertex at ($(a2)!0.5!(b4)$) (ctr);
+\diagram* {
+{[edges=plain]
+(a1) -- (a2) -- (a3),
+},
+{[edges=plain]
+(b1) -- (b4) -- (b5),
+},
+(a2) -- [gluon] (b4),
+};
+\end{feynman}
+\end{tikzpicture}
++...+
+\begin{tikzpicture}[baseline=(d1.base)]
+\begin{feynman}[inline=d1.base)]
+\vertex (a1);
+\vertex[right=0.7cm of a1] (a2);
+\vertex[right=1.5cm of a2] (a3);
+\vertex[right=0.2cm of a3] (a4);
+\vertex[below=1.5cm of a1] (b1);
+\vertex[right=0.2cm of b1] (b2);
+\vertex[right=1cm of b2] (b3);
+\vertex[right=1cm of b3] (b4);
+\vertex[right=0.2cm of b4] (b5);
+\vertex at ($(a3)!0.1!(b4)$) (c1);
+\vertex at ($(a3)!0.4!(b4)$) (c2);
+\vertex at ($(a3)!0.7!(b4)$) (c3);
+\vertex at ($(a2)!0.5!(b3)$) (d1);
+\diagram* {
+{[edges=plain]
+(a1) -- (a2) -- (a3) -- (a4),
+},
+{[edges=plain]
+(b1) -- (b2) -- (b3) -- (b4) -- (b5),
+},
+(a3) -- [gluon] (c1) -- [gluon] (c2),
+(c2) -- [plain, half right] (c3) -- [plain, half right] (c2),
+(c3) -- [gluon] (b4),
+(a2) -- [gluon] (d1) -- [gluon] (b3),
+(b2) -- [gluon] (d1) -- [gluon] (c1),
+};
+\end{feynman}
+\end{tikzpicture}
++...
+\end{align*}

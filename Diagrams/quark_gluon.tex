@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+    \begin{feynman}
+    \vertex (c);
+    \vertex [above left=of c] (q1) {q};
+    \vertex [above right=of c] (q2) {q};
+    \vertex [below=of c] (g) {g};
+
+    \diagram* {
+    (q1) -- [fermion] (c) -- [fermion] (q2),
+    (c) -- [gluon] (g),
+    };
+    \end{feynman}
+\end{tikzpicture}

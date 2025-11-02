@@ -1,0 +1,34 @@
+\begin{tikzpicture}
+    \begin{feynman}
+    \vertex (q1) {q};
+    \vertex at ($(q1) + (4cm, -0.5cm)$) (a);
+    \vertex [right=9cm of q1] (q2) {q};
+    \vertex at ($(a) + (+1.5cm, -2cm)$) (b) ;
+    \vertex [below=3cm of q1] (g1) {g};
+    \vertex [right=9cm of g1] (g2) {g}; 
+
+    \vertex at ($(q1) + (0.2cm, 0.2cm)$) (q11);
+    \vertex at ($(a) + (0.2cm, 0.2cm)$) (a1);
+    \vertex at ($(b) + (0.2cm, 0.2cm)$) (b1);
+    \vertex at ($(g2) + (0.2cm, 0.2cm)$) (g21);
+
+    \vertex at ($(g1) + (-0.2cm, 0.2cm)$) (g12);
+    \vertex at ($(b) + (-0.45cm, 0.2cm)$) (b2);
+    \vertex at ($(a) + (-0.2cm, -0.2cm)$) (a2);
+    \vertex at ($(q2) + (-0.2cm, -0.2cm)$) (q22);
+
+   \vertex at ($(g1) + (0, -0.3cm)$) (g13);
+    \vertex at ($(b) + (0, -0.3cm)$) (b3);
+    \vertex at ($(g2) + (0, -0.3cm)$) (g23); 
+
+
+    \diagram* {
+    (q1) -- [fermion] (a) -- [fermion] (q2),
+    (a) -- [gluon, edge label'=g\(_1\)] (b),
+    (g1) -- [gluon] (b)  -- [gluon] (g2),
+    (q11) -- [red, charged scalar] (a1) -- [red, charged scalar] (b1) -- [red, charged scalar] (g21),
+    (g12) -- [blue, charged scalar] (b2) -- [blue, charged scalar] (a2) -- [blue, charged scalar] (q22),
+    (g13) -- [green, charged scalar] (b3) -- [green, charged scalar] (g23), 
+    };
+    \end{feynman}
+\end{tikzpicture}

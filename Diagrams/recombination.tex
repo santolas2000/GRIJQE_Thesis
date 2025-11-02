@@ -1,0 +1,105 @@
+\begin{equation*}
+\begin{tikzpicture}[baseline=(g12.base)]
+\begin{feynman}[inline=g12.base)]
+\vertex (q1);
+\vertex[right=0.7cm of q1] (q2);
+\vertex[right=3cm of q1] (q3);
+\vertex[below=0.8cm of q2] (g11);
+\vertex[below=0.8cm of q3] (g12);
+%\vertex at ($(a1)!0.5!(b1)$) (ctr);
+\diagram* {
+(q1) -- [fermion] (q3),
+(q2) -- [gluon, half right,magenta] (g11),
+(g11) -- [gluon,magenta] (g12),
+};
+\end{feynman}
+\end{tikzpicture}
+\quad \to \quad
+\begin{tikzpicture}[baseline=(g13.base)]
+\begin{feynman}[inline=g13.base)]
+\vertex (q1);
+\vertex[right=0.7cm of q1] (q2);
+\vertex[right=3cm of q1] (q3);
+
+\vertex[below=0.8cm of q2] (g11);
+\vertex[right=0.7cm of g11] (g12);
+\vertex[below=0.8cm of q3] (g13);
+\vertex[right=0.1cm of g13] (g13l) {$x_1$};
+
+\vertex[below=0.8cm of g12] (g21);
+\vertex[right=0.7cm of g21] (g22);
+\vertex[below=0.8cm of g13] (g23);
+\vertex[right=0.1cm of g23] (g23l) {$x_2$};
+
+\vertex[below=0.8cm of g22] (g31);
+\vertex[below=0.8cm of g23] (g32);
+\vertex[right=0.1cm of g32] (g32l) {$x_3$};
+
+\vertex at ($(g13l)!0.5!(g23l)$)[rotate=270] (gg1) {$\gg$};
+\vertex at ($(g23l)!0.5!(g32l)$)[rotate=270] (gg2) {$\gg$};
+
+%\vertex at ($(a1)!0.5!(b1)$) (ctr);
+\diagram* {
+(q1) -- [fermion] (q3),
+{[edges=gluon]
+(q2) -- [half right,magenta] (g11) -- [magenta] (g12) -- [magenta] (g13),
+(g12) -- [half right,magenta] (g21) -- [magenta] (g22) -- [magenta] (g23),
+(g22) -- [half right,magenta] (g31) -- [magenta] (g32),
+},
+};
+\end{feynman}
+\end{tikzpicture}
+\quad \to \quad
+\begin{tikzpicture}[baseline=(g13.base)]
+\begin{feynman}[inline=g13.base)]
+\vertex (q1);
+\vertex[right=0.7cm of q1] (q2);
+\vertex[right=3cm of q1] (q3);
+
+\vertex[below=0.8cm of q2] (g11);
+\vertex[right=0.7cm of g11] (g12);
+\vertex[below=0.8cm of q3] (g13);
+
+\vertex[below=0.8cm of g12] (g21);
+\vertex[right=0.7cm of g21] (g22);
+\vertex[below=0.8cm of g13] (g23);
+
+\vertex[below=0.8cm of g22] (g31);
+\vertex[right=3cm of g31,circle,fill=red] (g32) {};
+\vertex[right=0.9cm of g32] (g33);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vertex[right=3cm of q1] (peq1);
+\vertex[above=0.3cm of peq1] (eq1);
+\vertex[right=0.7cm of eq1] (eq2);
+\vertex[right=3cm of eq1] (eq3);
+
+\vertex[below=0.8cm of eq2] (eg11);
+\vertex[right=0.7cm of eg11] (eg12);
+\vertex[below=0.8cm of eq3] (eg13);
+
+\vertex[below=0.8cm of eg12] (eg21);
+\vertex[right=0.7cm of eg21] (eg22);
+\vertex[below=0.8cm of eg13] (eg23);
+
+\vertex[below=0.8cm of eg22] (eg31);
+\vertex[below=0.8cm of eg23] (eg32);
+
+%\vertex at ($(a1)!0.5!(b1)$) (ctr);
+\diagram* {
+(q1) -- [fermion] (q3),
+{[edges=gluon]
+(q2) -- [half right,magenta] (g11) -- [magenta] (g12) -- [magenta] (g13),
+(g12) -- [half right,magenta] (g21) -- [magenta] (g22) -- [magenta] (g23),
+(g22) -- [half right,magenta] (g31) -- [magenta] (g32) -- [magenta] (g33),
+},
+
+(eq1) -- [fermion] (eq3),
+{[edges=gluon]
+(eq2) -- [half right,cyan] (eg11) -- [cyan] (eg12) -- [cyan] (eg13),
+(eg12) -- [half right,cyan] (eg21) -- [cyan] (eg22) -- [cyan] (eg23),
+(eg22) -- [half right,cyan] (g32),
+},
+};
+\end{feynman}
+\end{tikzpicture}
+\end{equation*}

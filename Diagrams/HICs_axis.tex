@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+	\filldraw[fill=red!20,draw=red!50] (-4,0) ellipse (0.2 and 1.5);
+	\filldraw[fill=red!20,draw=red!50] (4,0) ellipse (0.2 and 1.5);
+	\filldraw[fill=red!20,draw=red!50] (-0.1,0) ellipse (0.2 and 1.5);
+	\filldraw[fill=red!20,draw=red!50] (0.1,0) ellipse (0.2 and 1.5);
+	
+	\node[above] at (-4,1.5) (t1) {$t_1<0$};
+	\node[above] at (4,1.5) (t2) {$t_1<0$};
+	\node[above] at (0,1.5) {$t=0$};	
+	
+	\node[below] at (-4,-1.5) {Nucleus 1};
+	\node[below] at (4,-1.5) {Nucleus 2};
+	
+	\draw[-{Latex[length=2mm]},red]  (-3.8,1.5) -- ++(0.8,0);
+	\draw[-{Latex[length=2mm]},red]  (3.8,1.5) -- ++(-0.8,0);
+	
+	\draw[-|] (-5,0) -- (0,0) node[at end, below] {$0$};
+	\draw[-{Latex[length=3mm]}]  (0,0) -- (5,0) node[at end, below] {$x^1$};
+\end{tikzpicture}

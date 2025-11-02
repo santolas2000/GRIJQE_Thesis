@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+	\filldraw[color=gray!20] (0,1) rectangle (3,-1);
+
+	\filldraw[fill=red!20] (0,0.5) ellipse (0.3 and 1.5);
+	\filldraw[fill=red!20] (3,-0.5) ellipse (0.3 and 1.5);
+	\node at (0,0.5) [gray] {$\times$};
+	\node at (3,-0.5) [gray] {$\times$};
+	\draw[-{Latex[length=3mm]},thick] (0,0.5) -- (1.5,0.5) node[midway,above] {$\vec{p}$};
+	\draw[-{Latex[length=3mm]},thick] (3,-0.5) -- (1.5,-0.5) node[midway,below] {$-\vec{p}$};
+	\draw [|-|,color=gray] (-0.5,0.5) -- (-0.5,2) node[midway,left] {$R$};
+	
+	\filldraw[color=red!20] (6,0.5) circle (1.5);
+	\filldraw[color=red!20] (6,-0.5) circle (1.5);
+	\draw (6,0.5) circle (1.5);
+	\draw (6,-0.5) circle (1.5);
+	\node at (6,0.5) [gray] {$\times$};
+	\node at (6,-0.5) [gray] {$\times$};
+\end{tikzpicture}

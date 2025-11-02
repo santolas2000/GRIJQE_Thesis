@@ -1,0 +1,48 @@
+\begin{tikzpicture}%[scale=4]
+\begin{axis}[
+	axis x line=none, 
+	axis y line=none,
+	axis z line=none,
+	view={0}{90},
+	xmin=-5,xmax=5,ymin=0,ymax=5,
+	x=1cm,y=1cm,
+	xtick=\empty, ytick=\empty, ztick=\empty,
+		]
+\node at (0,0.1) (o) {};
+    \addplot3 [
+        surf,shader=interp,z buffer=sort,
+        samples=60,
+        domain=-3:3,
+        y domain=1.25/1.414:5.2/1.414),
+    ] (
+{y*(exp(x)-exp(-x))/1.414},
+{y*(exp(x)+exp(-x))/1.414},
+-(y-1/1.414)
+);
+\draw[thick,samples=50,blue] plot (\x,{sqrt(1.56+\x*\x)+0.1});
+\draw[thick,samples=50,blue] plot (\x,{sqrt(6.25+\x*\x)+0.1});
+\draw[thick,samples=50,blue] plot (\x,{sqrt(14.06+\x*\x)+0.1});
+\end{axis}
+
+\draw[-{Latex[length=2mm]},thick]  (o)+(-5,0) -- ++(5,0) node[below] {$x^1$};
+\draw[-{Latex[length=2mm]},thick]  (o)+(0,-0.2) -- ++(0,5.6) node[left] {$t$};
+\draw (o)+(-1,-1) -- ++(5,5);
+\draw (o)+(1,-1) -- ++(-5,5);
+
+\draw[draw opacity=0] (o) -- ++(5,5) node[pos=0.17,sloped,above,scale=0.6] {Pre-hydrodynamic};
+\node [above=1.78cm of o,scale=0.6,right] {QGP};
+\node [above=3.03cm of o,scale=0.6,right] {Hadronization};
+\node [above=4.28cm of o,scale=0.6,right] {Free Hadron Gas};
+
+\node [below left=1cm of o] (n1) {};
+\node [below left=0.5cm of o] (m1) {};
+
+\node [below right=1cm of o] (n2) {};
+\node [below right=0.5cm of o] (m2) {};
+
+\filldraw[fill=red!20,draw=red!50] (n1) ellipse (0.05 and 0.25);
+\filldraw[fill=red!20,draw=red!50] (n2) ellipse (0.05 and 0.25);
+\filldraw[fill=red!20,draw=red!50] (m1) ellipse (0.05 and 0.25);
+\filldraw[fill=red!20,draw=red!50] (m2) ellipse (0.05 and 0.25);
+
+\end{tikzpicture}

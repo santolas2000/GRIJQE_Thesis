@@ -549,8 +549,14 @@
 \usepackage{siunitx}
 
 \usepackage{tikz}
-\usetikzlibrary{external}
-\tikzexternalize[optimize=true]
+%\usetikzlibrary{external}
+%\tikzexternalize[optimize=true]
+\usepackage{pgfplots}
+\usepgfplotslibrary{patchplots}
+\usetikzlibrary {shapes.symbols} 
+
+
+\usepackage[compat=1.1.0]{tikz-feynman}
 
 %\usepackage{pifont}
 
@@ -615,3 +621,5 @@
 
 %Trace
 \DeclareMathOperator{\Tr}{Tr}
+
+\pgfplotsset{width=7cm,compat=1.18}
