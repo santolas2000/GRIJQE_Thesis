@@ -1,0 +1,36 @@
+\begin{minipage}[c]{0.4\textwidth}
+    \centering 
+\begin{tikzpicture}%[baseline=(ctr.base)]
+\begin{feynman}[large]%[inline=ctr.base)]
+\vertex (c);
+\vertex[above left= of c] (p);
+\vertex[below left= of c] (q1);
+\vertex[right= of c] (q2);
+
+\diagram* {
+(q1) -- [fermion, momentum=\(P\)] c [blob,minimum height=1.8cm, minimum width=1.8cm] -- [fermion] (q2),
+(p) -- [yourboson] c,
+};
+\end{feynman}
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}[c]{0.4\textwidth}
+    \centering 
+\begin{tikzpicture}%[baseline=(ctr.base)]
+\begin{feynman}[large]%[inline=ctr.base)]
+\vertex (c);
+\vertex[above left= of c] (p);
+\vertex[below left= of c] (q1);
+\vertex[right= of c] (q2);
+
+\vertex at ($(q1)!0.6!(c)$) (q11);
+\vertex at ($(q2)!0.6!(c)$) (q22);
+
+\diagram* {
+(q1) -- [fermion, momentum=\(P\)] (q11) -- [plain, momentum=\(P-q\)] c [blob,minimum height=0.5cm, minimum width=0.5cm] -- [plain] (q22) -- [fermion] (q2),
+(p) -- [photon] (c),
+(q11) -- [gluon, half right, momentum' = \(q\)] (q22),
+};
+\end{feynman}
+\end{tikzpicture}
+\end{minipage}

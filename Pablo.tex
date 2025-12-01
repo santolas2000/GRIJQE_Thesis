@@ -14,7 +14,7 @@ At \gls{HERA}, electrons (or positrons) and protons were accelerated to collide 
 
 The contributions from these many experiments have permitted the quantitative assessment of the proton's parton content via the measurement of its \glspl{PDF}. These translate the abundance, inside the proton, of a given parton species carrying a certain fraction of its momentum (in a frame of reference where the proton's momentum is large). A species $q$'s \gls{PDF}, $q(x)$, is defined such that the number of $q$ partons carrying a fraction of the proton's momentum between $x$ and $x + \Delta x$, in a frame where the proton's momentum is much greater than its mass, is given by $q(x)\Delta x$. These functions actually also depend on the energy scale of the process used to probe the proton, $Q^2$, since a greater exchange of energy allows probing finer features of the proton, increasing its \glspl{PDF} at small $x$, for example. \cite{Thomson8:2013}
 
-Fig. \ref{fig:PDFs} shows a recent result for the proton's \glspl{PDF}. For $0.1 \lesssim x < 1$, the ``valence" quarks $u$ ($\mathbf{u}_V$)and $d$ ($\mathbf{d}_V$) dominate, and in the relative proportion expected from the static quark model, $uud$. However, for $x \lesssim 0.02$, they are overtaken by a ``sea" of quarks and antiquarks. These may be thought of as $q\overline{q}$ pairs arising from interactions between the valence quarks. Therefore, any ``sea'' flavor's \gls{PDF} is identical to its antiquark's \gls{PDF}. The ``sea'' includes new flavors ($s$, $c$ and $b$) and $u$ and $d$ quarks which are as abundant as the $\overline{u}$ and $\overline{d}$ antiquarks; to distinguish them from their valence counterparts, their \glspl{PDF} are written $\mathbf{\overline{u}}$ and $\overline{\mathbf{d}}$. For small $x$, however, the most abundant parton is, by far, the gluon ($\mathbf{g}$).
+Fig. \ref{fig:PDFs} shows a recent result for the proton's \glspl{PDF}. For $0.1 \lesssim x < 1$, the ``valence" quarks $u$ ($\mathbf{u}_V$) and $d$  ($\mathbf{d}_V$) dominate, and in the relative proportion expected from the static quark model, $uud$. However, for $x \lesssim 0.02$, they are overtaken by a ``sea" of quarks and antiquarks. These may be thought of as $q\overline{q}$ pairs arising from interactions between the valence quarks. Therefore, any ``sea'' flavor's \gls{PDF} is identical to its antiquark's \gls{PDF}. The ``sea'' includes new flavors ($s$, $c$ and $b$) and $u$ and $d$ quarks which are as abundant as the $\overline{u}$ and $\overline{d}$ antiquarks; to distinguish them from their valence counterparts, their \glspl{PDF} are written $\mathbf{\overline{u}}$ and $\overline{\mathbf{d}}$. For small $x$, however, the most abundant parton is, by far, the gluon ($\mathbf{g}$).
 
 \begin{figure}[h]
     \centering
@@ -26,7 +26,7 @@ Fig. \ref{fig:PDFs} shows a recent result for the proton's \glspl{PDF}. For $0.1
 \section{Gluon Saturation}
 \label{sec:gluon_saturation}
 
-\textcolor{red}{[Missing a discussion of evolution in $Q$ (DGLAP) vs evolution in $x$ (BFKL) accompanied by the usual $x$ vs. $Q$ plot -- should include "linear evolution predicts exponential growth.]}
+%\textcolor{red}{[Missing a discussion of evolution in $Q$ (DGLAP) vs evolution in $x$ (BFKL) accompanied by the usual $x$ vs. $Q$ plot -- should include "linear evolution predicts exponential growth.]}
 %\textcolor{red}{[Refer previous discussion of low-$x$ gluon abundance]}
 
 The dominance by the gluon over the proton's parton content  at low-$x$ is predicted by \gls{QCD}. Two avenues for reaching this prediction will be explored in this section: first, using the splitting function of the gluon and, second, using the \gls{QCD} evolution equations.
@@ -56,22 +56,45 @@ One interpretation of these non-linear effects is the onset, above certain gluon
     \label{fig:gluon_recombination}
 \end{figure}
 
-The evolution equations of \gls{QCD} -- the \gls{DGLAP} equations and the \gls{BFKL} equations -- also predict the growth of gluon densities at low-$x$.
+This uncapped growth of gluon densities in the proton is also quantitatively predicted by the evolution equations of \gls{QCD}. These equations provide a picture of how the parton content of the proton should evolve with $x$ and with the energy scale, $\mu$. %The \gls{BFKL} equations, specifically, quantitatively predict the growth of gluon densities at low-$x$.
 
-The \gls{DGLAP} differential equations describe how \glspl{PDF} should evolve with $\mu$ at fixed $x$.
+The \gls{DGLAP} differential equations describe how \glspl{PDF} should evolve with $\mu$ at fixed $x$. They predict that all partons' \glspl{PDF} at low-$x$ should grow when $\mu$ is increased, as in Fig. \ref{fig:PDFs}. \cite{Halzen:1984mc}\footnote{In this book the \gls{DGLAP} equations are referred to as the Altarelli-Parisi equations.} The \glspl{PDF} of the valence quarks, specifically, grow at low-$x$ and shrink at high-$x$ when $\mu$ is increased, effectively moving them back along the $x$ axis. This reflects the fact that increasing the energy of the probing process allows resolving lower energy partons in the proton -- low-$x$ gluons emitted by a valence quarks may be distinguishable at a higher $\mu$ but seen as part of the valence quark at a lower $\mu$ (Fig. \ref{fig:DGLAP_resolution}).
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[width=\textwidth]{Figures/DGLAP_resolution.png}
+%    \caption{.}
+%    \label{fig:DGLAP_resolution}
+%\end{figure}
+\begin{figure}[h]
+    \centering
+    \include{Diagrams/DGLAP_resolution}
+    \caption{(Left) A quark being resolved as having momentum $P$ by a low-energy photon. (Right) The same quark becoming distinguishable from a gluon it emitted when probed by a high-energy photon, which resolves it as having momentum $P-q$. Adapted from \cite{Thomson:2013}.}
+    \label{fig:DGLAP_resolution}
+\end{figure}
 
-The \gls{BFKL} differential equations, on the other hand, describe how gluon density in momentum space, $\phi$, should evolve with $x$ at fixed $\mu$. It is a linear equation, and, as introduced, it predicts
+The \gls{BFKL} differential equations, on the other hand, describe how gluon density in momentum space, $\phi$, should evolve with $x$ at fixed $\mu$. It is a linear equation, and predicts
 %an exponential growth of the gluon density with rapidity, Y = ln(1/x); equivalently, it predicts
-a divergence of the gluon density as $x \to 0$; to be specific, it predicts an exponential growth of $\phi$ with rapidity, $y \equiv \ln(1/x)$. Nonetheless, the equation does not contain any terms reflecting interference between gluon emitters, as it assumes the hadron to be a dilute parton system. However, making the probability of emission of a new gluon dependent on the present gluon density by adding non-linear terms allows for saturation to be reached when gluon generation and gluon recombination balance out. These new non-linear terms have coefficients that are inverse energy scales, $(1/Q)^n$, which control when the new terms become comparable to the old linear terms, and thus correspond to saturation scales, $Q_s$. \cite{Albacete_2014} 
-%QCD evolution equations which attempt to incorporate this effect have additional, non-linear, density-dependent terms, such as the \gls{GRL-MQ} equation. 
+a divergence of the gluon density as $x \to 0$; more specifically, it predicts an exponential growth of $\phi$ with rapidity, $y \equiv \ln(1/x)$. The equation does not contain any terms reflecting interference between gluon emitters, as it assumes the hadron to be a dilute parton system. However, making the probability of emission of a new gluon dependent on the present gluon density by adding non-linear terms to the \gls{BFKL} equations allows for saturation to be reached when gluon generation and gluon recombination balance out. These new non-linear terms have coefficients that are inverse powers of energy scales, $(1/Q)^n$; they control when the new terms become comparable to the old linear terms, and thus act as saturation scales, $Q_s$. \cite{Albacete_2014}
+
+Figure \ref{fig:DGLAPvsBFKL} illustrates the evolution of the parton content of the proton when its characterizing functions are evolved via the \gls{DGLAP} and the \gls{BFKL} equations. The upper left corner of this plot corresponds to the saturation region, where non-linear effects like recombination are thought to take over, otherwise gluon density growth as $x\to 0$ would violate unitarity.
+%QCD evolution equations which attempt to incorporate this effect have additional, non-linear, density-dependent terms, such as the \gls{GRL-MQ} equation.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/DGLAPvsBFKL.png}
+    \caption{An energy scale, $\mu$, vs. $x$ plot illustrating the evolution of the parton content of the proton via the \gls{DGLAP} and \gls{BFKL} equations. Moving left to right via \gls{DGLAP}, parton populations increase but the circles representing them get smaller, reflecting the decreasing characteristic length scale of the probing process ($\sim 1/\mu$). Moving bottom to top via \gls{BFKL}, parton populations also increase but the partons' size remains the same; the region where there are enough partons to force the circles to overlap is used as an analog for the region of this phase space where the proton should become saturated -- an area of interest for exploration in collider experiments.  Adapted from \cite{Diakonov2010}.}
+    \label{fig:DGLAPvsBFKL} %does it make a difference to move horizontally first and then vertically or vice-versa?
+\end{figure}
+
 
 %More formally, the \gls{BFKL} \gls{QCD} evolution equation is a linear differential equation that governs how gluon density in momentum space within a hadron should evolve with $x$ when that hadron is probed at a fixed energy scale ($\mu^2$ is constant). It is a linear equation, and it predicts
 %an exponential growth of the gluon density with rapidity, Y = ln(1/x); equivalently, it predicts
 %a divergence of the gluon density as $x \to 0$. The equation does not contain terms reflecting interference between emitters of gluons, as it assumes the hadron to be a dilute parton system. However, making the probability of emission of a new gluon dependent on the present gluon density allows for saturation to be reached when gluon generation and gluon recombination balance out. QCD evolution equations which attempt to incorporate this effect have additional, non-linear, density-dependent terms, such as the \gls{GRL-MQ} equation. \cite{Albacete_2014}
 
+The proton's (and, therefore, the heavy ion's) content may thus be thought of as dominated by its saturated low-$x$ gluon population. Over the next sections, a formalism for handling systems like this, the \gls{CGC}, \glsreset{CGC} will be introduced, preceded by a review of the \gls{QCD} Lagrangian and the definition of a proper set of coordinates in the context of a \gls{HIC}.
+
 \section{The QCD Lagrangian}
 
-In studying a system where only strong interactions are relevant, one turns to the QCD Lagrangian. It is a functional of the quark fields, $\psi$, which are 4-component Dirac spinors (with $\overline{\psi} = \psi^\dagger \gamma^0$ being the quark field's Dirac adjoint), and of the gluon fields, $A^a_\mu$, which are real-valued four-vectors; both are functions of spacetime. For a theory with $N_c$ colors and $N_f$ flavors of quarks each with mass $m_f$,
+In studying a system where strong interactions are dominant, one turns to the QCD Lagrangian, which encodes those interactions. It is a functional of the quark fields, $\psi$, which are 4-component Dirac spinors (with $\overline{\psi} = \psi^\dagger \gamma^0$ being the quark field's Dirac adjoint), and of the gluon fields (also called color fields), $A^a_\mu$, which are real-valued four-vectors; both are functions of spacetime. For a theory with $N_c$ colors and $N_f$ flavors of quarks each with mass $m_f$,
 % in the presence of external color charge sources $J^\mu (x)$,
  the Lagrangian is
 \begin{equation}
@@ -94,7 +117,7 @@ and $F^{\mu \nu}$, the gluon field strength tensor, is given by:
 %\begin{equation}
 %	J_\mu \equiv J_\mu^a T^a
 %\end{equation}}
-where $g$ is the Strong Force's coupling constant; $T^a$ are the SU($N_c$) generators in the fundamental representation\footnote{Normalized such that $\Tr_c [T^a, T^b] = \delta^{ab}/2$}, and $f^{abc}$ are the SU($N_c$) structure constants; $\Tr_c$ denotes a color-trace, that is, a trace in color space, the space of the $T_a$ matrices' indices.
+where $g$ is the Strong Force's coupling constant; $T^a$ are the SU($N_c$) generators in the fundamental representation\footnote{Normalized such that $\Tr_c [T^a, T^b] = \delta^{ab}/2$}, and $f^{abc}$ are the SU($N_c$) structure constants. $\Tr_c$ denotes a color-trace, that is, a trace in color space, the space of the $T_a$ matrices' indices.
 
 %where the 4-component Dirac spinor $\psi$ is the quark field, a function of spacetime; $\overline{\psi}$ is its Dirac adjoint, $ \psi^\dagger \gamma^0$; $m$ is that quark flavour's mass; $D^\mu$ is the covariant derivative, obtained from the four-vector $A^\mu$, which is in turn obtained from a linear combination of the SU($N_c$) generators in the fundamental representation, $T^a$, with the real-valued gluon fields $A_\mu^a$, functions of spacetime, serving as coefficients; $F^{\mu \nu}$ is called the gluon field strength tensor; and $\Tr_c$ denotes a color-trace, that is, a trace in color space, where the $T_a$ live.
 
@@ -106,7 +129,7 @@ Writing the Lagrangian with all indices explicit,
 \end{equation}
 where $\alpha, \beta, \gamma = 1,2,3,4$ are Dirac indices, $i,j=1, ..., N_c$ are color indices in the fundamental representation, $a = 1, ..., {N_c}^2-1$ are color indices in the adjoint representation, $f = 1, ..., N_f$ are flavor indices and $\mu,\nu = 0,1,2,3$ are spacetime indices when using Minkowski coordinates.
 
- To obtain the Lagrangian considering all flavors of quarks, one need only add copies of the first term of Eq. (\ref{eq:QCD_Lagrangian}) for each quark flavor's quark fields.
+%To obtain the Lagrangian considering all flavors of quarks, one need only add copies of the first term of Eq. (\ref{eq:QCD_Lagrangian}) for each quark flavor's quark fields.
 
 Given the presented QCD Lagrangian, the corresponding Euler-Lagrange equations relating to the gluon fields $A$ are called the Yang-Mills equations, which can be thought of as the QCD equivalent to Classical Electrodynamics' Maxwell's equations.
 %In the absence of color sources,\footnote{That is, in the absence of source terms in the Lagrangian and taking the usual color current, $g \overline{\psi} \gamma^v \psi$, to be $0$.}
@@ -159,8 +182,8 @@ These trajectories are well-illustrated in the $x^1Ox^0$ plane (Fig. \ref{fig:HI
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{Figures/HIC_lightcone.png} %PLACEHOLDER
-    %\input{Diagrams/Collision_plot}
+    %\includegraphics[width=0.7\textwidth]{Figures/HIC_lightcone.png} %PLACEHOLDER
+    \input{Diagrams/Collision_plot}
     \caption{A heavy-ion collision represented in the $x^1Ox^0$ plane. Both nuclei travel along the light-cone centered around the collision at coordinates $(0,0)$. The several stages of the post-collision inter-nuclear medium are delimited (not to scale). Based on the figure from \cite{vanderschee2014}.}
     \label{fig:HIC_lightcone}
 \end{figure}
@@ -196,7 +219,7 @@ and the collision coordinates remain at $(x^+=0,x^-=0)$.
 %\textcolor{blue}{[Separation between the CGC and the MV model]}
 
 The \gls{CGC} is an effective theory of \gls{QCD} for high-energy %\gls{QCD} 
-scattering applied to describe the aforementioned saturated gluons \cite{Gelis_2010}, which evade standard perturbation techniques. It is one of the approaches adopted to study initial state effects in \glspl{HIC}; that is, the influence of the properties of the system prior to the formation of the \gls{QGP}, and their impact on final-state observables. It is used, for example, in the modeling of the incoming nuclei and of the non-equilibrated medium that leads to the \gls{QGP}. In this regard, it has stood out due to its practical applicability and phenomenological success. \cite{Albacete_2014} 
+scattering applied to describe the aforementioned saturated gluons \cite{Gelis_2010}, which evade standard perturbation techniques. It is one of the approaches adopted to study initial state effects in \glspl{HIC}; that is, the properties of the system prior to the formation of the \gls{QGP}, and their impact on final-state observables. It is used, for example, in the modeling of the incoming nuclei and of the non-equilibrated medium that leads to the \gls{QGP}. In this regard, it has stood out due to its practical applicability and phenomenological success. \cite{Albacete_2014} 
 
 The effective theory hinges on the partition of the parton content of a hadron,
 %-- in this case, a heavy nucleus --
@@ -206,16 +229,18 @@ The effective theory hinges on the partition of the parton content of a hadron,
 
 %\textcolor{purple}{- Separation of the contents of the nucleus//hadron according to their momentum. This is done in the INFINITE MOMENTUM FRAME.}
 
+The founding iteration of this formalism was introduced in \cite{McLerran_1994_classic_source} and is known today as the \gls{MV} \glsreset{MV} model. Together with other iterations, which incorporate quantum corrections to the classical theory, they form the corpus of the \gls{CGC} framework.
+
 \subsection{Classical saturated gluon fields}
 \textcolor{purple}{YET UNJUSTIFIED: why $N \sim 1/g^2$; why $g$ is small; do the creation operators create a gluon with a specific momentum $(x,\mathbf{k}_\perp)$?}
 
-First, the treatment of the saturated gluons as classical fields will be justified. The saturated gluon densities at low-$x$ discussed previously in Sections \ref{sec:nuclear_matter} and \ref{sec:gluon_saturation} imply gluon fields (also called color fields) of the order $A \sim 1/g$, which does not allow their treatment through standard perturbative techniques\footnote{For example, in calculating the matrix element $\mathcal{M}$ for a \gls{QCD} process using a series expansion in powers of $g$, all terms are proportional to $gA \sim \mathcal{O}(1)$, which does not allow truncating the series in order to estimate $\mathcal{M}$ -- all orders need to be summed.}. \cite{Albacete_2014} However, it opens the possibility of their treatment as classical fields.
+First, the treatment of the saturated gluons as classical fields will be justified. The saturated gluon densities at low-$x$ discussed previously in Sections \ref{sec:nuclear_matter} and \ref{sec:gluon_saturation} imply gluon fields of the order $A \sim 1/g$, which does not allow their treatment through standard perturbative techniques\footnote{For example, in calculating the matrix element $\mathcal{M}$ for a \gls{QCD} process using a series expansion in powers of $g$, all terms are proportional to $gA \sim \mathcal{O}(1)$, which does not allow truncating the series in order to estimate $\mathcal{M}$ -- all orders need to be summed.}. \cite{Albacete_2014} However, it opens the possibility of their treatment as classical fields.
 
-Comparing the occupation number of the saturated gluon fields and the commutator of their creation and annihilation operators, $a$ and $a^\dagger$ \citep{Albacete_2014}
+Comparing the occupation number of the saturated gluon fields and the commutator of their creation and annihilation operators, $a$ and $a^\dagger$, \citep{Albacete_2014}
 \begin{equation}
 	N = a^\dagger a \sim \frac{1}{g^2} \quad \gg \quad [a^\dagger, a] \sim 1
 \end{equation}
-it is possible to state that quantum corrections to the classical solution, where the fields commute, are negligible. Thus, it is reasonable to treat the low-$x$ gluon fields as classical fields.
+it is possible to state that quantum corrections to the classical solution, where the fields commute, are negligible. Thus, it is reasonable to treat the low-$x$ gluon fields as classical fields. This is the basis for the development of the \gls{MV} model.
 
 \subsection{Partition of the nucleus's parton content} \label{sec:scale_separation}
 
@@ -228,7 +253,7 @@ In order to analitically validate the partition of the parton content of the nuc
 	\text{Parton $i$: } & p^\mu = (x_i P, x_i P, \sim 0, \sim 0)
 \\
 \intertext{
-where $0<x_i<1$ is the fraction of the nuclear longitudinal momentum carried by the $i$-th parton; it was further assumed that the boost applied was such that $x_i P \gg m_i$, with $m_i$ being the $i$-th parton's mass. In light-cone coordinates, where $a^+ = (a^0+a^1)/\sqrt{2}$, $a^- = (a^0-a^1)/\sqrt2$ and $a^2, a^3$ are unchanged (see Appendix \ref{ap:Light_Cone} for more details),}
+where $0<x_i<1$ is the fraction of the nuclear longitudinal momentum carried by the $i$-th parton; it was further assumed that the boost applied was such that $x_i P \gg m_i$, with $m_i$ being the $i$-th parton's mass. In light-cone coordinates,}
 	\text{Nucleus: } & P^\mu = (P^+,0,0,0)
 	&
     \text{Parton $i$: } & p^\mu = (x_i P^+, \sim 0, \sim 0, \sim 0)
@@ -266,7 +291,7 @@ As was introduced in sections \ref{sec:nuclear_matter} and \ref{sec:gluon_satura
 
 %The parton content of the nucleus is thus divided into the group of high $+$-momentum ($p^+ > \Lambda^+$) static color charges and the group of low $+$-momentum ($p^+ < \Lambda^+$) dynamic classical gluon fields which they generate. The static color charges may themselves be treated as classical \citep{Albacete_2014,McLerran_1994_classic_source} and are eikonally \textcolor{red}{define} coupled to the classical gluon fields; that is, they suffer negligible recoil from their interactions with the color fields, when compared to their longitudinal momentum.\cite{Gelis_2010} Thus, they are introduced into the \gls{QCD} Lagrangian (Eq. (\ref{eq:QCD_Lagrangian_Indices})) as a classical color current 4-vector, $J^\mu \equiv J^\mu_a T^a$, in the term $A_\mu^a J^\mu_a$. Since, now, the formalism does not include quantum quark fields, Eq.  (\ref{eq:QCD_Lagrangian_Indices}) becomes 
 
-The parton content of the nucleus is thus divided into the group of high $+$-momentum ($p^+ > \Lambda^+$) static color charges and the group of low $+$-momentum ($p^+ < \Lambda^+$) dynamic classical gluon fields which they generate. The static color charges may themselves be treated as classical \citep{Albacete_2014,McLerran_1994_classic_source}, and are expressed in the formalism as a classical color current four-vector, $J^\mu \equiv J^\mu_a T^a$. This current is eikonally \textcolor{red}{define} coupled to the classical gluon fields; that is, the static charges suffer negligible recoil from their interactions with the color fields, when compared to their longitudinal momentum. \cite{Gelis_2010} This is expressed by inserting the color current into the Lagrangian via the term $A_\mu^a J^\mu_a$. Since, now, the formalism does not include quantum quark fields, Eq.  (\ref{eq:QCD_Lagrangian_Indices}) becomes 
+The parton content of the nucleus is thus divided into the group of high $+$-momentum ($p^+ > \Lambda^+$) static color charges and the group of low $+$-momentum ($p^+ < \Lambda^+$) dynamic classical gluon fields which they generate. The static color charges may themselves be treated as classical \citep{Albacete_2014,McLerran_1994_classic_source}, and are expressed in the formalism as a classical color current four-vector, $J^\mu \equiv J^\mu_a T^a$. This current is eikonally \textcolor{red}{define} coupled to the classical gluon fields; that is, the static charges suffer negligible recoil from their interactions with the gluon fields, when compared to their longitudinal momentum. \cite{Gelis_2010} This is expressed by inserting the color current into the Lagrangian via the term $A_\mu^a J^\mu_a$. Since, now, the formalism does not include quantum quark fields, Eq.  (\ref{eq:QCD_Lagrangian_Indices}) becomes 
 
 %\textcolor{red}{the absence of dynamic color fields gets rid of the first term. The influence of the static color sources on the system is brought back via the} addition of an external color source term to the \gls{QCD} Lagrangian. Equations \ref{eq:QCD_Lagrangian} and \ref{eq:QCD_Lagrangian_Indices} become, respectively,
 \begin{equation}
@@ -298,7 +323,7 @@ where the charge distribution is taken to be very narrowly peaked around $x^-=0$
 %$\rho$ has become an area number charge density \textcolor{purple}{(why?)}.
 
 \subsection{The stochastic nature of $\rho$}
-The color charge distribution $\rho$, from which $J^\mu$ and, consequently, the evolution of the gluon fields are obtained, is fixed for a single nucleus in a single event. It is different, however, for different nuclei and for each event. For this reason, it is treated as a stochastic variable \cite{Gelis_2010} which is neither accessible experimentally for each collision nor computable from first principles.  Even for the same nucleus, $\rho$ would change if enough time is allowed to pass in order for the nucleus to travel over a $x^+$ length greater than the valence partons' typical $x^+$ scale \cite{Gelis_Habilitation}. In order to calculate an observable $\mathcal{O}$ out of many events within the \gls{CGC} effective theory, one must determine its average value considering all the different possible color charge distributions and their probabilities: \cite{Gelis_2010}
+The color charge distribution $\rho$, from which $J^\mu$ and, consequently, the evolution of the gluon fields are obtained, is fixed for a single nucleus in a single event. It is different, however, for different nuclei and for each event. For this reason, it is treated as a stochastic variable \cite{Gelis_2010} which is neither accessible experimentally for each collision nor computable from first principles.  Even considering a single nucleus, $\rho$ would change if enough time is allowed to pass in order for the nucleus to travel over a $x^+$ length greater than the valence partons' typical $x^+$ scale \cite{Gelis_Habilitation}. In order to calculate an observable $\mathcal{O}$ out of many events within the \gls{CGC} effective theory, one must determine its average value considering all the different possible color charge distributions and their probabilities: \cite{Gelis_2010}
 \begin{equation}
 	\left< \mathcal{O} \right> = \int [\diff \rho] W[\rho] \mathcal{O}[\rho]
 \end{equation}
@@ -306,18 +331,18 @@ where $\mathcal{O}[\rho]$ is the observable's value for the particular charge di
 
 \subsection{Quantum Corrections and the McLerran-Venugopalan Model}
 
-So far, the framework's dependence on the arbitrary choice of a $+$-momentum scale $\Lambda^+$ to separate low- and high-$x$ partons
-% and its impact on the final value of an observable to be computed, $\left< \mathcal{O} \right>$, 
-has been neglected. Indeed, once a $+$-momentum scale has been set, one neglects that certain low-$x$ partons sorted into the category of classical fields actually may act as static color sources for lower-$x$-still partons\footnote{In the language of Section \ref{sec:gluon_saturation}, even a low-$x$ gluon can serve as an emitter of lower-$x$ gluons.} \cite{Albacete_2014}. Thus, choosing a different $\Lambda^+$ would lead to different observable values. \textcolor{red}{(Next sentence needs re-writing and compartamentalizing)} When changing the value of the $+$-momentum scale from $\Lambda^+$ to ${\Lambda^+}'$, it is possible, however, to renormalize $\rho$, correlators of different $\rho$ or the functional probability distribution  $W$ in order to incorporate those quantum corrections into the \gls{CGC} effective theory and preserve the value of the observables, making them independent of $\Lambda^+$, while keeping the calculation procedure strictly classical \citep{Albacete_2014}. Choosing to incorporate these quantum corrections into the probability distribution $W$, which then becomes dependent on the $+$-momentum scale, $W_{\Lambda^+}$, its evolution with $\Lambda^+$ is ruled by the \gls{JIMWLK} equation (read ``Jim-Walk") \cite{Gelis_2010}.
+So far, the framework's dependence on the arbitrary choice of a $+$-momentum scale $\Lambda^+$ which separates low- and high-$x$ partons has been neglected. Indeed, once a $+$-momentum scale has been set, one neglects that certain low-$x$ partons sorted into the category of classical fields may actually act as static color sources for lower-$x$-still partons\footnote{In the language of Section \ref{sec:gluon_saturation}, even a low-$x$ gluon can serve as an emitter of lower-$x$ gluons.} \cite{Albacete_2014}. Thus, choosing a different $\Lambda^+$ would lead to different final-state observable values, amounting to a quantum correction to the classical theory.
+Consider changing the momentum scale from an initial value of $\Lambda_+$ to $\Lambda'_+$ -- this alters the value of final-state observables calculated with the \gls{CGC} framework. However, it is possible to renormalize $\rho$, correlators of $\rho$ or the probability distribution $W$ so as to incorporate these quantum corrections into the \gls{CGC} effective theory. This preserves the value of the observables, making them independent of $\Lambda^+$ while keeping the calculation procedure strictly classical \citep{Albacete_2014}.  
+Choosing to incorporate the quantum corrections into $W$, which then becomes dependent on the $+$-momentum scale, $W_{\Lambda^+}$, its evolution with $\Lambda^+$ is ruled by the \gls{JIMWLK} equation (read ``Jim-Walk") \cite{Gelis_2010}.
 %Other methods to incorporate quantum corrections into the effective theory exist, as well as variations on the \gls{JIMWLK} equation \citep{Albacete_2014}.
 
-In spite of this achievement, an initial probability distribution $W_{\Lambda^+_0}$ is still necessary before studying its evolution with the $+$-momentum scale $\Lambda^+$; this function can be seen as an initial condition for the \gls{JIMWLK} equation. The \gls{MV} model provides that initial condition, $W_{\text{MV}}$, for the case of large nuclei.
+In spite of this achievement, an initial probability distribution $W_{\Lambda^+_0}$ is still necessary before studying its evolution with the $+$-momentum scale $\Lambda^+$; this function can be seen as an initial condition for the \gls{JIMWLK} equation. The \gls{MV} model, the founding iteration of the \gls{CGC}, provides that initial condition, $W_{\text{MV}}$, for the case of large nuclei.
 
 The \gls{MV} model's functional probability distribution $W_{\text{MV}}$ %and corresponding charge density 2-point correlator are 
 is motivated physically by the characteristics of large nuclei: \citep{Gelis_Habilitation}
 \begin{itemize}
-	\item[1)] Due to color confinement, color charge within different nucleons should be uncorrelated. Since charge densities at different transverse positions are associated with different nucleons/longitudinal superpositions of nucleons, they should also be uncorrelated.
-	\item[2)] For large nuclei, at least at central positions, transverse color charge density results from the sum of many longitudinally aligned nucleons. Since the color charge of those nucleons is uncorrelated, then $\rho_\text{\textcolor{blue}{$a$}}(\mathbf{x}_\perp)$ is a sum of uncorrelated variables. Therefore, the Central Limit Theorem applies, and $\rho_\text{\textcolor{blue}{$a$}}(\mathbf{x}_\perp)$ should follow a Gaussian distribution.
+	\item[1)] Due to color confinement, color charge within different nucleons should be uncorrelated. Since charge densities at different transverse positions $\mathbf{x}_\perp$ and $\mathbf{y}_\perp$ are associated with different nucleons/longitudinal superpositions of nucleons, $\rho(\mathbf{x}_\perp)$ and $\rho(\mathbf{y}_\perp)$ should also be uncorrelated.
+	\item[2)] For large nuclei, at least at central positions, transverse color charge density results from the sum of many longitudinally aligned nucleons. Since the color charge of those nucleons is uncorrelated, then $\rho(\mathbf{x}_\perp)$ is a sum of uncorrelated variables. Therefore, the Central Limit Theorem applies, and $\rho(\mathbf{x}_\perp)$ should follow a Gaussian distribution.
 \end{itemize}
 
 The form of $W_{\text{MV}}$, apart from a normalization constant $C$, is \citep{Gelis_Habilitation}:
@@ -331,7 +356,7 @@ which has an associated charge density 2-point correlator:
 \end{equation}
 %\textcolor{red}{How do I relate these two?}
 
-In spite of corresponding to an initial condition, the \gls{MV} model may be used directly, without needing to be evolved into $x$-scales much smaller than $\Lambda_0^+$, for the study of $pA$ or $AA$ collisions where the values of $x$ are not small enough to require that evolution. \citep{Gelis_2010} 
+In spite of not incorporating quantum corrections, the \gls{MV} model may be used directly, without needing to be evolved into $x$-scales much smaller than $\Lambda_0^+$, for the study of $pA$ or $AA$ collisions where the values of $x$ are not small enough to require that evolution. \citep{Gelis_2010} 
 
 %that constitute the classical color fields and the color charge sources
 

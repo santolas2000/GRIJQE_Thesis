@@ -549,14 +549,19 @@
 \usepackage{siunitx}
 
 \usepackage{tikz}
-%\usetikzlibrary{external}
-%\tikzexternalize[optimize=true]
+\usetikzlibrary{external}
+\tikzexternalize[optimize=true]
 \usepackage{pgfplots}
 \usepgfplotslibrary{patchplots}
 \usetikzlibrary {shapes.symbols} 
 
 
 \usepackage[compat=1.1.0]{tikz-feynman}
+\tikzfeynmanset{
+yourboson/.style={
+black,
+decoration={snake,amplitude=1.5mm,segment length=6mm},decorate}
+}
 
 %\usepackage{pifont}
 
