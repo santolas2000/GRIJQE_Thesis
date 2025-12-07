@@ -388,7 +388,9 @@ The classical \gls{MV} model will be used, and quantum corrections will be left 
 First, the case of a single nucleus will be considered.  Nucleus 1 is chosen, moving in the positive $x^1$ direction.
 Solutions to the Yang-Mills equations for a single nucleus moving along the light-cone were first found analytically in \cite{McLerran:1993ka} for the classical case $D_{\mu}F^{\mu \nu} = J^\nu$.   %\textcolor{blue}{The very first papers' approach was to start off in light-cone gauge right away. Should I refer to this method too?}
 
-In the present work, the Yang-Mills equations in the case of a single nucleus are initially solved in the Lorenz, or covariant, gauge, where $\partial_\mu A^\mu=0$, following the more recent solving of the full equations from \cite[Section 2.2]{Blaizot_2004}\footnote{Note that this paper's covariant derivative definition is $D_\mu=\partial_\mu -igA_\mu$. However, this does not affect the final result.}. The solution is then brought to light-cone gauge, where $A^+=0$, an axial gauge condition, following the procedure from \citep[Section 3A]{Carrington_2022}. \textcolor{blue}{(\citep{Kovner_1995}: "Using light cone gauge one has direct access to the gluon distribution functions of the parton model" -- I wasn't able to find a justification for this, in order to include it as a motivation to work in light-cone gauge. Is there any reference you know I could use?)} %\textcolor{red}{I was going to write something here. Maybe the residual gauge freedom?}
+In the present work, the Yang-Mills equations in the case of a single nucleus are initially solved in the Lorenz, or covariant, gauge, where $\partial_\mu A^\mu=0$, following the more recent solving of the full equations from \cite[Section 2.2]{Blaizot_2004}\footnote{Note that this paper's covariant derivative definition is $D_\mu=\partial_\mu -igA_\mu$. However, this does not affect the final result.}. The solution is then brought to light-cone gauge, where $A^+=0$, an axial gauge condition, following the procedure from \citep[Section 3A]{Carrington_2022}. 
+%\textcolor{blue}{(\citep{Kovner_1995}: "Using light cone gauge one has direct access to the gluon distribution functions of the parton model" -- I wasn't able to find a justification for this, in order to include it as a motivation to work in light-cone gauge. Is there any reference you know I could use?)}.
+Bringing the final solution to light-cone gauge is necessary, as this is the gauge where the parton distribution operators have the physical interpretation of quantifying the parton populations inside a hadron. \citep{Kovner_1995}\citep[Section 5.1.1]{Lappi_high_energy}\citep[Section 2.4]{Iancu:2000hn} Thus, this gauge is required in order to use our previous insights concerning the low-$x$ gluon populations within protons. Additionally, use of the light-cone gauge allows reducing the problem to two degrees of freedom ($A^2$ and $A^3$). \citep[Section 5.1.1]{Lappi_high_energy}.
 
 First of all, the equation explicitly enforcing the covariant conservation of color charge is added to the set of equations to solve. It is analogous to Classical Electrodynamics' equation of conservation of electric charge, and is obtained from the Yang-Mills equations as:
 \begin{equation}
@@ -413,7 +415,7 @@ The conservation equation and The Yang-Mills equations (in the Lorenz gauge) are
 	\end{cases}
 \end{equation}
 
-A solution may be built by solving this system iteratively, for the fields and current expanded \textcolor{red}{in terms of powers of the color number charge density, $\rho$}. The terms of order $(n)$ are obtained from those of lower orders by:
+A solution may be built by solving this system iteratively, for the fields and current expanded in terms of powers of the color number charge density, $\rho$. The terms of order $(n)$ are obtained from those of lower orders by:
 \begin{equation}
 	\begin{cases}
 	\partial_\mu J_{(n)}^\mu = -ig[A_\mu, J^\mu]_{(n)}  \\
@@ -447,7 +449,7 @@ Moving to the $n=2$ system, the right side of the top equation is once again $0$
 	\end{cases}
 \end{equation}
 
-Once again requiring that the current and fields  \textcolor{red}{vanish in the far past}
+Once again requiring that the current and fields vanish in the far past
 %do not explode in the far past
 , the solution is $J_{(2)}^\mu = 0$ for the top and $A_{(2)}^\mu =0$ for the bottom. This makes all the greater-order terms also $0$, making the final solution equal to the first order solution:
 \begin{subequations}
@@ -534,7 +536,7 @@ which allows factoring the $x^-$ dependence of the $A^i_\text{LC}$ fields:
 
 %which will be useful in the establishment of boundary conditions for the resolution of the Yang-Mills equations in the space between the two nuclei, after the collision.
 
-This factorization is possible due to the choice $U(-\infty,\mathbf{x}_\perp) = \mathds{1}$. Another, $\mathbf{x}_\perp$-dependent form for $U(-\infty,\mathbf{x}_\perp)$ may be chosen, amounting to a further gauge transformation $U'(\mathbf{x}_\perp)$ which keeps $A'^+$ and $A'^-$ equal to $0$ (and consequently keeps the solution in the light-cone gauge), but due to which the transverse fields $A'^i$ do not vanish for $x^-<0$. However, keeping the fields in the form of Eq. (\ref{eq:A^i_factorization}) will be useful for establishing boundary conditions for the resolution of the Yang-Mills equations in the space between the two nuclei, after the collision. Addditionally, it corresponds to having the gluon fields vanish in the region in front of the planar nucleus; since the nucleus travels at the speed of light, the region in front of it should not ``feel" the presence of its color charges due to causality, and this is explicitly the case in the present gauge. \textcolor{purple}{$times$}
+This factorization is possible due to the choice $U(-\infty,\mathbf{x}_\perp) = \mathds{1}$. Another, $\mathbf{x}_\perp$-dependent form for $U(-\infty,\mathbf{x}_\perp)$ may be chosen, amounting to a further gauge transformation $U'(\mathbf{x}_\perp)$ which keeps $A'^+$ and $A'^-$ equal to $0$ (and consequently keeps the solution in the light-cone gauge), but due to which the transverse fields $A'^i$ do not vanish for $x^-<0$. However, keeping the fields in the form of Eq. (\ref{eq:A^i_factorization}) will be useful for establishing boundary conditions for the resolution of the Yang-Mills equations in the space between the two nuclei, after the collision. Addditionally, it corresponds to having the gluon fields vanish in the region in front of the planar nucleus; since the nucleus travels at the speed of light, the region in front of it should not ``feel" the presence of its color charges due to causality, and this is explicitly the case in the present gauge. \textcolor{purple}{$\times$}
 %\textcolor{red}{(Note: It is also explicitly boost invariant. Add?)}
 
 One last topic that should be discussed before moving on to the situation of the oppositely-moving nucleus is that, unlike in the classical abelian case of Electrodynamics, in the present case of a classical non-abelian gauge theory of Chromodynamics gauge transformations alter the distributions of color charge; otherwise, the introduced Lagrangian, Eq. (\ref{eq:QCD_Lag_Current_indices}), would not be invariant under SU(3) gauge transformations. Thus, one should remember that the color charge distribution $\rho$ discussed in this chapter and present in its final result (Eqs. (\ref{eq:A_lc_one_nucleus})) is the color charge distribution in the Lorenz, and not the light-cone, gauge. In the rest of this work, the subscript ``LC" denoting results in the light-cone gauge will be dropped; in order to avoid confusion, color number charge densities in the Lorenz gauge will be denoted by $\tilde{\rho}$ instead of $\rho$.
@@ -645,7 +647,7 @@ Following the ansatz first proposed in \cite{Kovner_1995}, the $\alpha$ field an
 \label{eq:ansatz}
 \end{subequations}
 %\textcolor{red}{Attention: \citep{Kovner_1995} initially posits that $A^+$ and $A^-$ are different}
-For the third quadrant (terms underbraced with `3'), applying such a boost as described leaves the form of the solution unchanged, as $\tau$ and $\mathbf{x}_\perp$ are invariant under it. \textcolor{purple}{Specify why the $A^+$ and $A^-$ terms are invariant?}
+For the third quadrant (terms underbraced with `3'), applying such a boost as described leaves the form of the solution unchanged, as $\tau$ and $\mathbf{x}_\perp$ are invariant under it. % \textcolor{purple}{Specify why the $A^+$ and $A^-$ terms are invariant?}
 
 In the interior of the third quadrant, the currents $J_1^\mu$ and $J_2^\mu$ have no support, and the Yang-Mills equations take the form:
 \begin{equation}
