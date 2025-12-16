@@ -192,7 +192,7 @@ After the collision, many of the nuclei's constituent particles
 carry on in the direction they were moving at the speed of light, and the pre-hydrodynamic medium which will be studied in this work forms in between the now receding discs.
 %After the collision, the nuclei's approximately static high-$x$ partons, discussed in Section \ref{sec:scale_separation}, carry on in the direction they were moving at the speed of light, acting as color sources for the gluon fields then generated in the space between the now receding nuclei.
 %\textcolor{red}{[They were already acting as color sources for fields, but in the other quadrants]}.
-Fig. \ref{fig:HIC_lightcone} suggests the usefulness of a coordinate system where the axes lie along the nuclei's path in the $x^1Ox^0$ plane. In the Ligh-Cone coordinate system (see Appendix \ref{ap:Light_Cone}), 
+Fig. \ref{fig:HIC_lightcone} suggests the usefulness of a coordinate system where the axes lie along the nuclei's path in the $x^1Ox^0$ plane. In the Light-Cone coordinate system (see Appendix \ref{ap:Light_Cone}), 
 \begin{subequations}
 \begin{gather}
 x^+ = \frac{x^0+x^1}{\sqrt{2}} \\
@@ -232,11 +232,13 @@ The effective theory hinges on the partition of the parton content of a hadron,
 The founding iteration of this formalism was introduced in \cite{McLerran_1994_classic_source} and is known today as the \gls{MV} \glsreset{MV} model. Together with other iterations, which incorporate quantum corrections to the classical theory, they form the corpus of the \gls{CGC} framework.
 
 \subsection{Classical saturated gluon fields}
-\textcolor{purple}{YET UNJUSTIFIED: why $N \sim 1/g^2$; why $g$ is small; do the creation operators create a gluon with a specific momentum $(x,\mathbf{k}_\perp)$?}
+\textcolor{purple}{YET UNJUSTIFIED: why $N \sim 1/g^2$; why $g$ is small; well sourced?}
 
-First, the treatment of the saturated gluons as classical fields will be justified. The saturated gluon densities at low-$x$ discussed previously in Sections \ref{sec:nuclear_matter} and \ref{sec:gluon_saturation} imply gluon fields of the order $A \sim 1/g$, which does not allow their treatment through standard perturbative techniques\footnote{For example, in calculating the matrix element $\mathcal{M}$ for a \gls{QCD} process using a series expansion in powers of $g$, all terms are proportional to $gA \sim \mathcal{O}(1)$, which does not allow truncating the series in order to estimate $\mathcal{M}$ -- all orders need to be summed.}. \cite{Albacete_2014} However, it opens the possibility of their treatment as classical fields.
+First, the treatment of the saturated gluons as classical fields will be justified. Reaching the saturation regime implies that the non-linear terms of the evolution equation have become non-negligible\footnote{Here, specifically, the \gls{BK} equation at leading order is considered, where it serves as a non-linear extension of the \gls{BFKL} evolution equation. \cite{Albacete_2014}}, as discussed in Section \ref{sec:gluon_saturation}. For this to occur, gluon densities should be of the order $\sim 1/\alpha \sim 1/g^2$. When taking the gluon density as a proxy for the gluon field two-point function, $\left< AA \right>$, this allows estimating the average value of the gluon fields as $\sim 1/g$
+%The saturated gluon densities at low-$x$ discussed previously in Sections \ref{sec:nuclear_matter} and \ref{sec:gluon_saturation} imply gluon fields of the order $A \sim 1/g$
+, which does not allow their treatment through standard perturbative techniques\footnote{For example, in calculating the matrix element $\mathcal{M}$ for a \gls{QCD} process using a series expansion in powers of $g$, all terms are proportional to $gA \sim \mathcal{O}(1)$, which does not allow truncating the series in order to estimate $\mathcal{M}$ -- all orders need to be summed.}. \cite{Albacete_2014} However, it opens the possibility of their treatment as classical fields.
 
-Comparing the occupation number of the saturated gluon fields and the commutator of their creation and annihilation operators, $a$ and $a^\dagger$, \citep{Albacete_2014}
+Comparing the occupation number of the saturated gluon fields, which is itself a proxy for the gluon field two-point function, and the commutator of their creation and annihilation operators, $a$ and $a^\dagger$, \citep{Albacete_2014} in the regime of perturbative \gls{QCD},
 \begin{equation}
 	N = a^\dagger a \sim \frac{1}{g^2} \quad \gg \quad [a^\dagger, a] \sim 1
 \end{equation}
@@ -345,16 +347,19 @@ is motivated physically by the characteristics of large nuclei: \citep{Gelis_Hab
 	\item[2)] For large nuclei, at least at central positions, transverse color charge density results from the sum of many longitudinally aligned nucleons. Since the color charge of those nucleons is uncorrelated, then $\rho(\mathbf{x}_\perp)$ is a sum of uncorrelated variables. Therefore, the Central Limit Theorem applies, and $\rho(\mathbf{x}_\perp)$ should follow a Gaussian distribution.
 \end{itemize}
 
-The form of $W_{\text{MV}}$, apart from a normalization constant $C$, is \citep{Gelis_Habilitation}:
-\textcolor{blue}{[Some authors use $\mu(x^-)$, $\rho(x^-, \mathbf{x}_\perp)$ for $W$ \citep{Albacete_2014} or for the 2-point correlator \cite{Lappi_notes}. From what I saw, only \cite{Gelis_Habilitation} introduces the MV model without the $x^-$ coordinate here, but for $W[\rho_a]$ instead of $W[\rho]$.][Should I not factorize the $x^-$ as soon as I do, so that I can use those results here?]}
+The form of $W_{\text{MV}}$, apart from a normalization constant $C$, is \citep{Albacete_2014} \textcolor{red}{\citep{Carrington_2022}}:
+
+%\textcolor{blue}{[Some authors use $\mu(x^-)$, $\rho(x^-, \mathbf{x}_\perp)$ for $W$ \citep{Albacete_2014} or for the 2-point correlator \cite{Lappi_notes}. From what I saw, only \cite{Gelis_Habilitation} introduces the MV model without the $x^-$ coordinate here, but for $W[\rho_a]$ instead of $W[\rho]$.][Should I not factorize the $x^-$ as soon as I do, so that I can use those results here?]}
 \begin{equation}
-	W[\rho_\text{\textcolor{blue}{$a$}}] = C \exp \left[ - \int \diff^2 \mathbf{x}_\perp \frac{\rho_a(\mathbf{x_\perp})\rho_a(\mathbf{x_\perp})}{2 \mu^2} \right]
+	W_\text{MV}[\rho] = C \exp \left[ - \int \diff x^- \diff^2 \mathbf{x}_\perp \frac{\rho^a(x^-,\mathbf{x_\perp})\rho^a(x^-,\mathbf{x_\perp})}{2 \mu(x^-)^2 } \right]
 \end{equation}
 which has an associated charge density 2-point correlator:
 \begin{equation}
-	\left< \rho_a(\mathbf{x}_\perp) \rho_b (\mathbf{y}_\perp) \right> = \mu^2 \delta_{ab} \delta^2 (\mathbf{x}_\perp - \mathbf{y}_\perp)
+	\left< \rho_a(x^-,\mathbf{x}_\perp) \rho_b (y^-,\mathbf{y}_\perp) \right> =  \delta^{ab} \delta^2 (\mathbf{x}_\perp - \mathbf{y}_\perp) \delta (x^- - y^-) \mu_A^2 \textcolor{red}{\lambda(x^-, \mathbf{x}_\perp)}
 \end{equation}
 %\textcolor{red}{How do I relate these two?}
+
+\textcolor{red}{[Explain $\mu/\lambda$].}
 
 In spite of not incorporating quantum corrections, the \gls{MV} model may be used directly, without needing to be evolved into $x$-scales much smaller than $\Lambda_0^+$, for the study of $pA$ or $AA$ collisions where the values of $x$ are not small enough to require that evolution. \citep{Gelis_2010} 
 
@@ -378,7 +383,7 @@ In spite of not incorporating quantum corrections, the \gls{MV} model may be use
 
 %\textcolor{purple}{- Then the stochastic, Gaussian model for the static color charges (fuzzy)}
 
-The classical \gls{MV} model will be used, and quantum corrections will be left out of the scope of this work. The application of this formalism to the two-nuclei system of a \gls{HIC} will be introduced over the next sections. It was first accomplished in \cite{Kovner_1995}.
+The classical \gls{MV} model will be used, and quantum corrections will be left out of the scope of this work. The application of this formalism to the two-nuclei system of a \gls{HIC} will be introduced over the next sections. 
 
 
 
@@ -493,11 +498,17 @@ where the dependence of the $A^+$ fields on $\mathbf{x}_\perp$ was only shown ex
 \end{gather}
 Additionally,  $\mathcal{P}^-\exp[ig\int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp)]$ is called the path-ordered exponential of the $ig\int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp)$ integral.
 
+This solution corresponds to a Wilson Line,
+\begin{equation}
+	\mathcal{P}^- \exp  \Bigg[ig \int_{x_0^-}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp) \Bigg] \equiv W[A^+](x^-, x_0^-,\mathbf{x}_\perp)
+\end{equation}
+These objects frequently appear in calculations in the \gls{CGC} framework. One physical interpretation of a Wilson Line is as the matrix for the rotation in color space that a high-energy quark experiences when traversing a color field eikonally -- that is, having negligible momentum exchange with the color field \cite{Solana_lectures}. Indeed, one way to turn the initial expression for the color current (Eq. (\ref{eq:+_Current})) into a covariantly conserved one is to add Wilson line operators to it reflecting the color rotation it suffers as it traverses the gluon fields: $J^\mu(x^-,\mathbf{x_\perp}) \to W[A^-](x^+,x^+_0,\mathbf{x_\perp}) J^\mu(x^-,\mathbf{x_\perp}) W[A^-](x^+_0,x^+,\mathbf{x_\perp})$. Here, the Wilson lines serve as link operators bringing the original (at $x_0^+$) current, $J^\mu$, to the present, $x^+$. 
+
 It is possible to choose $x^-_0$ to be $-\infty$ and $U(x_0^-,\mathbf{x}_\perp)$ to be $\mathds{1}$ with $U$ remaining a solution: %\textcolor{red}{(Is this a part of residual gauge freedom?}
 \begin{equation}
-	U(x^-,\mathbf{x}_\perp) = \mathcal{P}^- \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp) \Bigg] \equiv W(x^-,\mathbf{x}_\perp)
+	U(x^-,\mathbf{x}_\perp) = \mathcal{P}^- \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp) \Bigg]
 \end{equation}
-which corresponds to a Wilson Line, $W(x^-,\mathbf{x}_\perp)$. \textcolor{purple}{(Should add some reference to the celebrity of Wilson Lines in ths line of work.)}
+ %\textcolor{purple}{(Should add some reference to the celebrity of Wilson Lines in ths line of work.)}
 
 Renaming the $+$-component of $A$ in the Lorenz gauge to $\Phi(x^-,\mathbf{x}_\perp)$,
 % and dropping the ``LC" subscript to denote fields in the light-cone gauge, 
@@ -539,7 +550,7 @@ which allows factoring the $x^-$ dependence of the $A^i_\text{LC}$ fields:
 This factorization is possible due to the choice $U(-\infty,\mathbf{x}_\perp) = \mathds{1}$. Another, $\mathbf{x}_\perp$-dependent form for $U(-\infty,\mathbf{x}_\perp)$ may be chosen, amounting to a further gauge transformation $U'(\mathbf{x}_\perp)$ which keeps $A'^+$ and $A'^-$ equal to $0$ (and consequently keeps the solution in the light-cone gauge), but due to which the transverse fields $A'^i$ do not vanish for $x^-<0$. However, keeping the fields in the form of Eq. (\ref{eq:A^i_factorization}) will be useful for establishing boundary conditions for the resolution of the Yang-Mills equations in the space between the two nuclei, after the collision. Addditionally, it corresponds to having the gluon fields vanish in the region in front of the planar nucleus; since the nucleus travels at the speed of light, the region in front of it should not ``feel" the presence of its color charges due to causality, and this is explicitly the case in the present gauge. \textcolor{purple}{$\times$}
 %\textcolor{red}{(Note: It is also explicitly boost invariant. Add?)}
 
-One last topic that should be discussed before moving on to the situation of the oppositely-moving nucleus is that, unlike in the classical abelian case of Electrodynamics, in the present case of a classical non-abelian gauge theory of Chromodynamics gauge transformations alter the distributions of color charge; otherwise, the introduced Lagrangian, Eq. (\ref{eq:QCD_Lag_Current_indices}), would not be invariant under SU(3) gauge transformations. Thus, one should remember that the color charge distribution $\rho$ discussed in this chapter and present in its final result (Eqs. (\ref{eq:A_lc_one_nucleus})) is the color charge distribution in the Lorenz, and not the light-cone, gauge. In the rest of this work, the subscript ``LC" denoting results in the light-cone gauge will be dropped; in order to avoid confusion, color number charge densities in the Lorenz gauge will be denoted by $\tilde{\rho}$ instead of $\rho$.
+One last topic that should be discussed before moving on to the situation of the oppositely-moving nucleus is that, unlike in the abelian case of Classical Electrodynamics, in the present case of a classical non-abelian gauge theory of Chromodynamics gauge transformations alter the distributions of color charge; otherwise, the introduced Lagrangian, Eq. (\ref{eq:QCD_Lag_Current_indices}), would not be invariant under SU(3) gauge transformations. Thus, one should remember that the color charge distribution $\rho$ discussed in this chapter and present in its final result (Eqs. (\ref{eq:A_lc_one_nucleus})) is the color charge distribution in the Lorenz, and not the light-cone, gauge. In the rest of this work, the subscript ``LC" denoting results in the light-cone gauge will be dropped; in order to avoid confusion, color number charge densities in the Lorenz gauge will be denoted by $\tilde{\rho}$ instead of $\rho$.
 
 \begin{comment}
 When the only non-vanishing component of $J^\mu$ is $J^+$, this requirement becomes:
@@ -576,15 +587,17 @@ with
 	=  \mathcal{P}^+ \exp  \Bigg[ig \int_{-\infty}^{x^+} \diff z ~ (- g) \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \tilde{\rho}_2(z,\mathbf{y}_\perp) \Bigg] \nonumber 
 \end{align}
 
-\textcolor{purple}{ADD SOME SORT OF CONCLUSION}
+Expressions for the gluon fields around a single nucleus traveling at the speed of light have finally been obtained. Next, when studying the \gls{HIC} system of two colliding nuclei, they will be useful for evaluating the gluon fields in regions of spacetime causally related to only one of the nuclei, and for setting the boundary conditions for solving the Yang-Mills equations everywhere else.
 
 \subsection{Two nuclei}
 
-\textcolor{red}{WHAT PAPERS WILL YOU BE FOLLOWING} \cite{Albacete_2019} \cite{Guerrero_Rodr_guez_2021}
 
 %Having solved the Yang Mills equations in the case of a single nucleus, moving in either direction, 
 
-Moving to the scenario of a HIC, where both nuclei are present, the two currents are added, and $J^\mu$ is given by the expression:
+Moving to the scenario of a HIC, where both nuclei are present, the recent solvings in \cite{Albacete_2019,Guerrero_Rodr_guez_2021} will be followed.
+The use of a \gls{CGC} formalism to study the case of a \gls{HIC} was first accomplished in \cite{Kovner_1995}.
+
+The two currents are added, and $J^\mu$ is given by the expression:
 \begin{equation}
 \begin{split}
 	J^\mu(x^\mu) & = J_1^\mu(x^-,\mathbf{x}_\perp) + J_2^\mu(x^+, \mathbf{x}_\perp) = g \delta^{\mu}_+ \tilde{\rho}_1(x^-,\mathbf{x}_\perp) + g \delta^{\mu}_- \tilde{\rho}_2(x^+,\mathbf{x}_\perp) \\ 
@@ -593,10 +606,21 @@ Moving to the scenario of a HIC, where both nuclei are present, the two currents
 \end{equation}
 
 \begin{figure}
-\input{Diagrams/space_partition}
 \centering
-\caption{Partition of spacetime into light-cone quadrants. The quadrants where the Yang-Mills equations will be solved are identified as quadrants 1, 2 and 3. Adapted from \citep{Kovner_1995}.}
-\label{fig:space_partition}
+	\begin{subfigure}{0.4\textwidth}
+	\centering
+	\input{Diagrams/space_partition}
+	\caption{Partition of spacetime into light-cone quadrants. The quadrants where the Yang-Mills equations will be solved are identified as quadrants 1, 2 and 3. Adapted from \citep{Kovner_1995}.}
+	\label{fig:space_partition}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.55\textwidth}
+	\centering
+	\input{Diagrams/space_partition_light_cones}
+	\caption{The same four quadrants with the support of current $J_1$ ($J_2$) drawn as a red (blue) line. Future light-cones drawn from points where $J_1$ passes only occupy quadrants 1 and 3; future light-cones drawn from points where $J_2$ passes only occupy quadrants 2 and 3.}
+	\label{fig:current_light-cones}
+	\end{subfigure}
+	\caption{}
 \end{figure}
 
 For the purpose of solving the Yang-Mills equations, spacetime is divided into four quadrants in $(x^+,x^-)$ space,  as illustrated in Fig. \ref{fig:space_partition}. Quadrants 1 and 2 are named the pre-collision quadrants, while quadrant 3 is referred to as the forward light-cone. For calculations in the third quadrant, the Milne coordinate system\footnote{Also called the Bjorken or Comoving coordinate system.} is used, where positions and four-vectors are given by:
@@ -613,13 +637,6 @@ A^\eta & = \frac{x^- A^+ - x^+ A^-}{\tau^2} \label{eq:milne_Aeta}
 \end{align}
 \end{subequations}
 and the transverse components ($i=2,3$) keep their Cartesian form. $\tau$ is called the proper time and $\eta$ is called the rapidity. For a more detailed overview of the Comoving coordinates, see Appendix \ref{ap:bjorken_coordinates}.
-
-\begin{figure}
-\input{Diagrams/space_partition_light_cones}
-\centering
-\caption{The same four quadrants with the support of current $J_1$ ($J_2$) drawn as a red (blue) line. Future light-cones drawn from points where $J_1$ passes only occupy quadrants 1 and 3; future light-cones drawn from points where $J_2$ passes only occupy quadrants 2 and 3.}
-\label{fig:current_light-cones}
-\end{figure}
 
 Drawing future light-cones out from points where the color currents pass in $(x^+,x^-)$ space, one notices that all points in quadrant 1 may not be affected by the $J_2$ current, due to causality; in the same manner, all points in quadrant 2 may not be affected by current $J_1$. Only points in quadrant 3 are causally related to both currents (Fig. \ref{fig:current_light-cones}). Following \cite{Albacete_2019}'s approach, this permits the ``single-nuclei" results of the previous section to be used for the gluon fields in quadrants 1 and 2, reducing the problem to solving the Yang-Mills equations in the third quadrant. Even though they were obtained using different gauge conditions ($A^+ = 0$ for the first nucleus and $A^- = 0$ for the second nucleus), the result in Eqs. (\ref{eq:A_lc_one_nucleus}) and (\ref{eq:A^i_factorization}) can be used for the fields in quadrant 1 and the result in Eqs. (\ref{eq:A_lc_one_nucleus_2}) can be used for the fields in quadrant 2, since those regions are not causally related. In solving the Yang Mills equations for the case of two nuclei, the Fock-Schwinger gauge is chosen, defined by the axial gauge condition:
 \begin{equation}
@@ -655,7 +672,7 @@ In the interior of the third quadrant, the currents $J_1^\mu$ and $J_2^\mu$ have
 \end{equation}
 
 %Before moving on to their treatment, a discussion of the boundary conditions to be used to connect the solution in the forward light-cone with the already-found solutions in the pre-collision quadrants is in order. It is possible to obtain, out of the already-found fields in the pre-collision quadrants, boundary conditions along the edges of the forward light-cone. A detailed derivation of these boundary conditions may be found in \cite[Appendix C]{Carrington_2022_Energy_Momentum_Tensor}. They are obtained by first considering that the longitudinal width of the sources is finite and greater than 0, rather than infinitely thin as in Eq. (2.32), then integrating the Yang-Mills equations over a path (Eq. (\ref{eq:boundary_alpha})) and an area (Eq. (\ref{eq:boundary_transverse})) which cross the light-cone, and finally taking the limit where the width goes to zero. They are:
-Before moving on to their treatment, a discussion of the boundary conditions to be used to connect the solution in the forward light-cone with the already-found solutions in the pre-collision quadrants is in order. It is possible to obtain, out of the already-found fields in the pre-collision quadrants, starting values for the fields in the forward light-cone at $\tau = 0$. A detailed derivation of these boundary conditions may be found in \cite[Appendix C]{Carrington_2022_Energy_Momentum_Tensor}. They are obtained by first considering that the longitudinal width of the sources is finite and greater than 0, rather than infinitely thin as in Eq. (\ref{eq:thin_rho}), then integrating the Yang-Mills equations over a path (Eq. (\ref{eq:boundary_alpha})) and an area (Eq. (\ref{eq:boundary_transverse})) which cross the light-cone, and finally taking the limit where the width of the sources goes to zero. They are:
+Before moving on to their treatment, a discussion of the boundary conditions to be used to connect the solution in the forward light-cone with the already-found solutions in the pre-collision quadrants is in order. It is possible to obtain, out of the already-found fields in the pre-collision quadrants, starting values for the fields in the forward light-cone at $\tau = 0^+$. This is usually done by requiring that, using the ansatz in Eq. (\ref{eq:ansatz}), the Yang-Mills equations be regular at $\tau = 0$ \cite{Guerrero_Rodr_guez_2021}. They may also be obtained by first considering that the longitudinal width of the sources is finite and greater than $0$, rather than infinitely thin as in Eq. (\ref{eq:thin_rho}), then integrating the Yang-Mills equations over a path (Eq. (\ref{eq:boundary_alpha})) and an area (Eq. (\ref{eq:boundary_transverse})) which cross the light-cone, and finally taking the limit where the width of the sources goes to zero. \cite[Appendix C]{Carrington_2022_Energy_Momentum_Tensor} The obtained boundary conditions are:
 \begin{subequations}
 \label{eq:boundary_conditions}
 \begin{align}
@@ -665,6 +682,37 @@ Before moving on to their treatment, a discussion of the boundary conditions to 
 	\label{eq:boundary_transverse}
 \end{align}
 \end{subequations}
+
+Another way to express these boundary conditions is via the chromodynamic force fields: the electric chromodynamic field, $\mathbf{E}$, and the magnetic chromodynamic field, $\mathbf{B}$, which will be referred to simply as the electric and magnetic fields. In Minkowski coordinates, the components of the chromodynamic fields are obtained from the components of the gluon field strength tensor, $F^{\mu \nu}$, following \cite{Lappi:2017skr}, as:
+\begin{subequations}
+\begin{gather}
+E^i = F_{0 i}\\
+B^i = -\frac12 \varepsilon^{ijk} F_{jk}
+\end{gather}
+\end{subequations}
+with $i,j,k=1,2,3$, as in the case of Classical Electrodynamics. In Milne coordinates, the components are defined as:
+\begin{subequations}
+\begin{alignat}{2}
+E^\eta &= \frac{1}{\tau} F_{\tau \eta}  = - F_{+ -}
+ && E^i = F_{\tau i} \label{eq:E_from_F} \\
+ B^\eta &= -\frac12 \varepsilon^{ij} F_{ij} = -F_{23} \quad
+&& B^i = -\varepsilon^{ij} \frac{1}{\tau} F_{j \eta} \label{eq:B_from_F}
+\end{alignat}
+\label{eq:E_B_from_F}
+\end{subequations}
+with $i,j=2,3$. Defined this way, $E^\eta= E^1$ and $B^\eta = B^1$ everywhere, earning them the name ``longitudinal fields''; on the other hand, $E^i_{\text{Minkowski}} = E^i_{\text{Milne}}$  and $B^i_{\text{Minkowski}} = B^i_{\text{Milne}}$ ($i=2,3$) at midrapidity -- these are the transverse fields.
+
+The boundary conditions for the electric and magnetic fields  are obtainable by calculating the relevant components of $F^{\mu \nu}$ using the boundary conditions already found for $\alpha$ and $\alpha^i$ (Eqs. (\ref{eq:boundary_conditions})):
+\begin{subequations}
+\begin{gather}
+E^\eta_0 (\mathbf{x}_\perp) = - ig \delta^{ij} \left[ \alpha_1^i(\mathbf{x}_\perp), \alpha_2^j(\mathbf{x}_\perp) \right] 
+\label{eq:E_from_precollision}\\
+B^\eta_0 (\mathbf{x}_\perp) = -ig \varepsilon^{ij} \left[ \alpha_1^i(\mathbf{x}_\perp), \alpha_2^j(\mathbf{x}_\perp) \right]
+\label{eq:B_from_precollision}
+\end{gather}
+\label{eq:EB_from_precollision}
+\end{subequations}
+Additionally, the initial chromodynamic fields are purely longitudinal; that is, the transverse fields are initially null, $E^i_0 = B^i_0 = 0$. The steps of this derivation are detailed in Appendix \ref{ap:EB_from_precollision}.
 
 Moving on to the treatment of the Yang-Mills equations, defining $Y^\nu \equiv [D_\mu, F^{\mu\nu}]$, the $\tau$ and $\eta$ components of the system of equations in comoving coordinates may be obtained out of the $+$ and $-$ components in light-cone coordinates as:
 \begin{subequations}
@@ -685,8 +733,8 @@ Inserting Eq. (\ref{eq:ansatz}) into the Yang-Mills equations in comoving coordi
 \end{subequations}
 where $i,j=2,3$.
 
-These equations have no known analytical solution, but have been studied numerically (\textcolor{purple}{say more}) and analytically via approximations (\textcolor{purple}{say more}). In this work, the approximation that will allow the analytical treatment of the equations is their linearization; that is, the neglect of second or higher order terms in the fields, which was first done in \cite{}. This  will naturally do away with gauge invariance, as the value of the neglected terms changes according to the used gauge. Therefore, one must choose the proper gauge, which minimizes the influence of these terms, before linearizing the equations. Two criteria are put forward in \cite{Guerrero_Rodr_guez_2021}: keeping the result independent of $\eta$ suggests that the gauge transformation matrix should be independent of $\eta$ as well; additionally, since there are no color charge sources in the interior of the forward light-cone that would generate a static Coulomb field,
-the Fock-Schwinger gauge condition ($A^\tau = 0$) is maintained \textcolor{purple}{(why?)}, which can be achieved by requiring the gauge transformation to be independent of $\tau$. Thus, the inverse gauge transformation is:
+These equations don't look very friendly. They have no known analytical solution, but have been studied numerically (\textcolor{purple}{say more}) and analytically via approximations (\textcolor{purple}{say more}). In this work, the approximation that will allow the analytical treatment of the equations is their linearization; that is, the neglect of second or higher order terms in the fields, which was first done in \cite{}. This  will naturally do away with gauge invariance, as the value of the neglected terms changes according to the used gauge. Therefore, one must choose the proper gauge, which minimizes the influence of these terms, before linearizing the equations. Two criteria are put forward in \cite{Guerrero_Rodr_guez_2021}: keeping the result independent of $\eta$ suggests that the gauge transformation matrix should be independent of $\eta$ as well; additionally, since there are no color charge sources in the interior of the forward light-cone that would generate a static Coulomb field,
+the Fock-Schwinger gauge condition ($A^\tau = 0$) is maintained\footnote{Maintaining the Fock-Schwinger gauge also ensures that $A^-$ remains $0$ in the support of the right-moving current and $A^+$ remains $0$ in the support of the left-moving current, doing away with the complicated Wilson Line operators that would be needed to ensure their covariant conservation.}, which can be achieved by requiring the gauge transformation to be independent of $\tau$. Thus, the inverse gauge transformation is:
 \begin{subequations}
 \begin{gather}
 	\alpha(\tau,\mathbf{x}_\perp) = V (\mathbf{x}_\perp) \beta(\tau,\mathbf{x}_\perp) V^\dagger (\mathbf{x}_\perp) \\
@@ -703,7 +751,7 @@ which makes the linearized Yang-Mills equations for the fields in the new gauge,
 \end{subequations}
 where $k=2,3$. (\textcolor{purple}{different signs in 1808 and 2102})
 
-The remaining gauge freedom allows setting $\partial_i \beta^i = 0$ (\textcolor{purple}{minimizes the amplitudes of the transverse fields?}), because of which this will be called the Coulomb gauge. The equations become:
+The remaining gauge freedom allows setting $\partial_i \beta^i = 0$, a Coulomb gauge condition, minimizing the amplitudes of the transverse fields \cite{Blaizot:2010kh}. The equations become:
 \begin{subequations}
 \begin{gather}
 	\partial_\tau \left( \frac{1}{\tau} \partial_\tau \left( \tau^2 \beta \right) \right) - \tau \partial^{\textcolor{purple}{i}}  \partial^i \beta = 0 \\
@@ -740,32 +788,14 @@ The solution is, then,
 \end{subequations}
 where the factor of $2$ in Eq. (\ref{eq:beta_tilde}) was introduced in order to make the $\mathbf{k}_\perp$-dependent coefficient, $\tilde{\beta}_0$, match the value of $\tilde{\beta}$ at $\tau=0$, since $\lim_{z \to 0} J_1(z)/z=1/2$. \cite{arfken2005mathematical}
 
-In order to find the expressions for the fields at $\tau = 0$ ($\tilde{\beta}_0$ and $\tilde{\beta}^i_0$), the next step would be to use the boundary conditions of Eqs. (\ref{eq:boundary_conditions}), which would require first bringing the pre-collision potentials, $\alpha^i_1$ and $\alpha^i_2$, to the Coulomb gauge. However, no analytical expression for the necessary transformation matrix $V(\mathbf{x}_\perp)$ has been found. In spite of this, another approach to this problem has found that the resolution of the linearized equations with numerically-computed boundary conditions in the Coulomb gauge approximate the resolution of the full Yang-Mills equations quite well \cite{} \textcolor{purple}{(read paper, quantify similarity)}, except for very soft modes (very low $|\mathbf{k}_\perp|$). \textcolor{purple}{(quantify)}
+In order to find the expressions for the fields at $\tau = 0$ ($\tilde{\beta}_0$ and $\tilde{\beta}^i_0$), the next step would be to use the boundary conditions of Eqs. (\ref{eq:boundary_conditions}), which would require first bringing the pre-collision potentials, $\alpha^i_1$ and $\alpha^i_2$, to the Coulomb gauge. However, no analytical expression for the necessary transformation matrix $V(\mathbf{x}_\perp)$ has been found. In spite of this, another approach to this problem has found that the resolution of the linearized equations with numerically-computed boundary conditions in the Coulomb gauge approximate the resolution of the full Yang-Mills equations quite well \cite{Guerrero_Rodr_guez_2021,Blaizot:2010kh} %\textcolor{purple}{(read paper, quantify similarity)}
+, except for very soft modes (very low $|\mathbf{k}_\perp|$). %\textcolor{purple}{(quantify)}
 
-One way to go around this problem is to recall that the quantities needed to compute the physically meaningful results are the chromodynamic force fields: the electric chromodynamic field, $\mathbf{E}$, and the magnetic chromodynamic field, $\mathbf{B}$, which will be referred to simply as the electric and magnetic fields. The components of the chromodynamic fields ($E^i$ and $B^i$ with $i=\eta,2,3$) are obtained from the components of the gluon field strength tensor, $F^{\mu \nu}$, following \cite{Lappi:2017skr}, as:
-\begin{subequations}
-\begin{gather}
-E^i = F_{0 i}\\
-B^i = -\frac12 \varepsilon^{ijk} F_{jk}
-\end{gather}
-\end{subequations}
-with $i=1,2,3$, as in the case of Classical Electromagnetism. In Milne coordinates, the components are defined as:
-\begin{subequations}
-\begin{alignat}{2}
-E^\eta &= \frac{1}{\tau} F_{\tau \eta}  = - F_{+ -}
- && E^i = F_{\tau i} \label{eq:E_from_F} \\
- B^\eta &= -\frac12 \varepsilon^{ij} F_{ij} = -F_{23} \quad
-&& B^i = -\varepsilon^{ij} \frac{1}{\tau} F_{j \eta} \label{eq:B_from_F}
-\end{alignat}
-\label{eq:E_B_from_F}
-\end{subequations}
-with $i,j=2,3$. Defined this way, $E^\eta= E^1$ and $B^\eta = B^1$ everywhere; and $E^i_{\text{Minkowski}} = E^i_{\text{Milne}}$  and $B^i_{\text{Minkowski}} = B^i_{\text{Milne}}$ ($i=2,3$) at midrapidity, where $\eta = 0$.
-
-They will be used to calculate color traces of products of components, like $\Tr_c [E^i(\tau, \mathbf{x}_\perp) B^j(\tau', \mathbf{y}_\perp) ]$, for example. Checking for gauge invariance, since the field components change under the latest gauge transformation as $E^i (\tau, \mathbf{x}_\perp) \to E'^i(\tau, \mathbf{x}_\perp) = V(\mathbf{x}_\perp) E^i(\tau, \mathbf{x}_\perp) V^\dagger(\mathbf{x}_\perp)$ \textcolor{purple}{(NOT GAUGE INVARIANT FOR $v_\perp \neq 0$ ??
+One way to go around this problem is to recall that the quantities needed to compute the physically meaningful results are the chromodynamic force fields: the electric field, $\mathbf{E}$, and the magnetic field, $\mathbf{B}$. They will be used to calculate color traces of products of their components, like $\Tr_c [E^i(\tau, \mathbf{x}_\perp) B^j(\tau', \mathbf{y}_\perp) ]$, for example. Checking for gauge invariance, since the field components change under the latest gauge transformation as $E^i (\tau, \mathbf{x}_\perp) \to E'^i(\tau, \mathbf{x}_\perp) = V(\mathbf{x}_\perp) E^i(\tau, \mathbf{x}_\perp) V^\dagger(\mathbf{x}_\perp)$ \textcolor{purple}{(NOT GAUGE INVARIANT FOR $v_\perp \neq 0$ ??
 % But maybe $\hat{q}$ and $dE/dx$ are)
 }, the previous trace is gauge invariant. 
 
-As such, in order to obtain the initial fields $\tilde{\beta}_0$ and $\tilde{\beta}_0^i$, one may choose them so as to produce the appropriate initial chromodynamic fields. The initial values of the chromodynamic fields, $\mathbf{E}_0 (\mathbf{x}_\perp) \equiv \mathbf{E}(\tau \to 0^+,\mathbf{x}_\perp)$ and $\mathbf{B}_0 (\mathbf{x}_\perp) \equiv \mathbf{B}(\tau \to 0^+,\mathbf{x}_\perp)$ may themselves be obtained out of the initial conditions in Eqs. (\ref{eq:boundary_conditions}).
+As such, in order to obtain the initial fields $\tilde{\beta}_0$ and $\tilde{\beta}_0^i$, one may choose them so as to produce the appropriate initial chromodynamic fields given by Eqs. (\ref{eq:EB_from_precollision}): $\mathbf{E}_0 (\mathbf{x}_\perp) \equiv \mathbf{E}(\tau \to 0^+,\mathbf{x}_\perp)$ and \linebreak $\mathbf{B}_0 (\mathbf{x}_\perp) \equiv \mathbf{B}(\tau \to 0^+,\mathbf{x}_\perp)$.
 
 The relations between the initial gluon fields and the initial chromodynamic fields are obtained from taking the Fourier transform of the gluon and chromodynamic fields in Eqs. (\ref{eq:E_B_from_F}), as detailed in Appendix \ref{ap:betas_and_EBs}:
 \begin{subequations}
@@ -779,18 +809,6 @@ The relations between the initial gluon fields and the initial chromodynamic fie
 \end{subequations}
 %\tilde{E}_0^i = \\
 %\tilde{B}_0^i =
-
-The initial values of $E^\eta$ and $B^\eta$, the longitudinal fields (so called because they match $E^1$ and $B^1$), are obtainable from the pre-collision potentials by calculating the relevant components of $F^{\mu \nu}$ using the expressions for $\alpha$ and $\alpha^i$ arbitrarily close to the borders of the forward light-cone (the boundary equations of Eq. (\ref{eq:boundary_conditions})):
-\begin{subequations}
-\begin{gather}
-E^\eta_0 (\mathbf{x}_\perp) = - ig \delta^{ij} \left[ \alpha_1^i(\mathbf{x}_\perp), \alpha_2^j(\mathbf{x}_\perp) \right] 
-\label{eq:E_from_precollision}\\
-B^\eta_0 (\mathbf{x}_\perp) = -ig \varepsilon^{ij} \left[ \alpha_1^i(\mathbf{x}_\perp), \alpha_2^j(\mathbf{x}_\perp) \right]
-\label{eq:B_from_precollision}
-\end{gather}
-\label{eq:EB_from_precollision}
-\end{subequations}
-Additionally, the initial chromodynamic fields are purely longitudinal; that is, the transverse fields are initially null, $E^i_0 = B^i_0 = 0$. The steps of this derivation are detailed in Appendix \ref{ap:EB_from_precollision}.
 
 Thus, the chain of expressions which allows writing the chromodynamic fields as functions of the pre-collision potentials is now complete.
 \begin{subequations} \label{eq:EB_from_initial_EB}

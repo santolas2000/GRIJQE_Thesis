@@ -89,10 +89,13 @@
 \glossaryentry{IMF?\glossentry{IMF}|setentrycounter[]{page}"\glsnumberformat}{15}
 \glossaryentry{MV?\glossentry{MV}|setentrycounter[]{page}"\glsnumberformat}{15}
 \glossaryentry{CGC?\glossentry{CGC}|setentrycounter[]{page}"\glsnumberformat}{15}
+\glossaryentry{QCD?\glossentry{QCD}|setentrycounter[]{page}"\glsnumberformat}{16}
 \glossaryentry{MV?\glossentry{MV}|setentrycounter[]{page}"\glsnumberformat}{16}
 \glossaryentry{HIC?\glossentry{HIC}|setentrycounter[]{page}"\glsnumberformat}{16}
 \glossaryentry{IMF?\glossentry{IMF}|setentrycounter[]{page}"\glsnumberformat}{16}
 \glossaryentry{IMF?\glossentry{IMF}|setentrycounter[]{page}"\glsnumberformat}{16}
+\glossaryentry{BK?\glossentry{BK}|setentrycounter[]{page}"\glsnumberformat}{16}
+\glossaryentry{BFKL?\glossentry{BFKL}|setentrycounter[]{page}"\glsnumberformat}{16}
 \glossaryentry{QCD?\glossentry{QCD}|setentrycounter[]{page}"\glsnumberformat}{16}
 \glossaryentry{CGC?\glossentry{CGC}|setentrycounter[]{page}"\glsnumberformat}{17}
 \glossaryentry{CGC?\glossentry{CGC}|setentrycounter[]{page}"\glsnumberformat}{17}
@@ -107,3 +110,7 @@
 \glossaryentry{MV?\glossentry{MV}|setentrycounter[]{page}"\glsnumberformat}{19}
 \glossaryentry{MV?\glossentry{MV}|setentrycounter[]{page}"\glsnumberformat}{19}
 \glossaryentry{HIC?\glossentry{HIC}|setentrycounter[]{page}"\glsnumberformat}{19}
+\glossaryentry{CGC?\glossentry{CGC}|setentrycounter[]{page}"\glsnumberformat}{22}
+\glossaryentry{HIC?\glossentry{HIC}|setentrycounter[]{page}"\glsnumberformat}{24}
+\glossaryentry{CGC?\glossentry{CGC}|setentrycounter[]{page}"\glsnumberformat}{24}
+\glossaryentry{HIC?\glossentry{HIC}|setentrycounter[]{page}"\glsnumberformat}{24}
