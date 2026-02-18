@@ -387,7 +387,8 @@ The classical \gls{MV} model will be used, and quantum corrections will be left 
 
 
 
-\section{Solving The Yang-Mills Equations}
+\section{Solving the Yang-Mills Equations}
+\label{sec:solving_YM}
 
 \subsection{One nucleus}
 First, the case of a single nucleus will be considered.  Nucleus 1 is chosen, moving in the positive $x^1$ direction.
@@ -636,7 +637,7 @@ A^\tau & = \frac{x^- A^+ + x^+ A^-}{\tau} \\
 A^\eta & = \frac{x^- A^+ - x^+ A^-}{\tau^2} \label{eq:milne_Aeta}
 \end{align}
 \end{subequations}
-and the transverse components ($i=2,3$) keep their Cartesian form. $\tau$ is called the proper time and $\eta$ is called the rapidity. For a more detailed overview of the Comoving coordinates, see Appendix \ref{ap:bjorken_coordinates}.
+and the transverse components ($i=2,3$) keep their Cartesian form. $\tau$ is called the proper time and $\eta$ is called the rapidity. For a more detailed overview of the Milne coordinates, see Appendix \ref{ap:bjorken_coordinates}.
 
 Drawing future light-cones out from points where the color currents pass in $(x^+,x^-)$ space, one notices that all points in quadrant 1 may not be affected by the $J_2$ current, due to causality; in the same manner, all points in quadrant 2 may not be affected by current $J_1$. Only points in quadrant 3 are causally related to both currents (Fig. \ref{fig:current_light-cones}). Following \cite{Albacete_2019}'s approach, this permits the ``single-nuclei" results of the previous section to be used for the gluon fields in quadrants 1 and 2, reducing the problem to solving the Yang-Mills equations in the third quadrant. Even though they were obtained using different gauge conditions ($A^+ = 0$ for the first nucleus and $A^- = 0$ for the second nucleus), the result in Eqs. (\ref{eq:A_lc_one_nucleus}) and (\ref{eq:A^i_factorization}) can be used for the fields in quadrant 1 and the result in Eqs. (\ref{eq:A_lc_one_nucleus_2}) can be used for the fields in quadrant 2, since those regions are not causally related. In solving the Yang Mills equations for the case of two nuclei, the Fock-Schwinger gauge is chosen, defined by the axial gauge condition:
 \begin{equation}
@@ -700,7 +701,7 @@ E^\eta &= \frac{1}{\tau} F_{\tau \eta}  = - F_{+ -}
 \end{alignat}
 \label{eq:E_B_from_F}
 \end{subequations}
-with $i,j=2,3$. Defined this way, $E^\eta= E^1$ and $B^\eta = B^1$ everywhere, earning them the name ``longitudinal fields''; on the other hand, $E^i_{\text{Minkowski}} = E^i_{\text{Milne}}$  and $B^i_{\text{Minkowski}} = B^i_{\text{Milne}}$ ($i=2,3$) at midrapidity -- these are the transverse fields.
+with $i,j=2,3$. Defined this way, $E^\eta= E^1$ and $B^\eta = B^1$ everywhere, earning them the name ``longitudinal fields''; on the other hand, $E^i_{\text{Minkowski}} = E^i_{\text{Milne}}$  and $B^i_{\text{Minkowski}} = B^i_{\text{Milne}}$ ($i=2,3$) at midrapidity -- these are the transverse chromodynamic fields.
 
 The boundary conditions for the electric and magnetic fields  are obtainable by calculating the relevant components of $F^{\mu \nu}$ using the boundary conditions already found for $\alpha$ and $\alpha^i$ (Eqs. (\ref{eq:boundary_conditions})):
 \begin{subequations}
@@ -821,13 +822,28 @@ Thus, the chain of expressions which allows writing the chromodynamic fields as 
 \end{subequations}
 
 In order to obtain these expressions in position space, it is necessary to calculate the Fourier transforms of Eqs. (\ref{eq:EB_from_precollision}) to insert into Eqs. (\ref{eq:EB_from_initial_EB}), before applying the Fourier transform again to finish at position space. For example, for $E^i$:
-\begin{equation}
+
+\begin{subequations}
+\label{eq:chromodynamic_fields_full}
+\begin{align}
 \begin{split}
-	E^i (\tau,\mathbf{x}_\perp) & =  \int \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} e^{i \mathbf{k}_\perp \cdot \mathbf{x}_\perp} (-i)   \varepsilon^{i j} \frac{k^j}{k} J_1 (k \tau)  \int \diff^2 \mathbf{u}_\perp e^{-i \mathbf{k}_\perp \cdot \mathbf{u}_\perp} (-ig) \varepsilon^{mn} [\alpha^m_{1} (\mathbf{u}_\perp) \alpha^n_{2}(\mathbf{u}_\perp)] \\
-	& = -ig \varepsilon^{mn} f^{abc} T_c \varepsilon^{ij} \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} \frac{k^j}{k} J_1 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^m_{1a} (\mathbf{u}_\perp) \alpha^n_{2b}(\mathbf{u}_\perp)
-\end{split}
+	E^i (\tau,\mathbf{x}_\perp) & =  \int \frac{\diff^2 \mathbf{k}_\perp}{(2\pi)^2} e^{i \mathbf{k}_\perp \cdot \mathbf{x}_\perp} (-i)   \varepsilon^{i j} \frac{k^j}{k} J_1 (k \tau)  \int \diff^2 \mathbf{u}_\perp e^{-i \mathbf{k}_\perp \cdot \mathbf{u}_\perp} (-ig) \varepsilon^{mn} [\alpha^m_{1} (\mathbf{u}_\perp) \alpha^n_{2}(\mathbf{u}_\perp)] \\
+	& = -ig \varepsilon^{mn} f^{abc} T_c \varepsilon^{ij} \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi)^2} \frac{k^j}{k} J_1 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^m_{1a} (\mathbf{u}_\perp) \alpha^n_{2b}(\mathbf{u}_\perp)
+\end{split} \\
+\intertext{where the definition $\alpha_i^m(\mathbf{u}_\perp) \equiv \alpha_{ia}^m(\mathbf{u}_\perp) T_a$ and the SU(3) commutation relations, $[T_a,T_b] = if^{abc} T_c$, were used. The remaining components are:}
+	E^\eta (\tau,\mathbf{x}_\perp) & = g \delta^{mn} f^{abc} T_c \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi)^2} J_0 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^m_{1a} (\mathbf{u}_\perp) \alpha^n_{2b}(\mathbf{u}_\perp) \\
+	B^\eta (\tau,\mathbf{x}_\perp) & = g \varepsilon^{mn} f^{abc} T_c \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi)^2} J_0 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^m_{1a} (\mathbf{u}_\perp) \alpha^n_{2b}(\mathbf{u}_\perp) \\
+	B^i (\tau,\mathbf{x}_\perp) & = -ig \delta^{mn} f^{abc} T_c \varepsilon^{i j} \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi)^2} \frac{k^j}{k} J_1 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^m_{1a} (\mathbf{u}_\perp) \alpha^n_{2b}(\mathbf{u}_\perp)
+\end{align}
+\end{subequations}
+
+These expressions are quite lengthy. However, they may be more easily treated remembering their shared  structure. For a general chromodynamic field $G^\alpha (\tau, \mathbf{x}_\perp)$, with $\alpha = \eta,2,3$:
+
+\begin{equation}
+\label{eq:shared_structure}
+ G^\alpha (\tau, \mathbf{x}_\perp) = C^{mn} ~ g f^{abc} T_c \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi)^2} ~ D^\alpha (\tau, \mathbf{k}_\perp) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^m_{1a} (\mathbf{u}_\perp) \alpha^n_{2b} (\mathbf{u}_\perp)
 \end{equation}
-where the definition $\alpha_i^m(\mathbf{u}_\perp) \equiv \alpha_{ia}^m(\mathbf{u}_\perp) T_a$ and the SU(3) commutation relations, $[T_a,T_b] = if^{abc} T_c$, were used.
+where $D^\eta = J_0(k \tau)$  and $D^2=D^3 = -i \varepsilon^{ij} (k^j/k) J_1(k \tau)$; and  $C^{mn} = \delta^{mn}$ for $E^\eta$ and $B^i$ and $C^{mn} = \varepsilon^{mn}$ for $E^i$ and $B^\eta$.
 
 
 
@@ -858,9 +874,9 @@ The classical Yang-Mills equations to be solved in the presence of the static co
 
 \end{comment}
 
+\begin{comment}
 \section{\textcolor{red}{Transcribed expressions yet without text}}
 
-\begin{comment}
 \begin{subequations} \label{eq:initial_fields}
 \begin{equation}
 \begin{split}
@@ -875,7 +891,7 @@ B^\eta_0(\mathbf{x}_\perp) & = -ig \varepsilon^{ij} [\alpha^i_1 (\mathbf{x}_\per
 \end{split} \label{eq:initial_B}
 \end{equation}
 \end{subequations}
-\end{comment}
+
 
 In order to get expressions for one of the fields in coordinate  space\textcolor{red}{\footnote{as is necessary in order to calculate $X^{\alpha \beta}$}}, the appropriate field at $\tau=0^+$ (eqs. \ref{eq:initial_fields}) must be Fourier-transformed and used in Eqs. (\ref{eq:EB_from_initial_EB}). The inverse Fourier transform is then applied to the resulting expression. For $E^\alpha$, $\alpha=2,3$, for example:
 
@@ -895,3 +911,4 @@ And the remaining fields:
 	B^\eta (\tau,\mathbf{x}_\perp) & = g \varepsilon^{ij} f^{abc} T_c \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} J_0 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp) \\
 	B^\alpha (\tau,\mathbf{x}_\perp) & = -ig \delta^{ij} f^{abc} T_c \varepsilon^{\alpha \beta} \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} \hat{k}^\beta J_1 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp)
 \end{align}
+\end{comment}

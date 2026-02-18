@@ -1,0 +1,69 @@
+\chapter{$X^{\alpha \beta}$ tensor}
+
+\section{Components}
+\label{X_components}
+
+The components of the $X^{\alpha \beta}$ tensor are divided into four groups in order to perform their calculation:
+\begin{equation}
+X^{\alpha \beta}=
+\begin{bmatrix}
+\begin{array}{c|cc}
+X^{11} & X^{12} & X^{13} \\ \hline
+X^{21} & X^{22} & X^{23} \\
+X^{31} & X^{32} & X^{33}
+\end{array}
+\end{bmatrix}
+\end{equation}
+
+For brevity, presentation of the results is limited to a partial integrand $(H^{\alpha \beta})^{ijmn}$ of each component, which excludes the full integrals and the color space terms:
+
+\begin{equation}
+\begin{split}
+X^{\alpha \beta}
+  \equiv \frac{g^4}{2N_c} \int_0^t & dt' \int \frac{\diff^2 \mathbf{k_\perp}}{(2\pi)^2}
+\int \frac{\diff^2 \mathbf{l}_\perp}{(2\pi)^2}
+\int \diff^2 \mathbf{u}_\perp
+\int \diff^2 \mathbf{w}_\perp 
+~ (H^{\alpha \beta})^{ijmn} (\tau, \tau',\mathbf{v},\mathbf{k}_\perp,\mathbf{l}_\perp)
+\\
+& e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp}
+e^{i \mathbf{l}_\perp \cdot (\mathbf{y} - \mathbf{w})_\perp} f^{bca} f^{dea}
+ \big< \alpha^i_{1b} (\mathbf{u}_\perp) \alpha^m_{1d} (\mathbf{w}_\perp) \big>
+ \big< \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^n_{2e} (\mathbf{w}_\perp) \big>
+\end{split}
+\end{equation}
+
+The components are, with $\alpha, \beta = 2,3$:
+\begin{subequations}
+\begin{equation}
+\begin{split}
+(H^{11})^{ijmn} = \bigg[ & J_0\big(k \tau \big) J_0\big(l \tau'\big) + i \frac{\mathbf{v}_\perp \cdot \mathbf{l}_\perp}{l} J_0\big(k \tau \big) J_1\big(l\tau'\big) \\
+& + i \frac{\mathbf{v}_\perp \cdot \mathbf{k}_\perp}{k} J_1\big(k \tau \big) J_0\big(l\tau'\big) - \frac{\mathbf{v}_\perp \cdot \mathbf{l}_\perp}{l} \frac{\mathbf{v}_\perp \cdot \mathbf{k}_\perp}{k} J_1\big(k \tau \big) J_1\big(l\tau'\big)
+\bigg] \delta^{ij} \delta^{mn}
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+(H^{1 \beta})^{ijmn} = \bigg[ - i v^1 \frac{l^\beta}{l} J_0(k \tau) J_1\big(l\tau' \big) + \frac{\mathbf{v}_\perp \cdot \mathbf{k}_\perp}{k}  v^1 \frac{l^\beta}{l} J_1 (k\tau) J_1\big(l\tau' \big)  \bigg] \delta^{ij} \delta^{mn}
+\end{split}
+\end{equation} 
+\begin{equation}
+\begin{split}
+(H^{\alpha 1})^{ijmn} = \bigg[  - i v^1 \frac{k^\alpha}{k} J_1(k \tau) J_0\big(l\tau'\big) + \frac{\mathbf{v}_\perp \cdot \mathbf{l}_\perp}{l}  v^1 \frac{k^\alpha}{k} J_1(k\tau) J_1\big(l\tau'\big)  \bigg] \delta^{ij} \delta^{mn}
+\end{split}
+\end{equation} 
+\begin{equation}
+\begin{split}
+(H^{\alpha \beta})^{ijmn} = - & ~ (v^1)^2 \frac{k^\alpha l^\beta}{k ~l} J_1 (k \tau) J_1\big(l\tau'\big) \delta^{ij} \delta^{mn} \\
+  + & ~ \bigg[\Big(\delta^{\alpha \beta}  - \frac{v^\alpha v^\beta}{{v_\perp}^2}\Big) {v_\perp}^2 ~ J_0 (k \tau) J_0\big(l\tau'\big) \\
+  & -i \Big(\delta^{\alpha \beta}  - \frac{l^\alpha v^\beta}{\mathbf{l}_\perp \cdot \mathbf{v}_\perp}\Big) \frac{\mathbf{l}_\perp \cdot \mathbf{v}_\perp}{l} J_0 (k \tau) J_1\big(l\tau'\big) \\
+&  -i \Big(\delta^{\alpha \beta}  - \frac{v^\alpha k^\beta}{\mathbf{v}_\perp \cdot \mathbf{k}_\perp}\Big) \frac{\mathbf{v}_\perp \cdot \mathbf{k}_\perp}{k} J_1 (k \tau) J_0\big(l\tau'\big) \\
+& -\Big(\delta^{\alpha \beta}  - \frac{l^\alpha k^\beta}{\mathbf{l}_\perp \cdot \mathbf{k}_\perp}\Big) \frac{\mathbf{l}_\perp \cdot \mathbf{k}_\perp}{l ~k} J_1 (k \tau) J_1\big(l\tau'\big)   \bigg] \varepsilon^{ij} \varepsilon^{mn}
+\end{split}
+\end{equation} 
+\end{subequations}
+These results are then used to calculate the projections $\delta^{\alpha \beta} X^{\alpha \beta}$ and $v^\alpha v^\beta X^{\alpha \beta}$.
+
+\section{Projections}
+
+The relevant projections 

@@ -1,4 +1,5 @@
 \chapter{[Margaret]}
+\label{sec:Margaret}
 
 \textcolor{red}{[Likely to Migrate, requires references (textbooks?)]}
 
@@ -58,14 +59,14 @@ As such, $\hat{q}$ and $\diff E / \diff x$ may be obtained from $X^{\alpha\beta}
 \label{eq:collision_from_tensors_v0}
 \end{subequations}
 
-\textcolor{red}{Should these auxiliary calcs be moved to an appendix?} To prove the first equality of eq. \ref{eq:qHat_from_X},
+\textcolor{red}{Should these auxiliary calcs be moved to an appendix?} To prove the first equality of Eq. (\ref{eq:qHat_from_X}),
 \begin{equation*}
 \frac{1}{v} \left(\delta^{\alpha \beta} - \frac{v^\alpha v^\beta}{v^2} \right) \frac{\left< \Delta p^\alpha \Delta p^\beta \right>}{\Delta t} = \frac{1}{\Delta x} \left< (\Delta \mathbf{p})^2 - \left(\frac{\mathbf{v}\cdot \Delta \mathbf{p}}{v^2} \right)\right> = \frac{\left<(\Delta{\mathbf{p}_T})^2\right>}{\Delta x}
 \end{equation*}
 
-To prove the second equality of eq. \ref{eq:qHat_from_X}, eq. \ref{eq:momentum_from_X} is plugged in and the symmetry of $(\delta^{\alpha \beta} - v^\alpha v^\beta/v^2)$ under the switch of $\alpha$ and $\beta$ is used.
+To prove the second equality of Eq. (\ref{eq:qHat_from_X}), Eq. (\ref{eq:momentum_from_X}) is plugged in and the symmetry of $(\delta^{\alpha \beta} - v^\alpha v^\beta/v^2)$ under the switch of $\alpha$ and $\beta$ is used.
 
-To prove the first equality of eq. \ref{eq:dEdx_from_Y}, it is easiest to start from the definition of the stopping power:
+To prove the first equality of Eq. (\ref{eq:dEdx_from_Y}), it is easiest to start from the definition of the stopping power:
 \begin{equation*}
 	\frac{\left< \Delta E\right>}{\Delta x}  = \frac{1}{v\Delta t} \left<  \Delta (\sqrt{\mathbf{p}^2+m^2})\right> = \frac{1}{v\Delta t} \left<  \frac{\Delta (\mathbf{p}^2)}{ 2\sqrt{\mathbf{p}^2+m^2}}\right> 
 	 = \frac{1}{v\Delta t} \left<  \frac{\mathbf{p} \cdot \Delta \mathbf{p}}{ \sqrt{p^2+m^2}}\right> = \frac{v^\alpha}{v} \frac{\Delta p^\alpha}{\Delta t}
@@ -118,13 +119,14 @@ F^\alpha_a(t, \mathbf{x}) & = g \big( E^\alpha_a(t, \mathbf{x}) + \varepsilon^{\
 \end{subequations}
 \noindent \textcolor{red}{where $g$ is the strong coupling constant and $\varepsilon^{\alpha \beta \gamma}$ is the Levi-Civita or antisymmetric tensor with $\varepsilon^{123}=1$.}
 
-Plugging eq. \ref{eq:lorentz_force_component} into eq. \ref{eq:short_X} allows writing the unfolded expression for $X^{\alpha \beta}$:
+Plugging Eq. (\ref{eq:lorentz_force_component}) into Eq. (\ref{eq:short_X}) allows unfolding the expression for $X^{\alpha \beta}$:
 \begin{equation}
+\label{eq:unfolded_X}
 \begin{split}
 	X^{\alpha \beta} (\textcolor{red}{t,\mathbf{x}}, \mathbf{v}) =  \frac{g^2}{2 N_c} \int_0^t \diff t'   
-	 \bigg[ &  \left< E^\alpha_a(t, \mathbf{x} ) E^\beta_a(t-t', \mathbf{y} )\right> \\ 
-	& + \varepsilon^{\beta \gamma \gamma'} v^\gamma \left< E^\alpha_a(t, \mathbf{x} ) B^{\gamma'}_a(t-t', \mathbf{y} )\right> \\
-	& + \varepsilon^{\alpha \gamma \gamma'} v^\gamma \left< B^{\gamma'}_a(t, \mathbf{x} ) E^{\beta}_a(t-t', \mathbf{y} )\right> \\
-	& + \varepsilon^{\alpha \gamma \gamma'} \varepsilon^{\beta \delta \delta'} v^\gamma v^\delta \left< B^{\gamma'}_a(t, \mathbf{x} ) B^{\delta'}_a(t-t', \mathbf{y} )\right> \bigg]
+	 \bigg[ &  \left< E^\alpha_a(t, \mathbf{x} ) E^\beta_a(t', \mathbf{y} )\right> \\ 
+	& + \varepsilon^{\beta \gamma \gamma'} v^\gamma \left< E^\alpha_a(t, \mathbf{x} ) B^{\gamma'}_a(t', \mathbf{y} )\right> \\
+	& + \varepsilon^{\alpha \gamma \gamma'} v^\gamma \left< B^{\gamma'}_a(t, \mathbf{x} ) E^{\beta}_a(t', \mathbf{y} )\right> \\
+	& + \varepsilon^{\alpha \gamma \gamma'} \varepsilon^{\beta \delta \delta'} v^\gamma v^\delta \left< B^{\gamma'}_a(t, \mathbf{x} ) B^{\delta'}_a(t', \mathbf{y} )\right> \bigg]
 \end{split}
 \end{equation}
