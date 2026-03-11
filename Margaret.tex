@@ -28,6 +28,7 @@ These quantities are dependent on the properties of the medium and of the probe,
 The chromodynamic field correlators derived in the previous section may be used to obtain the momentum broadening coefficient, $\hat{q}$, and the stopping power, $\diff E/\diff x$,  felt by a relativistic quark probe traversing the glasma. This procedure is outlined in \cite{Carrington_2022}.
 
 \section{The Fokker-Planck equation and its collision terms}
+\label{sec:fokker-planck}
 
 The Fokker-Planck equation has frequently been used to study the transport of heavy quarks across a thermalized QGP. The following Fokker-Planck equation, derived in \cite{Mrowczynski2018} for the transport of heavy quarks through a glasma, is also applicable to relativistic light partons, as long as the diffusion approximation is applicable \cite{Carrington_2022}, that is, as long as the transfer of momentum to the probe is negligible when compared to the probe's momentum \citep{Mrowczynski2018}. It commands the evolution of the event-averaged probe quark distribution function $n(t,\mathbf{x},\mathbf{p})$ as the probes traverse the medium.
 
@@ -87,7 +88,7 @@ In order to circumvent the challenges of calculating $Y^\alpha$, it is assumed t
 
 For the purpose of obtaining $Y^\alpha$ from $X^{\alpha\beta}$, $T$ is taken to be the temperature of a thermalized QGP with an energy density equal to that of the glasma\textcolor{red}{\footnote{\textcolor{red}{The derivation of the glasma's energy density should end up before this section, so the reader will be familiar with the concept.}}}. That is, the temperature which would characterize the system achieved if the glasma were allowed to reach equilibrium without expanding. \textcolor{red}{[Comments on validity?] - partly discussed in sec. 5 of Mrowczyncki\_2018}
 
-From eqs. \ref{eq:collision_from_tensors_v0} and \ref{eq:Y_from_X}, the final expressions for determining $\hat{q}$ and $\diff E / \diff x$ from $X^{\alpha \beta}$ become:\textcolor{red}{\footnote{\textcolor{red}{The final form of dEdx will depend on wheteher the projection calculated will be on va*vb or va*vb/v**2}}}
+From Eqs. (\ref{eq:collision_from_tensors_v0}) and (\ref{eq:Y_from_X}), the final expressions for determining $\hat{q}$ and $\diff E / \diff x$ from $X^{\alpha \beta}$ become:\textcolor{red}{\footnote{\textcolor{red}{The final form of dEdx will depend on wheteher the projection calculated will be on va*vb or va*vb/v**2}}}
 \begin{subequations}
 \begin{align}
 	\hat{q} & = \frac{2}{v} \left(\delta^{\alpha \beta} - \frac{v^\alpha v^\beta}{v^2} \right) X^{\alpha\beta} \\	
@@ -107,7 +108,11 @@ The first collision term is obtained from the correlators of chromodynamic field
 	\end{split}
 \label{eq:short_X}
 \end{equation}
-\noindent \textcolor{red}{where $N_c$ is the number of colors, $\Tr_c$ is a color trace in the fundamental representation, $\mathbf{y} = \mathbf{x} - \mathbf{v} (t - t')$, $F^\alpha \equiv F^\alpha_a t^a$\textcolor{red}{\footnote{\textcolor{red}{A proper appendix or introduction to SU(Nc) will be necessary}}} is the $\alpha$ component of the Lorentz color force, and $a$ are color indices in the adjoint representation, which run from 1 through ${N_c}^2 - 1$}. Thus, the $X^{\alpha \beta}$ component of the tensor is obtained by integrating, in time, over the full past trajectory of the probe, the correlator of the $\alpha$ and $\beta$ components of the Lorentz color force; the first at the ``present'' (time $t$, position $\mathbf{x}$), and the second at a past point of the probe's trajectory (time $t'$, position $\mathbf{y}$).
+\noindent \textcolor{red}{where $N_c$ is the number of colors, $\Tr_c$ is a color trace in the fundamental representation, $\mathbf{y} = \mathbf{x} - \mathbf{v} (t - t')$, $F^\alpha \equiv F^\alpha_a t^a$\textcolor{red}{\footnote{\textcolor{red}{A proper appendix or introduction to SU(Nc) will be necessary}}} is the $\alpha$ component of the Lorentz color force, and $a$ are color indices in the adjoint representation, which run from 1 through ${N_c}^2 - 1$}. Thus, the $X^{\alpha \beta}$ component of the tensor is obtained by integrating, in time, over the full past trajectory of the probe, the correlator of the $\alpha$ and $\beta$ components of the Lorentz color force; the first at the ``present'' (time $t$, position $\mathbf{x}$), and the second at a past point of the probe's trajectory (time $t'$, position $\mathbf{y}$). In the eikonal approximation, where the probe is undeflected as it traverses the medium, its velocity is constant, and the probe's past position is:
+\begin{equation}
+	\mathbf{y} = \mathbf{x} - (t-t')\mathbf{v}
+	\label{eq:past_position}
+\end{equation}
 
 The Lorentz color force a quark is subject to when traveling with velocity $\mathbf{v}$ at time $t$ and position $\mathbf{x}$ is:
 \begin{subequations}

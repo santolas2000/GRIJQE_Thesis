@@ -912,3 +912,53 @@ And the remaining fields:
 	B^\alpha (\tau,\mathbf{x}_\perp) & = -ig \delta^{ij} f^{abc} T_c \varepsilon^{\alpha \beta} \int  \frac{\diff^2 \mathbf{k}_\perp}{(2\pi^2)} \hat{k}^\beta J_1 (k \tau) \int \diff^2 \mathbf{u}_\perp e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp} \alpha^i_{1a} (\mathbf{u}_\perp) \alpha^j_{2b}(\mathbf{u}_\perp)
 \end{align}
 \end{comment}
+
+\subsection{The two-point gluon field correlator}
+
+\textcolor{purple}{How is this form for the correlator justified? $G(|\mathbf{x}_\perp - \mathbf{y}_\perp|, \mathbf{x}_\perp + \mathbf{y}_\perp )$ is symmetric! Could there be any more arguments for the $G$ function?}
+
+\textcolor{red}{UNSURE} A general form for the correlator is:
+\begin{equation}
+	\left< \alpha^i_{pa} (\mathbf{x}_\perp) \alpha^j_{qb} (\mathbf{y}_\perp) \right> = 
+	 \delta^{pq}\delta^{ab} \frac{1}{2}
+	\left( \delta^{ij} G_p (\mathbf{x}_\perp,\mathbf{y}_\perp) + \left(\delta^{ij} - 2 \frac{r^i r^j}{r^2} \right) h_p (\mathbf{x}_\perp,\mathbf{y}_\perp) \right)
+\label{eq:general_correlator}
+\end{equation}
+where $\mathbf{r} \equiv \mathbf{x}_\perp - \mathbf{y}_\perp$. 
+
+Defining the following tensor,
+\begin{equation}
+ C^{im~jn}_{bd~ce} (\mathbf{x}_\perp,\mathbf{y}_\perp) \equiv \big< \alpha^i_{1b} (\mathbf{x}_\perp) \alpha^m_{1d} (\mathbf{y}_\perp) \big>
+ \big< \alpha^j_{2c} (\mathbf{x}_\perp) \alpha^n_{2e} (\mathbf{y}_\perp) \big>
+\end{equation}
+Some of its contractions are:
+\begin{subequations}
+\begin{align}
+\delta^{ij} \varepsilon^{mn} ~
+C^{im~jn}_{bd~ce} (\mathbf{x}_\perp,\mathbf{y}_\perp) & = 0 \label{eq:correlator_contractions_null1}\\
+\varepsilon^{ij} \delta^{mn} ~
+C^{im~jn}_{bd~ce} (\mathbf{x}_\perp,\mathbf{y}_\perp) & = 0 \label{eq:correlator_contractions_null2}\\
+\delta^{ij} \delta^{mn} ~
+C^{im~jn}_{bd~ce} (\mathbf{x}_\perp,\mathbf{y}_\perp) & = \frac{\delta^{bd}\delta^{ce}}{2} \big( G_1(\mathbf{x}_\perp,\mathbf{y}_\perp) G_2(\mathbf{x}_\perp,\mathbf{y}_\perp) + h_1(\mathbf{x}_\perp,\mathbf{y}_\perp) h_2(\mathbf{x}_\perp,\mathbf{y}_\perp)\big)\\
+\varepsilon^{ij} \varepsilon^{mn} ~
+C^{im~jn}_{bd~ce} (\mathbf{x}_\perp,\mathbf{y}_\perp) & = \frac{\delta^{bd}\delta^{ce}}{2} \big( G_1(\mathbf{x}_\perp,\mathbf{y}_\perp) G_2(\mathbf{x}_\perp,\mathbf{y}_\perp) - h_1(\mathbf{x}_\perp,\mathbf{y}_\perp) h_2(\mathbf{x}_\perp,\mathbf{y}_\perp)\big)
+\end{align}
+\label{eq:correlator_contractions}
+\end{subequations}
+The simple forms of these contractions are the motivation for the separation of the $\delta^{ij}$ and $r^i r^j$ components of the corrrelator as it is done in Eq. (\ref{eq:general_correlator}). These contractions will be useful in Chapter \ref{ch:merge}.
+
+-----------------------------------------------
+
+and the arguments of the $G$ and $h$ functions are actually $r$ and $\mathbf{x}_\perp - \mathbf{y}_\perp$. 
+
+This general form for the correlator fulfills the following requirements:
+\begin{itemize}
+\item the correlator should be $0$ for fields from dfferent nuclei, as fields in different nuclei are uncorrelated;
+\item it should be symmetrical under a switch of the nucleus labels (nucleus 1 is relabeled as nucleus 2, and \textit{vice versa});
+\item \textcolor{red}{it should be symmetrical under a swap of the positions where the gluon fields are evaluated, $\mathbf{x}_\perp \leftrightarrow ~ \mathbf{y}_\perp$}.
+\item \textcolor{purple}{$i \leftrightarrow j$?}
+\end{itemize}
+
+
+
+
