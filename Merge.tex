@@ -349,7 +349,7 @@ with $r^2 = \big((t-t')v_\perp + \tau' \cos \varphi - \tau \cos \phi \big)^2 + \
 All that is left is to provide an expression for $T$.
 
 \subsection{``Temperature'' of the glasma}
-As was outlined in Section \ref{sec:fokker-planck}, the analytically challenging $Y^\alpha$ tensor needed to compute $\diff E / \diff x$ may be obtained from $X^{\alpha \beta}$ by assuming that the Fokker-Planck equation for the probe quarks traversing the \textcolor{red}{medium/QGP?} should admit a Boltzmann distribution as a solution. This technique, however, requires  introducing a temperature $T$ \footnote{\textcolor{red}{of what?}} for that Boltzmann distribution. Since the glasma is not a medium in thermal equilibrium, one resorts to using the temperature of a \gls{QGP} as similar as possible to the glasma \textcolor{red}{cite}; that is, a QGP with the same energy density, $\varepsilon$, as the glasma's. Using similar techniques to those of this Section, it is possible to compute the energy density of the glasma. In the same coordinate system that has been used so far,  \cite{Guerrero_Rodr_guez_2021}
+As was outlined in Section \ref{sec:fokker-planck}, the analytically challenging $Y^\alpha$ tensor needed to compute $\diff E / \diff x$ may be obtained from $X^{\alpha \beta}$ by assuming that the Fokker-Planck equation for the probe quarks traversing the \textcolor{red}{medium/QGP?} should admit a Boltzmann distribution as a solution. This technique, however, requires  introducing a temperature $T$ \footnote{\textcolor{red}{of what?}} for that Boltzmann distribution. Since the glasma is not a medium in thermal equilibrium, one resorts to using the temperature of a \gls{QGP} as similar as possible to the glasma \textcolor{red}{cite}; that is, a QGP with the same energy density, $\varepsilon$, as the glasma's. Using similar techniques to those of this Section, and via the same linearization of the Yang-Mills equations as in Section \ref{sec:solving_YM}, the energy density of the glasma has been computed in \cite{Guerrero_Rodr_guez_2021}. In the same coordinate system that has been used so far,
 \begin{equation}
 	\left< \varepsilon (\tau) \right> = \left< \frac{\mathbf{E}^2 + \mathbf{B}^2}{\textcolor{red}{2}} \right>= \frac{g^2}{2} N_c (N_c - 1)^2 \int_0^{2\pi} \frac{\diff \Theta}{2 \pi} \left(1 + \cos \Theta \right) G_1(r) G_2(r)
 	\label{eq:Pablos_energy_density}
@@ -369,6 +369,7 @@ Solving Eq. (\ref{eq:energy_temperature}) for temperature and replacing $\vareps
 	\label{eq:final_full_T}
 \end{equation}
 
+
 \section{Numerically computing $\hat{q}$ and $\diff E / \diff x$}
 
 \subsection{Numerical tools}
@@ -384,3 +385,7 @@ For multidimensional numerical integration, \gls{GSL} includes the traditional M
 In order to numerically compute a multidimensional integral in \gls{GSL}, one must write the integrand as a C function which takes, as arguments, an array of the variables to be integrated over ($t'$, $\phi$ and $\varphi$) and a pointer to a C structure containing the values of all the other parameters (e.g. $g$, $N_c$ and $v$).
 
 A pointer to the integrand function must then be provided to the \texttt{gsl\_monte\_plain\_integrate} function, along with the bounds of integration, the number of points to be sampled, and an already-seeded \gls{GSL} random number generator. The function then stores the value of the integral in a provided variable.
+
+Every time the program is run, the integral is computed for several values of $t$, between $0$ and a previously set final time $t_f$, with a previously set number of steps $N_\text{steps}$. The program uses the current date as a seed for \texttt{stdlib.h}'s \texttt{rand} function, which is then used to generate seeds for \gls{GSL}'s random number generator each time an integral is calculated. 
+
+The results are printed onto a \texttt{.txt} file headlined with the original seed (the current time) and all the parameter values. These lines all start with a \texttt{\#} character which makes \texttt{gnuplot} treat them as comments. The results follow, in three columns separated by commas: the value of $t$  (in \qty{}{fm}), the integral, and the statistical error of the integral as estimated by \gls{GSL} (in  \qty{}{GeV^2/fm} for $\hat{q}$ and \qty{}{GeV/fm} for $\diff E / \diff x$).
