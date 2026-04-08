@@ -1,14 +1,14 @@
 \chapter{}
 \label{ch:merge}
 
-In Section \ref{sec:solving_YM}, a way to calculate the chromodynamic fields in the forward light-cone as a function of the pre-collision potentials was provided (Eqs. (\ref{eq:chromodynamic_fields_full})). Chapter \ref{sec:Margaret}, in turn, showed how to extract, from the chromodynamic fields, values for the stopping power and for the momentum broadening coefficient (Eqs. (\ref{eq:collision_from_tensors})), quantities which characterize the pre-hydrodynamic stage "macroscopically". The present chapter will be concerned with the insertion of the results of Section \ref{sec:solving_YM} into the machinery of Chapter \ref{sec:Margaret}, and the simplification of the resulting expressions.
+In Section \ref{sec:solving_YM}, a way to calculate the chromodynamic fields in the forward light-cone as a function of the pre-collision potentials was shown (Eqs. (\ref{eq:chromodynamic_fields_full})). Chapter \ref{sec:Margaret}, in turn, showed how to extract, from the chromodynamic fields, values for the stopping power and for the momentum broadening coefficient (Eqs. (\ref{eq:collision_from_tensors})) -- quantities which characterize the pre-hydrodynamic stage "macroscopically". The present chapter will be concerned with the insertion of the results of Section \ref{sec:solving_YM} into the machinery of Chapter \ref{sec:Margaret}, and the simplification of the resulting expressions.
 
 \section{Handling the $X^{\alpha \beta}$ tensor}
 \subsection{Calculating components of $X^{\alpha \beta}$ }
 
-In order to  calculate the components of the $X^{\alpha \beta}$ tensor, the chromodynamic field expressions of Eqs. (\ref{eq:chromodynamic_fields_full}) are plugged into Eq. (\ref{eq:unfolded_X}). This can be made easier by remembering the shared structure of the chromodynamic field expressions detailed in Eq. (\ref{eq:shared_structure}). Any two-point correlator of chromodynamic fields may thus be written as:
+
+In order to  calculate the components of the $X^{\alpha \beta}$ tensor, the chromodynamic field expressions of Eqs. (\ref{eq:chromodynamic_fields_full}) are plugged into Eq. (\ref{eq:unfolded_X}). Remembering the shared structure of the chromodynamic field expressions detailed in Eq. (\ref{eq:shared_structure}), any two-point correlator of chromodynamic fields may be written as:
 \begin{equation}
-\label{eq:generalized_chromodynamic_correlator}
 \begin{alignedat}{1}
 \Big< {G_1^\alpha}_a  (t,\mathbf{x}) {G_2^\beta}_a (t',\mathbf{y}) \Big>
  & =  g^2 \Bigg<\int  \frac{\diff^2 \mathbf{k_\perp}}{(2\pi)^2}
@@ -33,16 +33,17 @@ D^\alpha (\tau, \mathbf{x}_\perp) D^\beta (\tau', \mathbf{y}_\perp)  \right] \\
  \big< \alpha^i_{1b} (\mathbf{u}_\perp) \alpha^m_{1d} (\mathbf{w}_\perp) \big>
  \big< \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^n_{2e} (\mathbf{w}_\perp) \big>
 \end{alignedat}
+\label{eq:generalized_chromodynamic_correlator}
 \end{equation}
 where $\tau$ and $\tau'$ are obtained from cartesian coordinates as usual: $\tau = \sqrt{t^2 - \mathbf{x}^2}$, $\tau' = \sqrt{t'^2 - \mathbf{y}^2}$. At the second equality, the gluon fields have been paired up in two-point correlators, as gluon fields from different incoming nuclei are uncorrelated, due to them being causally unrelated.
 
-Given that, between different correlators, only the terms in square brackets change, one may concentrate on them when calculating the $X^{\alpha \beta}$ tensor components by following Eq. (\ref{eq:unfolded_X}). This allows postponing concern with the integrals and the color space section of Eq. (\ref{eq:generalized_chromodynamic_correlator}). All of the components are treated in this manner and the simplified results are shown in Appendix \ref{X_components}.
+Comparing different correlators, like $\big< E^\alpha_a(t, \mathbf{x} ) E^\beta_a(t', \mathbf{y} )\big>$ and $\big< E^\alpha_a(t, \mathbf{x} ) B^{\gamma'}_a(t', \mathbf{y} )\big>$, they all share the same structure outside the square brackets in Eq. (\ref{eq:generalized_chromodynamic_correlator}). Thus, one may concentrate on the inside of the square brackets when calculating the $X^{\alpha \beta}$ tensor components by following Eq. (\ref{eq:unfolded_X}). This allows postponing concern with the integrals and the color space section of Eq. (\ref{eq:generalized_chromodynamic_correlator}). All of the tensor components are treated in this manner, and the simplified results are shown in Appendix \ref{X_components}.
 
 \subsection{Calculating projections of $X^{\alpha \beta}$}
 
-The components of the $X^{\alpha \beta}$ tensor must now be used to calculate the projections needed to calculate $\hat{q}$ and $\diff E / \diff x$ (Eq. (\ref{eq:collision_from_tensors})). In this work, the projections are calculated excluding any terms proportional to $\delta^{ij}\varepsilon^{mn}$ and $\varepsilon^{ij}\delta^{mn}$, as they become $0$ when contracted with the general correlator expression (Eqs. (\ref{eq:correlator_contractions_null1}) and (\ref{eq:correlator_contractions_null2})). Excluding those terms, these projections can be simplified into a surprisingly compact form, considering the amount of terms involved in each of them.
-\begin{subequations}
-\begin{alignat}{2}
+The newly-computed components of the $X^{\alpha \beta}$ tensor are now used to compute the projections needed to calculate $\hat{q}$ and $\diff E / \diff x$ (Eq. (\ref{eq:collision_from_tensors})) -- $v^\alpha v^\beta X^{\alpha \beta}$ and $\delta^{\alpha \beta} X^{\alpha \beta}$. In this work, the projections are calculated excluding any terms proportional to $\delta^{ij}\varepsilon^{mn}$ and $\varepsilon^{ij}\delta^{mn}$, as they become $0$ when contracted with the general correlator expression (Eqs. (\ref{eq:correlator_contractions_null1}) and (\ref{eq:correlator_contractions_null2})). The $v^\alpha v^\beta X^{\alpha \beta}$ projection, for example, can be simplified into a surprisingly compact form, considering the amount of terms summed:
+
+\begin{equation}
 \begin{split}
 v^\alpha v^\beta X^{\alpha \beta} = \frac{g^4}{2N_c} & \int_0^t \diff t' \int \frac{\diff^2 \mathbf{k_\perp}}{(2\pi)^2}
 \int \frac{\diff^2 \mathbf{l}_\perp}{(2\pi)^2}
@@ -56,276 +57,18 @@ e^{i \mathbf{l}_\perp \cdot (\mathbf{y} - \mathbf{w})_\perp}
 f^{bca} f^{dea}
  \big< \alpha^i_{1b} (\mathbf{u}_\perp) \alpha^m_{1d} (\mathbf{w}_\perp) \big>
  \big< \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^n_{2e} (\mathbf{w}_\perp) \big>
-\end{split} \label{eq:unintegrated_X_projections_vv}\\
-\begin{split}
-\delta^{\alpha \beta} X^{\alpha \beta} = \frac{g^4}{2N_c} & \int_0^t \diff t' \int \frac{\diff^2 \mathbf{k_\perp}}{(2\pi)^2}
-\int \frac{\diff^2 \mathbf{l}_\perp}{(2\pi)^2}
-\int \diff^2 \mathbf{u}_\perp
- \int \diff^2 \mathbf{w}_\perp  
- \\
- & \Bigg[ (\delta^{ij} \delta^{mn} + {v_\perp}^2 \varepsilon^{ij} \varepsilon^{mn}) J_0 (k \tau) J_0(l\tau') \\
- & + i \frac{\mathbf{v}_\perp \cdot \mathbf{l}_\perp}{l} (\delta^{ij} \delta^{mn} - \varepsilon^{ij} \varepsilon^{mn}) J_0 (k \tau) J_1(l\tau') \\
-&  + i \frac{\mathbf{v}_\perp \cdot \mathbf{k}_\perp}{k} (\delta^{ij} \delta^{mn} - \varepsilon^{ij} \varepsilon^{mn}) J_1 (k \tau) J_0(l\tau')  \\
-& - \bigg( \Big(\frac{\mathbf{v}_\perp \cdot \mathbf{k}_\perp}{k} \frac{\mathbf{v}_\perp \cdot \mathbf{l}_\perp}{l} + (v^1)^2 \frac{\mathbf{k}_\perp \cdot \mathbf{l}_\perp}{k~l} \Big) \delta^{ij} \delta^{mn} + \frac{\mathbf{k}_\perp \cdot \mathbf{l}_\perp}{k ~l} \varepsilon^{ij}\varepsilon^{mn} \bigg) J_1 (k \tau) J_1\big(l\tau'\big) \Bigg]
- \\
-& e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp}
-e^{i \mathbf{l}_\perp \cdot (\mathbf{y} - \mathbf{w})_\perp}
-f^{bca} f^{dea}
- \big< \alpha^i_{1b} (\mathbf{u}_\perp) \alpha^m_{1d} (\mathbf{w}_\perp) \big>
- \big< \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^n_{2e} (\mathbf{w}_\perp) \big>
-\end{split} \label{eq:unintegrated_X_projections_delta}\\
-\begin{split}
-\left(\delta^{\alpha \beta} - \frac{v^\alpha v^\beta}{v^2} \right) & X^{\alpha \beta} = \frac{g^4}{2N_c} \int_0^t \diff t' \int \frac{\diff^2 \mathbf{k_\perp}}{(2\pi)^2}
- \int \frac{\diff^2 \mathbf{l}_\perp}{(2\pi)^2}
-\int \diff^2 \mathbf{u}_\perp
- \int \diff^2 \mathbf{w}_\perp  
- \\
- & \qquad \quad \Bigg[ \frac{{v_\perp}^2}{v^2}(\delta^{ij} \delta^{mn} + v^2 \varepsilon^{ij} \varepsilon^{mn}) J_0 (k \tau) J_0(l\tau') \\
- & \qquad \quad ~ + i \frac{\mathbf{v}_\perp \cdot \mathbf{l}_\perp}{l} (\delta^{ij} \delta^{mn} - \varepsilon^{ij} \varepsilon^{mn}) J_0 (k \tau) J_1(l\tau') \\
- & \qquad \quad ~ + i \frac{\mathbf{v}_\perp \cdot \mathbf{k}_\perp}{k} (\delta^{ij} \delta^{mn} - \varepsilon^{ij} \varepsilon^{mn}) J_1 (k \tau) J_0(l\tau') \\
-& \qquad \quad ~ -  \Big(\frac{\mathbf{v}_\perp \cdot \mathbf{k}_\perp}{k} \frac{\mathbf{v}_\perp \cdot \mathbf{l}_\perp}{l} + (v^1)^2 \frac{\mathbf{k}_\perp \cdot \mathbf{l}_\perp}{k~l} \Big)  \Big( \delta^{ij}\delta^{mn} +  \frac{\varepsilon^{ij}\varepsilon^{mn}}{v^2}  \Big)  J_1 (k \tau) J_1\big(l\tau'\big) \Bigg] \\
-& \qquad \quad ~ e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp}
-e^{i \mathbf{l}_\perp \cdot (\mathbf{y} - \mathbf{w})_\perp}
-f^{bca} f^{dea}
- \big< \alpha^i_{1b} (\mathbf{u}_\perp) \alpha^m_{1d} (\mathbf{w}_\perp) \big>
- \big< \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^n_{2e} (\mathbf{w}_\perp) \big>
-\end{split}
-\label{eq:unintegrated_X_projections_diff}
-\end{alignat}
-\label{eq:unintegrated_X_projections}
-\end{subequations}
-where $\mathbf{a}_\perp \times \mathbf{b}_\perp$ is the 2-dimensional cross product. It is defined as $\mathbf{a}_\perp \times \mathbf{b}_\perp \equiv \varepsilon^{ij} {a_\perp}^i {b_\perp}^j = |\mathbf{a}_\perp| |\mathbf{b}_\perp| \sin \hat{\left(\mathbf{a}_\perp,\mathbf{b}_\perp \right)} $; particularly, $\left( \mathbf{a}_\perp \times \mathbf{b}_\perp \right) \left( \mathbf{a}_\perp \times \mathbf{c}_\perp \right) = {\mathbf{a}_\perp}^2 \left(\mathbf{b}_\perp \cdot \mathbf{c}_\perp \right) - \left(\mathbf{a}_\perp \cdot \mathbf{b}_\perp \right) \left(\mathbf{a}_\perp \cdot \mathbf{c}_\perp \right)$.
-
-The next step is to compute the integrals analytically to the greatest extent possible.
-
-\subsection{Computing the integrals}
-
-Similar techniques to those employed in \cite{Guerrero_Rodr_guez_2021} are used to simplify Eqs. (\ref{eq:unintegrated_X_projections}). First, the order of integration of the Fourier and inverse Fourier transforms is swapped, and the latter are converted to polar coordinates. As before, $k$ and $l$ denote the Euclidean norms of $\mathbf{k}_\perp$ and $\mathbf{l}_\perp$; additionally,
-\begin{subequations}
-\begin{align}
-k^2 & \equiv k \cos \theta_k \\
-k^3 & \equiv k \sin \theta_k
-\end{align}
-\end{subequations}
-and similarly for $\mathbf{l}_\perp$ with the definition of $\theta_l$. The angular variables are defined such that $\theta_k$ measures the angle between $(\mathbf{x}-\mathbf{u})_\perp$ and $\mathbf{k}_\perp$, and $\theta_l$ measures the angle between $(\mathbf{y}-\mathbf{w})_\perp$ and $\mathbf{l}_\perp$, as illustrated in Fig. \ref{fig:angles}. After the change of variables and changing the order of integration,
-\begin{subequations}
-\begin{align}
-	\int \frac{\diff^2 \mathbf{k_\perp}}{(2\pi)^2}
-\int \frac{\diff^2 \mathbf{l}_\perp}{(2\pi)^2} \quad & \to
-\quad \int_0^{+\infty} \frac{\diff k}{2\pi} k
-\int_0^{+\infty} \frac{\diff l}{2\pi} l
-\int_{0}^{2\pi} \frac{\diff \theta_k}{2 \pi} \int_{0}^{2\pi} \frac{\diff \theta_l}{2 \pi} \\
-e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp}
-e^{i \mathbf{l}_\perp \cdot (\mathbf{y} - \mathbf{w})_\perp} \quad &\to \quad 
-e^{i k |\mathbf{x}_\perp - \mathbf{u}_\perp| \cos{\theta_k}}
-e^{i l |\mathbf{y}_\perp - \mathbf{w}_\perp| \cos{\theta_l}}\\
-(\mathbf{v}_\perp \times \mathbf{k}_\perp) (\mathbf{v}_\perp \times \mathbf{l}_\perp) \quad & \to \quad 
-{v_\perp}^2 k l \sin \left(\theta_v - (\theta_{x-u} + \theta_k) \right) \sin \left(\theta_v - (\theta_{y-w} + \theta_l) \right)\\
-\mathbf{v}_\perp \cdot \mathbf{k}_\perp  \quad & \to \quad 
- v_\perp k \cos \left(\theta_v - (\theta_{x-u} + \theta_k) \right)\\
-\mathbf{v}_\perp \cdot \mathbf{l}_\perp  \quad & \to \quad 
- v_\perp l \cos \left(\theta_v - (\theta_{y-w} + \theta_l) \right) \\
-(\mathbf{v}_\perp \cdot \mathbf{k}_\perp) (\mathbf{v}_\perp \cdot \mathbf{l}_\perp)  \quad & \to \quad 
-{v_\perp}^2 k l \cos \left(\theta_v - (\theta_{x-u} + \theta_k) \right) \cos \left(\theta_v - (\theta_{y-w} + \theta_l) \right)\\
-\mathbf{k}_\perp \cdot \mathbf{l}_\perp  \quad & \to \quad 
-k l \cos \left( \theta_{y-w} + \theta_l - \left(\theta_{x-u} + \theta_k \right) \right)
-\end{align}
-\end{subequations}
-
-
-\begin{figure}
-    \centering
-    %\includegraphics[width=0.7\textwidth]{Figures/HIC_lightcone.png} %PLACEHOLDER
-    \input{Diagrams/angles}
-    \caption{Relative positions and angles defined between the vectors $(\mathbf{x}-\mathbf{u})_\perp$, $(\mathbf{y}-\mathbf{w})_\perp$, $\mathbf{k}_\perp$, $\mathbf{l}_\perp$ and $\mathbf{v}_\perp$ at some point in the integration.}
-    \label{fig:angles}
-\end{figure}
-
-The first integrals to be computed are the ones over the angular variables. The parts of the integrands which depend on the angular variables are the complex exponentials and the cross and dot products. To integrate, the integral representation of the Bessel functions is used:\footnote{The first two equalities are from \cite{arfken2005mathematical}.}
-\begin{subequations}
-\begin{align}
- J_0 (x) & = \int_0^{2\pi} \frac{\diff \theta}{2 \pi} e^{ix \cos \theta} \\
- J_1(x) & = \int_0^\pi \frac{\diff \theta}{\pi} \cos \left( \theta - x \sin \theta \right) = \frac{1}{i} \int_0^{2 \pi} \frac{\diff \theta}{2 \pi} e^{i x \cos \theta} \cos \theta
-\end{align}
-\label{eq:bessel_integrals}
-\end{subequations}
-
-Additionally, it can be shown that:
-\begin{equation}
-	\int_0^{2\pi} \frac{\diff \theta}{2 \pi} e^{i x \cos \theta} \cos (\theta + \alpha) = \int_0^{2\pi} \frac{\diff \theta}{2 \pi} e^{i x \cos \theta} \left(\cos \theta \cos \alpha - \sin \theta \sin \alpha \right) = \cos \alpha \int_0^{2\pi} \frac{\diff \theta}{2 \pi} e^{i x \cos \theta} \cos \theta
-\label{eq:J1_cos_alpha}
+\end{split} 
 \end{equation}
-where the second term after the first equality can be shown to be $0$ by performing the change of variable $\theta \to - \theta$.
+the $( \delta^{\alpha \beta} - v^\alpha v^\beta / v^2)X^{\alpha \beta}$ projection has a similar structure, with different terms in square brackets, which nonetheless also contain Bessel functions of degrees $0$ and $1$ with arguments $k\tau$ and $l\tau'$. 
 
-Using Eqs. (\ref{eq:bessel_integrals}) and (\ref{eq:J1_cos_alpha}), 
-\begin{subequations}
-\begin{align}
-\int_{0}^{2\pi} \frac{\diff \theta_k}{2 \pi} \int_{0}^{2\pi} & \frac{\diff \theta_l}{2 \pi} 
-e^{i k |\mathbf{x}_\perp - \mathbf{u}_\perp| \cos{\theta_k}}
-e^{i l |\mathbf{y}_\perp - \mathbf{w}_\perp| \cos{\theta_l}} = 
-J_0(k |\mathbf{x}_\perp - \mathbf{u}_\perp|) J_0(l |\mathbf{y}_\perp - \mathbf{w}_\perp|) \\
-\begin{split}
-\int_{0}^{2\pi} \frac{\diff \theta_k}{2 \pi} \int_{0}^{2\pi} & \frac{\diff \theta_l}{2 \pi} 
-e^{i k |\mathbf{x}_\perp - \mathbf{u}_\perp| \cos{\theta_k}}
-e^{i l |\mathbf{y}_\perp - \mathbf{w}_\perp| \cos{\theta_l}} \sin \left(\theta_v - (\theta_{x-u} + \theta_k) \right) \sin \left(\theta_v - (\theta_{y-w} + \theta_l) \right)
-\\ & = 
-- J_1(k |\mathbf{x}_\perp - \mathbf{u}_\perp|) J_1(l |\mathbf{y}_\perp - \mathbf{w}_\perp|) \sin(\theta_{x-u} - \theta_v) \sin \left( \theta_{y-w} - \theta_v \right)
-\end{split}\\
-\begin{split}
-\int_{0}^{2\pi} \frac{\diff \theta_k}{2 \pi} \int_{0}^{2\pi} & \frac{\diff \theta_l}{2 \pi} 
-e^{i k |\mathbf{x}_\perp - \mathbf{u}_\perp| \cos{\theta_k}}
-e^{i l |\mathbf{y}_\perp - \mathbf{w}_\perp| \cos{\theta_l}}
-\cos \left(\theta_v - (\theta_{x-u} + \theta_k) \right) 
-\\ & =  
-i J_1(k |\mathbf{x}_\perp - \mathbf{u}_\perp|) J_0(l |\mathbf{y}_\perp - \mathbf{w}_\perp|) \cos(\theta_{x-u} - \theta_v) 
-\end{split}\\
-\begin{split}
-\int_{0}^{2\pi} \frac{\diff \theta_k}{2 \pi} \int_{0}^{2\pi} & \frac{\diff \theta_l}{2 \pi} 
-e^{i k |\mathbf{x}_\perp - \mathbf{u}_\perp| \cos{\theta_k}}
-e^{i l |\mathbf{y}_\perp - \mathbf{w}_\perp| \cos{\theta_l}}
-\cos \left(\theta_v - (\theta_{y-w} + \theta_l) \right)
-\\ & =
-i J_0(k |\mathbf{x}_\perp - \mathbf{u}_\perp|) J_1(l |\mathbf{y}_\perp - \mathbf{w}_\perp|) \cos(\theta_{y-w} - \theta_v) 
-\end{split} \\
-\begin{split}
-\int_{0}^{2\pi} \frac{\diff \theta_k}{2 \pi} \int_{0}^{2\pi} & \frac{\diff \theta_l}{2 \pi} 
-e^{i k |\mathbf{x}_\perp - \mathbf{u}_\perp| \cos{\theta_k}}
-e^{i l |\mathbf{y}_\perp - \mathbf{w}_\perp| \cos{\theta_l}}\cos \left(\theta_v - (\theta_{x-u} + \theta_k) \right) \cos \left(\theta_v - (\theta_{y-w} + \theta_l) \right)
-\\ & = 
-- J_1(k |\mathbf{x}_\perp - \mathbf{u}_\perp|) J_1(l |\mathbf{y}_\perp - \mathbf{w}_\perp|) \cos(\theta_{x-u} - \theta_v) \cos \left( \theta_{y-w} - \theta_v \right)
-\end{split} \\
-\begin{split}
-\int_{0}^{2\pi} \frac{\diff \theta_k}{2 \pi} \int_{0}^{2\pi} & \frac{\diff \theta_l}{2 \pi} 
-e^{i k |\mathbf{x}_\perp - \mathbf{u}_\perp| \cos{\theta_k}}
-e^{i l |\mathbf{y}_\perp - \mathbf{w}_\perp| \cos{\theta_l}}\cos \left( \theta_{y-w} + \theta_l - \left(\theta_{x-u} + \theta_k \right) \right)
-\\ & = 
-- J_1(k |\mathbf{x}_\perp - \mathbf{u}_\perp|) J_1(l |\mathbf{y}_\perp - \mathbf{w}_\perp|) \cos ( \theta_{x-u} - \theta_{y-w})
-\end{split}
-\end{align}
-\end{subequations}
+These projections must now be simplified analytically to the greatest extent possible. In Appendix \ref{ap:Projections}, a procedure which allows rewriting the projections as triple integrals is written out in detail, based on the one used in \cite{Guerrero_Rodr_guez_2021}; the integral representations of the Bessel functions, the orthogonality of the Bessel functions, and the general form for the gluon field correlator in Eq. (\ref{eq:general_correlator}) are used.
 
-%\textcolor{red}{TODO: CHECK IF EQS 4.7 c) THROUGH f) AGREE WITH NOTEBOOK IN $\hat{q}$.}
-
-After calculating these integrals, every term in Eqs. (\ref{eq:unintegrated_X_projections}) now includes the product of four Bessel functions which take as arguments functions of $k$ and $l$. The integrals in $k$ and $l$ will be computed using the orthogonality of the Bessel functions \cite{arfken2005mathematical}:
-\begin{equation}
-\int_0^\infty \diff \rho ~ \rho ~ J_\nu (\alpha \rho) J_\nu (\alpha' \rho) = \frac{1}{\alpha} \delta (\alpha - \alpha'), \quad \nu > -\frac{1}{2} 
-\end{equation}
-
-For every term, then,
-\begin{equation}
-\begin{split}
-	\int_0^\infty \frac{\diff k}{2 \pi} ~ k J_i (k \tau) J_i (k |\mathbf{x}_\perp - \mathbf{u}_\perp|) \int_0^\infty & \frac{\diff l}{2 \pi} ~ l J_j (l \tau') J_j (l |\mathbf{y}_\perp - \mathbf{w}_\perp|) \\
- & = \frac{\delta(\tau - |\mathbf{x}_\perp - \mathbf{u}_\perp|)}{2 \pi \tau} \frac{\delta(\tau' - |\mathbf{y}_\perp - \mathbf{w}_\perp|)}{2 \pi \tau'}
-\end{split}
-\end{equation}
-where $i,j = 0,1$ which are not summed over.
-
-Having integrated over $\mathbf{k}_\perp$ and $\mathbf{l}_\perp$, Eqs. (\ref{eq:unintegrated_X_projections_vv}) and (\ref{eq:unintegrated_X_projections_diff}) become: 
-\begin{subequations}
-\begin{equation}
-\begin{split}
-	v^\alpha v^\beta X^{\alpha \beta} = \frac{g^4}{2N_c}
-	\int_0^t & \diff t' \int \diff^2 \mathbf{u}_\perp \int \diff^2 \mathbf{w}_\perp \\
-	& \big[ (v^1)^2 \delta^{ij} \delta^{mn} + {v_\perp}^2 \sin(\theta_{x-u} - \theta_v) \sin \left( \theta_{y-w} - \theta_v \right) \varepsilon^{ij} \varepsilon^{mn} \big] \\
-	 & \frac{\delta(\tau - |\mathbf{x}_\perp - \mathbf{u}_\perp|)}{2 \pi \tau} \frac{\delta(\tau' - |\mathbf{y}_\perp - \mathbf{w}_\perp|)}{2 \pi \tau'}	\\
-	& f^{bca} f^{dea}
- \big< \alpha^i_{1b} (\mathbf{u}_\perp) \alpha^m_{1d} (\mathbf{w}_\perp) \big>
- \big< \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^n_{2e} (\mathbf{w}_\perp) \big>
-\end{split}
-\end{equation}
-\begin{equation}
-\begin{split}
-	\Bigg(\delta^{\alpha \beta} - & \frac{v^\alpha v^\beta}{v^2} \Bigg) X^{\alpha \beta} = \frac{g^4}{2N_c} \int_0^t \diff t' \int \diff^2 \mathbf{u}_\perp  \int \diff^2 \mathbf{w}_\perp\\
-	 &
-	\Bigg[ \frac{{v_\perp}^2}{v^2}(\delta^{ij} \delta^{mn} + v^2 \varepsilon^{ij} \varepsilon^{mn}) 
-	 - v_\perp  \big( \cos \left( \theta_{x-u} - \theta_v \right) + \cos  \left( \theta_{y-w} - \theta_v \right)  \big)  \left(\delta^{ij}\delta^{mn} - \varepsilon^{ij}\varepsilon^{mn} \right)
-	 \\
-	 & + \Big( {v_\perp}^2  \cos \left( \theta_{x-u} - \theta_v \right)  \cos  \left( \theta_{y-w} - \theta_v \right)  + (v_1)^2 \cos \left( \theta_{x-u} - \theta_{y-w} \right) \Big) \Big( \delta^{ij}\delta^{mn} +  \frac{\varepsilon^{ij}\varepsilon^{mn}}{v^2}  \Big) \Bigg]   \\
-	& \frac{\delta(\tau - |\mathbf{x}_\perp - \mathbf{u}_\perp|)}{2 \pi \tau} \frac{\delta(\tau' - |\mathbf{y}_\perp - \mathbf{w}_\perp|)}{2 \pi \tau'}  f^{bca} f^{dea}
- \big< \alpha^i_{1b} (\mathbf{u}_\perp) \alpha^m_{1d} (\mathbf{w}_\perp) \big>
- \big< \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^n_{2e} (\mathbf{w}_\perp) \big>
-\end{split}
-\end{equation}
-\label{eq:contractions_after_k_l}
-\end{subequations}
-
-The color sector of the integrand will now finally be dealt with, for which it is necessary to specify the gluon field correlator's form. Using the general correlator form of Eq. (\ref{eq:general_correlator}), the relevant contractions in Eqs. (\ref{eq:correlator_contractions}) are inserted into into Eqs. (\ref{eq:contractions_after_k_l}). The color sector of Eqs. (\ref{eq:correlator_contractions}) contract with $f^{bca} f^{dea}$: \cite{SciPost} \textcolor{red}{good reference?}
-\begin{equation}
-	 f^{bca} f^{dea} \delta^{bd} \delta^{ce} = f^{bca} f^{bca} = N_c ({N_c}^2 - 1)
-\end{equation}
-Additionally, the $ijmn$ sectors are replaced with $G$ and $h$ functions which take $\mathbf{u}_\perp$ and $\mathbf{w}_\perp$ as arguments.
-
-In this work, the \gls{GBW} and the \gls{MVcorr} models' expressions for the $G$ and $h$ functions are used -- Eqs. (\ref{}) and (\ref{}). In both models, $G$ and $h$ are functions of the distance between the points where the fields are evaluated, the norm $r$ of $\mathbf{r} =  \mathbf{u}_\perp - \mathbf{w}_\perp$. This allows performing the change of variables:
-\begin{subequations}
-\begin{align}
-	\mathbf{s}_\perp & = \mathbf{x}_\perp - \mathbf{u}_\perp \\
-	\mathbf{q}_\perp & = \mathbf{y}_\perp - \mathbf{w}_\perp
-\end{align}
-\end{subequations}
-while maintaining a somewhat simple expression for $\mathbf{r}$:
-\begin{equation}
-\mathbf{r} = (\mathbf{x}_\perp - \mathbf{s}_\perp) - (\mathbf{y}_\perp - \mathbf{q}_\perp) = \mathbf{q}_\perp - \mathbf{s}_\perp + (t-t')\mathbf{v}_\perp 
-\end{equation}
-where Eq. (\ref{eq:past_position}) was used. 
-
-Under this transformation, one may rewrite $\theta_{x-u} \to \theta_s$ and $\theta_{y-w} \to \theta_q$. It is also useful to define $\phi(\theta_s) \equiv \theta_s - \theta_v$ and $\varphi(\theta_q) \equiv \theta_q - \theta_v$. The squared distance $r^2$ may be written explicitly as a function of $s$, $\phi$, $q$ and $\varphi$, 
-\begin{equation}
-	r^2 = \big((t-t')v_\perp + q \cos \varphi - s \cos \phi \big)^2 + \big(q \sin \varphi - s \sin \phi \big)^2
-\end{equation}
-This may be done by first decomposing $\mathbf{q}_\perp - \mathbf{s}_\perp$ into parallel and perpendicular components to $\mathbf{v}_\perp$.
-	
-As was done for $\mathbf{k}_\perp$ and $\mathbf{l}_\perp$, polar coordinates $s, \theta_s$ and $q, \theta_q$ are used for $\mathbf{s}_\perp$ and $\mathbf{q}_\perp$. In these coordinates,
-\begin{subequations}
-\begin{align}
-\int \diff^2 \mathbf{u}_\perp
-\int \diff^2 \mathbf{w}_\perp \quad \to \quad 
-\int \diff^2 \mathbf{s}_\perp
-\int \diff^2 \mathbf{q}_\perp \quad & \to \quad
-\int_{0}^{2\pi} \diff \theta_s \int_{0}^{2\pi} \diff \theta_q
-\int_0^{+\infty} \diff s ~ s
-\int_0^{+\infty} \diff q ~ q \\
-\delta(\tau - |\mathbf{x}_\perp - \mathbf{u}_\perp|) \delta(\tau' - |\mathbf{y}_\perp - \mathbf{w}_\perp|) 
-\quad & \to \quad
-\delta(\tau - s) \delta(\tau' - q)
-\end{align}
-\end{subequations}
-
-Performing the integrals over $s$ and $q$ amounts to replacing every occurrence of these variables in the integrand by $\tau$ and $\tau'$, respectively. 
-
-Finally, another change of variables is in order, which allows writing the final result in a more compact manner, from $\theta_s$ and $\theta_q$ to $\phi$ and $\varphi$:
-\begin{equation}
-	\int_{0}^{2\pi} \diff \theta_s \int_{0}^{2\pi} \diff \theta_q \quad \to \quad 
-	\int_{-\theta_v}^{2\pi-\theta_v} \diff \phi \int_{-\theta_v}^{2\pi-\theta_v} \diff \varphi \quad \to \quad
-	\int_{0}^{2\pi} \diff \phi \int_{0}^{2\pi} \diff \varphi
-\end{equation}
-where the last change to the limits of integration is justified by the fact that $\phi$ and $\varphi$ always appear as arguments to trigonometric functions with period $2\pi$. 
-
-Now, one may write $v^\alpha v^\beta X^{\alpha \beta}$ and $(\delta^{\alpha \beta} - v^\alpha v^\beta/v^2) X^{\alpha \beta}$ to the greatest  extent that they are simplified analytically in this work:
-
-\begin{subequations}
-\begin{equation}
-\begin{split}
-v^\alpha v^\beta X^{\alpha \beta} = \frac{g^4}{4} (N_c-1)^2 \int_0^t \diff t' \int_0^{2\pi} \frac{\diff \phi}{2\pi} & \int_0^{2\pi} \frac{\diff \varphi}{2\pi}
-  \Bigg[ (v^1)^2 \bigg(G_1(r) G_2(r) + h_1(r)  h_2(r) \bigg) \\
-  & + {v_\perp}^2 \sin \phi \sin \varphi \bigg(G_1(r) G_2(r) - h_1(r)   h_2(r) \bigg) \Bigg]
-\end{split}
-\end{equation}
-\begin{equation}
-\begin{split}
-\left( \delta^{\alpha \beta} - \frac{v^\alpha v^\beta}{v^2} \right) X^{\alpha \beta} =  \frac{g^4}{4}  ({N_c}^2 - & 1) \int_0^t \diff t' \int_0^{2\pi}  \frac{\diff \phi}{2\pi} \int_0^{2\pi} \frac{\diff \varphi}{2\pi} \\
-& \Bigg[ \frac{1+v^2}{v^2} G_1 (r) G_2 (r)  \Big( (v^1)^2 \cos(\phi-\varphi) + {v_\perp}^2 (\cos \phi \cos \varphi+1) \Big) \\
-& ~ - \frac{1-v^2}{v^2} h_1(r) h_2(r) \Big( (v^1)^2 \cos (\phi-\varphi) + {v_\perp}^2 (\cos \phi \cos \varphi -1) \Big) \\
-& ~ - 2 v_\perp h_1(r) h_2(r) (\cos \phi + \cos \varphi ) \Bigg]
-\end{split}
-\end{equation}
-\label{eq:simplified_unintegrated_projections}
-\end{subequations}
-with $r^2 = \big((t-t')v_\perp + \tau' \cos \varphi - \tau \cos \phi \big)^2 + \big(\tau' \sin \varphi - \tau \sin \phi \big)^2$.
 
 \section{Expressions for $\hat{q}$ and $\diff E / \diff x$}
 
-Using Eqs. (\ref{eq:collision_from_tensors}) and (\ref{eq:simplified_unintegrated_projections}),
- one may write the analytical expressions for $\hat{q}$ and $\diff E / \diff x$:
+
+Combining these results (Eqs. (\ref{eq:simplified_unintegrated_projections})) with the expressions for $\hat{q}$ and $\diff E / \diff x$ of Eqs. (\ref{eq:collision_from_tensors}),
+
 \begin{subequations}
 \begin{align}
 \begin{split}
@@ -346,24 +89,24 @@ Using Eqs. (\ref{eq:collision_from_tensors}) and (\ref{eq:simplified_unintegrate
 \end{subequations}
 with $r^2 = \big((t-t')v_\perp + \tau' \cos \varphi - \tau \cos \phi \big)^2 + \big(\tau' \sin \varphi - \tau \sin \phi \big)^2$. 
 
-All that is left is to provide an expression for $T$.
+All that is left in order to be able to evaluate $\hat{q}$ and $\diff E / \diff x$ is to provide an expression for $T$.
 
 \subsection{``Temperature'' of the glasma}
-As was outlined in Section \ref{sec:fokker-planck}, the analytically challenging $Y^\alpha$ tensor needed to compute $\diff E / \diff x$ may be obtained from $X^{\alpha \beta}$ by assuming that the Fokker-Planck equation for the probe quarks traversing the \textcolor{red}{medium/QGP?} should admit a Boltzmann distribution as a solution. This technique, however, requires  introducing a temperature $T$ \footnote{\textcolor{red}{of what?}} for that Boltzmann distribution. Since the glasma is not a medium in thermal equilibrium, one resorts to using the temperature of a \gls{QGP} as similar as possible to the glasma \textcolor{red}{cite}; that is, a QGP with the same energy density, $\varepsilon$, as the glasma's. Using similar techniques to those of this Section, and via the same linearization of the Yang-Mills equations as in Section \ref{sec:solving_YM}, the energy density of the glasma has been computed in \cite{Guerrero_Rodr_guez_2021}. In the same coordinate system that has been used so far,
+As was outlined in Section \ref{sec:fokker-planck}, the analytically challenging $Y^\alpha$ tensor needed to compute $\diff E / \diff x$ may be obtained from $X^{\alpha \beta}$ by assuming that the Fokker-Planck equation for the probe quarks traversing the \textcolor{red}{medium/QGP?} should admit a Boltzmann distribution as a solution. This technique, however, requires  introducing a temperature $T$ \footnote{\textcolor{red}{of what?}} for that Boltzmann distribution. Since the glasma is not a medium in thermal equilibrium, one resorts to using the temperature of a \gls{QGP} as similar as possible to the glasma \textcolor{red}{cite}; that is, a QGP with the same energy density, $\varepsilon$, as the glasma's. The energy density of the glasma has been computed in \cite{Guerrero_Rodr_guez_2021} within the same framework as this work -- the linearization of the Yang-Mills Equations. In the same coordinate system that has been used so far,
 \begin{equation}
 	\left< \varepsilon (\tau) \right> = \left< \frac{\mathbf{E}^2 + \mathbf{B}^2}{\textcolor{red}{2}} \right>= \frac{g^2}{2} N_c (N_c - 1)^2 \int_0^{2\pi} \frac{\diff \Theta}{2 \pi} \left(1 + \cos \Theta \right) G_1(r) G_2(r)
 	\label{eq:Pablos_energy_density}
 \end{equation}
 with $r^2 = 2 \tau^2 (1 - \cos \Theta)$.
 
-Now one must find the temperature of a \gls{QGP} with the same energy density. The relation between the energy density of a \gls{QGP} medium and its temperature  is \cite{Carrington_2022} \textcolor{red}{cite} 
+Now, the temperature of a \gls{QGP} with the same energy density must be found. The relation between the energy density of a \gls{QGP} medium and its temperature  is \cite{Carrington_2022} \textcolor{red}{cite} 
 \begin{equation}
 	\varepsilon_\text{\gls{QGP}} = \frac{\pi^2}{60} \big( 4(N_c - 1)^2 + 7 N_f N_c \big) T_\text{\gls{QGP}}^4 
 	\label{eq:energy_temperature}
 \end{equation} 
 where $N_f$ is \textcolor{red}{the number of quark flavors included in the \gls{QGP}, whose mass should be much smaller than the temperature}.
 
-Solving Eq. (\ref{eq:energy_temperature}) for temperature and replacing $\varepsilon_\textbf{\gls{QGP}}$ with Eq. (\ref{eq:Pablos_energy_density})'s event-averaged energy density produces an expression for $T$ to be plugged into the expression for $\diff E / \diff x$:
+Solving Eq. (\ref{eq:energy_temperature}) for the temperature and replacing $\varepsilon_\textbf{\gls{QGP}}$ with Eq. (\ref{eq:Pablos_energy_density})'s event-averaged energy density produces an expression for $T$ to be plugged into the expression for $\diff E / \diff x$:
 \begin{equation}
 	T^4 = \frac{\frac{g^2}{2} N_c (N_c - 1)^2}{\frac{\pi^2}{60} \big( 4(N_c - 1)^2 + 7 N_f N_c \big)} \int_0^{2\pi} \frac{\diff \Theta}{2 \pi} \left(1 + \cos \Theta \right) G_1(r) G_2(r)
 	\label{eq:final_full_T}
@@ -372,20 +115,14 @@ Solving Eq. (\ref{eq:energy_temperature}) for temperature and replacing $\vareps
 
 \section{Numerically computing $\hat{q}$ and $\diff E / \diff x$}
 
-\subsection{Numerical tools}
+Since no way was found to further analytically simplify the integrals in the formulas for $\hat{q}$ (Eq. (\ref{eq:final_full_qhat})) and $\diff E / \diff x$ (Eqs. (\ref{eq:final_full_dEdx}) and (\ref{eq:final_full_T})), numerical methods were used in order to obtain values for these quantities. The \gls{GSL} \cite{gsl} version 2.8 for the C programming language was used to perform the calculations. 
 
-Since no way was found to further analytically simplify the integrals in the formulas for $\hat{q}$ (Eq. (\ref{eq:final_full_qhat})) and $\diff E / \diff x$ (Eqs. (\ref{eq:final_full_dEdx}) and (\ref{eq:final_full_T})), numerical methods were used in order to obtain values for these quantities. This was first attempted using Mathematica; however, it was found that this was too slow, taking several minutes to produce values for $\hat{q}$, and did not allow accompanying the progress of the numerical integration. Thus, the \gls{GSL} \cite{gsl} version 2.8 for the C programming language was used to perform the calculations. 
+\gls{GSL} is an open source numerical library written in C, but available in wrappers for other programming languages. It contains a number of routines useful for numerical calculations, including the following, relevant to this work: special functions, random number generation and Monte Carlo integration.
 
-\gls{GSL} is an open source numerical library written in C, but available in wrappers for other programming languages. \textcolor{red}{How widely is it used in our field?}. It contains a number of routines useful for numerical calculations, including the following, relevant to this work: special functions, random number generation and Monte Carlo integration.
+For numerical multidimensional integration, \gls{GSL} includes the traditional Monte Carlo method, with uniform random sampling over the domain of integration, and the MISER and VEGAS adaptive algorithms, which use importance sampling and stratified sampling. After comparing values of $\hat{q}$ obtained via the three algorithms, it was found that they all produced similar results within each other's error estimates. Thus, with the objectives in mind of keeping the program simple and minimizing hard-to-interpret potential sources of error, the traditional, plain, Monte Carlo method was selected.
 
-\subsection{Implementation}
+%In order to numerically compute a multidimensional integral in \gls{GSL}, one must write the integrand as a C function which takes, as arguments, an array of the variables to be integrated over ($t'$, $\phi$ and $\varphi$) and a pointer to a C structure containing the values of all the other parameters (e.g. $g$, $N_c$ and $v$).
 
-For multidimensional numerical integration, \gls{GSL} includes the traditional Monte Carlo method, with uniform random sampling over the domain of integration, and the MISER and VEGAS adaptive algorithms, which use importance sampling and stratified sampling. After comparing values of $\hat{q}$ obtained via the three algorithms, it was found that they all produced similar results within each other's error estimates. Thus, with the objectives in mind of keeping the program simple and minimizing hard-to-interpret potential sources of error, the traditional, plain, Monte Carlo method was selected.
+%A pointer to the integrand function must then be provided to the \texttt{gsl\_monte\_plain\_integrate} function, along with the bounds of integration, the number of points to be sampled, and an already-seeded \gls{GSL} random number generator. The function then stores the value of the integral in a provided variable.
 
-In order to numerically compute a multidimensional integral in \gls{GSL}, one must write the integrand as a C function which takes, as arguments, an array of the variables to be integrated over ($t'$, $\phi$ and $\varphi$) and a pointer to a C structure containing the values of all the other parameters (e.g. $g$, $N_c$ and $v$).
-
-A pointer to the integrand function must then be provided to the \texttt{gsl\_monte\_plain\_integrate} function, along with the bounds of integration, the number of points to be sampled, and an already-seeded \gls{GSL} random number generator. The function then stores the value of the integral in a provided variable.
-
-Every time the program is run, the integral is computed for several values of $t$, between $0$ and a previously set final time $t_f$, with a previously set number of steps $N_\text{steps}$. The program uses the current date as a seed for \texttt{stdlib.h}'s \texttt{rand} function, which is then used to generate seeds for \gls{GSL}'s random number generator each time an integral is calculated. 
-
-The results are printed onto a \texttt{.txt} file headlined with the original seed (the current time) and all the parameter values. These lines all start with a \texttt{\#} character which makes \texttt{gnuplot} treat them as comments. The results follow, in three columns separated by commas: the value of $t$  (in \qty{}{fm}), the integral, and the statistical error of the integral as estimated by \gls{GSL} (in  \qty{}{GeV^2/fm} for $\hat{q}$ and \qty{}{GeV/fm} for $\diff E / \diff x$).
+Every time the program is run, the integral is computed for several values of $t$, between $0$ and a previously set final time $t_f$, with a previously set number of steps $N_\text{steps}$. The program uses the current date as a seed for \texttt{stdlib.h}'s \texttt{rand} function, which is then used to generate seeds for \gls{GSL}'s random number generator each time an integral is calculated. The results are  then printed onto a \texttt{.txt} file headlined with the original seed (the current time) and all the parameter values. The results follow, in three columns separated by commas: the value of $t$  (in \qty{}{fm}), the integral, and the statistical error of the integral as estimated by \gls{GSL} (in  \qty{}{GeV^2/fm} for $\hat{q}$ and \qty{}{GeV/fm} for $\diff E / \diff x$).

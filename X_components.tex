@@ -63,3 +63,291 @@ The components, excluding terms proportional too $\delta^{ij} \varepsilon^{mn}$ 
 \end{equation} 
 \end{subequations}
 These results are then used to calculate the projections $\delta^{\alpha \beta} X^{\alpha \beta}$ and $v^\alpha v^\beta X^{\alpha \beta}$.
+
+\newpage
+\section{Projections}
+\label{ap:Projections}
+In this work, $v^\alpha v^\beta X^{\alpha\beta}$ and $\delta^{\alpha \beta} X^{\alpha \beta}$ are calculated excluding any terms proportional to $\delta^{ij}\varepsilon^{mn}$ or $\varepsilon^{ij}\delta^{mn}$, as they become $0$ when contracted with the general correlator expression (Eqs. (\ref{eq:correlator_contractions_null1}) and (\ref{eq:correlator_contractions_null2})). Excluding those terms, these projections can be simplified into a surprisingly compact form:
+\begin{subequations}
+\begin{equation}
+\begin{split}
+v^\alpha v^\beta X^{\alpha \beta} = \frac{g^4}{2N_c} & \int_0^t \diff t' \int \frac{\diff^2 \mathbf{k_\perp}}{(2\pi)^2}
+\int \frac{\diff^2 \mathbf{l}_\perp}{(2\pi)^2}
+\int \diff^2 \mathbf{u}_\perp
+ \int \diff^2 \mathbf{w}_\perp  
+\\
+& \left[ (v^1)^2 J_0 (k \tau) J_0(l\tau') \delta^{ij} \delta^{mn} - \left(\frac{\mathbf{v}_\perp \times \mathbf{k}_\perp}{k}\frac{\mathbf{v}_\perp \times \mathbf{l}_\perp}{l}\right) J_1 (k \tau) J_1(l\tau') \varepsilon^{ij} \varepsilon^{mn} \right]
+\\
+& e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp}
+e^{i \mathbf{l}_\perp \cdot (\mathbf{y} - \mathbf{w})_\perp}
+f^{bca} f^{dea}
+ \big< \alpha^i_{1b} (\mathbf{u}_\perp) \alpha^m_{1d} (\mathbf{w}_\perp) \big>
+ \big< \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^n_{2e} (\mathbf{w}_\perp) \big>
+\end{split}
+\label{eq:unintegrated_X_projections_vv}
+\end{equation} 
+\begin{equation}
+\begin{split}
+\delta^{\alpha \beta} X^{\alpha \beta} = \frac{g^4}{2N_c} & \int_0^t \diff t' \int \frac{\diff^2 \mathbf{k_\perp}}{(2\pi)^2}
+\int \frac{\diff^2 \mathbf{l}_\perp}{(2\pi)^2}
+\int \diff^2 \mathbf{u}_\perp
+ \int \diff^2 \mathbf{w}_\perp  
+ \\
+ & \Bigg[ (\delta^{ij} \delta^{mn} + {v_\perp}^2 \varepsilon^{ij} \varepsilon^{mn}) J_0 (k \tau) J_0(l\tau') \\
+ & + i \frac{\mathbf{v}_\perp \cdot \mathbf{l}_\perp}{l} (\delta^{ij} \delta^{mn} - \varepsilon^{ij} \varepsilon^{mn}) J_0 (k \tau) J_1(l\tau') \\
+&  + i \frac{\mathbf{v}_\perp \cdot \mathbf{k}_\perp}{k} (\delta^{ij} \delta^{mn} - \varepsilon^{ij} \varepsilon^{mn}) J_1 (k \tau) J_0(l\tau')  \\
+& - \bigg( \Big(\frac{\mathbf{v}_\perp \cdot \mathbf{k}_\perp}{k} \frac{\mathbf{v}_\perp \cdot \mathbf{l}_\perp}{l} + (v^1)^2 \frac{\mathbf{k}_\perp \cdot \mathbf{l}_\perp}{k~l} \Big) \delta^{ij} \delta^{mn} + \frac{\mathbf{k}_\perp \cdot \mathbf{l}_\perp}{k ~l} \varepsilon^{ij}\varepsilon^{mn} \bigg) J_1 (k \tau) J_1\big(l\tau'\big) \Bigg]
+ \\
+& e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp}
+e^{i \mathbf{l}_\perp \cdot (\mathbf{y} - \mathbf{w})_\perp}
+f^{bca} f^{dea}
+ \big< \alpha^i_{1b} (\mathbf{u}_\perp) \alpha^m_{1d} (\mathbf{w}_\perp) \big>
+ \big< \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^n_{2e} (\mathbf{w}_\perp) \big>
+\end{split} \label{eq:unintegrated_X_projections_delta}\end{equation}
+\begin{equation}
+\begin{split}
+\left(\delta^{\alpha \beta} - \frac{v^\alpha v^\beta}{v^2} \right) & X^{\alpha \beta} = \frac{g^4}{2N_c} \int_0^t \diff t' \int \frac{\diff^2 \mathbf{k_\perp}}{(2\pi)^2}
+ \int \frac{\diff^2 \mathbf{l}_\perp}{(2\pi)^2}
+\int \diff^2 \mathbf{u}_\perp
+ \int \diff^2 \mathbf{w}_\perp  
+ \\
+ & \qquad \quad \Bigg[ \frac{{v_\perp}^2}{v^2}(\delta^{ij} \delta^{mn} + v^2 \varepsilon^{ij} \varepsilon^{mn}) J_0 (k \tau) J_0(l\tau') \\
+ & \qquad \quad ~ + i \frac{\mathbf{v}_\perp \cdot \mathbf{l}_\perp}{l} (\delta^{ij} \delta^{mn} - \varepsilon^{ij} \varepsilon^{mn}) J_0 (k \tau) J_1(l\tau') \\
+ & \qquad \quad ~ + i \frac{\mathbf{v}_\perp \cdot \mathbf{k}_\perp}{k} (\delta^{ij} \delta^{mn} - \varepsilon^{ij} \varepsilon^{mn}) J_1 (k \tau) J_0(l\tau') \\
+& \qquad \quad ~ -  \Big(\frac{\mathbf{v}_\perp \cdot \mathbf{k}_\perp}{k} \frac{\mathbf{v}_\perp \cdot \mathbf{l}_\perp}{l} + (v^1)^2 \frac{\mathbf{k}_\perp \cdot \mathbf{l}_\perp}{k~l} \Big)  \Big( \delta^{ij}\delta^{mn} +  \frac{\varepsilon^{ij}\varepsilon^{mn}}{v^2}  \Big)  J_1 (k \tau) J_1\big(l\tau'\big) \Bigg] \\
+& \qquad \quad ~ e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp}
+e^{i \mathbf{l}_\perp \cdot (\mathbf{y} - \mathbf{w})_\perp}
+f^{bca} f^{dea}
+ \big< \alpha^i_{1b} (\mathbf{u}_\perp) \alpha^m_{1d} (\mathbf{w}_\perp) \big>
+ \big< \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^n_{2e} (\mathbf{w}_\perp) \big>
+\end{split}
+\label{eq:unintegrated_X_projections_diff}
+\end{equation}
+\label{eq:unintegrated_X_projections}
+\end{subequations}
+where $\mathbf{a}_\perp \times \mathbf{b}_\perp$ is the 2-dimensional cross product, defined as $\mathbf{a}_\perp \times \mathbf{b}_\perp \equiv \varepsilon^{ij} {a_\perp}^i {b_\perp}^j = |\mathbf{a}_\perp| |\mathbf{b}_\perp| \sin \hat{\left(\mathbf{a}_\perp,\mathbf{b}_\perp \right)} $; particularly, $\left( \mathbf{a}_\perp \times \mathbf{b}_\perp \right) \left( \mathbf{a}_\perp \times \mathbf{c}_\perp \right) = {\mathbf{a}_\perp}^2 \left(\mathbf{b}_\perp \cdot \mathbf{c}_\perp \right) - \left(\mathbf{a}_\perp \cdot \mathbf{b}_\perp \right) \left(\mathbf{a}_\perp \cdot \mathbf{c}_\perp \right)$.
+
+The next step is to compute the integrals analytically to the greatest extent possible.
+
+\subsection{Computing the integrals}
+
+Similar techniques to those employed in \cite{Guerrero_Rodr_guez_2021} are used to simplify Eqs. (\ref{eq:unintegrated_X_projections}). First, the order of integration of the Fourier and inverse Fourier transforms is swapped, and the latter are converted to polar coordinates. As before, $k$ and $l$ denote the Euclidean norms of $\mathbf{k}_\perp$ and $\mathbf{l}_\perp$; additionally,
+\begin{subequations}
+\begin{align}
+k^2 & \equiv k \cos \theta_k \\
+k^3 & \equiv k \sin \theta_k
+\end{align}
+\end{subequations}
+and similarly for $\mathbf{l}_\perp$ with the definition of $\theta_l$. The angular variables are defined such that $\theta_k$ measures the angle between $(\mathbf{x}-\mathbf{u})_\perp$ and $\mathbf{k}_\perp$, and $\theta_l$ measures the angle between $(\mathbf{y}-\mathbf{w})_\perp$ and $\mathbf{l}_\perp$, as illustrated in Fig. \ref{fig:angles}. After the change of variables, and changing the order of integration,
+\begin{subequations}
+\begin{align}
+	\int \frac{\diff^2 \mathbf{k_\perp}}{(2\pi)^2}
+\int \frac{\diff^2 \mathbf{l}_\perp}{(2\pi)^2} \quad & \to
+\quad \int_0^{+\infty} \frac{\diff k}{2\pi} k
+\int_0^{+\infty} \frac{\diff l}{2\pi} l
+\int_{0}^{2\pi} \frac{\diff \theta_k}{2 \pi} \int_{0}^{2\pi} \frac{\diff \theta_l}{2 \pi} \\
+e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp}
+e^{i \mathbf{l}_\perp \cdot (\mathbf{y} - \mathbf{w})_\perp} \quad &\to \quad 
+e^{i k |\mathbf{x}_\perp - \mathbf{u}_\perp| \cos{\theta_k}}
+e^{i l |\mathbf{y}_\perp - \mathbf{w}_\perp| \cos{\theta_l}}\\
+(\mathbf{v}_\perp \times \mathbf{k}_\perp) (\mathbf{v}_\perp \times \mathbf{l}_\perp) \quad & \to \quad 
+{v_\perp}^2 k l \sin \left(\theta_v - (\theta_{x-u} + \theta_k) \right) \sin \left(\theta_v - (\theta_{y-w} + \theta_l) \right)\\
+\mathbf{v}_\perp \cdot \mathbf{k}_\perp  \quad & \to \quad 
+ v_\perp k \cos \left(\theta_v - (\theta_{x-u} + \theta_k) \right)\\
+\mathbf{v}_\perp \cdot \mathbf{l}_\perp  \quad & \to \quad 
+ v_\perp l \cos \left(\theta_v - (\theta_{y-w} + \theta_l) \right) \\
+(\mathbf{v}_\perp \cdot \mathbf{k}_\perp) (\mathbf{v}_\perp \cdot \mathbf{l}_\perp)  \quad & \to \quad 
+{v_\perp}^2 k l \cos \left(\theta_v - (\theta_{x-u} + \theta_k) \right) \cos \left(\theta_v - (\theta_{y-w} + \theta_l) \right)\\
+\mathbf{k}_\perp \cdot \mathbf{l}_\perp  \quad & \to \quad 
+k l \cos \left( \theta_{y-w} + \theta_l - \left(\theta_{x-u} + \theta_k \right) \right)
+\end{align}
+\end{subequations}
+
+
+\begin{figure}
+    \centering	%\includegraphics[width=0.7\textwidth]{Figures/HIC_lightcone.png} %PLACEHOLDER
+    \input{Diagrams/angles}
+    \caption{Relative positions and angles defined between the vectors $(\mathbf{x}-\mathbf{u})_\perp$, $(\mathbf{y}-\mathbf{w})_\perp$, $\mathbf{k}_\perp$, $\mathbf{l}_\perp$ and $\mathbf{v}_\perp$ at some point in the integration.}
+    \label{fig:angles}
+\end{figure}
+
+The first integrals to be computed are the ones over the angular variables. The parts of the integrands which depend on the angular variables are the complex exponentials and the cross and dot products. To integrate, the integral representation of the Bessel functions is used:\footnote{The first two equalities are from \cite{arfken2005mathematical}.}
+\begin{subequations}
+\begin{align}
+ J_0 (x) & = \int_0^{2\pi} \frac{\diff \theta}{2 \pi} e^{ix \cos \theta} \\
+ J_1(x) & = \int_0^\pi \frac{\diff \theta}{\pi} \cos \left( \theta - x \sin \theta \right) = \frac{1}{i} \int_0^{2 \pi} \frac{\diff \theta}{2 \pi} e^{i x \cos \theta} \cos \theta
+\end{align}
+\label{eq:bessel_integrals}
+\end{subequations}
+
+Additionally, it can be shown that:
+\begin{equation}
+	\int_0^{2\pi} \frac{\diff \theta}{2 \pi} e^{i x \cos \theta} \cos (\theta + \alpha) = \int_0^{2\pi} \frac{\diff \theta}{2 \pi} e^{i x \cos \theta} \left(\cos \theta \cos \alpha - \sin \theta \sin \alpha \right) = \cos \alpha \int_0^{2\pi} \frac{\diff \theta}{2 \pi} e^{i x \cos \theta} \cos \theta
+\label{eq:J1_cos_alpha}
+\end{equation}
+where the second term after the first equality can be shown to be $0$ by performing the change of variable $\theta \to - \theta$.
+
+Using Eqs. (\ref{eq:bessel_integrals}) and (\ref{eq:J1_cos_alpha}), 
+\begin{subequations}
+\begin{align}
+\int_{0}^{2\pi} \frac{\diff \theta_k}{2 \pi} \int_{0}^{2\pi} & \frac{\diff \theta_l}{2 \pi} 
+e^{i k |\mathbf{x}_\perp - \mathbf{u}_\perp| \cos{\theta_k}}
+e^{i l |\mathbf{y}_\perp - \mathbf{w}_\perp| \cos{\theta_l}} = 
+J_0(k |\mathbf{x}_\perp - \mathbf{u}_\perp|) J_0(l |\mathbf{y}_\perp - \mathbf{w}_\perp|) \\
+\begin{split}
+\int_{0}^{2\pi} \frac{\diff \theta_k}{2 \pi} \int_{0}^{2\pi} & \frac{\diff \theta_l}{2 \pi} 
+e^{i k |\mathbf{x}_\perp - \mathbf{u}_\perp| \cos{\theta_k}}
+e^{i l |\mathbf{y}_\perp - \mathbf{w}_\perp| \cos{\theta_l}} \sin \left(\theta_v - (\theta_{x-u} + \theta_k) \right) \sin \left(\theta_v - (\theta_{y-w} + \theta_l) \right)
+\\ & = 
+- J_1(k |\mathbf{x}_\perp - \mathbf{u}_\perp|) J_1(l |\mathbf{y}_\perp - \mathbf{w}_\perp|) \sin(\theta_{x-u} - \theta_v) \sin \left( \theta_{y-w} - \theta_v \right)
+\end{split}\\
+\begin{split}
+\int_{0}^{2\pi} \frac{\diff \theta_k}{2 \pi} \int_{0}^{2\pi} & \frac{\diff \theta_l}{2 \pi} 
+e^{i k |\mathbf{x}_\perp - \mathbf{u}_\perp| \cos{\theta_k}}
+e^{i l |\mathbf{y}_\perp - \mathbf{w}_\perp| \cos{\theta_l}}
+\cos \left(\theta_v - (\theta_{x-u} + \theta_k) \right) 
+\\ & =  
+i J_1(k |\mathbf{x}_\perp - \mathbf{u}_\perp|) J_0(l |\mathbf{y}_\perp - \mathbf{w}_\perp|) \cos(\theta_{x-u} - \theta_v) 
+\end{split}\\
+\begin{split}
+\int_{0}^{2\pi} \frac{\diff \theta_k}{2 \pi} \int_{0}^{2\pi} & \frac{\diff \theta_l}{2 \pi} 
+e^{i k |\mathbf{x}_\perp - \mathbf{u}_\perp| \cos{\theta_k}}
+e^{i l |\mathbf{y}_\perp - \mathbf{w}_\perp| \cos{\theta_l}}
+\cos \left(\theta_v - (\theta_{y-w} + \theta_l) \right)
+\\ & =
+i J_0(k |\mathbf{x}_\perp - \mathbf{u}_\perp|) J_1(l |\mathbf{y}_\perp - \mathbf{w}_\perp|) \cos(\theta_{y-w} - \theta_v) 
+\end{split} \\
+\begin{split}
+\int_{0}^{2\pi} \frac{\diff \theta_k}{2 \pi} \int_{0}^{2\pi} & \frac{\diff \theta_l}{2 \pi} 
+e^{i k |\mathbf{x}_\perp - \mathbf{u}_\perp| \cos{\theta_k}}
+e^{i l |\mathbf{y}_\perp - \mathbf{w}_\perp| \cos{\theta_l}}\cos \left(\theta_v - (\theta_{x-u} + \theta_k) \right) \cos \left(\theta_v - (\theta_{y-w} + \theta_l) \right)
+\\ & = 
+- J_1(k |\mathbf{x}_\perp - \mathbf{u}_\perp|) J_1(l |\mathbf{y}_\perp - \mathbf{w}_\perp|) \cos(\theta_{x-u} - \theta_v) \cos \left( \theta_{y-w} - \theta_v \right)
+\end{split} \\
+\begin{split}
+\int_{0}^{2\pi} \frac{\diff \theta_k}{2 \pi} \int_{0}^{2\pi} & \frac{\diff \theta_l}{2 \pi} 
+e^{i k |\mathbf{x}_\perp - \mathbf{u}_\perp| \cos{\theta_k}}
+e^{i l |\mathbf{y}_\perp - \mathbf{w}_\perp| \cos{\theta_l}}\cos \left( \theta_{y-w} + \theta_l - \left(\theta_{x-u} + \theta_k \right) \right)
+\\ & = 
+- J_1(k |\mathbf{x}_\perp - \mathbf{u}_\perp|) J_1(l |\mathbf{y}_\perp - \mathbf{w}_\perp|) \cos ( \theta_{x-u} - \theta_{y-w})
+\end{split}
+\end{align}
+\end{subequations}
+
+%\textcolor{red}{TODO: CHECK IF EQS 4.7 c) THROUGH f) AGREE WITH NOTEBOOK IN $\hat{q}$.}
+
+After calculating these integrals, every term in Eqs. (\ref{eq:unintegrated_X_projections}) now includes the product of four Bessel functions which take as arguments functions of $k$ and $l$. The integrals in $k$ and $l$ will be computed using the orthogonality of the Bessel functions \cite{arfken2005mathematical}:
+\begin{equation}
+\int_0^\infty \diff \rho ~ \rho ~ J_\nu (\alpha \rho) J_\nu (\alpha' \rho) = \frac{1}{\alpha} \delta (\alpha - \alpha'), \quad \nu > -\frac{1}{2} 
+\end{equation}
+
+For every term, then,
+\begin{equation}
+\begin{split}
+	\int_0^\infty \frac{\diff k}{2 \pi} ~ k J_i (k \tau) J_i (k |\mathbf{x}_\perp - \mathbf{u}_\perp|) \int_0^\infty & \frac{\diff l}{2 \pi} ~ l J_j (l \tau') J_j (l |\mathbf{y}_\perp - \mathbf{w}_\perp|) \\
+ & = \frac{\delta(\tau - |\mathbf{x}_\perp - \mathbf{u}_\perp|)}{2 \pi \tau} \frac{\delta(\tau' - |\mathbf{y}_\perp - \mathbf{w}_\perp|)}{2 \pi \tau'}
+\end{split}
+\end{equation}
+where $i,j = 0,1$ which are not summed over.
+
+Having integrated over $\mathbf{k}_\perp$ and $\mathbf{l}_\perp$, Eqs. (\ref{eq:unintegrated_X_projections_vv}) and (\ref{eq:unintegrated_X_projections_diff}) become: 
+\begin{subequations}
+\begin{equation}
+\begin{split}
+	v^\alpha v^\beta X^{\alpha \beta} = \frac{g^4}{2N_c}
+	\int_0^t & \diff t' \int \diff^2 \mathbf{u}_\perp \int \diff^2 \mathbf{w}_\perp \\
+	& \big[ (v^1)^2 \delta^{ij} \delta^{mn} + {v_\perp}^2 \sin(\theta_{x-u} - \theta_v) \sin \left( \theta_{y-w} - \theta_v \right) \varepsilon^{ij} \varepsilon^{mn} \big] \\
+	 & \frac{\delta(\tau - |\mathbf{x}_\perp - \mathbf{u}_\perp|)}{2 \pi \tau} \frac{\delta(\tau' - |\mathbf{y}_\perp - \mathbf{w}_\perp|)}{2 \pi \tau'}	\\
+	& f^{bca} f^{dea}
+ \big< \alpha^i_{1b} (\mathbf{u}_\perp) \alpha^m_{1d} (\mathbf{w}_\perp) \big>
+ \big< \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^n_{2e} (\mathbf{w}_\perp) \big>
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+	\Bigg(\delta^{\alpha \beta} - & \frac{v^\alpha v^\beta}{v^2} \Bigg) X^{\alpha \beta} = \frac{g^4}{2N_c} \int_0^t \diff t' \int \diff^2 \mathbf{u}_\perp  \int \diff^2 \mathbf{w}_\perp\\
+	 &
+	\Bigg[ \frac{{v_\perp}^2}{v^2}(\delta^{ij} \delta^{mn} + v^2 \varepsilon^{ij} \varepsilon^{mn}) 
+	 - v_\perp  \big( \cos \left( \theta_{x-u} - \theta_v \right) + \cos  \left( \theta_{y-w} - \theta_v \right)  \big)  \left(\delta^{ij}\delta^{mn} - \varepsilon^{ij}\varepsilon^{mn} \right)
+	 \\
+	 & + \Big( {v_\perp}^2  \cos \left( \theta_{x-u} - \theta_v \right)  \cos  \left( \theta_{y-w} - \theta_v \right)  + (v_1)^2 \cos \left( \theta_{x-u} - \theta_{y-w} \right) \Big) \Big( \delta^{ij}\delta^{mn} +  \frac{\varepsilon^{ij}\varepsilon^{mn}}{v^2}  \Big) \Bigg]   \\
+	& \frac{\delta(\tau - |\mathbf{x}_\perp - \mathbf{u}_\perp|)}{2 \pi \tau} \frac{\delta(\tau' - |\mathbf{y}_\perp - \mathbf{w}_\perp|)}{2 \pi \tau'}  f^{bca} f^{dea}
+ \big< \alpha^i_{1b} (\mathbf{u}_\perp) \alpha^m_{1d} (\mathbf{w}_\perp) \big>
+ \big< \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^n_{2e} (\mathbf{w}_\perp) \big>
+\end{split}
+\end{equation}
+\label{eq:contractions_after_k_l}
+\end{subequations}
+
+The color sector of the integrand will now finally be dealt with, for which it is necessary to specify the gluon field correlator's form. Using the general correlator form of Eq. (\ref{eq:general_correlator}), the relevant contractions in Eqs. (\ref{eq:correlator_contractions}) are inserted into into Eqs. (\ref{eq:contractions_after_k_l}). The color sector of Eqs. (\ref{eq:correlator_contractions}) contract with $f^{bca} f^{dea}$: \cite{SciPost}
+\begin{equation}
+	 f^{bca} f^{dea} \delta^{bd} \delta^{ce} = f^{bca} f^{bca} = N_c ({N_c}^2 - 1)
+\end{equation}
+Additionally, the $ijmn$ sectors are replaced with $G$ and $h$ functions which take $\mathbf{u}_\perp$ and $\mathbf{w}_\perp$ as arguments.
+
+In this work, the \gls{GBW} and the \gls{MVcorr} models' expressions for the $G$ and $h$ functions are used -- Eqs. (\ref{}) and (\ref{}). In both models, $G$ and $h$ are functions of the distance between the points where the fields are evaluated, the norm $r$ of $\mathbf{r} =  \mathbf{u}_\perp - \mathbf{w}_\perp$. This allows performing the change of variables:
+\begin{subequations}
+\begin{align}
+	\mathbf{s}_\perp & = \mathbf{x}_\perp - \mathbf{u}_\perp \\
+	\mathbf{q}_\perp & = \mathbf{y}_\perp - \mathbf{w}_\perp
+\end{align}
+\end{subequations}
+while maintaining a somewhat simple expression for $\mathbf{r}$:
+\begin{equation}
+\mathbf{r} = (\mathbf{x}_\perp - \mathbf{s}_\perp) - (\mathbf{y}_\perp - \mathbf{q}_\perp) = \mathbf{q}_\perp - \mathbf{s}_\perp + (t-t')\mathbf{v}_\perp 
+\end{equation}
+where Eq. (\ref{eq:past_position}) was used. 
+
+Under this transformation, one may rewrite $\theta_{x-u} \to \theta_s$ and $\theta_{y-w} \to \theta_q$. It is also useful to define $\phi(\theta_s) \equiv \theta_s - \theta_v$ and $\varphi(\theta_q) \equiv \theta_q - \theta_v$. The squared distance $r^2$ may be written explicitly as a function of $s$, $\phi$, $q$ and $\varphi$, 
+\begin{equation}
+	r^2 = \big((t-t')v_\perp + q \cos \varphi - s \cos \phi \big)^2 + \big(q \sin \varphi - s \sin \phi \big)^2
+\end{equation}
+This may be done by first decomposing $\mathbf{q}_\perp - \mathbf{s}_\perp$ into parallel and perpendicular components to $\mathbf{v}_\perp$.
+	
+As was done for $\mathbf{k}_\perp$ and $\mathbf{l}_\perp$, polar coordinates $s, \theta_s$ and $q, \theta_q$ are used for $\mathbf{s}_\perp$ and $\mathbf{q}_\perp$. In these coordinates,
+\begin{subequations}
+\begin{align}
+\int \diff^2 \mathbf{u}_\perp
+\int \diff^2 \mathbf{w}_\perp \quad \to \quad 
+\int \diff^2 \mathbf{s}_\perp
+\int \diff^2 \mathbf{q}_\perp \quad & \to \quad
+\int_{0}^{2\pi} \diff \theta_s \int_{0}^{2\pi} \diff \theta_q
+\int_0^{+\infty} \diff s ~ s
+\int_0^{+\infty} \diff q ~ q \\
+\delta(\tau - |\mathbf{x}_\perp - \mathbf{u}_\perp|) \delta(\tau' - |\mathbf{y}_\perp - \mathbf{w}_\perp|) 
+\quad & \to \quad
+\delta(\tau - s) \delta(\tau' - q)
+\end{align}
+\end{subequations}
+
+Performing the integrals over $s$ and $q$ amounts to replacing every occurrence of these variables in the integrand by $\tau$ and $\tau'$, respectively. 
+
+Finally, another change of variables is in order, which allows writing the final result in a more compact manner, from $\theta_s$ and $\theta_q$ to $\phi$ and $\varphi$:
+\begin{equation}
+	\int_{0}^{2\pi} \diff \theta_s \int_{0}^{2\pi} \diff \theta_q \quad \to \quad 
+	\int_{-\theta_v}^{2\pi-\theta_v} \diff \phi \int_{-\theta_v}^{2\pi-\theta_v} \diff \varphi \quad \to \quad
+	\int_{0}^{2\pi} \diff \phi \int_{0}^{2\pi} \diff \varphi
+\end{equation}
+where the last change to the limits of integration is justified by the fact that $\phi$ and $\varphi$ always appear as arguments to trigonometric functions with period $2\pi$. 
+
+Now, one may write $v^\alpha v^\beta X^{\alpha \beta}$ and $(\delta^{\alpha \beta} - v^\alpha v^\beta/v^2) X^{\alpha \beta}$ to the greatest  extent that they are simplified analytically in this work:
+
+\begin{subequations}
+\begin{equation}
+\begin{split}
+v^\alpha v^\beta X^{\alpha \beta} = \frac{g^4}{4} (N_c-1)^2 \int_0^t \diff t' \int_0^{2\pi} \frac{\diff \phi}{2\pi} & \int_0^{2\pi} \frac{\diff \varphi}{2\pi}
+  \Bigg[ (v^1)^2 \bigg(G_1(r) G_2(r) + h_1(r)  h_2(r) \bigg) \\
+  & + {v_\perp}^2 \sin \phi \sin \varphi \bigg(G_1(r) G_2(r) - h_1(r)   h_2(r) \bigg) \Bigg]
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+\left( \delta^{\alpha \beta} - \frac{v^\alpha v^\beta}{v^2} \right) X^{\alpha \beta} =  \frac{g^4}{4}  ({N_c}^2 - & 1) \int_0^t \diff t' \int_0^{2\pi}  \frac{\diff \phi}{2\pi} \int_0^{2\pi} \frac{\diff \varphi}{2\pi} \\
+& \Bigg[ \frac{1+v^2}{v^2} G_1 (r) G_2 (r)  \Big( (v^1)^2 \cos(\phi-\varphi) + {v_\perp}^2 (\cos \phi \cos \varphi+1) \Big) \\
+& ~ - \frac{1-v^2}{v^2} h_1(r) h_2(r) \Big( (v^1)^2 \cos (\phi-\varphi) + {v_\perp}^2 (\cos \phi \cos \varphi -1) \Big) \\
+& ~ - 2 v_\perp h_1(r) h_2(r) (\cos \phi + \cos \varphi ) \Bigg]
+\end{split}
+\end{equation}
+\label{eq:simplified_unintegrated_projections}
+\end{subequations}
+with $r^2 = \big((t-t')v_\perp + \tau' \cos \varphi - \tau \cos \phi \big)^2 + \big(\tau' \sin \varphi - \tau \sin \phi \big)^2$.
