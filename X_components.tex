@@ -33,7 +33,7 @@ e^{i \mathbf{l}_\perp \cdot (\mathbf{y} - \mathbf{w})_\perp} f^{bca} f^{dea}
 \end{split}
 \end{equation}
 
-The components, excluding terms proportional too $\delta^{ij} \varepsilon^{mn}$ or $\varepsilon^{ij}\delta^{mn}$, with $\alpha, \beta = 2,3$, are:
+The components, excluding terms proportional to $\delta^{ij} \varepsilon^{mn}$ or $\varepsilon^{ij}\delta^{mn}$, with $\alpha, \beta = 2,3$, are:
 \begin{subequations}
 \begin{equation}
 \begin{split}
@@ -67,7 +67,7 @@ These results are then used to calculate the projections $\delta^{\alpha \beta} 
 \newpage
 \section{Projections}
 \label{ap:Projections}
-In this work, $v^\alpha v^\beta X^{\alpha\beta}$ and $\delta^{\alpha \beta} X^{\alpha \beta}$ are calculated excluding any terms proportional to $\delta^{ij}\varepsilon^{mn}$ or $\varepsilon^{ij}\delta^{mn}$, as they become $0$ when contracted with the general correlator expression (Eqs. (\ref{eq:correlator_contractions_null1}) and (\ref{eq:correlator_contractions_null2})). Excluding those terms, these projections can be simplified into a surprisingly compact form:
+The projections $v^\alpha v^\beta X^{\alpha\beta}$ and $\delta^{\alpha \beta} X^{\alpha \beta}$ are calculated excluding any terms proportional to $\delta^{ij}\varepsilon^{mn}$ or $\varepsilon^{ij}\delta^{mn}$, as they become $0$ when contracted with the general correlator expression (Eqs. (\ref{eq:correlator_contractions_null1}) and (\ref{eq:correlator_contractions_null2})). Excluding those terms, these projections can be simplified into a surprisingly compact form:
 \begin{subequations}
 \begin{equation}
 \begin{split}
@@ -127,15 +127,16 @@ f^{bca} f^{dea}
 \end{subequations}
 where $\mathbf{a}_\perp \times \mathbf{b}_\perp$ is the 2-dimensional cross product, defined as $\mathbf{a}_\perp \times \mathbf{b}_\perp \equiv \varepsilon^{ij} {a_\perp}^i {b_\perp}^j = |\mathbf{a}_\perp| |\mathbf{b}_\perp| \sin \hat{\left(\mathbf{a}_\perp,\mathbf{b}_\perp \right)} $; particularly, $\left( \mathbf{a}_\perp \times \mathbf{b}_\perp \right) \left( \mathbf{a}_\perp \times \mathbf{c}_\perp \right) = {\mathbf{a}_\perp}^2 \left(\mathbf{b}_\perp \cdot \mathbf{c}_\perp \right) - \left(\mathbf{a}_\perp \cdot \mathbf{b}_\perp \right) \left(\mathbf{a}_\perp \cdot \mathbf{c}_\perp \right)$.
 
-The next step is to compute the integrals analytically to the greatest extent possible.
+The next step is to reduce these 9-dimensional integrals to triple integrals using the properties of the Bessel functions.
 
 \subsection{Computing the integrals}
 
-Similar techniques to those employed in \cite{Guerrero_Rodr_guez_2021} are used to simplify Eqs. (\ref{eq:unintegrated_X_projections}). First, the order of integration of the Fourier and inverse Fourier transforms is swapped, and the latter are converted to polar coordinates. As before, $k$ and $l$ denote the Euclidean norms of $\mathbf{k}_\perp$ and $\mathbf{l}_\perp$; additionally,
+%Similar techniques to those employed in \cite{Guerrero_Rodr_guez_2021} are used to simplify Eqs. (\ref{eq:unintegrated_X_projections}).
+First, the order of integration of the Fourier and inverse Fourier transforms is swapped, and the latter are converted to polar coordinates. As before, $k$ and $l$ denote the Euclidean norms of $\mathbf{k}_\perp$ and $\mathbf{l}_\perp$; additionally,
 \begin{subequations}
 \begin{align}
-k^2 & \equiv k \cos \theta_k \\
-k^3 & \equiv k \sin \theta_k
+(k^2) & \equiv k \cos \theta_k \\
+(k^3) & \equiv k \sin \theta_k
 \end{align}
 \end{subequations}
 and similarly for $\mathbf{l}_\perp$ with the definition of $\theta_l$. The angular variables are defined such that $\theta_k$ measures the angle between $(\mathbf{x}-\mathbf{u})_\perp$ and $\mathbf{k}_\perp$, and $\theta_l$ measures the angle between $(\mathbf{y}-\mathbf{w})_\perp$ and $\mathbf{l}_\perp$, as illustrated in Fig. \ref{fig:angles}. After the change of variables, and changing the order of integration,
@@ -279,11 +280,11 @@ Having integrated over $\mathbf{k}_\perp$ and $\mathbf{l}_\perp$, Eqs. (\ref{eq:
 \label{eq:contractions_after_k_l}
 \end{subequations}
 
-The color sector of the integrand will now finally be dealt with, for which it is necessary to specify the gluon field correlator's form. Using the general correlator form of Eq. (\ref{eq:general_correlator}), the relevant contractions in Eqs. (\ref{eq:correlator_contractions}) are inserted into into Eqs. (\ref{eq:contractions_after_k_l}). The color sector of Eqs. (\ref{eq:correlator_contractions}) contract with $f^{bca} f^{dea}$: \cite{SciPost}
+Before moving on to the color sector of the integrand, it is necessary to specify the gluon field correlator's form. Using the general correlator form of Eq. (\ref{eq:general_correlator}), the relevant contractions in Eqs. (\ref{eq:correlator_contractions}) are inserted into into Eqs. (\ref{eq:contractions_after_k_l}). The color sectors from the general correlator contract with $f^{bca} f^{dea}$: %\cite{SciPost}
 \begin{equation}
 	 f^{bca} f^{dea} \delta^{bd} \delta^{ce} = f^{bca} f^{bca} = N_c ({N_c}^2 - 1)
 \end{equation}
-Additionally, the $ijmn$ sectors are replaced with $G$ and $h$ functions which take $\mathbf{u}_\perp$ and $\mathbf{w}_\perp$ as arguments.
+%Additionally, the $ijmn$ sectors are replaced with $G$ and $h$ functions which take $\mathbf{u}_\perp$ and $\mathbf{w}_\perp$ as arguments.
 
 In this work, the \gls{GBW} and the \gls{MVcorr} models' expressions for the $G$ and $h$ functions are used -- Eqs. (\ref{}) and (\ref{}). In both models, $G$ and $h$ are functions of the distance between the points where the fields are evaluated, the norm $r$ of $\mathbf{r} =  \mathbf{u}_\perp - \mathbf{w}_\perp$. This allows performing the change of variables:
 \begin{subequations}
@@ -330,7 +331,8 @@ Finally, another change of variables is in order, which allows writing the final
 \end{equation}
 where the last change to the limits of integration is justified by the fact that $\phi$ and $\varphi$ always appear as arguments to trigonometric functions with period $2\pi$. 
 
-Now, one may write $v^\alpha v^\beta X^{\alpha \beta}$ and $(\delta^{\alpha \beta} - v^\alpha v^\beta/v^2) X^{\alpha \beta}$ to the greatest  extent that they are simplified analytically in this work:
+Now, one may write $v^\alpha v^\beta X^{\alpha \beta}$ and $(\delta^{\alpha \beta} - v^\alpha v^\beta/v^2) X^{\alpha \beta}$ reduced to triple integrals:
+%to the greatest  extent that they are simplified analytically in this work:
 
 \begin{subequations}
 \begin{equation}

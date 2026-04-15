@@ -1,13 +1,44 @@
 \chapter{}
 \label{ch:merge}
 
-In Section \ref{sec:solving_YM}, a way to calculate the chromodynamic fields in the forward light-cone as a function of the pre-collision potentials was shown (Eqs. (\ref{eq:chromodynamic_fields_full})). Chapter \ref{sec:Margaret}, in turn, showed how to extract, from the chromodynamic fields, values for the stopping power and for the momentum broadening coefficient (Eqs. (\ref{eq:collision_from_tensors})) -- quantities which characterize the pre-hydrodynamic stage "macroscopically". The present chapter will be concerned with the insertion of the results of Section \ref{sec:solving_YM} into the machinery of Chapter \ref{sec:Margaret}, and the simplification of the resulting expressions.
+In Section \ref{sec:solving_YM}, a way to calculate the chromodynamic fields in the forward light-cone as a function of the pre-collision potentials was shown (Eqs. (\ref{eq:chromodynamic_fields_full})). Chapter \ref{sec:Margaret}, in turn, showed how to extract, from the chromodynamic fields, values for the stopping power and for the momentum broadening coefficient (Eqs. (\ref{eq:collision_from_tensors})).
+% -- quantities which characterize the pre-hydrodynamic stage "macroscopically". 
+The present chapter will be concerned with the insertion of the results of Section \ref{sec:solving_YM} into the machinery of Chapter \ref{sec:Margaret}, and the simplification of the resulting expressions.
 
 \section{Handling the $X^{\alpha \beta}$ tensor}
-\subsection{Calculating components of $X^{\alpha \beta}$ }
+%\subsection{Calculating components of $X^{\alpha \beta}$ }
 
 
-In order to  calculate the components of the $X^{\alpha \beta}$ tensor, the chromodynamic field expressions of Eqs. (\ref{eq:chromodynamic_fields_full}) are plugged into Eq. (\ref{eq:unfolded_X}). Remembering the shared structure of the chromodynamic field expressions detailed in Eq. (\ref{eq:shared_structure}), any two-point correlator of chromodynamic fields may be written as:
+In order to  calculate the components of the $X^{\alpha \beta}$ tensor, the chromodynamic field expressions of Eqs. (\ref{eq:chromodynamic_fields_full}) are plugged into Eq. (\ref{eq:unfolded_X}). This involves the calculation of four kinds of two-point correlators of chromodynamic fields, for example, with $\alpha = 2,3$:
+%Remembering the shared structure of the chromodynamic field expressions detailed in Eq. (\ref{eq:shared_structure}), any two-point correlator of chromodynamic fields may be written as:
+\begin{equation}
+\begin{alignedat}{1}
+\Big< E^\alpha_a  (t,\mathbf{x}) E^1_a (t',\mathbf{y}) \Big>
+ & = g^2 \int  \frac{\diff^2 \mathbf{k_\perp}}{(2\pi)^2}
+\int \frac{\diff^2 \mathbf{l}_\perp}{(2\pi)^2}
+\int \diff^2 \mathbf{u}_\perp
+ \int \diff^2 \mathbf{w}_\perp 
+\left[ \varepsilon^{ij} 
+(-i) \varepsilon^{\alpha \alpha'} \frac{k^{\alpha'}}{k} J_1(k \tau) \cdot \delta^{mn} J_0 (l \tau')  \right] \\
+& \qquad e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp}
+ e^{i \mathbf{l}_\perp \cdot (\mathbf{y} - \mathbf{w})_\perp}
+ f^{bca} f^{dea}
+ \big< \alpha^i_{1b} (\mathbf{u}_\perp) \alpha^m_{1d} (\mathbf{w}_\perp) \big>
+ \big< \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^n_{2e} (\mathbf{w}_\perp) \big>
+\end{alignedat}
+\label{eq:generalized_chromodynamic_correlator}
+\end{equation}
+% & =  g^2 \Bigg<\int  \frac{\diff^2 \mathbf{k_\perp}}{(2\pi)^2}
+%\int \frac{\diff^2 \mathbf{l}_\perp}{(2\pi)^2}
+%\int \diff^2  \mathbf{u}_\perp 
+%\int \diff^2 \mathbf{w}_\perp 
+%\left[ \varepsilon^{ij} 
+%(-i) \varepsilon^{\alpha \alpha'} \frac{k^{\alpha'}}{k} J_1(k \tau) \cdot \delta^{mn} J_0 (l \tau')  \right] \\
+%&  \qquad e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp}
+%e^{i \mathbf{l}_\perp \cdot (\mathbf{y} - \mathbf{w})_\perp}
+%f^{bca} f^{dea}
+% \alpha^i_{1b} (\mathbf{u}_\perp) \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^m_{1d} (\mathbf{w}_\perp)   \alpha^n_{2e} (\mathbf{w}_\perp) \Bigg> \\
+\begin{comment}
 \begin{equation}
 \begin{alignedat}{1}
 \Big< {G_1^\alpha}_a  (t,\mathbf{x}) {G_2^\beta}_a (t',\mathbf{y}) \Big>
@@ -16,7 +47,7 @@ In order to  calculate the components of the $X^{\alpha \beta}$ tensor, the chro
 \int \diff^2  \mathbf{u}_\perp 
 \int \diff^2 \mathbf{w}_\perp 
 \left[ C_1^{ij} C_2^{mn}
-D^\alpha (\tau, \mathbf{x}_\perp) D^\beta (\tau', \mathbf{y}_\perp)  \right] \\
+D^\alpha (\tau, \mathbf{k}_\perp) D^\beta (\tau', \mathbf{l}_\perp)  \right] \\
 &  \qquad e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp}
 e^{i \mathbf{l}_\perp \cdot (\mathbf{y} - \mathbf{w})_\perp}
 f^{bca} f^{dea}
@@ -26,22 +57,23 @@ f^{bca} f^{dea}
 \int \diff^2 \mathbf{u}_\perp
  \int \diff^2 \mathbf{w}_\perp 
 \left[ C_1^{ij} C_2^{mn}
-D^\alpha (\tau, \mathbf{x}_\perp) D^\beta (\tau', \mathbf{y}_\perp)  \right] \\
+D^\alpha (\tau, \mathbf{k}_\perp) D^\beta (\tau', \mathbf{l}_\perp)  \right] \\
 & \qquad e^{i \mathbf{k}_\perp \cdot (\mathbf{x} - \mathbf{u})_\perp}
  e^{i \mathbf{l}_\perp \cdot (\mathbf{y} - \mathbf{w})_\perp}
  f^{bca} f^{dea}
  \big< \alpha^i_{1b} (\mathbf{u}_\perp) \alpha^m_{1d} (\mathbf{w}_\perp) \big>
  \big< \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^n_{2e} (\mathbf{w}_\perp) \big>
 \end{alignedat}
-\label{eq:generalized_chromodynamic_correlator}
+%\label{eq:generalized_chromodynamic_correlator}
 \end{equation}
-where $\tau$ and $\tau'$ are obtained from cartesian coordinates as usual: $\tau = \sqrt{t^2 - \mathbf{x}^2}$, $\tau' = \sqrt{t'^2 - \mathbf{y}^2}$. At the second equality, the gluon fields have been paired up in two-point correlators, as gluon fields from different incoming nuclei are uncorrelated, due to them being causally unrelated.
+\end{comment}
+where $\tau$ and $\tau'$ are obtained from cartesian coordinates as usual: $\tau = \sqrt{t^2 - (x^1)^2}$, $\tau' = \sqrt{t'^2 - (y^1)^2}$. The gluon fields have been paired up in two two-point correlators, as gluon fields from different incoming nuclei are uncorrelated, due to them being causally disconnected.
 
 Comparing different correlators, like $\big< E^\alpha_a(t, \mathbf{x} ) E^\beta_a(t', \mathbf{y} )\big>$ and $\big< E^\alpha_a(t, \mathbf{x} ) B^{\gamma'}_a(t', \mathbf{y} )\big>$, they all share the same structure outside the square brackets in Eq. (\ref{eq:generalized_chromodynamic_correlator}). Thus, one may concentrate on the inside of the square brackets when calculating the $X^{\alpha \beta}$ tensor components by following Eq. (\ref{eq:unfolded_X}). This allows postponing concern with the integrals and the color space section of Eq. (\ref{eq:generalized_chromodynamic_correlator}). All of the tensor components are treated in this manner, and the simplified results are shown in Appendix \ref{X_components}.
 
-\subsection{Calculating projections of $X^{\alpha \beta}$}
+%\subsection{Calculating projections of $X^{\alpha \beta}$}
 
-The newly-computed components of the $X^{\alpha \beta}$ tensor are now used to compute the projections needed to calculate $\hat{q}$ and $\diff E / \diff x$ (Eq. (\ref{eq:collision_from_tensors})) -- $v^\alpha v^\beta X^{\alpha \beta}$ and $\delta^{\alpha \beta} X^{\alpha \beta}$. In this work, the projections are calculated excluding any terms proportional to $\delta^{ij}\varepsilon^{mn}$ and $\varepsilon^{ij}\delta^{mn}$, as they become $0$ when contracted with the general correlator expression (Eqs. (\ref{eq:correlator_contractions_null1}) and (\ref{eq:correlator_contractions_null2})). The $v^\alpha v^\beta X^{\alpha \beta}$ projection, for example, can be simplified into a surprisingly compact form, considering the amount of terms summed:
+The newly-computed components of the $X^{\alpha \beta}$ tensor are now used to compute the projections needed to calculate $\hat{q}$ and $\diff E / \diff x$ (Eq. (\ref{eq:collision_from_tensors})) -- $v^\alpha v^\beta X^{\alpha \beta}$ and $\delta^{\alpha \beta} X^{\alpha \beta}$. The projections are calculated excluding any terms proportional to $\delta^{ij}\varepsilon^{mn}$ and $\varepsilon^{ij}\delta^{mn}$, as they become $0$ when contracted with the general correlator expression (Eqs. (\ref{eq:correlator_contractions_null1}) and (\ref{eq:correlator_contractions_null2})). The $v^\alpha v^\beta X^{\alpha \beta}$ projection, for example, can be simplified into a surprisingly compact form, considering the amount of terms summed:
 
 \begin{equation}
 \begin{split}
@@ -59,15 +91,15 @@ f^{bca} f^{dea}
  \big< \alpha^j_{2c} (\mathbf{u}_\perp) \alpha^n_{2e} (\mathbf{w}_\perp) \big>
 \end{split} 
 \end{equation}
-the $( \delta^{\alpha \beta} - v^\alpha v^\beta / v^2)X^{\alpha \beta}$ projection has a similar structure, with different terms in square brackets, which nonetheless also contain Bessel functions of degrees $0$ and $1$ with arguments $k\tau$ and $l\tau'$. 
+the $( \delta^{\alpha \beta} - v^\alpha v^\beta / v^2)X^{\alpha \beta}$ projection has a similar structure, differing by the terms in square brackets, which nonetheless also contain Bessel functions of degrees $0$ and $1$ with arguments $k\tau$ and $l\tau'$. 
 
-These projections must now be simplified analytically to the greatest extent possible. In Appendix \ref{ap:Projections}, a procedure which allows rewriting the projections as triple integrals is written out in detail, based on the one used in \cite{Guerrero_Rodr_guez_2021}; the integral representations of the Bessel functions, the orthogonality of the Bessel functions, and the general form for the gluon field correlator in Eq. (\ref{eq:general_correlator}) are used.
+These projections must now be simplified analytically to the greatest extent possible. In Appendix \ref{ap:Projections}, a procedure which allows reducing the projections to triple integrals, which then may be numerically computed, is written out in detail; the integral representations of the Bessel functions, the orthogonality of the Bessel functions, and the general form for the gluon field correlator in Eq. (\ref{eq:general_correlator}) are used.
 
 
 \section{Expressions for $\hat{q}$ and $\diff E / \diff x$}
 
 
-Combining these results (Eqs. (\ref{eq:simplified_unintegrated_projections})) with the expressions for $\hat{q}$ and $\diff E / \diff x$ of Eqs. (\ref{eq:collision_from_tensors}),
+Combining the results (Eqs. (\ref{eq:simplified_unintegrated_projections})) with the expressions for $\hat{q}$ and $\diff E / \diff x$ of Eqs. (\ref{eq:collision_from_tensors}),
 
 \begin{subequations}
 \begin{align}
@@ -92,7 +124,7 @@ with $r^2 = \big((t-t')v_\perp + \tau' \cos \varphi - \tau \cos \phi \big)^2 + \
 All that is left in order to be able to evaluate $\hat{q}$ and $\diff E / \diff x$ is to provide an expression for $T$.
 
 \subsection{``Temperature'' of the glasma}
-As was outlined in Section \ref{sec:fokker-planck}, the analytically challenging $Y^\alpha$ tensor needed to compute $\diff E / \diff x$ may be obtained from $X^{\alpha \beta}$ by assuming that the Fokker-Planck equation for the probe quarks traversing the \textcolor{red}{medium/QGP?} should admit a Boltzmann distribution as a solution. This technique, however, requires  introducing a temperature $T$ \footnote{\textcolor{red}{of what?}} for that Boltzmann distribution. Since the glasma is not a medium in thermal equilibrium, one resorts to using the temperature of a \gls{QGP} as similar as possible to the glasma \textcolor{red}{cite}; that is, a QGP with the same energy density, $\varepsilon$, as the glasma's. The energy density of the glasma has been computed in \cite{Guerrero_Rodr_guez_2021} within the same framework as this work -- the linearization of the Yang-Mills Equations. In the same coordinate system that has been used so far,
+As was outlined in Section \ref{sec:fokker-planck}, the analytically challenging $Y^\alpha$ tensor needed to compute $\diff E / \diff x$ may be obtained from $X^{\alpha \beta}$ by assuming that the Fokker-Planck equation for the probe quarks traversing the medium\footnote{\textcolor{red}{what is the rationale for even applyint the FP eq to the flasma}} should admit a Boltzmann distribution as a solution. This technique, however, requires  introducing a temperature $T$ \footnote{\textcolor{red}{of what?}} for that Boltzmann distribution. Since the glasma is not a medium in thermal equilibrium, one resorts to using the temperature of the \gls{QGP} that would be obtained if the pre-hydrodynamic stage were allowed to reach equilibrium without expanding, i.e. keeping its energy density, $\varepsilon$, constant \textcolor{red}{[cite]}. The energy density of the glasma has been computed in \cite{Guerrero_Rodr_guez_2021} within the same framework as this work -- the linearization of the Yang-Mills Equations:
 \begin{equation}
 	\left< \varepsilon (\tau) \right> = \left< \frac{\mathbf{E}^2 + \mathbf{B}^2}{\textcolor{red}{2}} \right>= \frac{g^2}{2} N_c (N_c - 1)^2 \int_0^{2\pi} \frac{\diff \Theta}{2 \pi} \left(1 + \cos \Theta \right) G_1(r) G_2(r)
 	\label{eq:Pablos_energy_density}
@@ -115,7 +147,7 @@ Solving Eq. (\ref{eq:energy_temperature}) for the temperature and replacing $\va
 
 \section{Numerically computing $\hat{q}$ and $\diff E / \diff x$}
 
-Since no way was found to further analytically simplify the integrals in the formulas for $\hat{q}$ (Eq. (\ref{eq:final_full_qhat})) and $\diff E / \diff x$ (Eqs. (\ref{eq:final_full_dEdx}) and (\ref{eq:final_full_T})), numerical methods were used in order to obtain values for these quantities. The \gls{GSL} \cite{gsl} version 2.8 for the C programming language was used to perform the calculations. 
+Since no way was found to further analytically simplify the integrals in the formulas for $\hat{q}$ (Eq. (\ref{eq:final_full_qhat})) and $\diff E / \diff x$ (Eqs. (\ref{eq:final_full_dEdx}) and (\ref{eq:final_full_T})), numerical techniques were used in order to obtain values for these quantities. The \gls{GSL} \cite{gsl} version 2.8 for the C programming language was used to perform the calculations. 
 
 \gls{GSL} is an open source numerical library written in C, but available in wrappers for other programming languages. It contains a number of routines useful for numerical calculations, including the following, relevant to this work: special functions, random number generation and Monte Carlo integration.
 
