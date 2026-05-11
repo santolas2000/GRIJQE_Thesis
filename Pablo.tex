@@ -443,11 +443,11 @@ Inputting $J_{(0)}^\mu = A_{(0)}^\mu = 0$ (since, in the absence of color charge
 \begin{split}
 	\partial_\mu & \partial^\mu A_{(1)}^\nu = J_{(1)}^\nu ~ \to ~
 	 - \mathbf{\nabla}_\perp^2 A_{(1)}^\nu = J_{(1)}^\nu \\
-	 & \to ~ A^\nu_{(1)}(x^-,\mathbf{x}_\perp) = - g \delta^{\nu}_+  \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(x^-,\mathbf{y}_\perp)
+	 & \to ~ A^\nu_{(1)}(x^-,\mathbf{x}_\perp) =  g \delta^{\nu}_+  \int \diff^2 \mathbf{y}_\perp \mathcal{G}(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(x^-,\mathbf{y}_\perp)
 \end{split}
 \label{eq:n_1_A}
 \end{equation}
-where $G(\mathbf{x_\perp} - \mathbf{y_\perp})$ is a Green's function for the 2-dimensional Laplacian, $\mathbf{\nabla}_\perp^2 = -\partial_i \partial^i$ with $i=2,3$.
+where $\mathcal{G}(\mathbf{x_\perp} - \mathbf{y_\perp})$ is a Green's function for the 2-dimensional Laplacian, $-\mathbf{\nabla}_\perp^2 = \partial_i \partial^i$ with $i=2,3$.
 
 Moving to the $n=2$ system, the right side of the top equation is once again $0$ since $A_{(1)}^\mu$ and $J_{(1)}^{\mu}$ only have a $+$-component. For the bottom equation, its commutator vanishes because $A_{(1)}^\mu$ only has a $+$-component and because that component is independent of $x^+$. The system for $n=2$ is, then,
 \begin{equation}
@@ -463,7 +463,7 @@ Once again requiring that the current and fields vanish in the far past
 \begin{subequations}
 \begin{gather}
 	J^\mu(x^-,\mathbf{x}_\perp) = g \delta^{\mu}_+ \rho(x^-,\mathbf{x}_\perp) \\
-	A^\nu(x^-,\mathbf{x}_\perp) = - g \delta^{\nu}_+  \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(x^-,\mathbf{y}_\perp)
+	A^\nu(x^-,\mathbf{x}_\perp) =  g \delta^{\nu}_+  \int \diff^2 \mathbf{y}_\perp \mathcal{G}(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(x^-,\mathbf{y}_\perp)
 \end{gather}
 \end{subequations}
 
@@ -523,7 +523,7 @@ the expressions for the gluon fields in light-cone gauge become:
 	A^i_\text{LC} & = \frac{i}{g} U(x^-,\mathbf{x}_\perp)^\dagger ~ && \partial^i U(x^-,\mathbf{x}_\perp), \qquad i = 1,2\\
 	& \text{with} ~ U(x^-, \mathbf{x}_\perp) && =
 	\mathcal{P}^- \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z ~ \Phi (z, \mathbf{x}_\perp) \Bigg] \nonumber \\ 
-	&  &&  =  \mathcal{P}^- \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z ~ (- g) \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(z,\mathbf{y}_\perp) \Bigg] \nonumber 
+	&  &&  =  \mathcal{P}^- \exp  \Bigg[ig \int_{-\infty}^{x^-} \diff z ~  g \int \diff^2 \mathbf{y}_\perp \mathcal{G}(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(z,\mathbf{y}_\perp) \Bigg] \nonumber 
 \end{alignat}
 \label{eq:A_lc_one_nucleus}
 \end{subequations}
@@ -587,7 +587,7 @@ with
 \begin{align}
 	U_2(x^+, \mathbf{x}_\perp) & =
 	\mathcal{P}^+ \exp  \Bigg[ig \int_{-\infty}^{x^+} \diff z ~ \Phi_2 (z, \mathbf{x}_\perp) \Bigg] \nonumber  
-	=  \mathcal{P}^+ \exp  \Bigg[ig \int_{-\infty}^{x^+} \diff z ~ (- g) \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \tilde{\rho}_2(z,\mathbf{y}_\perp) \Bigg] \nonumber 
+	=  \mathcal{P}^+ \exp  \Bigg[ig \int_{-\infty}^{x^+} \diff z ~  g \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \tilde{\rho}_2(z,\mathbf{y}_\perp) \Bigg] \nonumber 
 \end{align}
 
 Expressions for the gluon fields around a single nucleus traveling at the speed of light have finally been obtained. Next, when studying the \gls{HIC} system of two colliding nuclei, they will be useful for evaluating the gluon fields in regions of spacetime causally related to only one of the nuclei, and for setting the boundary conditions for solving the Yang-Mills equations everywhere else.
@@ -957,18 +957,25 @@ C^{im~jn}_{bd~ce} (\mathbf{x}_\perp,\mathbf{y}_\perp) & = \frac{\delta^{bd}\delt
 \end{subequations}
 The simple forms of these contractions are the motivation for the separation of the $\delta^{ij}$ and $r^i r^j$ components of the corrrelator as it is done in Eq. (\ref{eq:general_correlator}). These contractions will be useful in Chapter \ref{ch:merge}.
 
+\subsubsection{In the \gls{MV} model}
+
 Obtaining the explicit forms of the gluon distributions $G$ and $h$ within the \gls{MV} model requires solving for the $A^+_{(1)}$ field of Eq. (\ref{eq:n_1_A}), renamed field $\Phi$ in Eq. (\ref{eq:A_lc_one_nucleus}). This is done by finding an explicit form for the Green's function:
 \begin{equation}
-	- \nabla^2_\perp \Phi(x^-, \mathbf{x}_\perp) = \rho (x^-,\mathbf{x}_\perp) \quad \Rightarrow \quad 
-	\Phi(x^-,\mathbf{x}_\perp) = - g  \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(x^-,\mathbf{y}_\perp)
+	- \nabla^2_\perp \Phi(x^-, \mathbf{x}_\perp) = g \rho (x^-,\mathbf{x}_\perp) \quad \Rightarrow \quad 
+	\Phi(x^-,\mathbf{x}_\perp) = g  \int \diff^2 \mathbf{y}_\perp \mathcal{G}(\mathbf{x_\perp} - \mathbf{y_\perp}) \rho(x^-,\mathbf{y}_\perp)
 \end{equation}
 
-\textcolor{purple}{DIFFERENT NAME FOR THE GREEN'S FUNCTION}
 
 The Green's function should obey the equation:
 \begin{equation}
-	-? \nabla_\perp^2 G (\mathbf{x}_\perp) = 
+	 - \nabla_\perp^2 \mathcal{G} (\mathbf{x}_\perp) = \delta (\mathbf{x}_\perp)
 \end{equation}
+which is solved in momentum space\footnote{The 2D inverse Fourier transform of any radial function $\tilde{f}(\mathbf{k}) = \tilde{f}(k)$ is its Hankel transform over $k$, divided by $2 \pi$. The Hankel transform of $1/(k^2 + m^2)$ is given in \cite{Gradshteyn:1943cpj}, integral 6.5324}
+\begin{equation}
+	 | \mathbf{k}_\perp|^2 \tilde{\mathcal{G}}(\mathbf{k}) = 1 \quad \to \quad \tilde{\mathcal{G}}(\mathbf{k}) = \frac{1}{k^2+m^2} \quad \implies \quad \mathcal{G} (\mathbf{x}_\perp) = \frac{1}{2\pi} K_0 (m |\mathbf{x}_\perp|)
+\end{equation}
+where $K_0$ is the modified Bessel function of the second kind of degree $0$.
+
 -----------------------------------------------
 
 and the arguments of the $G$ and $h$ functions are actually $r$ and $\mathbf{x}_\perp - \mathbf{y}_\perp$. 

@@ -146,10 +146,11 @@ Solving Eq. (\ref{eq:energy_temperature}) for the temperature and replacing $\va
 
 
 \section{Numerically computing $\hat{q}$ and $\diff E / \diff x$}
+\label{sec:numerical_computation}
 
 Since no way was found to further analytically simplify the integrals in the formulas for $\hat{q}$ (Eq. (\ref{eq:final_full_qhat})) and $\diff E / \diff x$ (Eqs. (\ref{eq:final_full_dEdx}) and (\ref{eq:final_full_T})), numerical techniques were used in order to obtain values for these quantities. The \gls{GSL} \cite{gsl} version 2.8 for the C programming language was used to perform the calculations. 
 
-\gls{GSL} is an open source numerical library written in C, but available in wrappers for other programming languages. It contains a number of routines useful for numerical calculations, including the following, relevant to this work: special functions, random number generation and Monte Carlo integration.
+\gls{GSL} is an open source numerical library written in C, but also available in wrappers for other programming languages. It contains a number of routines useful for numerical calculations, including the following, relevant to this work: special functions, random number generation and Monte Carlo integration.
 
 For numerical multidimensional integration, \gls{GSL} includes the traditional Monte Carlo method, with uniform random sampling over the domain of integration, and the MISER and VEGAS adaptive algorithms, which use importance sampling and stratified sampling. After comparing values of $\hat{q}$ obtained via the three algorithms, it was found that they all produced similar results within each other's error estimates. Thus, with the objectives in mind of keeping the program simple and minimizing hard-to-interpret potential sources of error, the traditional, plain, Monte Carlo method was selected.
 
