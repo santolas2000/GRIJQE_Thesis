@@ -208,9 +208,9 @@ In this coordinate system, the nuclei's position four-vectors, $x^\mu=(x^+,x^-,x
 \end{equation*}
 and the collision coordinates remain at $(x^+=0,x^-=0)$.
 
-\textcolor{purple}{In order to fulfill this work's objectives, it will be necessary to calculate the gluon fields generated in the space between the receding nuclei, making use of the classical Yang-Mills equations. The fields will be determined from the the static distributions of color charge of the receding nuclei.}
+%\textcolor{purple}{In order to fulfill this work's objectives, it will be necessary to calculate the gluon fields generated in the space between the receding nuclei, making use of the classical Yang-Mills equations. The fields will be determined from the the static distributions of color charge of the receding nuclei.}
 
-\textcolor{red}{Move the introduction to dEdx and $\hat{q}$ to before this? say they are the result of the color fields acting on the quark probe?}
+%\textcolor{red}{Move the introduction to dEdx and $\hat{q}$ to before this? say they are the result of the color fields acting on the quark probe?}
 
 
 \section{The Color Glass Condensate and The McLerran-Venugopalan Model}
@@ -232,7 +232,7 @@ The effective theory hinges on the partition of the parton content of a hadron,
 The founding iteration of this formalism was introduced in \cite{McLerran_1994_classic_source} and is known today as the \gls{MV} \glsreset{MV} model. Together with other iterations, which incorporate quantum corrections to the classical theory, they form the corpus of the \gls{CGC} framework.
 
 \subsection{Classical saturated gluon fields}
-\textcolor{purple}{YET UNJUSTIFIED: why $N \sim 1/g^2$; why $g$ is small; well sourced?}
+%\textcolor{purple}{YET UNJUSTIFIED: why $N \sim 1/g^2$; why $g$ is small; well sourced?}
 
 First, the treatment of the saturated gluons as classical fields will be justified. Reaching the saturation regime implies that the non-linear terms of the evolution equation have become non-negligible\footnote{Here, specifically, the \gls{BK} equation at leading order is considered, where it serves as a non-linear extension of the \gls{BFKL} evolution equation. \cite{Albacete_2014}}, as discussed in Section \ref{sec:gluon_saturation}. For this to occur, gluon densities should be of the order $\sim 1/\alpha \sim 1/g^2$. When taking the gluon density as a proxy for the gluon field two-point function, $\left< AA \right>$, this allows estimating the average value of the gluon fields as $\sim 1/g$
 %The saturated gluon densities at low-$x$ discussed previously in Sections \ref{sec:nuclear_matter} and \ref{sec:gluon_saturation} imply gluon fields of the order $A \sim 1/g$
@@ -355,12 +355,12 @@ The form of $W_{\text{MV}}$, apart from a normalization constant $C$, is \citep{
 \end{equation}
 which has an associated charge density two-point correlator:
 \begin{equation}
-	\left< \rho_a(x^-,\mathbf{x}_\perp) \rho_b (y^-,\mathbf{y}_\perp) \right> =  \delta^{ab} \delta^2 (\mathbf{x}_\perp - \mathbf{y}_\perp) \delta (x^- - y^-) \mu_A^2 \textcolor{red}{\lambda(x^-, \mathbf{x}_\perp)}
+	\left< \rho_a(x^-,\mathbf{x}_\perp) \rho_b (y^-,\mathbf{y}_\perp) \right> =  \delta^{ab} \delta^2 (\mathbf{x}_\perp - \mathbf{y}_\perp) \delta (x^- - y^-) \mu_A^2 \lambda(x^-, \mathbf{x}_\perp)
 	\label{eq:MV_charge_correlator}
 \end{equation}
 %\textcolor{red}{How do I relate these two?}
 
-\textcolor{red}{[Explain $\mu/\lambda$].}
+%\textcolor{red}{[Explain $\mu/\lambda$].}
 
 In spite of not incorporating quantum corrections, the \gls{MV} model may be used directly, without needing to be evolved into $x$-scales much smaller than $\Lambda_0^+$, for the study of $pA$ or $AA$ collisions where the values of $x$ are not small enough to require that evolution. \citep{Gelis_2010} 
 
@@ -483,20 +483,20 @@ which admits a solution of the type $U(x^-,\mathbf{x}_\perp)$ and may be solved 
 \end{gather}
 \begin{alignat}{2}
 	U(x^-,\mathbf{x}_\perp) & = \lim_{n \to \infty} \Bigg( \mathds{1} 
-	 && + ig\int_{x^0_-}^{x^-}  \diff z_0 A^+ (z_0) 
-	+ (ig)^2\int_{x^0_-}^{x^-} \diff z_0 \int_{x^0_-}^{z_0} \diff z_1 A^+ (z_0) A^+ (z_1) + ... \nonumber \\ 
-	& && + (ig)^n\int_{x^0_-}^{x^-} \diff z_0  \int_{x^0_-}^{z_0} \diff z_1 ...  \int_{x^0_-}^{z_{n-1}} \diff z_n ~ A^+ (z_0) A^+ (z_1) ...  A^+ (z_n)
+	 && + ig\int_{x_0^-}^{x^-}  \diff z_0 A^+ (z_0) 
+	+ (ig)^2\int_{x_0^-}^{x^-} \diff z_0 \int_{x_0^-}^{z_0} \diff z_1 A^+ (z_0) A^+ (z_1) + ... \nonumber \\ 
+	& && + (ig)^n\int_{x_0^-}^{x^-} \diff z_0  \int_{x_0^-}^{z_0} \diff z_1 ...  \int_{x_0^-}^{z_{n-1}} \diff z_n ~ A^+ (z_0) A^+ (z_1) ...  A^+ (z_n)
 	 \Bigg) U(x_0^-,\mathbf{x}_\perp) \nonumber \\
 	 & = \lim_{n \to \infty} \Bigg( \mathds{1} 
-	 && + ig\int_{x^0_-}^{x^-}  \diff z_0 A^+ (z_0) 
-	+ \frac{(ig)^2}{2} \int_{x^0_-}^{x^-} \diff z_0 \int_{x^0_-}^{x^-} \diff z_1  \mathcal{P}^- \Big \{ A^+ (z_0) A^+ (z_1) \Big \} + ... \nonumber \\ 
-	& && + \frac{(ig)^n}{n!}\int_{x^0_-}^{x^-} \diff z_0  \int_{x^0_-}^{x^-} \diff z_1 ...  \int_{x^0_-}^{x^-} \diff z_n ~ \mathcal{P}^- \Big \{ A^+ (z_0) A^+ (z_1) ...  A^+ (z_n) \Big \}
+	 && + ig\int_{x_0^-}^{x^-}  \diff z_0 A^+ (z_0) 
+	+ \frac{(ig)^2}{2} \int_{x_0^-}^{x^-} \diff z_0 \int_{x_0^-}^{x^-} \diff z_1  \mathcal{P}^- \Big \{ A^+ (z_0) A^+ (z_1) \Big \} + ... \nonumber \\ 
+	& && + \frac{(ig)^n}{n!}\int_{x_0^-}^{x^-} \diff z_0  \int_{x_0^-}^{x^-} \diff z_1 ...  \int_{x_0^-}^{x^-} \diff z_n ~ \mathcal{P}^- \Big \{ A^+ (z_0) A^+ (z_1) ...  A^+ (z_n) \Big \}
 	 \Bigg) U(x_0^-,\mathbf{x}_\perp) \nonumber \\
 	 & \equiv \mathcal{P}^- \exp  \Bigg[&& ig \int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp) \Bigg] U(x_0^-,\mathbf{x}_\perp)
 \end{alignat}
 where the dependence of the $A^+$ fields on $\mathbf{x}_\perp$ was only shown explicitly in the last line and $\mathcal{P}^-$ is the path-ordering operator for the $x^-$ variable; that is, it orders the $A^+$ field operators from right to left in descending order of their $x^-$ argument:
 \begin{gather}
-	x^-_n \geq x^-_{n-1} \geq ... \geq x_1 \implies \mathcal{P}^- \left \{A^+(x^-_{p_n}) A^+(x^-_{p_{n-1}}) ... A^+(x_{p_1}) \right \} \equiv A^+(x^-_n) A^+(x^-_{n-1}) ... A^+(x_1) \\
+	x^-_n \geq x^-_{n-1} \geq ... \geq x_1^- \implies \mathcal{P}^- \left \{A^+(x^-_{p_n}) A^+(x^-_{p_{n-1}}) ... A^+(x_{p_1}^-) \right \} \equiv A^+(x^-_n) A^+(x^-_{n-1}) ... A^+(x_1^-) \\
 	\text{with $\{p_n, p_{n-1}, ..., p_1\}$ some permutation of $\{n, n-1, ..., 1\}$} \nonumber
 \end{gather}
 Additionally,  $\mathcal{P}^-\exp[ig\int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp)]$ is called the path-ordered exponential of the $ig\int_{x^-_0}^{x^-} \diff z A^+ (z, \mathbf{x}_\perp)$ integral.
@@ -736,7 +736,9 @@ Inserting Eq. (\ref{eq:ansatz}) into the Yang-Mills equations in comoving coordi
 \end{subequations}
 where $i,j=2,3$.
 
-These equations don't look very friendly. They have no known analytical solution, but have been studied numerically (\textcolor{purple}{say more}) and analytically via approximations (\textcolor{purple}{say more}). In this work, the approximation that will allow the analytical treatment of the equations is their linearization; that is, the neglect of second or higher order terms in the fields, which was first done in \cite{}. This  will naturally do away with gauge invariance, as the value of the neglected terms changes according to the used gauge. Therefore, one must choose the proper gauge, which minimizes the influence of these terms, before linearizing the equations. Two criteria are put forward in \cite{Guerrero_Rodr_guez_2021}: keeping the result independent of $\eta$ suggests that the gauge transformation matrix should be independent of $\eta$ as well; additionally, since there are no color charge sources in the interior of the forward light-cone that would generate a static Coulomb field,
+These equations don't look very friendly. They have no known analytical solution, but have been studied numerically and analytically via approximations. In this work, the approximation that will allow the analytical treatment of the equations is their linearization; that is, the neglect of second or higher order terms in the fields
+%, which was first done in \cite{}
+. This  will naturally do away with gauge invariance, as the value of the neglected terms changes according to the used gauge. Therefore, one must choose the proper gauge, which minimizes the influence of these terms, before linearizing the equations. Two criteria are put forward in \cite{Guerrero_Rodr_guez_2021}: keeping the result independent of $\eta$ suggests that the gauge transformation matrix should be independent of $\eta$ as well; additionally, since there are no color charge sources in the interior of the forward light-cone that would generate a static Coulomb field,
 the Fock-Schwinger gauge condition ($A^\tau = 0$) is maintained\footnote{Maintaining the Fock-Schwinger gauge also ensures that $A^-$ remains $0$ in the support of the right-moving current and $A^+$ remains $0$ in the support of the left-moving current, doing away with the complicated Wilson Line operators that would be needed to ensure their covariant conservation.}, which can be achieved by requiring the gauge transformation to be independent of $\tau$. Thus, the inverse gauge transformation is:
 \begin{subequations}
 \begin{gather}
@@ -744,7 +746,8 @@ the Fock-Schwinger gauge condition ($A^\tau = 0$) is maintained\footnote{Maintai
 	\alpha^i(\tau,\mathbf{x}_\perp) = V (\mathbf{x}_\perp) \left( \beta(\tau,\mathbf{x}_\perp) - \frac{1}{ig} \partial^i \right) V^\dagger (\mathbf{x}_\perp)
 \end{gather}
 \end{subequations}
-which makes the linearized Yang-Mills equations for the fields in the new gauge, \textcolor{purple}{CHECK}
+which makes the linearized Yang-Mills equations for the fields in the new gauge, 
+%\textcolor{purple}{CHECK}
 \begin{subequations}
 \begin{gather}
 	\partial_\tau \partial_i \beta^i = 0 \\
@@ -752,7 +755,7 @@ which makes the linearized Yang-Mills equations for the fields in the new gauge,
 	\frac{1}{\tau} \partial_\tau \left( \tau \partial_\tau \beta^i \right) - \left( \partial^k \partial^{\textcolor{purple}{k}} \delta^{i j} - \partial^j \partial^i \right) \beta^j =0
 \end{gather}
 \end{subequations}
-where $k=2,3$. (\textcolor{purple}{different signs in 1808 and 2102})
+where $k=2,3$. %(\textcolor{purple}{different signs in 1808 and 2102})
 
 The remaining gauge freedom allows setting $\partial_i \beta^i = 0$, a Coulomb gauge condition, minimizing the amplitudes of the transverse fields \cite{Blaizot:2010kh}. The equations become:
 \begin{subequations}
@@ -794,9 +797,9 @@ where the factor of $2$ in Eq. (\ref{eq:beta_tilde}) was introduced in order to 
 In order to find the expressions for the fields at $\tau = 0$ ($\tilde{\beta}_0$ and $\tilde{\beta}^i_0$), the next step would be to use the boundary conditions of Eqs. (\ref{eq:boundary_conditions}), which would require first bringing the pre-collision potentials, $\alpha^i_1$ and $\alpha^i_2$, to the Coulomb gauge. However, no analytical expression for the necessary transformation matrix $V(\mathbf{x}_\perp)$ has been found. In spite of this, another approach to this problem has found that the resolution of the linearized equations with numerically-computed boundary conditions in the Coulomb gauge approximate the resolution of the full Yang-Mills equations quite well \cite{Guerrero_Rodr_guez_2021,Blaizot:2010kh} %\textcolor{purple}{(read paper, quantify similarity)}
 , except for very soft modes (very low $|\mathbf{k}_\perp|$). %\textcolor{purple}{(quantify)}
 
-One way to go around this problem is to recall that the quantities needed to compute the physically meaningful results are the chromodynamic force fields: the electric field, $\mathbf{E}$, and the magnetic field, $\mathbf{B}$. They will be used to calculate color traces of products of their components, like $\Tr_c [E^i(\tau, \mathbf{x}_\perp) B^j(\tau', \mathbf{y}_\perp) ]$, for example. Checking for gauge invariance, since the field components change under the latest gauge transformation as $E^i (\tau, \mathbf{x}_\perp) \to E'^i(\tau, \mathbf{x}_\perp) = V(\mathbf{x}_\perp) E^i(\tau, \mathbf{x}_\perp) V^\dagger(\mathbf{x}_\perp)$ \textcolor{purple}{(NOT GAUGE INVARIANT FOR $v_\perp \neq 0$ ??
+One way to go around this problem is to recall that the quantities needed to compute the physically meaningful results are the chromodynamic force fields: the electric field, $\mathbf{E}$, and the magnetic field, $\mathbf{B}$. They will be used to calculate color traces of products of their components, like $\Tr_c [E^i(\tau, \mathbf{x}_\perp) B^j(\tau', \mathbf{y}_\perp) ]$, for example. Checking for gauge invariance, since the field components change under the latest gauge transformation as $E^i (\tau, \mathbf{x}_\perp) \to E'^i(\tau, \mathbf{x}_\perp) = V(\mathbf{x}_\perp) E^i(\tau, \mathbf{x}_\perp) V^\dagger(\mathbf{x}_\perp)$ %\textcolor{purple}{(NOT GAUGE INVARIANT FOR $v_\perp \neq 0$ ??
 % But maybe $\hat{q}$ and $dE/dx$ are)
-}, the previous trace is gauge invariant. 
+, the previous trace is gauge invariant. 
 
 As such, in order to obtain the initial fields $\tilde{\beta}_0$ and $\tilde{\beta}_0^i$, one may choose them so as to produce the appropriate initial chromodynamic fields given by Eqs. (\ref{eq:EB_from_precollision}): $\mathbf{E}_0 (\mathbf{x}_\perp) \equiv \mathbf{E}(\tau \to 0^+,\mathbf{x}_\perp)$ and \linebreak $\mathbf{B}_0 (\mathbf{x}_\perp) \equiv \mathbf{B}(\tau \to 0^+,\mathbf{x}_\perp)$.
 
@@ -915,9 +918,9 @@ And the remaining fields:
 \end{align}
 \end{comment}
 
-\subsection{The two-point gluon field correlator}
+\section{The two-point gluon field correlator}
 
-\textcolor{purple}{How is this form for the correlator justified? $G(|\mathbf{x}_\perp - \mathbf{y}_\perp|, \mathbf{x}_\perp + \mathbf{y}_\perp )$ is symmetric! Could there be any more arguments for the $G$ function?}
+%\textcolor{purple}{How is this form for the correlator justified? $G(|\mathbf{x}_\perp - \mathbf{y}_\perp|, \mathbf{x}_\perp + \mathbf{y}_\perp )$ is symmetric! Could there be any more arguments for the $G$ function?}
 
 %The previous section has ended with expressions for the chromodynamic fields $\mathbf{E}$ and $\mathbf{B}$ out of the gluon fields $\alpha$. In the next chapter, the procedure for extracting macroscopic information about the pre-hydrodynamic stage will be presented, and it will require the calculation of chromodynamic field correlators
 
@@ -937,11 +940,12 @@ A general form for the correlator in heavy ion collisions is: \cite{Lappi:2017sk
 \end{equation}
 where $\mathbf{r} \equiv \mathbf{x}_\perp - \mathbf{y}_\perp$, and $G$ and $h$ are called the unpolarized and polarized gluon distributions, respectively.\footnote{$G$ and $h$ are actually the Hankel transforms of the unpolarized and polarized gluon distributions, $\tilde{G}\big((\mathbf{x}_\perp + \mathbf{y}_\perp)/2,k\big)$  and $\tilde{h}\big((\mathbf{x}_\perp + \mathbf{y}_\perp)/2,k\big)$.}
 
+The product of two correlators, each one for one of the incoming nuclei, will appear further ahead in this work. Defining it as a tensor $C$,
 \begin{equation}
  C^{im~jn}_{bd~ce} (\mathbf{x}_\perp,\mathbf{y}_\perp) \equiv \big< \alpha^i_{1b} (\mathbf{x}_\perp) \alpha^m_{1d} (\mathbf{y}_\perp) \big>
  \big< \alpha^j_{2c} (\mathbf{x}_\perp) \alpha^n_{2e} (\mathbf{y}_\perp) \big>
 \end{equation}
-Some of its contractions are:
+some of its contractions are:
 \begin{subequations}
 \begin{align}
 \delta^{ij} \varepsilon^{mn} ~
@@ -955,9 +959,9 @@ C^{im~jn}_{bd~ce} (\mathbf{x}_\perp,\mathbf{y}_\perp) & = \frac{\delta^{bd}\delt
 \end{align}
 \label{eq:correlator_contractions}
 \end{subequations}
-The simple forms of these contractions are the motivation for the separation of the $\delta^{ij}$ and $r^i r^j$ components of the corrrelator as it is done in Eq. (\ref{eq:general_correlator}). These contractions will be useful in Chapter \ref{ch:merge}.
+The simple forms of these contractions in terms of $G$ and $h$ functions are the motivation for the separation of the $\delta^{ij}$ and $r^i r^j$ components of the corrrelator as it is done in Eq. (\ref{eq:general_correlator}).
 
-\subsubsection{In the \gls{MV} model}
+\subsection{In the MV model}
 
 Obtaining the explicit forms of the gluon distributions $G$ and $h$ within the \gls{MV} model requires solving for the $A^+_{(1)}$ field of Eq. (\ref{eq:n_1_A}), renamed field $\Phi$ in Eq. (\ref{eq:A_lc_one_nucleus}). This is done by finding an explicit form for the Green's function:
 \begin{equation}
@@ -970,12 +974,107 @@ The Green's function should obey the equation:
 \begin{equation}
 	 - \nabla_\perp^2 \mathcal{G} (\mathbf{x}_\perp) = \delta (\mathbf{x}_\perp)
 \end{equation}
-which is solved in momentum space\footnote{The 2D inverse Fourier transform of any radial function $\tilde{f}(\mathbf{k}) = \tilde{f}(k)$ is its Hankel transform over $k$, divided by $2 \pi$. The Hankel transform of $1/(k^2 + m^2)$ is given in \cite{Gradshteyn:1943cpj}, integral 6.5324}
+which is the 2D Poisson's equation for a point color charge, missing a factor of $g$. It is solved in momentum space as\footnote{The 2D inverse Fourier transform of any radial function $\tilde{f}(\mathbf{k}) = \tilde{f}(k)$ is its Hankel transform over $k$, divided by $2 \pi$. The Hankel transform of $1/(k^2 + m^2)$ is given in \cite{Gradshteyn:1943cpj}, integral 6.5324}
 \begin{equation}
 	 | \mathbf{k}_\perp|^2 \tilde{\mathcal{G}}(\mathbf{k}) = 1 \quad \to \quad \tilde{\mathcal{G}}(\mathbf{k}) = \frac{1}{k^2+m^2} \quad \implies \quad \mathcal{G} (\mathbf{x}_\perp) = \frac{1}{2\pi} K_0 (m |\mathbf{x}_\perp|)
 \end{equation}
-where $K_0$ is the modified Bessel function of the second kind of degree $0$.
+where $K_0$ is the modified Bessel function of the second kind of degree $0$. The $m$ quantity has been introduced as an infrared ($k \to 0 $) regulator. This procedure is equivalent to modifying the Poisson's equation by adding a gluon mass:
+\begin{equation}
+	- (\nabla^2_\perp - m^2) \Phi(x^-, \mathbf{x}_\perp) = g \rho (x^-,\mathbf{x}_\perp)
+\end{equation}
+which screens the color charges, limiting long-distance interactions across the color-charge discs.\footnote{Without the introduction of the infrared regulator, $\mathcal{G}(\mathbf{x}_\perp)$ is proportional to $-\ln |\mathbf{x}_\perp|$, which encodes long-distance interactions. Adding the regulator, $\mathcal{G}(\mathbf{x}_\perp)$ becomes $\frac{1}{2\pi} K_0 (m |\mathbf{x}_\perp|)$, which behaves asymptotically as $\mathcal{G}(\mathbf{x}_\perp \to \infty) \propto e^{-m |\mathbf{x}_\perp|} / \sqrt{m |\mathbf{x}_\perp|}$.} This, effectively, roughly encodes confinement into the solution, an aspect of the Strong Force which would not arise from the Yang-Mills equations on their own. \cite{Carrington_2022,Guerrero_Rodr_guez_2021} Since the characteristic length over which the interaction decays is $1/m$, the value $m = \qty{200}{GeV} \approx \Lambda_{\text{QCD}}$ is chosen.
 
+Using this Green's function, the \gls{MV} model's two-point gluon field correlator may be explicitly calculated, as was done in \cite[Appendix D]{Carrington_2022_Energy_Momentum_Tensor}. If the nucleus in question is given a uniform color charge number distribution, $\mu(\mathbf{x}_\perp) = \mu$, the unpolarized and polarized gluon distributions assume a manageable form. \cite{Carrington_2022,Guerrero_Rodr_guez_2021}\footnote{\cite{Carrington_2022}'s definition of $\mu$ and \cite{Guerrero_Rodr_guez_2021}'s parametrization of the correlator are used here.}
+\begin{subequations}
+\begin{align}
+G_{\text{MV}}(r) & = \frac{g^{2}\mu}{4\pi} ( mrK_{1}(mr) - 2K_{0}(mr) )
+~ \frac{1 - \exp \left [\frac{g^{4}\mu N_c}{4\pi m^{2}} (mrK_{1}(mr) - 1) \right ]}{\frac{g^{4}\mu N_c}{4\pi m^{2}} (mrK_{1}(mr) - 1)} \\
+h_{\text{MV}}(r) & = - \frac{g^{2}\mu}{4\pi } mrK_{1}(mr) 
+~ \frac{1 - \exp \left [ \frac{g^{4}\mu N_c}{4\pi m^{2}} (mrK_{1}(mr) - 1) \right ]}{\frac{g^{4}\mu N_c}{4\pi m^{2}} (mrK_{1}(mr) - 1)}
+\end{align}
+\label{eq:unregularized_MV_G_h}
+\end{subequations}
+where $\mathbf{r}_\perp \equiv \mathbf{x}_\perp - \mathbf{y}_\perp$ and $ r \equiv |\mathbf{r}_\perp|$.
+
+%Due to the $K_0 (mr)$ factor, $G_{\text{MV}}$ diverges in the ultraviolet limit ($r \to \infty$), and so must be regularized. 
+In the ultraviolet limit ($r \to \infty$), the fractions at the r.h.s. of Eqs. (\ref{eq:unregularized_MV_G_h}) approach $1$, and so does $mrK_1(mr)$; however, due to the $K_0 (mr)$ term, $G_{\text{MV}}$ diverges logarithmically, and so must be regularized. 
+\textcolor{red}{[Ask for help with the DGLAP interpretation]}.
+
+In \cite{Guerrero_Rodr_guez_2021}, $G_\text{MV}$ is regularized by replacing the coupling constant $g$ with a running coupling in $r$: \textcolor{red}{[Ask about $g(\mu)^2$ --  why is the asymptotic value of $g$ the value of $g$ at the scale $\mu$?]}
+\begin{equation}
+	g(r^2)^2 = \frac{g(\mu)^2}{\ln\left( \frac{4e^{-2\gamma_e-1}}{m^2 r^2} + e\right)}.
+\end{equation}
+where $\gamma_e$ is the Euler-Mascheroni constant and $g(\mu)^2$ is the asymptotic squared coupling constant. For both $G_\text{MV}$ and $h_\text{MV}$, only the overall factor $g^2$ is replaced, leaving the couplings in the rightmost fractions unchanged. Since 
+\begin{equation}
+2K_0 (mr) - mrK_1(mr) \quad \xrightarrow[r \to 0]{} \quad \ln \left( \frac{4e^{-2\gamma_e-1}}{m^2 r^2} \right)
+\end{equation}
+the regularized $G_\text{MV}$ approaches $\mu^2/(4 \pi g(\mu)^2)$ in the ultraviolet limit.
+
+%\textcolor{purple}{Mention other possible regularization schemes?}
+
+In order to obtain the expressions for $G_\text{MV}$ and $h_\text{MV}$ to be used in the calculations, $\mu$ should be replaced with a quantity adequate for characterizing the scale of the system. The average number color charge density, $\mu$, is the quantity used to characterize dilute color charge systems, in which it has a well-defined physical meaning. For saturated systems such as the two incoming nuclei, the saturation scale $Q_s$ is used instead. In \cite{Guerrero_Rodr_guez_2021}, it is defined in the present context as the value of $r$ above which the rightmost fractions of Eqs. (\ref{eq:unregularized_MV_G_h}) exhibit non-linear behavior. This is taken to be $r^2 \approx g(\mu)^4 \mu N_c / (4 \pi)$. In \cite{Carrington_2022}, the saturation scale's square is also taken to be proportional to $\mu$, $Q_s^2 \approx g^4 \mu$, with the exact proportionality constant requiring methods beyond the \gls{CGC} to be calculated \textcolor{purple}{(say more?)}. Here, \cite{Carrington_2022}'s expression will be preferred, in order to facilitate comparison with their results. Using the asymptotic value for the coupling constant:
+\begin{equation}
+Q_s^2 = g(\mu)^4 \mu
+\end{equation} 
+this will also be used within the rightmost fractions, even though the running coupling prescription has not been applied there.
+
+The expressions for $G_\text{MV}$ and $h_\text{MV}$ to be used become, then,
+\begin{subequations}
+\begin{align}
+G_{\text{MV}}(r) & = \frac{Q_s^2}{4\pi g(\mu)^{2}} \frac{ mrK_{1}(mr) - 2K_{0}(mr) } {\ln\left( \frac{4e^{-2\gamma_e-1}}{m^2 r^2} + e\right)}
+~ \frac{1 - \exp \left [\frac{N_c}{4\pi} \frac{Q_s^2}{m^2} (mrK_{1}(mr) - 1) \right ]}{\frac{N_c}{4\pi} \frac{Q_s^2}{m^2} (mrK_{1}(mr) - 1)} \\
+h_{\text{MV}}(r) & = - \frac{Q_s^2}{4\pi g(\mu)^{2}} \frac{mrK_{1}(mr)}{\ln\left( \frac{4e^{-2\gamma_e-1}}{m^2 r^2} + e\right)} 
+~ \frac{1 - \exp \left [ \frac{N_c}{4\pi} \frac{Q_s^2}{m^2} (mrK_{1}(mr) - 1) \right ]}{\frac{N_c}{4\pi} \frac{Q_s^2}{m^2} (mrK_{1}(mr) - 1)}
+\end{align}
+\label{eq:regularized_MV_G_h}
+\end{subequations}
+
+\begin{comment}
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+	scaled ticks=false,
+    xticklabel style={
+        /pgf/number format/fixed,
+        /pgf/number format/fixed zerofill,
+        /pgf/number format/precision=2
+        },
+    xlabel = $r \; (\qty{}{fm})$,
+    yticklabel style={
+        /pgf/number format/fixed,
+        /pgf/number format/fixed zerofill,
+        /pgf/number format/precision=1
+        },
+    	ylabel = {\shortstack{$G(r)$\\$(\qty{}{GeV^2})$}},
+   	ylabel style={rotate=-90},
+   	xmin = 0, ymin = 0,
+   	ytick distance = 0.5,
+   	no markers,
+   	 xticklabel={
+        \ifdim\tick pt=0pt
+        \else
+            \pgfmathprintnumber{\tick}
+        \fi
+    },
+    yticklabel={
+        \ifdim\tick pt=0pt
+        \else
+            \pgfmathprintnumber{\tick}
+        \fi
+    },
+    ]
+\addplot table [x index=0, y index=1] {Data/G_Greg.dat};
+\addlegendentry{Unregularized}
+\addplot table [x index=0, y index=2] {Data/G_Greg.dat};
+\addlegendentry{Running coupling}
+\end{axis}
+\end{tikzpicture}
+\caption{TEST}
+\end{figure}
+\end{comment}
+
+\begin{comment}
 -----------------------------------------------
 
 and the arguments of the $G$ and $h$ functions are actually $r$ and $\mathbf{x}_\perp - \mathbf{y}_\perp$. 
@@ -987,6 +1086,8 @@ This general form for the correlator fulfills the following requirements:
 \item \textcolor{red}{it should be symmetrical under a swap of the positions where the gluon fields are evaluated, $\mathbf{x}_\perp \leftrightarrow ~ \mathbf{y}_\perp$}.
 \item \textcolor{purple}{$i \leftrightarrow j$?}
 \end{itemize}
+
+\end{comment}
 
 
 

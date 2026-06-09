@@ -1,3 +1,60 @@
 \chapter{Results}
 
-As described in Section \ref{sec:numerical_computation}
+$\hat{q}(t)$ and $\diff E / \diff x (t)$ were evaluated following Section  \ref{sec:numerical_computation} using different parameter values of $Q_{s1/2}$, $m$ and $\mathbf{v}$. Unless otherwise stated, the same value was used for both saturation scales $Q_{s1} = Q_{s2}$, denoted simply by $Q_s$. For the remaining parameters, the same value was always used: $g(\mu)=1$, $N_c = 3$, $N_f = 2$. The magnitude of the velocity, $v$, was kept at $v=1$. All quantities were calculated either in the $0 < t\leq \qty{0.1}{fm}$ time interval or the $0 < t \leq \qty{0.6}{fm}$ time interval.
+
+Before presenting those results, however, the energy density and temperature calculated within the calculation of $\diff E / \diff x$ are shown.
+
+\section{Energy density and ``Temperature''}
+The event-averaged energy density as a function of proper time, $\left< \varepsilon (\tau) \right>$, given by Eq. (\ref{eq:Pablos_energy_density}), was evaluated for $0 < \tau < \qty{0.1}{fm}$, for several values of the saturation scales, as illustrated in Fig. \ref{fig:energy_Q_sweep}. $\left< \varepsilon (\tau) \right>$ was also evaluated for a fixed $Q_s$, varying $m$ so as to obtain different values of the $Q_s/m$ ratio, as illustrated in Fig. \ref{fig:energy_Qm_sweep}. As suggested by Eqs. (\ref{eq:Pablos_energy_density}) and (\ref{eq:regularized_MV_G_h}), $\left< \varepsilon (\tau) \right>$ scales with $Q_s^4$ and the speed of its decay increases with the ratio $Q_s/m$.
+
+The value of $Q_s$ which reproduces \cite{Carrington_2022}'s initial energy density, $\left<\varepsilon_0 \right>$, is $Q_s = \qty{3.8079}{GeV}$. They used a saturation constant of $Q_s = \qty{2.0}{GeV}$, and the difference is justified by the fact that another regularization method of the gluon densities was used in their case. As such, when comparing these results with \cite{Carrington_2022}'s, the $Q_s = \qty{3.8079}{GeV}$ curves should be used.
+
+The corresponding temperatures, $\left<T(\tau) \right>$, given by Eq. (\ref{eq:final_full_T}), are illustrated in Fig. \ref{fig:temperature_Q_sweep}. As $\left<T \right>$ is proportional to the fourth root of the energy density, the $\left< \varepsilon \right>$ range of $\sim [4,20](\qty{}{GeV^4})$ produced a narrower range of $\left<T \right>$, $\sim [0.9,1.2](\qty{}{GeV})$. As mentioned in Section \ref{sec:temperature}, the temperature should be much greater than the mass of the flavors of quarks included in $N_f$. This is the case here, as the masses of the up- and down-quarks are less than $\qty{10}{MeV}$. The strange-quark, with a mass of the order of $\qty{100}{MeV}$, is excluded from the \gls{QGP}. \cite{PDG_2024}
+
+\begin{figure}
+\centering
+\input{Graphs/energy_sweeping_Q}
+\caption{$\left< \varepsilon (\tau) \right>$ for several values of $Q_s$. Dotted in gray, \cite{Carrington_2022}'s value for the initial energy density, $\left<\varepsilon_0\right> = \qty{15.9773}{GeV^4}$; it matches this work's initial energy density for $Q_s \approx \qty{3.8079}{GeV}$.}
+\label{fig:energy_Q_sweep}
+\end{figure}
+
+\begin{figure}
+\centering
+\input{Graphs/energy_sweeping_Qm}
+\caption{$\left< \varepsilon (\tau) \right>$ for several values of $Q_s/m$.}
+\label{fig:energy_Qm_sweep}
+\end{figure}
+
+\begin{figure}
+\centering
+\input{Graphs/temperature_sweeping_Q}
+\caption{$\left< T (\tau) \right>$ for several values of $Q_s$. }
+\label{fig:temperature_Q_sweep}
+\end{figure}
+
+\subsection{Dependence on $Q_s$}
+Figures \ref{fig:qHat_Q_sweep} and \ref{fig:dEdx_Q_sweep} illustrate $\hat{q}$ and $\diff E / \diff x$ as functions of time for different values of $Q_s$. Overall, the values of $\hat{q}$ at $t = \qty{0.1}{fm}$ are of the order $\qty{10}{GeV^2/fm}$ and those of $\diff E / \diff x$ are of the order $10^{-1} \qty{}{GeV/fm}$ \textcolor{red}{(expected values)}. $\hat{q}$ plateaus at around $t = \qty{0.5}{fm}$.
+
+As predicted by \cite{Carrington_2022}'s expansions of $\hat{q}$ and $\diff E / \diff x$ in powers of proper time, when $v_\parallel = 0$, the initial slope of the stopping power is $0$, unlike that of $\hat{q}$. Furthermore, the initial slope of the $Q_s = \qty{3.8079}{GeV}$ curve agrees with \cite{Carrington_2022}'s result. 
+
+\begin{figure}
+\centering
+\input{Graphs/qHat_sweeping_Q}
+\caption{$\hat{q}(t)$ for several values of $Q_s$. \textcolor{red}{Since $v_\parallel=0$, $t=\tau$.} }
+\label{fig:qHat_Q_sweep}
+\end{figure}
+
+\begin{figure}
+\centering
+\input{Graphs/dEdx_sweeping_Q}
+\caption{$\diff E / \diff x$ for several values of $Q_s$. \textcolor{red}{Since $v_\parallel=0$, $t=\tau$.} }
+\label{fig:dEdx_Q_sweep}
+\end{figure}
+
+\begin{figure}
+\centering
+\input{Graphs/qHat_0.6}
+\caption{$\hat{q}$ up to $t = \qty{0.6}{fm}$. \textcolor{red}{Since $v_\parallel=0$, $t=\tau$.} }
+\label{fig:qHat_0.6}
+\end{figure}
+

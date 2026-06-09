@@ -1,7 +1,7 @@
 \chapter{[Margaret]}
 \label{sec:Margaret}
 
-\textcolor{red}{[Likely to Migrate, requires references (textbooks?)]}
+%\textcolor{red}{[Likely to Migrate, requires references (textbooks?)]}
 
 The objectives of this work are: the derivation, by analytical means, of expressions for parameters characterizing the pre-equilibrium stage of a HIC as a medium which affects the highly energetic partons that traverse it; and the numerical evaluation of those expressions and comparison of the results obtained to others in the literature.
 
@@ -23,7 +23,7 @@ The momentum broadening coefficient, on the other hand, measures how capable a m
 
 These quantities are dependent on the properties of the medium and of the probe, on the velocity of the probe, and, in the case of a heterogeneous, dynamic medium, on the current position of the probe and on time.
 
-\textcolor{red}{---------------------------------}
+%\textcolor{red}{---------------------------------}
 
 The chromodynamic field correlators derived in the previous section may be used to obtain the momentum broadening coefficient, $\hat{q}$, and the stopping power, $\diff E/\diff x$,  felt by a relativistic quark probe traversing the glasma. This procedure is outlined in \cite{Carrington_2022}.
 
@@ -39,9 +39,9 @@ The Fokker-Planck equation has frequently been used to study the transport of he
 	\right) n(t, \mathbf{x}, \mathbf{p}) = 0
 \end{equation}
 
-\noindent \textcolor{red}{where $t$ is time, $v$ is the probe's velocity, $\nabla^\alpha = (\partial_1, \partial_2, \partial_3)$ is the usual gradient, $\nabla_p^\alpha$ is the gradient with respect to the probes' momentum, $\partial/(\partial p^\alpha)$, $\mathbf{x}$ and $\mathbf{p}$ are the probes' position and momentum, respectively, and $\alpha,\beta$ run from 1 through 3}. The tensors $X^{\alpha\beta}$ and $Y^\alpha$, from which $\hat{q}$ and $\diff E / \diff x$ will be calculated, are called the collision terms. 
+where $t$ is time, $\textbf{v}$ is the probe's velocity, $\nabla^\alpha = (\partial_1, \partial_2, \partial_3)$ is the usual gradient, $\nabla_p^\alpha$ is the gradient with respect to the probes' momentum, $\partial/(\partial p^\alpha)$, $\mathbf{x}$ and $\mathbf{p}$ are the probes' position and momentum, respectively, and $\alpha,\beta$ run from 1 through 3. The tensors $X^{\alpha\beta}$ and $Y^\alpha$, from which $\hat{q}$ and $\diff E / \diff x$ will be calculated, are called the collision terms. 
 
-The collision terms are related to event-averaged\textcolor{red}{\footnote{ \textcolor{red}{Requires further explanation if the event-averages haven't been explained so far.}}} rates of change of the momentum of the probes over time:
+The collision terms are related to event-averaged rates of change of the momentum of the probes over time:
 \begin{subequations}
 \begin{align}
 	\frac{\left< \Delta p^\alpha \Delta p^\beta \right>}{\Delta t} &= X^{\alpha\beta} + X^{\beta\alpha} \label{eq:momentum_from_X}\\
@@ -58,7 +58,8 @@ As such, $\hat{q}$ and $\diff E / \diff x$ may be obtained from $X^{\alpha\beta}
 \label{eq:collision_from_tensors_v0}
 \end{subequations}
 
-\textcolor{red}{Should these auxiliary calcs be moved to an appendix?} To prove the first equality of Eq. (\ref{eq:qHat_from_X}),
+%\textcolor{red}{Should these auxiliary calcs be moved to an appendix?} 
+To prove the first equality of Eq. (\ref{eq:qHat_from_X}),
 \begin{equation*}
 \frac{1}{v} \left(\delta^{\alpha \beta} - \frac{v^\alpha v^\beta}{v^2} \right) \frac{\left< \Delta p^\alpha \Delta p^\beta \right>}{\Delta t} = \frac{1}{\Delta x} \left< (\Delta \mathbf{p})^2 - \left(\frac{\mathbf{v}\cdot \Delta \mathbf{p}}{v^2} \right)\right> = \frac{\left<(\Delta{\mathbf{p}_T})^2\right>}{\Delta x}
 \end{equation*}
@@ -84,9 +85,9 @@ In order to circumvent the challenges of calculating $Y^\alpha$, it is assumed t
 	\label{eq:Y_from_X}
 \end{equation}
 
-For the purpose of obtaining $Y^\alpha$ from $X^{\alpha\beta}$, $T$ is taken to be the temperature of a thermalized QGP with an energy density equal to that of the glasma\textcolor{red}{\footnote{\textcolor{red}{The derivation of the glasma's energy density should end up before this section, so the reader will be familiar with the concept.}}}. That is, the temperature which would characterize the system achieved if the glasma were allowed to reach equilibrium without expanding. \textcolor{red}{[Comments on validity?] - partly discussed in sec. 5 of Mrowczyncki\_2018}
+For the purpose of obtaining $Y^\alpha$ from $X^{\alpha\beta}$, $T$ is taken to be the temperature of a thermalized QGP with an energy density equal to that of the glasma. That is, the temperature which would characterize the system achieved if the glasma were allowed to reach equilibrium without expanding. %\textcolor{red}{[Comments on validity?] - partly discussed in sec. 5 of Mrowczyncki\_2018}
 
-From Eqs. (\ref{eq:collision_from_tensors_v0}) and (\ref{eq:Y_from_X}), the final expressions for determining $\hat{q}$ and $\diff E / \diff x$ from $X^{\alpha \beta}$ become:\textcolor{red}{\footnote{\textcolor{red}{The final form of dEdx will depend on wheteher the projection calculated will be on va*vb or va*vb/v**2}}}
+From Eqs. (\ref{eq:collision_from_tensors_v0}) and (\ref{eq:Y_from_X}), the final expressions for determining $\hat{q}$ and $\diff E / \diff x$ from $X^{\alpha \beta}$ become:
 \begin{subequations}
 \begin{align}
 	\hat{q} & = \frac{2}{v} \left(\delta^{\alpha \beta} - \frac{v^\alpha v^\beta}{v^2} \right) X^{\alpha\beta} \\	
@@ -106,7 +107,13 @@ The first collision term is obtained from the correlators of chromodynamic field
 	\end{split}
 \label{eq:short_X}
 \end{equation}
-\noindent \textcolor{red}{where $N_c$ is the number of colors, $\Tr_c$ is a color trace in the fundamental representation, $\mathbf{y} = \mathbf{x} - \mathbf{v} (t - t')$, $F^\alpha \equiv F^\alpha_a t^a$\textcolor{red}{\footnote{\textcolor{red}{A proper appendix or introduction to SU(Nc) will be necessary}}} is the $\alpha$ component of the Lorentz color force, and $a$ are color indices in the adjoint representation, which run from 1 through ${N_c}^2 - 1$}. Thus, the $X^{\alpha \beta}$ component of the tensor is obtained by integrating, in time, over the full past trajectory of the probe, the correlator of the $\alpha$ and $\beta$ components of the Lorentz color force; the first at the ``present'' (time $t$, position $\mathbf{x}$), and the second at a past point of the probe's trajectory (time $t'$, position $\mathbf{y}$). In the eikonal approximation, where the probe is undeflected as it traverses the medium, its velocity is constant, and the probe's past position is:
+\noindent where 
+\begin{equation}
+\mathbf{y} = \mathbf{x} - \mathbf{v} (t - t')
+\end{equation}
+is the probe's past position, under the eikonal approximation, where the probe is undeflected as it traverses the medium and its velocity is constant.
+
+Thus, the $X^{\alpha \beta}$ component of the tensor is obtained by integrating, in time, over the full past trajectory of the probe, the correlator of the $\alpha$ and $\beta$ components of the Lorentz color force; the first at the ``present'' (time $t$, position $\mathbf{x}$), and the second at a past point of the probe's trajectory (time $t'$, position $\mathbf{y}$). In the eikonal approximation, where the probe is undeflected as it traverses the medium, its velocity is constant, and the probe's past position is:
 \begin{equation}
 	\mathbf{y} = \mathbf{x} - (t-t')\mathbf{v}
 	\label{eq:past_position}
@@ -120,7 +127,6 @@ F^\alpha_a(t, \mathbf{x}) & = g \big( E^\alpha_a(t, \mathbf{x}) + \varepsilon^{\
 \label{eq:lorentz_force_component}
 \end{align}
 \end{subequations}
-\noindent \textcolor{red}{where $g$ is the strong coupling constant and $\varepsilon^{\alpha \beta \gamma}$ is the Levi-Civita or antisymmetric tensor with $\varepsilon^{123}=1$.}
 
 Plugging Eq. (\ref{eq:lorentz_force_component}) into Eq. (\ref{eq:short_X}) allows unfolding the expression for $X^{\alpha \beta}$:
 \begin{equation}

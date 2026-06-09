@@ -119,24 +119,28 @@ Combining the results (Eqs. (\ref{eq:simplified_unintegrated_projections})) with
 \label{eq:final_full_dEdx}
 \end{align}
 \end{subequations}
-with $r^2 = \big((t-t')v_\perp + \tau' \cos \varphi - \tau \cos \phi \big)^2 + \big(\tau' \sin \varphi - \tau \sin \phi \big)^2$. 
+with $r^2 = \big((t-t')v_\perp + \tau' \cos \varphi - \tau \cos \phi \big)^2 + \big(\tau' \sin \varphi - \tau \sin \phi \big)^2 < 13 t^2$. 
 
 All that is left in order to be able to evaluate $\hat{q}$ and $\diff E / \diff x$ is to provide an expression for $T$.
 
 \subsection{``Temperature'' of the glasma}
-As was outlined in Section \ref{sec:fokker-planck}, the analytically challenging $Y^\alpha$ tensor needed to compute $\diff E / \diff x$ may be obtained from $X^{\alpha \beta}$ by assuming that the Fokker-Planck equation for the probe quarks traversing the medium\footnote{\textcolor{red}{what is the rationale for even applyint the FP eq to the flasma}} should admit a Boltzmann distribution as a solution. This technique, however, requires  introducing a temperature $T$ \footnote{\textcolor{red}{of what?}} for that Boltzmann distribution. Since the glasma is not a medium in thermal equilibrium, one resorts to using the temperature of the \gls{QGP} that would be obtained if the pre-hydrodynamic stage were allowed to reach equilibrium without expanding, i.e. keeping its energy density, $\varepsilon$, constant \textcolor{red}{[cite]}. The energy density of the glasma has been computed in \cite{Guerrero_Rodr_guez_2021} within the same framework as this work -- the linearization of the Yang-Mills Equations:
+\label{sec:temperature}
+As was outlined in Section \ref{sec:fokker-planck}, the analytically challenging $Y^\alpha$ tensor needed to compute $\diff E / \diff x$ may be obtained from $X^{\alpha \beta}$ by assuming that the Fokker-Planck equation for the probe quarks traversing the medium should admit a Boltzmann distribution as a solution. This technique, however, requires  introducing a temperature $T$ for that Boltzmann distribution. Since the glasma is not a medium in thermal equilibrium, one resorts to using the temperature of the \gls{QGP} that would be obtained if the pre-hydrodynamic stage were allowed to reach equilibrium without expanding, i.e. keeping its energy density, $\varepsilon$, constant. The energy density of the glasma has been computed in \cite{Guerrero_Rodr_guez_2021} within the same framework as this work -- the linearization of the Yang-Mills Equations:
 \begin{equation}
 	\left< \varepsilon (\tau) \right> = \left< \frac{\mathbf{E}^2 + \mathbf{B}^2}{\textcolor{red}{2}} \right>= \frac{g^2}{2} N_c (N_c - 1)^2 \int_0^{2\pi} \frac{\diff \Theta}{2 \pi} \left(1 + \cos \Theta \right) G_1(r) G_2(r)
 	\label{eq:Pablos_energy_density}
 \end{equation}
-with $r^2 = 2 \tau^2 (1 - \cos \Theta)$.
+with $r^2 = 2 \tau^2 (1 - \cos \Theta)$. The initial energy density is:
+\begin{equation}
+	\left< \varepsilon_0 \right> \equiv \left< \varepsilon(\tau \to 0) \right> = \frac{g^2}{2} N_c (N_c - 1)^2 \frac{Q_{s1}^2}{4 \pi} \frac{Q_{s2}^2}{4\pi}
+\end{equation}
 
-Now, the temperature of a \gls{QGP} with the same energy density must be found. The relation between the energy density of a \gls{QGP} medium and its temperature  is \cite{Carrington_2022} \textcolor{red}{cite} 
+Now, the temperature of a \gls{QGP} with the same energy density can be found. The relation between the energy density of a \gls{QGP} medium and its temperature  is \cite{Carrington_2022} 
 \begin{equation}
 	\varepsilon_\text{\gls{QGP}} = \frac{\pi^2}{60} \big( 4(N_c - 1)^2 + 7 N_f N_c \big) T_\text{\gls{QGP}}^4 
 	\label{eq:energy_temperature}
 \end{equation} 
-where $N_f$ is \textcolor{red}{the number of quark flavors included in the \gls{QGP}, whose mass should be much smaller than the temperature}.
+where $N_f$ is the number of quark flavors included in the \gls{QGP}, whose mass should be much smaller than the temperature.
 
 Solving Eq. (\ref{eq:energy_temperature}) for the temperature and replacing $\varepsilon_\textbf{\gls{QGP}}$ with Eq. (\ref{eq:Pablos_energy_density})'s event-averaged energy density produces an expression for $T$ to be plugged into the expression for $\diff E / \diff x$:
 \begin{equation}
@@ -158,4 +162,4 @@ For numerical multidimensional integration, \gls{GSL} includes the traditional M
 
 %A pointer to the integrand function must then be provided to the \texttt{gsl\_monte\_plain\_integrate} function, along with the bounds of integration, the number of points to be sampled, and an already-seeded \gls{GSL} random number generator. The function then stores the value of the integral in a provided variable.
 
-Every time the program is run, the integral is computed for several values of $t$, between $0$ and a previously set final time $t_f$, with a previously set number of steps $N_\text{steps}$. The program uses the current date as a seed for \texttt{stdlib.h}'s \texttt{rand} function, which is then used to generate seeds for \gls{GSL}'s random number generator each time an integral is calculated. The results are  then printed onto a \texttt{.txt} file headlined with the original seed (the current time) and all the parameter values. The results follow, in three columns separated by commas: the value of $t$  (in \qty{}{fm}), the integral, and the statistical error of the integral as estimated by \gls{GSL} (in  \qty{}{GeV^2/fm} for $\hat{q}$ and \qty{}{GeV/fm} for $\diff E / \diff x$).
+Every time the program is run, the integral is computed for several values of $t$, between $0$ and a previously set final time $t_f$, with a previously set number of steps $N_\text{steps}$. The program uses the current date as a seed for \texttt{stdlib.h}'s \texttt{rand} function, which is then used to generate seeds for \gls{GSL}'s random number generator each time an integral is calculated. The results are  then printed onto a \texttt{.txt} file headlined with the original seed (the current time) and all the parameter values. The results follow, in three columns separated by commas: the value of $t$, the integral, and the statistical error of the integral as estimated by \gls{GSL}. As for units, time intervals and distances are given in \qty{}{fm}, $\hat{q}$ is given in \qty{}{GeV^2/fm}, $\varepsilon$ is given in \qty{}{GeV^4}, $T$ is given in \qty{}{GeV} and $\diff E / \diff x$ is given in \qty{}{GeV/fm}. However, within the program all calculations are performed using natural units ($\hbar = c = 1$), powers of \qty{}{GeV}.

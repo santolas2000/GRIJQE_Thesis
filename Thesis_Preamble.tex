@@ -552,8 +552,22 @@
 \usetikzlibrary{external}
 \tikzexternalize[optimize=true]
 \usepackage{pgfplots}
+\pgfplotstableset{col sep=comma}
 \usepgfplotslibrary{patchplots}
+\usepgfplotslibrary{units}
 \usetikzlibrary {shapes.symbols} 
+
+ \pgfplotscreateplotcyclelist{resultstyle}{
+    {red, solid},
+    {red!87.5!blue},
+    {red!75!blue},
+    {red!63!blue},
+    {red!50!blue},
+    {red!38!blue},
+    {red!25!blue},
+    {red!13!blue},
+    {blue}
+} 
 
 
 \usepackage[compat=1.1.0]{tikz-feynman}
