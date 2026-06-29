@@ -1,0 +1,55 @@
+\begin{tikzpicture}
+\begin{axis}[
+	cycle list={
+        [colors of colormap={875,750,625,500,375,250,125,0} of hot]},
+	%cycle list name = resultstyle,
+	title = {$\left< T (\tau) \right> \quad (m = \qty{0.2}{GeV})$},
+	scaled ticks=false,
+    xticklabel style={
+        /pgf/number format/fixed,
+        /pgf/number format/fixed zerofill,
+        /pgf/number format/precision=2
+        },
+    xlabel = $\tau \; (\qty{}{fm})$,
+    ylabel = $\left< T \right> \; (\qty{}{GeV})$,
+    %	ylabel = {\shortstack{$\left<\varepsilon_0 \right>$\\$(\qty{}{GeV^2})$}},
+   	%ylabel style={rotate=-90},
+   	xmin = 0, xmax = 0.1,
+   	%ytick distance = 0.5,
+   	no markers,
+   	 xticklabel={
+        \ifdim\tick pt=0pt
+        \else
+            \pgfmathprintnumber{\tick}
+        \fi
+    },
+    yticklabel={
+        \ifdim\tick pt=0pt
+        \else
+            \pgfmathprintnumber{\tick}
+        \fi
+    },
+    %legend pos=outer north east,
+    clip=false
+    ]
+    %\addlegendimage{empty legend}
+	%\addlegendentry{\hspace{-0.7cm} $Q_s \; (\qty{}{GeV})$}
+\foreach \Q in {4.0000,3.8079,3.6000,3.4000,3.2000,3.0000,2.8000,2.6000} {
+
+    \edef\filename{Data/temperature_sweeping_Q/MV_Temperature_Q\Q.txt}
+
+    \pgfmathprintnumberto[fixed,fixed zerofill,precision=2
+    ]{\Q}{\printedQ}
+
+    \edef\temp{%
+        \noexpand\addplot
+        table [x index=0,y index=1] {\filename}
+        node[pos=1,right,black,scale = 0.8] {\printedQ};
+    }
+    \temp
+}
+\node[anchor=west,scale = 0.8]
+    at (axis description cs:1,0.67)
+    {$Q_s (\qty{}{GeV})$};
+\end{axis}
+\end{tikzpicture}

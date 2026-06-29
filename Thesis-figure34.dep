@@ -1,1 +1,6 @@
-Thesis-figure34.pdf: Data/qHat_0.6/MV_qHat_Q3.8079.txt
+Thesis-figure34.pdf: Data/dEdx_sweeping_v/MV_dEdx_Q1.0000.txt
+Thesis-figure34.pdf: Data/dEdx_sweeping_v/MV_dEdx_Q0.9000.txt
+Thesis-figure34.pdf: Data/dEdx_sweeping_v/MV_dEdx_Q0.8000.txt
+Thesis-figure34.pdf: Data/dEdx_sweeping_v/MV_dEdx_Q0.7000.txt
+Thesis-figure34.pdf: Data/dEdx_sweeping_v/MV_dEdx_Q0.6000.txt
+Thesis-figure34.pdf: Data/dEdx_sweeping_v/MV_dEdx_Q0.5000.txt

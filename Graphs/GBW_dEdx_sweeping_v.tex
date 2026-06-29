@@ -1,0 +1,48 @@
+\begin{tikzpicture}
+\begin{axis}[
+	cycle list={
+        [colors of colormap={875,750,625,500,375,250,125,0} of viridis]},
+	%cycle list={[of colormap=hot]},
+	%cycle list name = resultstyle,
+	title = {$\diff E / \diff x_{\text{GBW}} \quad (m = \qty{0.2}{GeV}, Q_s = \qty{3.635}{GeV})$},
+	scaled ticks=false,
+    xticklabel style={
+        /pgf/number format/fixed,
+        /pgf/number format/fixed zerofill,
+        /pgf/number format/precision=2
+        },
+    xlabel = $t \; (\qty{}{fm})$,
+    ylabel = $\diff E / \diff x \; (\qty{}{GeV/fm})$,
+    %	ylabel = {\shortstack{$\left<\varepsilon_0 \right>$\\$(\qty{}{GeV^2})$}},
+   	%ylabel style={rotate=-90},
+   	xmin = 0, xmax = 0.1, ymin = 0,
+   	%ytick distance = 0.5,
+   	no markers,
+   	 xticklabel={
+        \ifdim\tick pt=0pt
+        \else
+            \pgfmathprintnumber{\tick}
+        \fi
+    },
+    yticklabel={
+        \ifdim\tick pt=0pt
+        \else
+            \pgfmathprintnumber{\tick}
+        \fi
+    },
+    legend pos=outer north east
+    ]
+    \addlegendimage{empty legend}
+	\addlegendentry{\hspace{-0.7cm} $v$}
+\foreach \Q in {1.0000,0.9000,0.8000,0.7000,0.6000,0.5000} {
+    \edef\filename{Data/GBW_dEdx_sweeping_v/MV_dEdx_Q\Q.txt}
+    \addplot table [x index=0, y index=1] {\filename};
+	\addlegendentryexpanded{$\pgfmathprintnumber[fixed,fixed zerofill,precision=2]{\Q}$}	
+	%\pgfmathprintnumberto[fixed,fixed zerofill,precision=2]{\Q}{\roundedQ}
+	%\edef\temp{\noexpand\addlegendentry{$\roundedQ$}}
+	%\temp
+}
+	\addplot[gray, densely dotted] {15.9773};
+
+\end{axis}
+\end{tikzpicture}

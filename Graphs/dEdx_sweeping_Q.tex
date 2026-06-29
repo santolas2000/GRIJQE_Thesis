@@ -33,7 +33,7 @@
     ]
     \addlegendimage{empty legend}
 	\addlegendentry{\hspace{-0.7cm} $Q_s \; (\qty{}{GeV})$}
-\foreach \Q in {4.0000,3.8079,3.6000,3.4000,3.2000,3.0000,2.8000,2.6000} {
+\foreach \Q in {4.0000,3.8000,3.6350,3.4000,3.2000,3.0000,2.8000,2.6000} {
     \edef\filename{Data/dEdx_sweeping_Q/MV_dEdx_Q\Q.txt}
     \addplot table [x index=0, y index=1] {\filename};
 	\addlegendentryexpanded{$\pgfmathprintnumber[fixed,fixed zerofill,precision=2]{\Q}$}	
