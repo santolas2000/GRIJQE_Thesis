@@ -76,7 +76,9 @@ The \gls{DGLAP} differential equation describes how \glspl{PDF} should evolve wi
 
 The \gls{BFKL} differential equations, on the other hand, describe how gluon density in momentum space, $\phi$, should evolve with $x$ at fixed $\mu$. It is a linear equation, and predicts
 %an exponential growth of the gluon density with rapidity, Y = ln(1/x); equivalently, it predicts
-a divergence of the gluon density as $x \to 0$; more specifically, it predicts an exponential growth of $\phi$ with rapidity, $y \equiv \ln(1/x)$. The equation does not contain any terms reflecting interference between gluon emitters, as it assumes the hadron to be a dilute parton system. However, making the probability of emission of a new gluon dependent on the present gluon density by adding non-linear terms to the \gls{BFKL} equations allows for saturation to be reached when gluon generation and gluon recombination balance out. These new non-linear terms have coefficients that are inverse powers of energy scales, $(1/Q)^n$; they control when the new terms become comparable to the old linear terms, and thus act as saturation scales, $Q_s$. \cite{Albacete_2014}
+a divergence of the gluon density as $x \to 0$; more specifically, it predicts an exponential growth of $\phi$ with rapidity, $y \equiv \ln(1/x)$. The equations do not contain any terms reflecting interference between gluon emitters, as they assume the hadron to be a dilute parton system. However, making the probability of emission of a new gluon dependent on the present gluon density by adding non-linear terms to the equations allows for saturation to be reached when gluon generation and gluon recombination balance out. The saturation scale $Q_s$ thus arises as the transverse momentum scale below which the new non-linear terms become comparable in magnitude to the old linear terms, leading to saturation. \cite{Albacete_2014}
+
+%These new non-linear terms have coefficients that are inverse powers of energy scales, $(1/Q)^n$; they control when the new terms become comparable to the old linear terms, and thus act as saturation scales, $Q_s$. \cite{Albacete_2014}
 
 Figure \ref{fig:DGLAPvsBFKL} illustrates the evolution of the parton content of the proton when its characterizing functions are evolved via the \gls{DGLAP} and the \gls{BFKL} equations. The upper left corner of this plot corresponds to the saturation region, where non-linear effects like recombination are thought to take over, otherwise gluon density growth as $x\to 0$ would violate unitarity.
 %QCD evolution equations which attempt to incorporate this effect have additional, non-linear, density-dependent terms, such as the \gls{GRL-MQ} equation.
@@ -367,7 +369,7 @@ The form of $W_{\text{MV}}$, apart from a normalization constant $C$, is \citep{
 \end{equation}
 which has an associated charge density two-point correlator:
 \begin{equation}
-	\left< \rho_a(x^-,\mathbf{x}_\perp) \rho_b (y^-,\mathbf{y}_\perp) \right> =  \delta^{ab} \delta^2 (\mathbf{x}_\perp - \mathbf{y}_\perp) \delta (x^- - y^-) \mu_A^2 \lambda(x^-, \mathbf{x}_\perp)
+	\left< \rho_a(x^-,\mathbf{x}_\perp) \rho_b (y^-,\mathbf{y}_\perp) \right> =  \delta^{ab} \delta^2 (\mathbf{x}_\perp - \mathbf{y}_\perp) \delta (x^- - y^-) \rho(x^-, \mathbf{x}_\perp)
 	\label{eq:MV_charge_correlator}
 \end{equation}
 %\textcolor{red}{How do I relate these two?}
@@ -607,7 +609,7 @@ with
 \begin{align}
 	U_2(x^+, \mathbf{x}_\perp) & =
 	\mathcal{P}^+ \exp  \Bigg[ig \int_{-\infty}^{x^+} \diff z ~ \Phi_2 (z, \mathbf{x}_\perp) \Bigg] \nonumber  
-	=  \mathcal{P}^+ \exp  \Bigg[ig \int_{-\infty}^{x^+} \diff z ~  g \int \diff^2 \mathbf{y}_\perp G(\mathbf{x_\perp} - \mathbf{y_\perp}) \tilde{\rho}_2(z,\mathbf{y}_\perp) \Bigg] \nonumber 
+	=  \mathcal{P}^+ \exp  \Bigg[ig \int_{-\infty}^{x^+} \diff z ~  g \int \diff^2 \mathbf{y}_\perp \mathcal{G}(\mathbf{x_\perp} - \mathbf{y_\perp}) \tilde{\rho}_2(z,\mathbf{y}_\perp) \Bigg] \nonumber 
 \end{align}
 
 Expressions for the gluon fields around a single nucleus traveling at the speed of light have finally been obtained. Next, when studying the \gls{HIC} system of two colliding nuclei, they will be useful for evaluating the gluon fields in regions of spacetime causally related to only one of the nuclei, and for setting the boundary conditions for solving the Yang-Mills equations everywhere else.
@@ -695,7 +697,7 @@ In the interior of the third quadrant, the currents $J_1^\mu$ and $J_2^\mu$ (Eq.
 \end{equation}
 
 %Before moving on to their treatment, a discussion of the boundary conditions to be used to connect the solution in the forward light-cone with the already-found solutions in the pre-collision quadrants is in order. It is possible to obtain, out of the already-found fields in the pre-collision quadrants, boundary conditions along the edges of the forward light-cone. A detailed derivation of these boundary conditions may be found in \cite[Appendix C]{Carrington_2022_Energy_Momentum_Tensor}. They are obtained by first considering that the longitudinal width of the sources is finite and greater than 0, rather than infinitely thin as in Eq. (2.32), then integrating the Yang-Mills equations over a path (Eq. (\ref{eq:boundary_alpha})) and an area (Eq. (\ref{eq:boundary_transverse})) which cross the light-cone, and finally taking the limit where the width goes to zero. They are:
-Before moving on to their treatment, a discussion of the boundary conditions to be used to connect the solution in the forward light-cone with the found solutions in the pre-collision quadrants is in order. It is possible to obtain, out of the found fields in the pre-collision quadrants, starting values for the fields in the forward light-cone at $\tau = 0^+$. This is usually done by requiring that, using the ansatz in Eq. (\ref{eq:ansatz}), the Yang-Mills equations be regular at $\tau = 0$ \cite{Guerrero_Rodr_guez_2021}. They may also be obtained by first considering that the longitudinal width of the sources is finite and greater than $0$, rather than infinitely thin as in Eq. (\ref{eq:thin_rho}), then integrating the Yang-Mills equations over a path (Eq. (\ref{eq:boundary_alpha})) and an area (Eq. (\ref{eq:boundary_transverse})) which cross the light-cone, and finally taking the limit where the width of the sources goes to zero. \cite[Appendix C]{Carrington_2022_Energy_Momentum_Tensor} The obtained boundary conditions are:
+Before moving on to their treatment, a discussion of the boundary conditions to be used to connect the solution in the forward light-cone with the found solutions in the pre-collision quadrants is in order. It is possible to obtain, out of the found fields in the pre-collision quadrants, starting values for the fields in the forward light-cone at $\tau = 0^+$. This is usually done by requiring that, using the ansatz in Eq. (\ref{eq:ansatz}), the Yang-Mills equations be regular at $\tau = 0$. That is, their singularities approaching the light cone from the inside and outside should match. \cite{Guerrero_Rodr_guez_2021} They may also be obtained by first considering that the longitudinal width of the sources is finite and greater than $0$, rather than infinitely thin as in Eq. (\ref{eq:thin_rho}), then integrating the Yang-Mills equations over a path (Eq. (\ref{eq:boundary_alpha})) and an area (Eq. (\ref{eq:boundary_transverse})) which cross the light-cone, and finally taking the limit where the width of the sources goes to zero. \cite[Appendix C]{Carrington_2022_Energy_Momentum_Tensor} The obtained boundary conditions are:
 \begin{subequations}
 \label{eq:boundary_conditions}
 \begin{align}
@@ -819,8 +821,9 @@ The solution is, then,
 \end{subequations}
 where the factor of $2$ in Eq. (\ref{eq:beta_tilde}) was introduced in order to make the $\mathbf{k}_\perp$-dependent coefficient, $\tilde{\beta}_0$, match the value of $\tilde{\beta}$ at $\tau=0$, since $\lim_{z \to 0} J_1(z)/z=1/2$. \cite{arfken2005mathematical}
 
-In order to find the expressions for the fields at $\tau = 0$ ($\tilde{\beta}_0$ and $\tilde{\beta}^i_0$), the next step would be to use the boundary conditions of Eqs. (\ref{eq:boundary_conditions}), which would require first bringing the pre-collision potentials, $\alpha^i_1$ and $\alpha^i_2$, to the Coulomb gauge. No analytical expression for the necessary transformation matrix $V(\mathbf{x}_\perp)$ has been found; however, solving the linearized equations using numerically-computed boundary conditions in the Coulomb gauge has been found to approximate the resolution of the full Yang-Mills equations quite well \cite{Guerrero_Rodr_guez_2021,Blaizot:2010kh}%\textcolor{purple}{(read paper, quantify similarity)}
-, except for very soft modes (very low $|\mathbf{k}_\perp|$). %\textcolor{purple}{(quantify)}
+In order to find the expressions for the fields at $\tau \to 0$ ($\tilde{\beta}_0$ and $\tilde{\beta}^i_0$), the next step would be to use the boundary conditions of Eqs. (\ref{eq:boundary_conditions}), which would require first bringing the pre-collision potentials, $\alpha^i_1$ and $\alpha^i_2$, to the Coulomb gauge. Solving the Yang-Mills equations with numerically computed $\tilde{\beta}_0$ and $\tilde{\beta}^i_0$ in this way has been found to approximate the resolution of the full Yang-Mills equations quite well, except for very soft modes (very low $|\mathbf{k}_\perp|$). \cite{Guerrero_Rodr_guez_2021,Blaizot:2010kh} However, no analytical expression for the necessary transformation matrix $V(\mathbf{x}_\perp)$ has been found.
+%No analytical expression for the necessary transformation matrix $V(\mathbf{x}_\perp)$ has been found; however, solving the linearized equations using numerically-computed boundary conditions in the Coulomb gauge has been found to approximate the resolution of the full Yang-Mills equations quite well \cite{Guerrero_Rodr_guez_2021,Blaizot:2010kh}%\textcolor{purple}{(read paper, quantify similarity)}
+%, except for very soft modes (very low $|\mathbf{k}_\perp|$). %\textcolor{purple}{(quantify)}
 
 One way to go around this problem is to recall that the quantities needed to compute the physically meaningful results are the chromodynamic force fields: the electric field, $\mathbf{E}$, and the magnetic field, $\mathbf{B}$. They will be used to calculate color traces of products of their components, like $\Tr_c [E^i(\tau, \mathbf{x}_\perp) B^j(\tau', \mathbf{y}_\perp) ]$, for example. Checking for gauge invariance, since the field components change under the transformation to the Coulomb gauge as $E^i (\tau, \mathbf{x}_\perp) \to E'^i(\tau, \mathbf{x}_\perp) = V(\mathbf{x}_\perp) E^i(\tau, \mathbf{x}_\perp) V^\dagger(\mathbf{x}_\perp)$ %\textcolor{purple}{(NOT GAUGE INVARIANT FOR $v_\perp \neq 0$ ??
 % But maybe $\hat{q}$ and $dE/dx$ are)
@@ -949,11 +952,11 @@ And the remaining fields:
 
 %The previous section has ended with expressions for the chromodynamic fields $\mathbf{E}$ and $\mathbf{B}$ out of the gluon fields $\alpha$. In the next chapter, the procedure for extracting macroscopic information about the pre-hydrodynamic stage will be presented, and it will require the calculation of chromodynamic field correlators
 
-The two-point gluon field correlator will be a useful quantity for Chapter \ref{ch:merge}, and it is computable within the present formalism. The correlator,
+The two-point gluon field correlator, 
 \begin{equation}
 	\left< \alpha^i_{pa} (\mathbf{x}_\perp) \alpha^j_{qb} (\mathbf{y}_\perp) \right>
 \end{equation}
-should be $0$ for gluon fields from different nuclei, $p \neq q$, as they are causally unrelated, and for different colors, $a \neq b$ \cite{Lappi:2017skr}.
+will be a useful quantity for Chapter \ref{ch:merge}, and it is computable within the present formalism for the pre-collision potentials. Furthermore, the two-point gluon field correlator, when calculated in light-cone gauge, corresponds to the Weizsäcker-Williams gluon distribution, a \gls{PDF} of the gluon (multiplied by $x$). The correlator should be $0$ for gluon fields from different nuclei, $p \neq q$, as they are causally unrelated, and for different colors, $a \neq b$ \cite{Lappi:2017skr}.
 
 
 A general form for the correlator in heavy ion collisions is: \cite{Lappi:2017skr}
@@ -1022,8 +1025,8 @@ h_{\text{MV}}(r) & = - \frac{g^{2}\mu}{4\pi } mrK_{1}(mr)
 where $\mathbf{r}_\perp \equiv \mathbf{x}_\perp - \mathbf{y}_\perp$ and $ r \equiv |\mathbf{r}_\perp|$.
 
 %Due to the $K_0 (mr)$ factor, $G_{\text{MV}}$ diverges in the ultraviolet limit ($r \to \infty$), and so must be regularized. 
-In the ultraviolet limit ($r \to 0$), the fractions at the r.h.s. of Eqs. (\ref{eq:unregularized_MV_G_h}) approach $1$, and so does $mrK_1(mr)$; however, due to the $K_0 (mr)$ term, $G_{\text{MV}}$ diverges logarithmically, and so must be regularized. 
-\textcolor{red}{[Ask for help with the DGLAP interpretation]}.
+In the ultraviolet limit ($r \to 0$), the fractions at the r.h.s. of Eqs. (\ref{eq:unregularized_MV_G_h}) approach $1$, and so does $mrK_1(mr)$; however, due to the $K_0 (mr)$ term, $G_{\text{MV}}$ diverges logarithmically, and so must be regularized. A logarithmic scaling of the unpolarized gluon distribution with distance is encouraging, as it seems analogous to the \gls{DGLAP} evolution equations' results. \cite{Guerrero_Rodr_guez_2021}
+%\textcolor{red}{[Ask for help with the DGLAP interpretation]}.
 
 In \cite{Guerrero_Rodr_guez_2021}, $G_\text{MV}$ is regularized by replacing the coupling constant $g$ with a running coupling in $r$: \textcolor{red}{[Ask about $g(\mu)^2$ --  why is the asymptotic value of $g$ the value of $g$ at the scale $\mu$?]}
 \begin{equation}
